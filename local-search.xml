@@ -5,8 +5,8 @@
   
   <entry>
     <title>本博客的搭建流程-续</title>
-    <link href="/2023/01/12/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B-%E7%BB%AD/"/>
-    <url>/2023/01/12/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B-%E7%BB%AD/</url>
+    <link href="/posts/197118431.html"/>
+    <url>/posts/197118431.html</url>
     
     <content type="html"><![CDATA[<p>本博客的搭建，离不开我的一位高中同学兼好友的指路： <a href="https://mug-chen.github.io/posts/23043.html">https://mug-chen.github.io/posts/23043.html</a> 。他的文章简明且直击要害，为这个博客的搭建起到了灯塔一般的作用。</p><p>不过，由于过于简明，初阅他的文章有一定难度。本文主要在这篇文章的基础上，补充一些知识点。</p><h2 id="1-什么是hexo？为什么用hexo而不用wordpress之类的？"><a href="#1-什么是hexo？为什么用hexo而不用wordpress之类的？" class="headerlink" title="1. 什么是hexo？为什么用hexo而不用wordpress之类的？"></a>1. 什么是hexo？为什么用hexo而不用wordpress之类的？</h2><h2 id="2-一些自定义和美化经验"><a href="#2-一些自定义和美化经验" class="headerlink" title="2. 一些自定义和美化经验"></a>2. 一些自定义和美化经验</h2><h2 id="附：Mac-amp-linux部署hexo博客的方式（比windows简单很多！）和一些截图"><a href="#附：Mac-amp-linux部署hexo博客的方式（比windows简单很多！）和一些截图" class="headerlink" title="附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图"></a>附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图</h2>]]></content>
     
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="/2023/01/12/hello-world/"/>
-    <url>/2023/01/12/hello-world/</url>
+    <link href="/posts/1243066710.html"/>
+    <url>/posts/1243066710.html</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     

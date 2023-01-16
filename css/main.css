@@ -429,16 +429,16 @@ sup > a::before,
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
-@supports (-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(0px)) {
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: rgba(22,20,18,0.5);
-    -webkit-backdrop-filter: blur(0px);
-    backdrop-filter: blur(0px);
+    background: rgba(22,20,18,0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 }
-@supports not ((-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(0px))) {
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
@@ -895,16 +895,16 @@ i.iconfont {
     filter: brightness(0.9);
     transition: filter 0.2s ease-in-out;
   }
-  @supports (-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(0px)) {
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
     :root:not([data-user-color-scheme]) .navbar .dropdown-collapse,
     :root:not([data-user-color-scheme]) .top-nav-collapse,
     :root:not([data-user-color-scheme]) .navbar-col-show {
-      background: rgba(65,65,65,0.5);
-      -webkit-backdrop-filter: blur(0px);
-      backdrop-filter: blur(0px);
+      background: rgba(65,65,65,0.4);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
     }
   }
-  @supports not ((-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(0px))) {
+  @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
     :root:not([data-user-color-scheme]) .navbar .dropdown-collapse,
     :root:not([data-user-color-scheme]) .top-nav-collapse,
     :root:not([data-user-color-scheme]) .navbar-col-show {
@@ -946,16 +946,16 @@ i.iconfont {
   filter: brightness(0.9);
   transition: filter 0.2s ease-in-out;
 }
-@supports (-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(0px)) {
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
   [data-user-color-scheme="dark"] .navbar .dropdown-collapse,
   [data-user-color-scheme="dark"] .top-nav-collapse,
   [data-user-color-scheme="dark"] .navbar-col-show {
-    background: rgba(65,65,65,0.5);
-    -webkit-backdrop-filter: blur(0px);
-    backdrop-filter: blur(0px);
+    background: rgba(65,65,65,0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 }
-@supports not ((-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(0px))) {
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   [data-user-color-scheme="dark"] .navbar .dropdown-collapse,
   [data-user-color-scheme="dark"] .top-nav-collapse,
   [data-user-color-scheme="dark"] .navbar-col-show {

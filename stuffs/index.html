@@ -24,7 +24,7 @@
 <meta property="og:description" content="这里是正文(这里的内容暂时是无用的) USELS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-16T11:38:44.000Z">
-<meta property="article:modified_time" content="2023-01-16T23:42:30.360Z">
+<meta property="article:modified_time" content="2023-01-17T03:08:05.101Z">
 <meta property="article:author" content="justaLoli">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -233,24 +233,6 @@
   
     
     <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://hexo.fluid-dev.com/" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="https://hexo.fluid-dev.com/img/fluid.png" srcset="/img/loading.gif" lazyload alt="Fluid Blog"
-                   onerror="this.onerror=null; this.src=this.srcset='/'"/>
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Blog</div>
-            <div class="link-intro">Fluid主题的官方博客，这也是本博客使用的主题。</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
       <a href="/mug-chen.site" class="card-body hover-with-bg" target="_blank" rel="noopener">
         <div class="card-content">
           
@@ -262,6 +244,24 @@
           <div class="link-text">
             <div class="link-title">MUG-chen's Blog</div>
             <div class="link-intro">我的一位高中同学兼好友的博客，给我建立这个博客提供了很大的帮助</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://hexo.fluid-dev.com/" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+          
+            <div class="link-avatar my-auto">
+              <img src="https://hexo.fluid-dev.com/img/fluid.png" srcset="/img/loading.gif" lazyload alt="Fluid Blog"
+                   onerror="this.onerror=null; this.src=this.srcset='/'"/>
+            </div>
+          
+          <div class="link-text">
+            <div class="link-title">Fluid Blog</div>
+            <div class="link-intro">Fluid主题的官方博客，这也是本博客使用的主题。</div>
           </div>
         </div>
       </a>
@@ -298,6 +298,24 @@
           <div class="link-text">
             <div class="link-title">解密PDF</div>
             <div class="link-intro">一个解密PDF的网站，拖入PDF即可移除加密。不知道这是什么原理？</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://github.com/dsrkafuu/sakana-widget" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+          
+            <div class="link-avatar my-auto">
+              <img src="/img/sakana/takina.png" srcset="/img/loading.gif" lazyload alt="Sakana🐟～"
+                   onerror="this.onerror=null; this.src=this.srcset='/'"/>
+            </div>
+          
+          <div class="link-text">
+            <div class="link-title">Sakana🐟～</div>
+            <div class="link-intro">在网页插入一个小组件版的石蒜模拟器，另有专门的hexo插件版本。</div>
           </div>
         </div>
       </a>
@@ -353,7 +371,8 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-      Loli的杂货铺
+       <p>Loli的杂货铺 | <a href="https://icp.gov.moe/?keyword=20239994" target="_blank">萌ICP备20239994号</a> </p> <p><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> |  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </p>
+
     </div>
   
   
@@ -409,5 +428,54 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+
+      <div id="sakana" style="position:fixed;right:0;bottom:20px;z-index:999;"></div>
+      <script async onload='initSakanaWidget({"enable":true,"character":"chisatoH","enable_mobile":false,"controls":true,"size":180,"bottom":"20px","threshold":0.5,"customCharacters":[{"base":"chisato","name":"chisatoH","image":"/img/sakana/chisato.png","i":0.09,"s":0.1,"d":0.95,"r":0,"y":3,"t":0,"w":0}],"autoFit":false,"stroke":{"color":"#b4b4b4","width":10},"rotate":0})' src="https://cdn.jsdelivr.net/npm/sakana-widget@2.3.0/lib/sakana.min.js"></script>
+      <script>
+      function log(msg) {
+        console.log("[hexo-sakana] " + msg);
+      }
+
+      function initSakanaWidget(config) {
+        if (
+          !config.enable_mobile &&
+          window.navigator.userAgent.match(
+            /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+          )
+        ) {
+          log(
+            '检测为移动端，且配置中未开启在移动端启用组件，hexo-sakana 已禁用'
+          );
+          return;
+        }
+        for (character of config.customCharacters) {
+          if (!["takina", "chisato"].includes(character.base)) {
+            log(`无效基础角色 ${character.base}，取消注册`);
+            continue;
+          }
+          if (character.name === "") {
+            log("名称为空，取消注册");
+            continue;
+          }
+          const originCharacter = SakanaWidget.getCharacter(character.base);
+          originCharacter.initialState = {
+            ...originCharacter.initialState,
+            ...character,
+          };
+          originCharacter.image = !character.image ? originCharacter.image : character.image
+          SakanaWidget.registerCharacter(character.name, originCharacter);
+          log(`注册自定义角色：${character.name}`)
+        }
+        new SakanaWidget({
+          character: config.character,
+          size: config.size,
+          autoFit: config.autoFit,
+          controls: config.controls,
+          stroke: config.stroke,
+          threshold: config.threshold,
+          rotate: config.rotate,
+        }).mount("#sakana");
+      }
+  </script>
+    </body>
 </html>

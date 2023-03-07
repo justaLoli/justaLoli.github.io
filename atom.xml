@@ -6,7 +6,7 @@
   <link href="https://justaloli.site/atom.xml" rel="self"/>
   
   <link href="https://justaloli.site/"/>
-  <updated>2023-03-05T05:55:18.935Z</updated>
+  <updated>2023-03-07T07:21:19.242Z</updated>
   <id>https://justaloli.site/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算摄像学 第三讲 相机几何模型</title>
+    <link href="https://justaloli.site/posts/62008.html"/>
+    <id>https://justaloli.site/posts/62008.html</id>
+    <published>2023-03-07T05:00:10.000Z</published>
+    <updated>2023-03-07T07:21:19.242Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>回顾计算摄像</p><p>计算摄像：通过计算从照片中获取更多信息。</p><p>在多个环节可以引入计算：</p><ol><li>场景和光学镜头之间的计算</li><li>传感器上对光信号的计算</li><li>传感器到图像之间的计算</li></ol><h2 id="引言：相机想知道的东西"><a href="#引言：相机想知道的东西" class="headerlink" title="引言：相机想知道的东西"></a>引言：相机想知道的东西</h2><ol><li>我在哪里——相机的空间位置</li><li>我看到的世界——相机看到的物体的空间位置</li></ol><h2 id="裸传感器成像"><a href="#裸传感器成像" class="headerlink" title="裸传感器成像"></a>裸传感器成像</h2><p>空间每个点的漫反射光都被传感器每个像素点接收——几乎无法成像。</p><h2 id="针孔相机成像"><a href="#针孔相机成像" class="headerlink" title="针孔相机成像"></a>针孔相机成像</h2><p>针孔对光线路径做出了选择，可以得到一个倒像。</p><p>相机术语：</p><ul><li>投影中心：即小孔位置</li><li>光圈：即小孔</li><li>焦距（遮光板到传感器的距离）</li></ul><p>改变焦距，传感器上的成像大小会改变。</p><p>针孔相机的问题：孔大导致模糊；孔小导致光强小，且带来衍射问题。</p><p>进光效率：孔直径大，进光大；焦距短，接收光的效果好</p><p>档：（f值）：焦距除以针孔直径。</p><p><strong>针孔相机的成像模型可以帮助理解现代相机。</strong></p><h2 id="相机矩阵：三维到二维的坐标变换"><a href="#相机矩阵：三维到二维的坐标变换" class="headerlink" title="相机矩阵：三维到二维的坐标变换"></a>相机矩阵：三维到二维的坐标变换</h2><p>用于解释开头的两个问题。</p><p>一些数学</p><p><img src="/posts/62008/%E7%9B%B8%E6%9C%BA%E7%9F%A9%E9%98%B5.png" alt="相机将三维世界的坐标（大X）通过线性变换转化为二维大图像坐标（小x的前两个分量）"></p><p>x &#x3D; f X&#x2F;Z; y &#x3D; f Y&#x2F;Z</p><p>P &#x3D; K[R|t]X, P(x,y,z)’ 为相机上的图像坐标，K(3 * 3)为内参矩阵，R(3 * 3)为相机在世界坐标系的旋转，t(3 * 1)为相机坐标系在世界坐标系中的平移，X为物体在世界的坐标(X,Y,Z,1)’ </p><p><strong>外参矩阵蕴含了相机在空间的平移和旋转；内参矩阵蕴含了相机将外界投影到照片的方式。二者分别回答“我在哪里”和“我眼中的世界”的问题</strong></p><h3 id="透视"><a href="#透视" class="headerlink" title="透视"></a>透视</h3><p>让景物变大：增加焦距？减小物体到针孔的距离？效果不同！</p><p>应用：“眩晕效果（滑动变焦）”，固定前景的大小，同时改变焦距和物体距离，制造景深的变化。</p><p>极端情况：正交投影：超级超级超级长焦，深度对大小不影响。（常见于游戏。</p><h2 id="相机几何标定"><a href="#相机几何标定" class="headerlink" title="相机几何标定"></a>相机几何标定</h2><h3 id="三维匹配点标定法"><a href="#三维匹配点标定法" class="headerlink" title="三维匹配点标定法"></a>三维匹配点标定法</h3><p>利用一些已知的三维空间点-相机图像坐标的对应关系，推知整个相机矩阵。</p><p>再利用算出的矩阵分析焦距、中心点等参数（得到一个上三角矩阵和正交矩阵，分别是相机的内部参数和外部坐标旋转）。</p><h3 id="非线性优化算法，处理类似畸变问题"><a href="#非线性优化算法，处理类似畸变问题" class="headerlink" title="非线性优化算法，处理类似畸变问题"></a>非线性优化算法，处理类似畸变问题</h3><h3 id="多图棋盘格标定法"><a href="#多图棋盘格标定法" class="headerlink" title="多图棋盘格标定法"></a>多图棋盘格标定法</h3><p>已经很成熟。</p><h2 id="学术前沿"><a href="#学术前沿" class="headerlink" title="学术前沿"></a>学术前沿</h2><ol><li>大规模的相机几何标定</li><li>利用深度学习进行相机几何标定</li><li>利用图像的“消失点”“消失线”进行几何标定</li><li>从镜面反射进行几何标定</li><li>……</li></ol>]]></content>
+    
+    
+    <summary type="html">难过，听不懂</summary>
+    
+    
+    
+    <category term="计算摄像学" scheme="https://justaloli.site/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>今日无用英语——杂货铺的正确翻译</title>

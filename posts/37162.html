@@ -16,23 +16,21 @@
   <meta name="author" content="justaLoli">
   <meta name="keywords" content="">
   
-    <meta name="description" content="难过，听不懂">
+    <meta name="description" content="焦点堆栈与光场摄像">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算摄像学 第三讲 相机几何模型">
-<meta property="og:url" content="https://justaloli.cn/posts/62008.html">
+<meta property="og:title" content="计算摄像学 第五讲 焦点堆栈与光场摄像">
+<meta property="og:url" content="https://justaloli.cn/posts/37162.html">
 <meta property="og:site_name" content="Loli的杂货铺">
-<meta property="og:description" content="难过，听不懂">
+<meta property="og:description" content="焦点堆栈与光场摄像">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://justaloli.cn/posts/62008/%E7%9B%B8%E6%9C%BA%E7%9F%A9%E9%98%B5.png">
-<meta property="article:published_time" content="2023-03-07T05:00:10.000Z">
-<meta property="article:modified_time" content="2023-03-07T07:21:19.242Z">
+<meta property="article:published_time" content="2023-03-21T05:00:39.000Z">
+<meta property="article:modified_time" content="2023-03-21T07:05:03.804Z">
 <meta property="article:author" content="justaLoli">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://justaloli.cn/posts/62008/%E7%9B%B8%E6%9C%BA%E7%9F%A9%E9%98%B5.png">
   
   
   
-  <title>计算摄像学 第三讲 相机几何模型 - Loli的杂货铺</title>
+  <title>计算摄像学 第五讲 焦点堆栈与光场摄像 - Loli的杂货铺</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">计算摄像学 第三讲 相机几何模型</span>
+            <span id="subtitle">计算摄像学 第五讲 焦点堆栈与光场摄像</span>
           
         </div>
 
@@ -222,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-07 13:00" pubdate>
-          2023年3月7日 下午
+        <time datetime="2023-03-21 13:00" pubdate>
+          2023年3月21日 下午
         </time>
       </span>
     
@@ -234,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          864 字
+          872 字
         
       </span>
     
@@ -311,7 +309,7 @@
       
         <a href="/posts/62008.html" title="计算摄像学 第三讲 相机几何模型"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">计算摄像学 第三讲 相机几何模型</span>
         </a>
       
@@ -329,7 +327,7 @@
       
         <a href="/posts/37162.html" title="计算摄像学 第五讲 焦点堆栈与光场摄像"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">计算摄像学 第五讲 焦点堆栈与光场摄像</span>
         </a>
       
@@ -362,55 +360,70 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">计算摄像学 第三讲 相机几何模型</h1>
+            <h1 style="display: none">计算摄像学 第五讲 焦点堆栈与光场摄像</h1>
             
             
               <div class="markdown-body">
                 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>回顾计算摄像</p>
-<p>计算摄像：通过计算从照片中获取更多信息。</p>
-<p>在多个环节可以引入计算：</p>
-<ol>
-<li>场景和光学镜头之间的计算</li>
-<li>传感器上对光信号的计算</li>
-<li>传感器到图像之间的计算</li>
-</ol>
-<h2 id="引言：相机想知道的东西"><a href="#引言：相机想知道的东西" class="headerlink" title="引言：相机想知道的东西"></a>引言：相机想知道的东西</h2><ol>
-<li>我在哪里——相机的空间位置</li>
-<li>我看到的世界——相机看到的物体的空间位置</li>
-</ol>
-<h2 id="裸传感器成像"><a href="#裸传感器成像" class="headerlink" title="裸传感器成像"></a>裸传感器成像</h2><p>空间每个点的漫反射光都被传感器每个像素点接收——几乎无法成像。</p>
-<h2 id="针孔相机成像"><a href="#针孔相机成像" class="headerlink" title="针孔相机成像"></a>针孔相机成像</h2><p>针孔对光线路径做出了选择，可以得到一个倒像。</p>
-<p>相机术语：</p>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Focal Stack and Light Field</p>
+<p>上节课的虚拟大光圈是基于“算法”的。直接得到的深度信息很有限。</p>
+<p>本节课将介绍“物理”地方法，从场景中更直接地得到更多深度信息。</p>
+<p>镜头成像：只有一个平面可以聚焦。</p>
 <ul>
-<li>投影中心：即小孔位置</li>
-<li>光圈：即小孔</li>
-<li>焦距（遮光板到传感器的距离）</li>
+<li><p>如何得到各个深度都清晰的成像？</p>
+<ul>
+<li>快速拍多个不同聚焦平面的照片-&gt;焦点堆栈（Focal Stack Imaging）。</li>
+<li>再得到一张全部对焦的图片（算法加工）（all-in-focus）</li>
 </ul>
-<p>改变焦距，传感器上的成像大小会改变。</p>
-<p>针孔相机的问题：孔大导致模糊；孔小导致光强小，且带来衍射问题。</p>
-<p>进光效率：孔直径大，进光大；焦距短，接收光的效果好</p>
-<p>档：（f值）：焦距除以针孔直径。</p>
-<p><strong>针孔相机的成像模型可以帮助理解现代相机。</strong></p>
-<h2 id="相机矩阵：三维到二维的坐标变换"><a href="#相机矩阵：三维到二维的坐标变换" class="headerlink" title="相机矩阵：三维到二维的坐标变换"></a>相机矩阵：三维到二维的坐标变换</h2><p>用于解释开头的两个问题。</p>
-<p>一些数学</p>
-<p><img src="/posts/62008/%E7%9B%B8%E6%9C%BA%E7%9F%A9%E9%98%B5.png" srcset="/img/loading.gif" lazyload alt="相机将三维世界的坐标（大X）通过线性变换转化为二维大图像坐标（小x的前两个分量）"></p>
-<p>x &#x3D; f X&#x2F;Z; y &#x3D; f Y&#x2F;Z</p>
-<p>P &#x3D; K[R|t]X, P(x,y,z)’ 为相机上的图像坐标，K(3 * 3)为内参矩阵，R(3 * 3)为相机在世界坐标系的旋转，t(3 * 1)为相机坐标系在世界坐标系中的平移，X为物体在世界的坐标(X,Y,Z,1)’ </p>
-<p><strong>外参矩阵蕴含了相机在空间的平移和旋转；内参矩阵蕴含了相机将外界投影到照片的方式。二者分别回答“我在哪里”和“我眼中的世界”的问题</strong></p>
-<h3 id="透视"><a href="#透视" class="headerlink" title="透视"></a>透视</h3><p>让景物变大：增加焦距？减小物体到针孔的距离？效果不同！</p>
-<p>应用：“眩晕效果（滑动变焦）”，固定前景的大小，同时改变焦距和物体距离，制造景深的变化。</p>
-<p>极端情况：正交投影：超级超级超级长焦，深度对大小不影响。（常见于游戏。</p>
-<h2 id="相机几何标定"><a href="#相机几何标定" class="headerlink" title="相机几何标定"></a>相机几何标定</h2><h3 id="三维匹配点标定法"><a href="#三维匹配点标定法" class="headerlink" title="三维匹配点标定法"></a>三维匹配点标定法</h3><p>利用一些已知的三维空间点-相机图像坐标的对应关系，推知整个相机矩阵。</p>
-<p>再利用算出的矩阵分析焦距、中心点等参数（得到一个上三角矩阵和正交矩阵，分别是相机的内部参数和外部坐标旋转）。</p>
-<h3 id="非线性优化算法，处理类似畸变问题"><a href="#非线性优化算法，处理类似畸变问题" class="headerlink" title="非线性优化算法，处理类似畸变问题"></a>非线性优化算法，处理类似畸变问题</h3><h3 id="多图棋盘格标定法"><a href="#多图棋盘格标定法" class="headerlink" title="多图棋盘格标定法"></a>多图棋盘格标定法</h3><p>已经很成熟。</p>
-<h2 id="学术前沿"><a href="#学术前沿" class="headerlink" title="学术前沿"></a>学术前沿</h2><ol>
-<li>大规模的相机几何标定</li>
-<li>利用深度学习进行相机几何标定</li>
-<li>利用图像的“消失点”“消失线”进行几何标定</li>
-<li>从镜面反射进行几何标定</li>
-<li>……</li>
+</li>
+<li><p>如何捕获焦点堆栈照片？需要固定哪些参数，更改什么参数？</p>
+<ul>
+<li>更改镜头到传感器的距离S’！（Focal distence）</li>
+<li>也可以更改镜头到物体的距离S</li>
+</ul>
+</li>
+<li><p>如何得到最清晰的部分？（合成）</p>
+<ol>
+<li>图像对齐（Alignment&amp;registration）<ul>
+<li>调整Focal distence时，视场FoV会有些微变化（参见第四讲），要进行一定地缩放调整。</li>
+</ul>
+</li>
+<li>权重分配<ul>
+<li>如何测量每个像素的清晰程度？<strong>这也是相机自动对焦的工作原理</strong></li>
+<li>每个图像，清晰的地方给高权重</li>
+</ul>
+</li>
+<li>加权平均<ul>
+<li>对每个图像每个像素点进行加权平均。</li>
+</ul>
+</li>
 </ol>
+</li>
+<li><p>注：相机自动对焦（主要通过提取边缘）</p>
+<ul>
+<li>做拉普拉斯算子（是一种差分）（可以起到提取边缘的作用）（也有其它提取边缘的方式）</li>
+<li>再做高斯模糊（拉普拉斯算子对噪声比较敏感，模糊起到平滑作用，降噪）</li>
+<li>还有主动对焦方式：比如ToF传感器</li>
+</ul>
+</li>
+<li><p>在焦点堆栈过程中，我们事实上得到了一些深度信息。但是这个信息比较模糊。</p>
+</li>
+<li><p>学术前沿：利用对焦距离和光圈调整估计表面深度（高精度）</p>
+<ul>
+<li>不仅改变焦点距离、同时改变光圈</li>
+<li>利用光圈和对焦距离两个信息得到尽可能真实的深度。</li>
+</ul>
+</li>
+</ul>
+<p>光场<br>不同子集<br>不同角度拍，得到真实光线的，可以还原场景光线的所有光线。</p>
+<p>光场：所有光线的集合</p>
+<p>光场表示方法: L(u,v,s,t)，uv表示光在透镜平面穿过的位置、st表示光在传感器平面穿过的位置。用uvst可以得到透镜到传感器之间的所有光线。</p>
+<p>如何得到光场数据？</p>
+<p>用相机阵列进行光场摄像 or 用一个相机移动进行拍摄</p>
+<p>如何单次相机单次拍摄？</p>
+<p>光场摄像。不让传感器精确聚焦，而是让聚焦的光重新散开（利用一个微透镜阵列），传感器可以得到更丰富的信息。</p>
+<p>学术前沿：深度学习生成光场</p>
+<p>学术前沿：神经辐射场NeRF</p>
 
                 
               </div>
@@ -449,8 +462,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>计算摄像学 第三讲 相机几何模型</div>
-      <div>https://justaloli.cn/posts/62008.html</div>
+      <div>计算摄像学 第五讲 焦点堆栈与光场摄像</div>
+      <div>https://justaloli.cn/posts/37162.html</div>
     </div>
     <div class="license-meta">
       
@@ -462,13 +475,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月7日</div>
+          <div>2023年3月21日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月7日</div>
+          <div>2023年3月21日</div>
         </div>
       
       
@@ -511,18 +524,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/29774.html" title="计算摄像学 第四讲 镜头 曝光 对焦">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算摄像学 第四讲 镜头 曝光 对焦</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/14140.html" title="今日无用英语——杂货铺的正确翻译">
-                        <span class="hidden-mobile">今日无用英语——杂货铺的正确翻译</span>
+                      <a href="/posts/38043.html" title="C++面向对象编程经验1——概论、模版类、构造函数、析构函数.">
+                        <span class="hidden-mobile">C++面向对象编程经验1——概论、模版类、构造函数、析构函数.</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -576,12 +583,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -717,49 +718,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

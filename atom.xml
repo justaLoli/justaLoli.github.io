@@ -6,7 +6,7 @@
   <link href="https://justaloli.cn/atom.xml" rel="self"/>
   
   <link href="https://justaloli.cn/"/>
-  <updated>2023-03-21T07:05:03.804Z</updated>
+  <updated>2023-03-30T07:54:24.667Z</updated>
   <id>https://justaloli.cn/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算摄像学第六讲 光照，反射率与明暗模型</title>
+    <link href="https://justaloli.cn/posts/43140.html"/>
+    <id>https://justaloli.cn/posts/43140.html</id>
+    <published>2023-03-28T05:01:31.000Z</published>
+    <updated>2023-03-30T07:54:24.667Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>光度模型</p><p>三维建模方法，激光测距扫描？</p><p>多视角图像重建结果（相机几何标定</p><p>对比：</p><p>几何建模：有总体形状，无细节</p><p>光度立体：无形状？，有精细的细节</p><p>利用光强理解物体的形状，计算机如何从图像的强度中理解物体形象？</p><p>光度成像过程：</p><p><code>光照-&gt;表面法线+反射率-&gt;光强</code></p><p>图像是对场景的观测，观测结果收到几何位置（第三讲）和光强的影响（本讲）</p><p>相机辐射响应：由光强和传感器数值的函数关系。</p><p>线性非线性？场景的辐射度和传感器受到的辐照度是线性的。但是传感器对辐射转化为图像亮度的关系是非线性的。</p><p>相机的辐射响应曲线：图像亮度-辐照度的函数关系。低辐照度时，亮度会高于线性值。</p><p>如何反推原本的辐照度值？反函数，逆响应曲线。</p><p>如何得到逆响应曲线？</p><ul><li>标定法：已知反射率的灰度色块序列（如果认为相机的RGB三个辐射响应曲线相同（这是目前的常见情况）可以单纯用灰度色块标定；而更复杂的情况需要各种颜色的色块做标定。</li><li>没色卡怎么办！多曝光序列的自标定(Mitsunaga, CVPR 99) 用已知<code>曝光时间比</code>的内容一致的图像序列进行标定。利用静态场景不同曝光时间拍摄的一组照片进行标定。<ul><li>待求解的函数：辐照度E &#x3D; g(M)，M为光强，</li><li>将g用k次多项式拟合，k为？4-5阶</li><li>已知曝光时间的比值</li><li><strong>曝光时间比值等于场景辐照度的比值</strong>。</li><li>带入，待定系数，形成一个待优化的目标函数</li><li>利用端点(g(0)&#x3D;0;g(1)&#x3D;1)减少一个系数</li><li>用单调性约束</li><li>最小二乘法</li></ul></li></ul><ul><li>不用线性拟合？<ul><li>Grossberg CVPR 03</li><li>分析许多相机的辐射响应曲线，得到一个“主成分”分析</li><li>将主成分函数按不同比例结合，可以用很少的参数高精度地拟合辐射响应曲线</li></ul></li></ul><p>已经得到了线性的辐照度，如何拿来重建环境的光度？</p><ul><li>反射模型：漫反射、镜面反射</li><li>BRDF：双向反射率分布函数，值为给定入射光方向和反射光方向（一个方向用两个数据，故函数为4元），输出反射能量与入射能量的比值。</li><li>优化：在各向同性（具有旋转对称性），BRDF可简化为三元函数。</li></ul><p>一些难办的光传播现象：这些都不管了！</p><ul><li>折射</li><li>相互反射（光线的多次反射</li><li>次表面反射（树叶半透明</li></ul><p>理想漫反射：朗伯反射：BRDF为常数，反射率为常数。</p><p>光源？</p><ul><li>点光源：向所有方向发出同等强度光。</li><li>平行光源：</li><li>聚光灯：在锥内有光</li></ul><p>表面法线。</p><p>光度成像模型的定量描述：</p><p>L(w_r) &#x3D; 积分（环境光照 * BRDF * 表面法线) dw_i</p><p>简化：朗伯反射模型的平行光反射：好像是一个单项式，挺简单的。</p><p>学术前沿：</p><p>老师梳理了好几篇这方面的文章，主要关于重建场景的光照。并把这个光照信息应用于AR物品的光照渲染。</p>]]></content>
+    
+    
+    <summary type="html">基本上是关于如何由图像得到场景的亮度信息（亮度信息可以帮助重建场景，也能帮助识别物体，比如借助明暗来识别物体。</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>计算摄像学 第五讲 焦点堆栈与光场摄像</title>

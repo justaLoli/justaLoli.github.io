@@ -16,21 +16,31 @@
   <meta name="author" content="justaLoli">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://justaloli.cn/archives/page/2/index.html">
+    <meta name="description" content="问题: 索引词表的建立问题简介根据书名和书号，建立书名关键词到书号的索引词表。 问题理解需要实现的功能包括:  从文件中读入书号和书名 计算索引词表 向文件输出词表。  从面向对象角度，主要的对象为书籍和关键词。书籍具有书号、书名等属性；关键词具有词条、书号列表等属性。 设计与实现.程序实现的数据结构本程序将使用 笔者编写的顺序表、双向链表、字符串类 作为数据结构的实现. 顺序表vector、双向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="上机作业 索引词表的建立">
+<meta property="og:url" content="https://justaloli.cn/posts/50447.html">
 <meta property="og:site_name" content="Loli的杂货铺">
+<meta property="og:description" content="问题: 索引词表的建立问题简介根据书名和书号，建立书名关键词到书号的索引词表。 问题理解需要实现的功能包括:  从文件中读入书号和书名 计算索引词表 向文件输出词表。  从面向对象角度，主要的对象为书籍和关键词。书籍具有书号、书名等属性；关键词具有词条、书号列表等属性。 设计与实现.程序实现的数据结构本程序将使用 笔者编写的顺序表、双向链表、字符串类 作为数据结构的实现. 顺序表vector、双向">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-23T06:03:55.000Z">
+<meta property="article:modified_time" content="2023-03-24T10:02:12.795Z">
 <meta property="article:author" content="justaLoli">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>归档 - Loli的杂货铺</title>
+  <title>上机作业 索引词表的建立 - Loli的杂货铺</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -81,7 +91,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -199,9 +209,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">归档</span>
+            <span id="subtitle">上机作业 索引词表的建立</span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-23 14:03" pubdate>
+          2023年3月23日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          895 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -217,70 +267,204 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 15 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2023</p>
-    
-    <a href="/posts/300.html" class="list-group-item list-group-item-action">
-      <time>02-22</time>
-      <div class="list-group-item-title">计算概论A-不围棋</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">上机作业 索引词表的建立</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-索引词表的建立"><a href="#问题-索引词表的建立" class="headerlink" title="问题: 索引词表的建立"></a>问题: 索引词表的建立</h1><h3 id="问题简介"><a href="#问题简介" class="headerlink" title="问题简介"></a>问题简介</h3><p>根据书名和书号，建立书名关键词到书号的索引词表。</p>
+<h3 id="问题理解"><a href="#问题理解" class="headerlink" title="问题理解"></a>问题理解</h3><p>需要实现的功能包括:</p>
+<ul>
+<li>从文件中读入书号和书名</li>
+<li>计算索引词表</li>
+<li>向文件输出词表。</li>
+</ul>
+<p>从面向对象角度，主要的对象为书籍和关键词。书籍具有书号、书名等属性；关键词具有词条、书号列表等属性。</p>
+<h2 id="设计与实现"><a href="#设计与实现" class="headerlink" title="设计与实现."></a>设计与实现.</h2><h3 id="程序实现的数据结构"><a href="#程序实现的数据结构" class="headerlink" title="程序实现的数据结构"></a>程序实现的数据结构</h3><p>本程序将使用 <strong>笔者编写的顺序表、双向链表、字符串类</strong> 作为数据结构的实现. 顺序表<code>vector</code>、双向链表<code>list</code>、字符串<code>string</code>类具有的属性和方法在此不做赘述。</p>
+<p>基于问题理解，建立<code>Book</code>类和<code>Keyword</code>类。 其UML图如下.</p>
+<pre><code class=" mermaid">classDiagram
+	class Book&#123;
+		+int id;
+		+string name;
+		+generatekeywords() list&lt;string&gt; 
+	&#125;
+	class Keyword&#123;
+		+string word;
+		+list&lt;int&gt; ids;
+	&#125;
+</code></pre>
+
+<p>所有<code>Book</code>存储在<code>vector&lt;Book&gt;</code>顺序表中；所有<code>Keyword</code>存储在<code>vector&lt;Keyword&gt;</code>顺序表中。</p>
+<p>程序顺序执行<code>loaddata(string fp)</code>, <code>generatekeywordvector(vector&lt;Book&gt;&amp;)</code>, <code>dumpdata(std::fstream&amp;,vector&lt;Keywords&gt;)</code>三个函数，完成程序的三个功能。</p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境:"></a>环境:</h3><p><code>g++ -std=c++11</code>. 在MacOS,arm64上测试.</p>
+<h3 id="程序输入输出"><a href="#程序输入输出" class="headerlink" title="程序输入输出"></a>程序输入输出</h3><p>输入: 从程序运行目录下的<code>filei.txt</code>得到数据.</p>
+<p>输出: 输出到程序运行目录下的<code>fileo.txt</code>.输出内容包括词条总数，每个词条对应的书号，以及程序运行时间。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>收获: 封装了相对完备的双向链表、线性表、字符串.</p>
+<p>遇到的问题与解决办法:</p>
+<ul>
+<li>问题：如何将字符串按照字典序排序</li>
+<li>解决办法：<ul>
+<li>利用<code>string.h</code>中的<code>strcmp</code>函数可以按照字典序比大小。</li>
+<li>在<code>string</code>类中重载大于、小于等五个大小判断运算符，让运算符返回strcmp的结果</li>
+<li>在<code>vector</code>类中增加<code>sortappend</code>方法，在添加时比较大小，建立有序顺序表。</li>
+</ul>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
   
-    
-    <a href="/posts/52568.html" class="list-group-item list-group-item-action">
-      <time>01-29</time>
-      <div class="list-group-item-title">流浪地球2一周目简评</div>
-    </a>
-  
-    
-    <a href="/posts/51354.html" class="list-group-item list-group-item-action">
-      <time>01-17</time>
-      <div class="list-group-item-title">博客更新日志</div>
-    </a>
-  
-    
-    <a href="/posts/19711.html" class="list-group-item list-group-item-action">
-      <time>01-13</time>
-      <div class="list-group-item-title">本博客的搭建流程-续</div>
-    </a>
-  
-    
-    <a href="/posts/1439.html" class="list-group-item list-group-item-action">
-      <time>01-13</time>
-      <div class="list-group-item-title">欢迎光临杂货铺</div>
-    </a>
   
 </div>
 
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
+              
+  
 
-
-
-
-              </div>
-            </div>
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>上机作业 索引词表的建立</div>
+      <div>https://justaloli.cn/posts/50447.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>justaLoli</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年3月23日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年3月24日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
           </div>
         </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('mermaid' in window) {
+        mermaid.init();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
     
 
     
@@ -354,6 +538,61 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 

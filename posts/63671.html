@@ -16,21 +16,31 @@
   <meta name="author" content="justaLoli">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://justaloli.cn/archives/2023/index.html">
+    <meta name="description" content="（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。 讲者1 常亚坤 主要内容：  背景介绍 成像模型、反射特性   经典优化求解 基准评价数据集 基于深度学习的方法。  1.背景介绍 反射的成因（经典物理图像 反射的特性 若反射和背景都在景深内，结果相当于线性叠加 若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积 若反射镜有厚度，将出现重影   反射的（不利）影响 例子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算摄像学第十二讲 图像反射消除">
+<meta property="og:url" content="https://justaloli.cn/posts/63671.html">
 <meta property="og:site_name" content="Loli的杂货铺">
+<meta property="og:description" content="（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。 讲者1 常亚坤 主要内容：  背景介绍 成像模型、反射特性   经典优化求解 基准评价数据集 基于深度学习的方法。  1.背景介绍 反射的成因（经典物理图像 反射的特性 若反射和背景都在景深内，结果相当于线性叠加 若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积 若反射镜有厚度，将出现重影   反射的（不利）影响 例子">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-04T05:01:22.000Z">
+<meta property="article:modified_time" content="2023-04-04T07:08:50.145Z">
 <meta property="article:author" content="justaLoli">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>归档 - Loli的杂货铺</title>
+  <title>计算摄像学第十二讲 图像反射消除 - Loli的杂货铺</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -81,7 +91,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -199,9 +209,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">归档</span>
+            <span id="subtitle">计算摄像学第十二讲 图像反射消除</span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-04 13:01" pubdate>
+          2023年4月4日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          682 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          4 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -217,100 +267,245 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 16 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2023</p>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
     
-    <a href="/posts/63671.html" class="list-group-item list-group-item-action">
-      <time>04-04</time>
-      <div class="list-group-item-title">计算摄像学第十二讲 图像反射消除</div>
-    </a>
+
+
+
+
+
+<div class="category-list">
   
-    
-    <a href="/posts/43140.html" class="list-group-item list-group-item-action">
-      <time>03-28</time>
-      <div class="list-group-item-title">计算摄像学第六讲 光照，反射率与明暗模型</div>
-    </a>
-  
-    
-    <a href="/posts/37162.html" class="list-group-item list-group-item-action">
-      <time>03-21</time>
-      <div class="list-group-item-title">计算摄像学 第五讲 焦点堆栈与光场摄像</div>
-    </a>
-  
-    
-    <a href="/posts/38043.html" class="list-group-item list-group-item-action">
-      <time>03-17</time>
-      <div class="list-group-item-title">C++面向对象编程经验1——概论、模版类、构造函数、析构函数.</div>
-    </a>
-  
-    
-    <a href="/posts/46200.html" class="list-group-item list-group-item-action">
-      <time>03-16</time>
-      <div class="list-group-item-title">C++实现一个尽可能优雅的双向链表</div>
-    </a>
-  
-    
-    <a href="/posts/29774.html" class="list-group-item list-group-item-action">
-      <time>03-14</time>
-      <div class="list-group-item-title">计算摄像学 第四讲 镜头 曝光 对焦</div>
-    </a>
-  
-    
-    <a href="/posts/62008.html" class="list-group-item list-group-item-action">
-      <time>03-07</time>
-      <div class="list-group-item-title">计算摄像学 第三讲 相机几何模型</div>
-    </a>
-  
-    
-    <a href="/posts/14140.html" class="list-group-item list-group-item-action">
-      <time>03-05</time>
-      <div class="list-group-item-title">今日无用英语——杂货铺的正确翻译</div>
-    </a>
-  
-    
-    <a href="/posts/32813.html" class="list-group-item list-group-item-action">
-      <time>03-01</time>
-      <div class="list-group-item-title">地图着色问题</div>
-    </a>
-  
-    
-    <a href="/posts/23312.html" class="list-group-item list-group-item-action">
-      <time>02-28</time>
-      <div class="list-group-item-title">计算摄像学 第二讲 数字摄像流程</div>
-    </a>
   
 </div>
 
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/#board">2</a><a class="extend next" rel="next" href="/archives/2023/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+  </aside>
 
 
+    </div>
 
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计算摄像学第十二讲 图像反射消除</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。</p>
+<p>讲者1 常亚坤</p>
+<p>主要内容：</p>
+<ol>
+<li>背景介绍<ul>
+<li>成像模型、反射特性</li>
+</ul>
+</li>
+<li>经典优化求解</li>
+<li>基准评价数据集</li>
+<li>基于深度学习的方法。</li>
+</ol>
+<h3 id="1-背景介绍"><a href="#1-背景介绍" class="headerlink" title="1.背景介绍"></a>1.背景介绍</h3><ol>
+<li>反射的成因（经典物理图像</li>
+<li>反射的特性<ol>
+<li>若反射和背景都在景深内，结果相当于线性叠加</li>
+<li>若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积</li>
+<li>若反射镜有厚度，将出现重影</li>
+</ol>
+</li>
+<li>反射的（不利）影响<ol>
+<li>例子：对着玻璃拍容易不美观</li>
+<li>对后期计算造成干扰</li>
+</ol>
+</li>
+<li>反射的消除</li>
+</ol>
+<h3 id="2-传统方法"><a href="#2-传统方法" class="headerlink" title="2. 传统方法"></a>2. 传统方法</h3><ol>
+<li>“人力驱动”，手工标记数据</li>
+</ol>
+<p>它基于了“背景图层和反射图层一定程度上是独立的”的假设。</p>
+<p>主要过程：第一阶段：边缘标记和边缘分类-&gt;第二阶段：反射消除</p>
+<ol start="2">
+<li>景深引导的反射消除</li>
+</ol>
+<p>主要依据：背景清晰时，反射多半会模糊。在梯度分布中也能看出。如果清晰的图像被模糊，梯度值更聚集于0（图像变化更平滑）；如果原本模糊的图像被模糊，则梯度直方图没有太大变化。</p>
+<ol start="3">
+<li><p>基于相对平滑性</p>
+</li>
+<li><p>基于多张图像：基于两层图像的位移不一致。</p>
+</li>
+</ol>
+<p>变换相机角度，拍摄多张图像。移动时，背景的边缘移动和反射的边缘移动有不同。</p>
+<h3 id="基准评价数据集"><a href="#基准评价数据集" class="headerlink" title="基准评价数据集"></a>基准评价数据集</h3><p>讲者：万人杰</p>
+<p>量化地评价消除反射的效果。</p>
+<p>SIR2数据集；SIR2+数据集</p>
+<p>（后面还有一下东西，没仔细听了呜呜</p>
+<h3 id="深度学习去反射"><a href="#深度学习去反射" class="headerlink" title="深度学习去反射"></a>深度学习去反射</h3><p>第一篇（CN ACCV 16</p>
+<p>借鉴了传统方法的思路，对深度进行分类，然后进行剔除</p>
+<p>Fan ICCV 17</p>
+<p>通过神经网络学背景层的边缘，辅助去除反射</p>
+<p>借鉴了传统的两步走方法：先提取边缘，分类，再剔除</p>
+<p>Wan CVPR 18 CRRN</p>
+<p>并联的反射消除网络</p>
+<p>Wan TPAMI 19 CoRRN</p>
+<p>“协作式”的神经网络，</p>
+<p>Zhang CVPR 18</p>
+<p>“感知损失函数”辅助去反射</p>
+<p>。。。。</p>
+<p>基于偏振的反射消除</p>
 
+                
               </div>
-            </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>计算摄像学第十二讲 图像反射消除</div>
+      <div>https://justaloli.cn/posts/63671.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>justaLoli</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年4月4日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年4月4日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
           </div>
         </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/43140.html" title="计算摄像学第六讲 光照，反射率与明暗模型">
+                        <span class="hidden-mobile">计算摄像学第六讲 光照，反射率与明暗模型</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -384,6 +579,61 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 

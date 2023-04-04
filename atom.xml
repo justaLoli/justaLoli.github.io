@@ -6,7 +6,7 @@
   <link href="https://justaloli.cn/atom.xml" rel="self"/>
   
   <link href="https://justaloli.cn/"/>
-  <updated>2023-03-30T07:54:24.667Z</updated>
+  <updated>2023-04-04T07:08:50.145Z</updated>
   <id>https://justaloli.cn/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算摄像学第十二讲 图像反射消除</title>
+    <link href="https://justaloli.cn/posts/63671.html"/>
+    <id>https://justaloli.cn/posts/63671.html</id>
+    <published>2023-04-04T05:01:22.000Z</published>
+    <updated>2023-04-04T07:08:50.145Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。</p><p>讲者1 常亚坤</p><p>主要内容：</p><ol><li>背景介绍<ul><li>成像模型、反射特性</li></ul></li><li>经典优化求解</li><li>基准评价数据集</li><li>基于深度学习的方法。</li></ol><h3 id="1-背景介绍"><a href="#1-背景介绍" class="headerlink" title="1.背景介绍"></a>1.背景介绍</h3><ol><li>反射的成因（经典物理图像</li><li>反射的特性<ol><li>若反射和背景都在景深内，结果相当于线性叠加</li><li>若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积</li><li>若反射镜有厚度，将出现重影</li></ol></li><li>反射的（不利）影响<ol><li>例子：对着玻璃拍容易不美观</li><li>对后期计算造成干扰</li></ol></li><li>反射的消除</li></ol><h3 id="2-传统方法"><a href="#2-传统方法" class="headerlink" title="2. 传统方法"></a>2. 传统方法</h3><ol><li>“人力驱动”，手工标记数据</li></ol><p>它基于了“背景图层和反射图层一定程度上是独立的”的假设。</p><p>主要过程：第一阶段：边缘标记和边缘分类-&gt;第二阶段：反射消除</p><ol start="2"><li>景深引导的反射消除</li></ol><p>主要依据：背景清晰时，反射多半会模糊。在梯度分布中也能看出。如果清晰的图像被模糊，梯度值更聚集于0（图像变化更平滑）；如果原本模糊的图像被模糊，则梯度直方图没有太大变化。</p><ol start="3"><li><p>基于相对平滑性</p></li><li><p>基于多张图像：基于两层图像的位移不一致。</p></li></ol><p>变换相机角度，拍摄多张图像。移动时，背景的边缘移动和反射的边缘移动有不同。</p><h3 id="基准评价数据集"><a href="#基准评价数据集" class="headerlink" title="基准评价数据集"></a>基准评价数据集</h3><p>讲者：万人杰</p><p>量化地评价消除反射的效果。</p><p>SIR2数据集；SIR2+数据集</p><p>（后面还有一下东西，没仔细听了呜呜</p><h3 id="深度学习去反射"><a href="#深度学习去反射" class="headerlink" title="深度学习去反射"></a>深度学习去反射</h3><p>第一篇（CN ACCV 16</p><p>借鉴了传统方法的思路，对深度进行分类，然后进行剔除</p><p>Fan ICCV 17</p><p>通过神经网络学背景层的边缘，辅助去除反射</p><p>借鉴了传统的两步走方法：先提取边缘，分类，再剔除</p><p>Wan CVPR 18 CRRN</p><p>并联的反射消除网络</p><p>Wan TPAMI 19 CoRRN</p><p>“协作式”的神经网络，</p><p>Zhang CVPR 18</p><p>“感知损失函数”辅助去反射</p><p>。。。。</p><p>基于偏振的反射消除</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>计算摄像学第六讲 光照，反射率与明暗模型</title>
     <link href="https://justaloli.cn/posts/43140.html"/>
     <id>https://justaloli.cn/posts/43140.html</id>
     <published>2023-03-28T05:01:31.000Z</published>
-    <updated>2023-03-30T07:54:24.667Z</updated>
+    <updated>2023-04-04T05:01:02.495Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>光度模型</p><p>三维建模方法，激光测距扫描？</p><p>多视角图像重建结果（相机几何标定</p><p>对比：</p><p>几何建模：有总体形状，无细节</p><p>光度立体：无形状？，有精细的细节</p><p>利用光强理解物体的形状，计算机如何从图像的强度中理解物体形象？</p><p>光度成像过程：</p><p><code>光照-&gt;表面法线+反射率-&gt;光强</code></p><p>图像是对场景的观测，观测结果收到几何位置（第三讲）和光强的影响（本讲）</p><p>相机辐射响应：由光强和传感器数值的函数关系。</p><p>线性非线性？场景的辐射度和传感器受到的辐照度是线性的。但是传感器对辐射转化为图像亮度的关系是非线性的。</p><p>相机的辐射响应曲线：图像亮度-辐照度的函数关系。低辐照度时，亮度会高于线性值。</p><p>如何反推原本的辐照度值？反函数，逆响应曲线。</p><p>如何得到逆响应曲线？</p><ul><li>标定法：已知反射率的灰度色块序列（如果认为相机的RGB三个辐射响应曲线相同（这是目前的常见情况）可以单纯用灰度色块标定；而更复杂的情况需要各种颜色的色块做标定。</li><li>没色卡怎么办！多曝光序列的自标定(Mitsunaga, CVPR 99) 用已知<code>曝光时间比</code>的内容一致的图像序列进行标定。利用静态场景不同曝光时间拍摄的一组照片进行标定。<ul><li>待求解的函数：辐照度E &#x3D; g(M)，M为光强，</li><li>将g用k次多项式拟合，k为？4-5阶</li><li>已知曝光时间的比值</li><li><strong>曝光时间比值等于场景辐照度的比值</strong>。</li><li>带入，待定系数，形成一个待优化的目标函数</li><li>利用端点(g(0)&#x3D;0;g(1)&#x3D;1)减少一个系数</li><li>用单调性约束</li><li>最小二乘法</li></ul></li></ul><ul><li>不用线性拟合？<ul><li>Grossberg CVPR 03</li><li>分析许多相机的辐射响应曲线，得到一个“主成分”分析</li><li>将主成分函数按不同比例结合，可以用很少的参数高精度地拟合辐射响应曲线</li></ul></li></ul><p>已经得到了线性的辐照度，如何拿来重建环境的光度？</p><ul><li>反射模型：漫反射、镜面反射</li><li>BRDF：双向反射率分布函数，值为给定入射光方向和反射光方向（一个方向用两个数据，故函数为4元），输出反射能量与入射能量的比值。</li><li>优化：在各向同性（具有旋转对称性），BRDF可简化为三元函数。</li></ul><p>一些难办的光传播现象：这些都不管了！</p><ul><li>折射</li><li>相互反射（光线的多次反射</li><li>次表面反射（树叶半透明</li></ul><p>理想漫反射：朗伯反射：BRDF为常数，反射率为常数。</p><p>光源？</p><ul><li>点光源：向所有方向发出同等强度光。</li><li>平行光源：</li><li>聚光灯：在锥内有光</li></ul><p>表面法线。</p><p>光度成像模型的定量描述：</p><p>L(w_r) &#x3D; 积分（环境光照 * BRDF * 表面法线) dw_i</p><p>简化：朗伯反射模型的平行光反射：好像是一个单项式，挺简单的。</p><p>学术前沿：</p><p>老师梳理了好几篇这方面的文章，主要关于重建场景的光照。并把这个光照信息应用于AR物品的光照渲染。</p>]]></content>
     

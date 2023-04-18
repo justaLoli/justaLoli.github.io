@@ -16,22 +16,22 @@
   <meta name="author" content="justaLoli">
   <meta name="keywords" content="">
   
-    <meta name="description" content="（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。 讲者1 常亚坤 主要内容：  背景介绍 成像模型、反射特性   经典优化求解 基准评价数据集 基于深度学习的方法。  1.背景介绍 反射的成因（经典物理图像 反射的特性 若反射和背景都在景深内，结果相当于线性叠加 若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积 若反射镜有厚度，将出现重影   反射的（不利）影响 例子">
+    <meta name="description" content="HDR imaging.  动态范围 图像的存储 多帧合成的动态范围  动态范围场景中最亮和最暗的部分之间的亮度比。 人眼能适应的动态范围极高，完全覆盖真实世界的常见场景。 HDR期望能覆盖真实世界的常见场景。 但还有一个问题：显示器的动态范围很低 在LDR显示器中，如何呈现真实世界的动态范围？ 「色调映射」 多帧合成的动态范围曝光的“挡”：按幂级数 选择什么曝光时间？几张？ 其实取决于场景的动态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算摄像学 第十二讲 图像反射消除">
-<meta property="og:url" content="https://justaloli.cn/posts/63671.html">
+<meta property="og:title" content="计算摄像学 第八讲 高动态范围成像">
+<meta property="og:url" content="https://justaloli.cn/posts/21773.html">
 <meta property="og:site_name" content="Loli的杂货铺">
-<meta property="og:description" content="（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。 讲者1 常亚坤 主要内容：  背景介绍 成像模型、反射特性   经典优化求解 基准评价数据集 基于深度学习的方法。  1.背景介绍 反射的成因（经典物理图像 反射的特性 若反射和背景都在景深内，结果相当于线性叠加 若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积 若反射镜有厚度，将出现重影   反射的（不利）影响 例子">
+<meta property="og:description" content="HDR imaging.  动态范围 图像的存储 多帧合成的动态范围  动态范围场景中最亮和最暗的部分之间的亮度比。 人眼能适应的动态范围极高，完全覆盖真实世界的常见场景。 HDR期望能覆盖真实世界的常见场景。 但还有一个问题：显示器的动态范围很低 在LDR显示器中，如何呈现真实世界的动态范围？ 「色调映射」 多帧合成的动态范围曝光的“挡”：按幂级数 选择什么曝光时间？几张？ 其实取决于场景的动态">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-04T05:01:22.000Z">
-<meta property="article:modified_time" content="2023-04-18T05:00:46.686Z">
+<meta property="article:published_time" content="2023-04-18T05:00:23.000Z">
+<meta property="article:modified_time" content="2023-04-18T06:28:11.858Z">
 <meta property="article:author" content="justaLoli">
 <meta property="article:tag" content="计算摄像学">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>计算摄像学 第十二讲 图像反射消除 - Loli的杂货铺</title>
+  <title>计算摄像学 第八讲 高动态范围成像 - Loli的杂货铺</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">计算摄像学 第十二讲 图像反射消除</span>
+            <span id="subtitle">计算摄像学 第八讲 高动态范围成像</span>
           
         </div>
 
@@ -221,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-04 13:01" pubdate>
-          2023年4月4日 下午
+        <time datetime="2023-04-18 13:00" pubdate>
+          2023年4月18日 下午
         </time>
       </span>
     
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          682 字
+          887 字
         
       </span>
     
@@ -244,7 +244,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -346,7 +346,7 @@
       
         <a href="/posts/21773.html" title="计算摄像学 第八讲 高动态范围成像"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">计算摄像学 第八讲 高动态范围成像</span>
         </a>
       
@@ -364,7 +364,7 @@
       
         <a href="/posts/63671.html" title="计算摄像学 第十二讲 图像反射消除"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">计算摄像学 第十二讲 图像反射消除</span>
         </a>
       
@@ -394,71 +394,78 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">计算摄像学 第十二讲 图像反射消除</h1>
+            <h1 style="display: none">计算摄像学 第八讲 高动态范围成像</h1>
             
             
               <div class="markdown-body">
                 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。</p>
-<p>讲者1 常亚坤</p>
-<p>主要内容：</p>
-<ol>
-<li>背景介绍<ul>
-<li>成像模型、反射特性</li>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>HDR imaging.</p>
+<ul>
+<li>动态范围</li>
+<li>图像的存储</li>
+<li>多帧合成的动态范围</li>
 </ul>
-</li>
-<li>经典优化求解</li>
-<li>基准评价数据集</li>
-<li>基于深度学习的方法。</li>
+<h2 id="动态范围"><a href="#动态范围" class="headerlink" title="动态范围"></a>动态范围</h2><p>场景中最亮和最暗的部分之间的亮度比。</p>
+<p>人眼能适应的动态范围极高，完全覆盖真实世界的常见场景。</p>
+<p>HDR期望能覆盖真实世界的常见场景。</p>
+<p>但还有一个问题：显示器的动态范围很低</p>
+<p>在LDR显示器中，如何呈现真实世界的动态范围？ 「色调映射」</p>
+<h2 id="多帧合成的动态范围"><a href="#多帧合成的动态范围" class="headerlink" title="多帧合成的动态范围"></a>多帧合成的动态范围</h2><p>曝光的“挡”：按幂级数</p>
+<p>选择什么曝光时间？几张？</p>
+<p>其实取决于场景的动态范围；</p>
+<p>一般选取5张，每张曝光时间差两档。</p>
+<p>具体原理（假设已经得到线性的RAW图像）</p>
+<p>回顾：在不欠曝，不过曝的情况下，RAW图像亮度和环境亮度为线性。</p>
+<p>I线性(x,y) &#x3D; min(ti * L(x,y) + noise, 255);</p>
+<p>（最理想的的）对于某个像素而言：</p>
+<ol>
+<li>找到正常曝光的图像（丢掉亮度过低或过高的</li>
+<li>对这些正常的图像，选择合适的权重进行加权平均</li>
 </ol>
-<h3 id="1-背景介绍"><a href="#1-背景介绍" class="headerlink" title="1.背景介绍"></a>1.背景介绍</h3><ol>
-<li>反射的成因（经典物理图像</li>
-<li>反射的特性<ol>
-<li>若反射和背景都在景深内，结果相当于线性叠加</li>
-<li>若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积</li>
-<li>若反射镜有厚度，将出现重影</li>
+<p>如果只有非线性的图像呢？</p>
+<p>辐射响应曲线利用多张曝光图也能求出来，进而把图像线性化。</p>
+<p>每个图像，每个像素的权重怎么选？</p>
+<p>亮度接近0.5的图像权重最大，亮度接近0或1的图像权重最小。</p>
+<p>隐身：绝对辐照度恢复</p>
+<p>HDR图像可以恢复相对辐照度，用其它仪器测出某点的绝对辐照后，能得到绝对辐照度。</p>
+<h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><p>PFM格式：32bit</p>
+<p>RGBE：增加额外的一些数据</p>
+<p>OpenEXR：浮点数</p>
+<h2 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h2><p>线性缩放亮度显然是不合理的</p>
+<p>要进行非线性缩放：</p>
+<ul>
+<li>一种方法：</li>
+</ul>
+<ol>
+<li>渐近线1</li>
+<li>接近0的时候，斜率为1</li>
 </ol>
-</li>
-<li>反射的（不利）影响<ol>
-<li>例子：对着玻璃拍容易不美观</li>
-<li>对后期计算造成干扰</li>
-</ol>
-</li>
-<li>反射的消除</li>
-</ol>
-<h3 id="2-传统方法"><a href="#2-传统方法" class="headerlink" title="2. 传统方法"></a>2. 传统方法</h3><ol>
-<li>“人力驱动”，手工标记数据</li>
-</ol>
-<p>它基于了“背景图层和反射图层一定程度上是独立的”的假设。</p>
-<p>主要过程：第一阶段：边缘标记和边缘分类-&gt;第二阶段：反射消除</p>
+<ul>
+<li>另一种方法：</li>
+</ul>
+<p>对数线性压缩</p>
+<ul>
+<li>更好的方法！</li>
+</ul>
+<p>色调映射 tone mapping，主要有下面两种</p>
+<p>滤波映射：对低频部分做更多映射；“双边滤波”：分离高低频同时保留边界的锐利</p>
+<p>梯度色调映射：计算梯度，根据梯度进行映射</p>
+<p>双边滤波映射和梯度重建结果已经非常优秀，谁更好取决于个人喜好。</p>
+<p>注：单反相机可以一次拍摄大概三档的动态范围，可以直接对单个RAW图像进行一些色调映射。但它效果显然比多张图要差一些</p>
+<h2 id="HDR的应用"><a href="#HDR的应用" class="headerlink" title="HDR的应用"></a>HDR的应用</h2><p>已经有成熟的应用</p>
+<h2 id="引申"><a href="#引申" class="headerlink" title="引申"></a>引申</h2><p>融合多张图像的HDR方法，有没有什么问题？</p>
+<p>场景必须静态；相机必须静态</p>
+<p>研究方向：1. 抖动的对齐</p>
 <ol start="2">
-<li>景深引导的反射消除</li>
-</ol>
-<p>主要依据：背景清晰时，反射多半会模糊。在梯度分布中也能看出。如果清晰的图像被模糊，梯度值更聚集于0（图像变化更平滑）；如果原本模糊的图像被模糊，则梯度直方图没有太大变化。</p>
-<ol start="3">
-<li><p>基于相对平滑性</p>
+<li><p>单张照片得HDR（应用于HDR视频很有效，需要特殊的相机</p>
 </li>
-<li><p>基于多张图像：基于两层图像的位移不一致。</p>
+<li><p>余数相机</p>
+</li>
+<li><p>卷积由原图猜高光部分</p>
+</li>
+<li><p>卷积由原图生成高光、低光的图组，再由图组合成HDR</p>
 </li>
 </ol>
-<p>变换相机角度，拍摄多张图像。移动时，背景的边缘移动和反射的边缘移动有不同。</p>
-<h3 id="基准评价数据集"><a href="#基准评价数据集" class="headerlink" title="基准评价数据集"></a>基准评价数据集</h3><p>讲者：万人杰</p>
-<p>量化地评价消除反射的效果。</p>
-<p>SIR2数据集；SIR2+数据集</p>
-<p>（后面还有一下东西，没仔细听了呜呜</p>
-<h3 id="深度学习去反射"><a href="#深度学习去反射" class="headerlink" title="深度学习去反射"></a>深度学习去反射</h3><p>第一篇（CN ACCV 16</p>
-<p>借鉴了传统方法的思路，对深度进行分类，然后进行剔除</p>
-<p>Fan ICCV 17</p>
-<p>通过神经网络学背景层的边缘，辅助去除反射</p>
-<p>借鉴了传统的两步走方法：先提取边缘，分类，再剔除</p>
-<p>Wan CVPR 18 CRRN</p>
-<p>并联的反射消除网络</p>
-<p>Wan TPAMI 19 CoRRN</p>
-<p>“协作式”的神经网络，</p>
-<p>Zhang CVPR 18</p>
-<p>“感知损失函数”辅助去反射</p>
-<p>。。。。</p>
-<p>基于偏振的反射消除</p>
 
                 
               </div>
@@ -504,8 +511,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>计算摄像学 第十二讲 图像反射消除</div>
-      <div>https://justaloli.cn/posts/63671.html</div>
+      <div>计算摄像学 第八讲 高动态范围成像</div>
+      <div>https://justaloli.cn/posts/21773.html</div>
     </div>
     <div class="license-meta">
       
@@ -517,7 +524,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月4日</div>
+          <div>2023年4月18日</div>
         </div>
       
       
@@ -566,18 +573,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/11144.html" title="数算关键概念一览">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数算关键概念一览</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/43140.html" title="计算摄像学 第六讲 光照，反射率与明暗模型">
-                        <span class="hidden-mobile">计算摄像学 第六讲 光照，反射率与明暗模型</span>
+                      <a href="/posts/7606.html" title="计算摄像学 第七讲 光度立体视觉">
+                        <span class="hidden-mobile">计算摄像学 第七讲 光度立体视觉</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

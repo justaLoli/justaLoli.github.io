@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>计算摄像学 第九讲 超分辨率</title>
+    <link href="/posts/33559.html"/>
+    <url>/posts/33559.html</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>更清晰、更远的变焦!</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>传感器的分辨率是有限的.</p><p>意义:</p><ul><li>提升视觉质量!</li><li>方便下游操作、识别</li></ul><p><a href="https://github.com/bloc97/Anime4K/releases">https://github.com/bloc97/Anime4K/releases</a></p><p><a href="https://jpghd.com/">https://jpgHD.com</a></p><h2 id="基于子像素位移的多帧方法-传统方法-这是基于信号于系统原理的求解方法"><a href="#基于子像素位移的多帧方法-传统方法-这是基于信号于系统原理的求解方法" class="headerlink" title="基于子像素位移的多帧方法-传统方法(这是基于信号于系统原理的求解方法)"></a>基于子像素位移的多帧方法-传统方法(这是基于信号于系统原理的求解方法)</h2><ul><li>方法动机: 多帧低分辨率图像 -&gt; 子像素的相对关系(位移) -&gt; 恢复高分辨率</li><li>图像退化模型:</li></ul><p>图像退化模型:</p><ul><li>相对运动矩阵: 平移、旋转<ul><li>透视、局部运动</li></ul></li><li>图像模糊矩阵: </li><li>降采样 像素抽取矩阵</li><li>噪声</li></ul><p>超分辨率, 就是反方向计算这些矩阵.</p><p>简化模型: 认为模糊矩阵和降采样矩阵不同图片是相同的.</p><p>做法: 1. ML 最大似然估计 2. 最大后验概率估计</p><p>太复杂了, 我不会</p><h2 id="通过改进传感器构造"><a href="#通过改进传感器构造" class="headerlink" title="通过改进传感器构造"></a>通过改进传感器构造</h2><p>让传感器产生微小抖动(2004)</p><p>规则像素排布的问题: 平移距离为整个像素的时候, 相当于没有平移, 效果不好.</p><p>Penrose像素排布(2011): 不规则的像素排布</p><p>八元组子像素排布(2014): 不规则的像素排布</p><h2 id="单帧超分辨率"><a href="#单帧超分辨率" class="headerlink" title="单帧超分辨率"></a>单帧超分辨率</h2><ol><li>生成一张保留细节的逼真的输出图像</li></ol><p>(双三次上采样)</p><ol start="2"><li>在图像内容上与低分辨率的输入图像保持一致</li></ol><p>非学习?</p><p>例1 基于图片形状的重复(自相似)</p><p>例2 基于梯度锐化变换的方法</p><p>基于学习</p><p>例 SRCNN ECCV 14 首次将深度学习引入超分辨率</p><p>VDSR 更深的网络层数</p><p>ZSSR 自监督</p><p>…</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算摄像学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算摄像学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>计算摄像学 第八讲 高动态范围成像</title>
     <link href="/posts/21773.html"/>
     <url>/posts/21773.html</url>

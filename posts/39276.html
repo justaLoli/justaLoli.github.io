@@ -16,18 +16,18 @@
   <meta name="author" content="justaLoli">
   <meta name="keywords" content="">
   
-    <meta name="description" content="二叉树二叉树二叉链表结构定义12345678#define M 100struct BinTreeNode&amp;#123;	DataType info;                        &#x2F;&#x2F;数据域	struct BinTreeNode *llink;      &#x2F;&#x2F;指向左孩子	struct BinTreeNode *rlink;     &#x2F;&#x2F;指向右孩子&amp;#125;;typedef str">
+    <meta name="description" content="顺序字典的二分查找1234567891011121314151617int BinSearch(SeqDictionary *pdic, KeyType key, int *pos)&amp;#123;	int low,mid,high;	low &#x3D; 0; high &#x3D; pdic-&gt;n - 1;	while(low &lt;&#x3D; high)&amp;#123; &#x2F;&#x2F;注意这里的判断		mid &#x3D; (low +">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数算示例程序">
 <meta property="og:url" content="https://justaloli.cn/posts/39276.html">
 <meta property="og:site_name" content="Loli的杂货铺">
-<meta property="og:description" content="二叉树二叉树二叉链表结构定义12345678#define M 100struct BinTreeNode&amp;#123;	DataType info;                        &#x2F;&#x2F;数据域	struct BinTreeNode *llink;      &#x2F;&#x2F;指向左孩子	struct BinTreeNode *rlink;     &#x2F;&#x2F;指向右孩子&amp;#125;;typedef str">
+<meta property="og:description" content="顺序字典的二分查找1234567891011121314151617int BinSearch(SeqDictionary *pdic, KeyType key, int *pos)&amp;#123;	int low,mid,high;	low &#x3D; 0; high &#x3D; pdic-&gt;n - 1;	while(low &lt;&#x3D; high)&amp;#123; &#x2F;&#x2F;注意这里的判断		mid &#x3D; (low +">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-25T09:35:44.000Z">
-<meta property="article:modified_time" content="2023-04-25T09:43:31.524Z">
+<meta property="article:modified_time" content="2023-04-25T09:52:41.410Z">
 <meta property="article:author" content="justaLoli">
-<meta property="article:tag" content="编程">
 <meta property="article:tag" content="数算">
+<meta property="article:tag" content="编程">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          2.1k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          10 分钟
+          12 分钟
         
       </span>
     
@@ -394,7 +394,9 @@
             
               <div class="markdown-body">
                 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="二叉树二叉链表结构定义"><a href="#二叉树二叉链表结构定义" class="headerlink" title="二叉树二叉链表结构定义"></a>二叉树二叉链表结构定义</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> M 100</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span></span><br><span class="hljs-class">&#123;</span><br>	DataType info;                        <span class="hljs-comment">//数据域</span><br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span> *<span class="hljs-title">llink</span>;</span>      <span class="hljs-comment">//指向左孩子</span><br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span> *<span class="hljs-title">rlink</span>;</span>     <span class="hljs-comment">//指向右孩子</span><br>&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span> *<span class="hljs-title">PBinTreeNode</span>;</span><br></code></pre></td></tr></table></figure>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="顺序字典的二分查找"><a href="#顺序字典的二分查找" class="headerlink" title="顺序字典的二分查找"></a>顺序字典的二分查找</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">BinSearch</span><span class="hljs-params">(SeqDictionary *pdic, KeyType key, <span class="hljs-type">int</span> *pos)</span>&#123;<br>	<span class="hljs-type">int</span> low,mid,high;<br>	low = <span class="hljs-number">0</span>; high = pdic-&gt;n - <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span>(low &lt;= high)&#123; <span class="hljs-comment">//注意这里的判断</span><br>		mid = (low + high) / <span class="hljs-number">2</span>; <span class="hljs-comment">//注意中间位置</span><br>		<span class="hljs-keyword">if</span>(key &lt; pdic-&gt;elem[mid].key)&#123;<br>			high = mid - <span class="hljs-number">1</span>; <span class="hljs-comment">//注意边界变化</span><br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key &gt; pdic-&gt;elem[mid].key)&#123;<br>			low = mid + <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意边界变化</span><br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			*pos = mid;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>		&#125;<br>	&#125;<br>	*pos = low; <span class="hljs-comment">//它“应该在”的位置,用于后续插入</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="二叉树二叉链表结构定义"><a href="#二叉树二叉链表结构定义" class="headerlink" title="二叉树二叉链表结构定义"></a>二叉树二叉链表结构定义</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> M 100</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span></span><br><span class="hljs-class">&#123;</span><br>	DataType info;                        <span class="hljs-comment">//数据域</span><br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span> *<span class="hljs-title">llink</span>;</span>      <span class="hljs-comment">//指向左孩子</span><br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span> *<span class="hljs-title">rlink</span>;</span>     <span class="hljs-comment">//指向右孩子</span><br>&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BinTreeNode</span> *<span class="hljs-title">PBinTreeNode</span>;</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="前根遍历二叉树非递归算法"><a href="#前根遍历二叉树非递归算法" class="headerlink" title="前根遍历二叉树非递归算法"></a>前根遍历二叉树非递归算法</h3><h3 id="从根开始，沿左子树一直走到末端为止，在走的过程中访问所遇结点，并依次将所遇结点的非空右孩子进栈。当左子树结点全处理完后，从栈顶退出某结点的右孩子，此时该结点的左子树已经遍历完，再按照上述过程遍历结点的右子树，如此重复直到栈空为止。"><a href="#从根开始，沿左子树一直走到末端为止，在走的过程中访问所遇结点，并依次将所遇结点的非空右孩子进栈。当左子树结点全处理完后，从栈顶退出某结点的右孩子，此时该结点的左子树已经遍历完，再按照上述过程遍历结点的右子树，如此重复直到栈空为止。" class="headerlink" title="从根开始，沿左子树一直走到末端为止，在走的过程中访问所遇结点，并依次将所遇结点的非空右孩子进栈。当左子树结点全处理完后，从栈顶退出某结点的右孩子，此时该结点的左子树已经遍历完，再按照上述过程遍历结点的右子树，如此重复直到栈空为止。"></a>从根开始，沿左子树一直走到末端为止，在走的过程中访问所遇结点，并依次将所遇结点的非空右孩子进栈。当左子树结点全处理完后，从栈顶退出某结点的右孩子，此时该结点的左子树已经遍历完，再按照上述过程遍历结点的右子树，如此重复直到栈空为止。</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">PreOrder</span><span class="hljs-params">(PBinTreeNode t)</span><br>&#123;<br>	<span class="hljs-type">int</span> top = <span class="hljs-number">0</span>;                                 <span class="hljs-comment">//栈顶指示器</span><br>	PBinTreeNode p, S[M];             <span class="hljs-comment">//栈中存放各个右子树根结点</span><br>	<br>	p = t;<br>	<span class="hljs-keyword">do</span><br>	&#123;    <br>		<span class="hljs-keyword">while</span> (p != <span class="hljs-literal">NULL</span>)<br>		&#123;<br>			visit(p-&gt;info);                        <span class="hljs-comment">//访问根结点</span><br>			<span class="hljs-keyword">if</span> (p-&gt;rlink != <span class="hljs-literal">NULL</span>)       <br>			&#123;    S[top++] = p-&gt;rlink;    &#125;  <span class="hljs-comment">//右子树根结点进栈</span><br>			p = p-&gt;llink;                          <span class="hljs-comment">//继续搜索p的左子树 </span><br>		&#125;<br>		<span class="hljs-keyword">if</span> (top &gt;= <span class="hljs-number">0</span>)    p = S[--top];          <span class="hljs-comment">//右子树根结点出栈，转到搜索右子树</span><br>	&#125; <span class="hljs-keyword">while</span> (top &gt;= <span class="hljs-number">0</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -436,9 +438,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>
-      
         <a href="/tags/%E6%95%B0%E7%AE%97/">#数算</a>
+      
+        <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>
       
     </div>
   

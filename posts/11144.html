@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://justaloli.cn/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg">
 <meta property="article:published_time" content="2023-04-10T13:41:45.000Z">
-<meta property="article:modified_time" content="2023-04-25T10:00:21.700Z">
+<meta property="article:modified_time" content="2023-05-09T07:57:18.336Z">
 <meta property="article:author" content="justaLoli">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="数算">
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.9k 字
+          6.8k 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          33 分钟
+          38 分钟
         
       </span>
     
@@ -701,17 +701,47 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 <p>字典的表示: 顺序表、散列表、树表</p>
 <h3 id="顺序表检索"><a href="#顺序表检索" class="headerlink" title="顺序表检索"></a>顺序表检索</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">DicElement</span>&#123;<span class="hljs-comment">/*元素结构*/</span><br>	KeyType key;  <span class="hljs-comment">/*元素的关键码*/</span><br>	DataType other; <span class="hljs-comment">/*其它属性字段*/</span><br>&#125;; <br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">SeqDictionary</span>&#123; <span class="hljs-comment">/*字典结构*/</span><br>	DicElement elementMAXNUM]; <span class="hljs-comment">/*字典数组*/</span><br>	<span class="hljs-type">int</span> n; <span class="hljs-comment">/*实际元素个数*/</span><br>&#125;; <br></code></pre></td></tr></table></figure>
 
-<ol>
+<h3 id="顺序检索的ASL"><a href="#顺序检索的ASL" class="headerlink" title="顺序检索的ASL"></a>顺序检索的ASL</h3><ol>
 <li>顺序检索 O(n)</li>
 </ol>
 <p>$$ASL &#x3D; \frac{n+1}{2}$$</p>
-<ol start="2">
+<blockquote>
+<p>“+1”不能忘记！</p>
+</blockquote>
+<h3 id="二分检索（折半检索）的ASL"><a href="#二分检索（折半检索）的ASL" class="headerlink" title="二分检索（折半检索）的ASL"></a>二分检索（折半检索）的ASL</h3><ol start="2">
 <li>二分法检索 中间: (最左+最后)&#x2F;2</li>
 </ol>
-<p>$$ASL &#x3D; log_2(n+1) - 1$$</p>
+<h3 id="顺序字典的二分查找"><a href="#顺序字典的二分查找" class="headerlink" title="顺序字典的二分查找"></a>顺序字典的二分查找</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">BinSearch</span><span class="hljs-params">(SeqDictionary *pdic, KeyType key, <span class="hljs-type">int</span> *pos)</span>&#123;<br>	<span class="hljs-type">int</span> low,mid,high;<br>	low = <span class="hljs-number">0</span>; high = pdic-&gt;n - <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span>(low &lt;= high)&#123; <span class="hljs-comment">//注意这里的判断</span><br>		‼️mid = (low + high) / <span class="hljs-number">2</span>; <span class="hljs-comment">//注意中间位置</span><br>		<span class="hljs-keyword">if</span>(key &lt; pdic-&gt;elem[mid].key)&#123;<br>			‼️high = mid - <span class="hljs-number">1</span>; <span class="hljs-comment">//注意边界变化</span><br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key &gt; pdic-&gt;elem[mid].key)&#123;<br>			‼️low = mid + <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意边界变化</span><br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			*pos = mid;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>		&#125;<br>	&#125;<br>	‼️*pos = low; <span class="hljs-comment">//它“应该在”的位置,用于后续插入</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>全满二叉树中，</p>
+<p>$$ASL \approx log_2(n+1) - 1$$</p>
+<blockquote>
+<p>“+1”, “-1”不能忘记！</p>
+</blockquote>
+<p>折半检索必须要是有序的顺序表。</p>
+<h3 id="分块检索的ASL"><a href="#分块检索的ASL" class="headerlink" title="分块检索的ASL"></a>分块检索的ASL</h3><p>分块，块间有序，块内无序</p>
 <ol start="3">
 <li><em><strong>分块检索</strong></em></li>
 </ol>
+<p>假定b块，每块s个记录；s &#x3D; n &#x2F; b</p>
+<p>对于b：可以顺序、可以折半；</p>
+<p>对于s：只能顺序</p>
+<ol>
+<li>对块间顺序检索</li>
+</ol>
+<p>$$ASL &#x3D; \frac{b+s}{2} + 1  &#x3D; \frac{\frac ns + s }2 + 1$$</p>
+<p>当 $s&#x3D;\sqrt{n}$时</p>
+<p>$$ASL_{min} &#x3D; \sqrt{n} + 1$$</p>
+<ol start="2">
+<li>块间折半检索</li>
+</ol>
+<p>$$ASL  &#x3D; log_2(\frac ns +1) -1 + \frac{s+1}2 \approx log_2(\frac ns + 1 ) + \frac s2$$</p>
+<h3 id="散链表检索的ASL"><a href="#散链表检索的ASL" class="headerlink" title="散链表检索的ASL"></a>散链表检索的ASL</h3><ul>
+<li>散列函数：h(key)</li>
+<li>散列地址：location &#x3D; h(key)</li>
+<li>散列表：通过h(key)建立起来的线性表（能够随机存取的顺序表）。</li>
+<li>“碰撞”：h(key1) &#x3D; h(key2)。需要避免。</li>
+</ul>
 
                 
               </div>
@@ -778,7 +808,7 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月25日</div>
+          <div>2023年5月9日</div>
         </div>
       
       

@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://justaloli.cn/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg">
 <meta property="article:published_time" content="2023-04-10T13:41:45.000Z">
-<meta property="article:modified_time" content="2023-05-09T07:57:18.336Z">
+<meta property="article:modified_time" content="2023-05-09T12:45:03.564Z">
 <meta property="article:author" content="justaLoli">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="数算">
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.8k 字
+          7k 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          38 分钟
+          39 分钟
         
       </span>
     
@@ -737,11 +737,31 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 </ol>
 <p>$$ASL  &#x3D; log_2(\frac ns +1) -1 + \frac{s+1}2 \approx log_2(\frac ns + 1 ) + \frac s2$$</p>
 <h3 id="散链表检索的ASL"><a href="#散链表检索的ASL" class="headerlink" title="散链表检索的ASL"></a>散链表检索的ASL</h3><ul>
-<li>散列函数：h(key)</li>
-<li>散列地址：location &#x3D; h(key)</li>
-<li>散列表：通过h(key)建立起来的线性表（能够随机存取的顺序表）。</li>
-<li>“碰撞”：h(key1) &#x3D; h(key2)。需要避免。</li>
+<li><p>散列函数：h(key)</p>
+</li>
+<li><p>散列地址：location &#x3D; h(key)</p>
+</li>
+<li><p>散列表：通过h(key)建立起来的线性表（能够随机存取的顺序表）。</p>
+</li>
+<li><p>“碰撞”：h(key1) &#x3D; h(key2)。需要避免。key1和key2称同义词。</p>
+</li>
+<li><p>“基本区间”：通过散列函数得到的散列地址。同义词可以放在基本区域里未占用的空间，也能另开辟一片空间（溢出区）。</p>
+</li>
+<li><p>“负载因子”：</p>
+</li>
 </ul>
+<p>$$\alpha &#x3D; \frac{散列表中的节点数目}{基本区域能容纳的节点数}$$</p>
+<p>当$\alpha &gt; 1$时，碰撞不可避免。</p>
+<ul>
+<li>“二次聚集”，利用基本区域存储同义词时，不同关键码争夺同一个散列地址。</li>
+</ul>
+<p>处理碰撞</p>
+<ol>
+<li>开放地址法</li>
+<li>再散列</li>
+<li>拉链法</li>
+</ol>
+<p>如果有一组散列函数，就加上“再散列”，如果没有，答1或3</p>
 
                 
               </div>

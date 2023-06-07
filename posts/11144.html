@@ -25,10 +25,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://justaloli.cn/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg">
 <meta property="article:published_time" content="2023-04-10T13:41:45.000Z">
-<meta property="article:modified_time" content="2023-05-09T12:45:03.564Z">
+<meta property="article:modified_time" content="2023-06-07T09:45:58.182Z">
 <meta property="article:author" content="justaLoli">
-<meta property="article:tag" content="数算">
 <meta property="article:tag" content="编程">
+<meta property="article:tag" content="数算">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://justaloli.cn/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg">
   
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7k 字
+          8.5k 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          39 分钟
+          47 分钟
         
       </span>
     
@@ -589,7 +589,12 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 <p><em><strong>超栈</strong></em>是一种输人受限的双端队列，即插入限制在一端进行,而删除仍允许在两
 端进行。它可以看成对栈溢出时的一种特殊的处理，即当栈溢出时，可将栈中保存
 最久的元素删除。</p>
-<h1 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h1><h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ul>
+<h1 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h1><p>default定义：</p>
+<p><em><strong>！！根的层数为0</strong></em></p>
+<p>所有节点的最大层数为树的高度。</p>
+<p>只有根节点的树的高度为0</p>
+<p>空树的高度为-1</p>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ul>
 <li>运算:</li>
 </ul>
 <p><em><strong>创建一颗空树、判断是否为空树、求根结点、求父结点、求第一个子结点、求右兄弟、遍历树（树的周游）</strong></em></p>
@@ -661,20 +666,29 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 </ol>
 </li>
 <li>深度为k的二叉树至多有 $2^k-1$ 个结点(k&gt;&#x3D;0)。</li>
-<li>对任何一棵二叉树T，如果其叶子结点(度为0的节点)数为n0，度为2的结点数为n2，则n0&#x3D;n2+1。</li>
-<li>具有n个结点的<em>完全二叉树</em>的深度k &#x3D; log(n+1)。</li>
-<li>对于有n个节点的<em>完全二叉树</em>，从上到下，从左往右编号（从1开始）<ol>
+</ol>
+<p>常考的性质！！！</p>
+<ol start="3">
+<li><p>对任何一棵二叉树T，如果其叶子结点(度为0的节点)数为n0，度为2的结点数为n2，则n0&#x3D;n2+1。</p>
+</li>
+<li><p>具有n个结点的<em>完全二叉树</em>的深度k &#x3D; log(n+1)。</p>
+</li>
+<li><p>对于有n个节点的<em>完全二叉树</em>，从上到下，从左往右编号（从1开始）</p>
+<ol>
 <li>i&#x3D;1 i为根</li>
 <li>i &gt; 1，i的父节点为i&#x2F;2</li>
 <li>如果2i &gt; n,i无左子女，否则i的左子女为2i</li>
 <li>如果2i+1 &gt; n,i无右子女，否则i的右子女为2i+1</li>
 </ol>
 </li>
-<li>在<em>扩充二叉树</em>中，外部节点比内部节点多1</li>
-<li><em>扩充二叉树</em>中，外部路径长度E &#x3D; 内部路径长度I + 2 * 内部节点数n</li>
+<li><p>在<em>扩充二叉树</em>中，外部节点比内部节点多1</p>
+</li>
+<li><p><em>扩充二叉树</em>中，外部路径长度E &#x3D; 内部路径长度I + 2 * 内部节点数n</p>
+</li>
 </ol>
 <p>要掌握性质7的证明</p>
 <p><img src="/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="K叉树"><a href="#K叉树" class="headerlink" title="K叉树"></a>K叉树</h3><p>满（之后叶子和度为K的）K叉树；完全（顺序）K叉树；完全满K叉树</p>
 <h1 id="集合与字典"><a href="#集合与字典" class="headerlink" title="集合与字典"></a>集合与字典</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="基于位向量的集合"><a href="#基于位向量的集合" class="headerlink" title="基于位向量的集合"></a>基于位向量的集合</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">BitSet</span>&#123;<br>	<span class="hljs-type">int</span> size;<br>	<span class="hljs-type">char</span> *array;<span class="hljs-comment">//一个字节存储8个0或1</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ol>
@@ -762,6 +776,82 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 <li>拉链法</li>
 </ol>
 <p>如果有一组散列函数，就加上“再散列”，如果没有，答1或3</p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="排序的类别和性能"><a href="#排序的类别和性能" class="headerlink" title="排序的类别和性能"></a>排序的类别和性能</h2><h2 id="shell排序"><a href="#shell排序" class="headerlink" title="shell排序"></a>shell排序</h2><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="一大堆概念"><a href="#一大堆概念" class="headerlink" title="一大堆概念"></a>一大堆概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>顶点、边（无向图）&amp;弧（有向图）</p>
+<p>完全图（任意两个顶点都有边&amp;弧）</p>
+<p>度（无向图）入度、出度（有向图）</p>
+<p>有向图中，度&#x3D;入度+出度</p>
+<p>$$节点数e &#x3D; \frac12 \sum_{i&#x3D;1}^{n}D_i$$</p>
+<p>路径：从v1到v2经过的顶点的序列</p>
+<p>路径长度：边的数目；带权：权值之和</p>
+<p>环</p>
+<p>根：到任何顶点都有路径</p>
+<p>子图</p>
+<p>【针对无向图的】连通图：</p>
+<p>v1和v2连通：v1和v2存在路径</p>
+<p>图连通：任意两个顶点都连通</p>
+<p>不连通的图可以被划成多个<em><strong>极大连通子图</strong></em></p>
+<p><em><strong>无向图的极大连通子图也称作连通分量</strong></em></p>
+<p>【针对有向图的】强连通图</p>
+<p>强连通：任意两个顶点都双向连通</p>
+<p>不强连通的图，可以分成几个<em><strong>极大强连通子图（又称作强连通分量）</strong></em></p>
+<p>权，网络</p>
+<p>网络：带权的（无向的）连通图或（有向的）强连通图</p>
+<p>生成树：<em><strong>包含原图中所有节点的极小连通子图</strong></em></p>
+<p>生成树具有n-1条边。</p>
+<h2 id="两种表示法"><a href="#两种表示法" class="headerlink" title="两种表示法"></a>两种表示法</h2><p>邻接矩阵；</p>
+<p>邻接表，逆临接表；</p>
+<h2 id="周游"><a href="#周游" class="headerlink" title="周游"></a>周游</h2><p>DFS</p>
+<p>BFS</p>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>P算法</p>
+<p>K算法</p>
+<h2 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h2><h3 id="单源最段路"><a href="#单源最段路" class="headerlink" title="单源最段路"></a>单源最段路</h3><p>D算法</p>
+<h3 id="多源最短路"><a href="#多源最短路" class="headerlink" title="多源最短路"></a>多源最短路</h3><p>F算法</p>
+<h2 id="AOV和拓扑排序"><a href="#AOV和拓扑排序" class="headerlink" title="AOV和拓扑排序"></a>AOV和拓扑排序</h2><p>拓扑排序可以检测一个有向图是否有回路。</p>
+<p>算法思路：选取入度为0的节点；删除这个节点的出弧，减小相连的节点的入度，继续选取入度为0的节点；如果最后尚有顶点剩余，则有环，返回失败。</p>
+<p>需要开辟一个数组计算每隔节点的入度。</p>
+<p>对所有入度为0的节点，可以建立一个静态栈（用数组的值表示下一个入度为0的节点）。利用栈控制，拿出入度为0的节点。</p>
+<h2 id="AOE和关键路径"><a href="#AOE和关键路径" class="headerlink" title="AOE和关键路径"></a>AOE和关键路径</h2><p>关键路径算法可以用来解决<em><strong>最长路径</strong></em></p>
+<p>AOE网中有些活动可以<em><strong>并行进行</strong></em>，所以完成整个工程的最短时间是从开始顶点到完成顶点的 <em><strong>最长路径长度</strong></em> 、路径长度为路径上各边的权值之和。把开始顶点到完成顶点的 <em><strong>最长路径称为关键路径。</strong></em></p>
+<p>顶点为“事件”，边为“活动”</p>
+<ol>
+<li>到达事件的最早时间</li>
+</ol>
+<p>进入vj的活动都结束，才能到达vj这个事件</p>
+<p>有活动<code>&lt;vi,vj&gt;</code>则</p>
+<p>$$\begin{aligned}
+ee(0) &amp;&#x3D; 0 \\
+ee(j) &amp;&#x3D; max(ee(i) + d(i,j))
+\end{aligned}$$</p>
+<ol start="2">
+<li>vi允许发生的最迟发生时间</li>
+</ol>
+<p>为了不拖延整个工期，vi发生的最晚时间不得迟于其后继
+事件vj的最晚发生时间减去活动<code>&lt;vi,vj&gt;</code>的持续时间。</p>
+<p>$$\begin{aligned}
+le(n-1) &amp;&#x3D; ee(n-1) \\
+le(i) &amp;&#x3D; min( le(j) - d(i,j) )
+\end{aligned}$$</p>
+<ol start="3">
+<li>活动<code>ak=&lt;vi,vj&gt;</code>的最早开始时间</li>
+</ol>
+<p>就是ak的起始点vi的最早开始时间</p>
+<p>$$ea(k) &#x3D; ee(i)$$</p>
+<ol start="4">
+<li>活动<code>ak=&lt;vi,vj&gt;</code>的最迟开始时间</li>
+</ol>
+<p>就是ak的终点vj的最迟开始时间减去ak的持续时间</p>
+<p>$$la(k) &#x3D; le(j) - d(i,j)$$</p>
+<p>时间余量：la(k) - ea(k)，即可以推迟的时间</p>
+<p>关键活动：时间余量为0的活动</p>
+<p>关键路径由关键活动构成。</p>
+<ul>
+<li>延误关键活动的持续时间，推迟整个工程时间；</li>
+<li>缩短非关键活动的持续时间，对整个工程时间无影响；</li>
+<li>只有缩短关键活动的持续时间，才能缩短整个工程时间，
+但可能引起关键活动的变化；</li>
+<li>缩短某些关键活动的持续时间，并不一定提前工程完成时间；</li>
+</ul>
+<p><em><strong>计算ee，le时需要按照一定顺序计算。这种顺序是拓扑序列</strong></em>。因此在算法中要首先执行拓扑排序。</p>
 
                 
               </div>
@@ -795,9 +885,9 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E7%AE%97/">#数算</a>
-      
         <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>
+      
+        <a href="/tags/%E6%95%B0%E7%AE%97/">#数算</a>
       
     </div>
   
@@ -828,7 +918,7 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年5月9日</div>
+          <div>2023年6月7日</div>
         </div>
       
       

@@ -1,395 +1,278 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
-  <link rel="icon" href="/img/avatar.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#161412">
-  <meta name="author" content="justaLoli">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="讨厌这个。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数算关键概念一览">
-<meta property="og:url" content="https://justaloli.cn/posts/11144.html">
-<meta property="og:site_name" content="Loli的杂货铺">
-<meta property="og:description" content="讨厌这个。">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://justaloli.cn/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg">
-<meta property="article:published_time" content="2023-04-10T13:41:45.000Z">
-<meta property="article:modified_time" content="2023-06-10T07:32:31.499Z">
-<meta property="article:author" content="justaLoli">
-<meta property="article:tag" content="编程">
-<meta property="article:tag" content="数算">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://justaloli.cn/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg">
-  
-  
-  
-  <title>数算关键概念一览 - Loli的杂货铺</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            数算关键概念一览 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
 
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
 
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"justaloli.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home"]},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#d92","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":[".jpeg",".png"]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
-
-
-  
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
 </head>
 
 
 <body>
-  
-
-  <header>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
     
 
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Loli的杂货铺</strong>
-    </a>
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/stuffs/">
-                <i class="iconfont icon-books"></i>
-                <span>杂货</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                <span>友链</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Loli的杂货铺
             </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/bannerbg.jpg') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle">数算关键概念一览</span>
-          
         </div>
 
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-10 21:41" pubdate>
-          2023年4月10日 晚上
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          8.5k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          48 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar category-bar" style="margin-right: -1rem">
-    
-
-
-
-
-
-<div class="category-list">
-  
-  
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="编程"
-        id="heading-41282bf95e43c64d579757573a03cdde" role="tab" data-toggle="collapse" href="#collapse-41282bf95e43c64d579757573a03cdde"
-        aria-expanded="true"
-      >
-        编程
-        <span class="list-group-count">(5)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse show" id="collapse-41282bf95e43c64d579757573a03cdde"
-           role="tabpanel" aria-labelledby="heading-41282bf95e43c64d579757573a03cdde">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/46200.html" title="C++实现一个尽可能优雅的双向链表"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">C++实现一个尽可能优雅的双向链表</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/38043.html" title="C++面向对象编程经验1——概论、模版类、构造函数、析构函数."
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">C++面向对象编程经验1——概论、模版类、构造函数、析构函数.</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/32813.html" title="地图着色问题"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">地图着色问题</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/11144.html" title="数算关键概念一览"
-           class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">数算关键概念一览</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/300.html" title="计算概论A-不围棋"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">计算概论A-不围棋</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-</div>
-
-
-  </aside>
-
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">数算关键概念一览</h1>
-            
-            
-              <div class="markdown-body">
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives/"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags/"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories/"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links/"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
                 
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives/">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags/">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories/">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links/">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">数算关键概念一览</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">justaLoli</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-04-10 21:41:45</span>
+        <span class="mobile">2023-04-10 21:41</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-06-10 15:32:31</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%95%B0%E7%AE%97/">数算</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>6k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>21 分钟</span>
+        </span>
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://justaloli.cn/posts/39276.html">https://justaloli.cn/posts/39276.html</a></p>
 <p><a href="https://justaloli.cn/posts/51676.html">https://justaloli.cn/posts/51676.html</a></p>
 <p>话不多说，直入正题</p>
@@ -532,7 +415,7 @@
 <li>KMP模式匹配</li>
 </ul>
 <p><em><strong>（书p82）</strong></em></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C">makeNext()&#123;PSeqString p,<span class="hljs-type">int</span> *next&#125;&#123;<br>	<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,k=<span class="hljs-number">-1</span>;<br>	next[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>;<br>	<span class="hljs-keyword">while</span>(i&lt; p-&gt;n<span class="hljs-number">-1</span>)&#123;<br>		<span class="hljs-keyword">while</span>(k&gt;=<span class="hljs-number">0</span> &amp;&amp; p-&gt;c[i]!=p-&gt;c[k])&#123;<br>			k = next[k];<br>		&#125;<br>		i++;k++;<br>		<span class="hljs-keyword">if</span>(p-&gt;c[i] == p-&gt;c[k])&#123;<br>			next[i] = next[k];<br>		&#125;<br>		<span class="hljs-keyword">else</span>&#123;<br>			next[i] = k;<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">makeNext()&#123;PSeqString p,<span class="type">int</span> *next&#125;&#123;</span><br><span class="line">	<span class="type">int</span> i=<span class="number">0</span>,k=<span class="number">-1</span>;</span><br><span class="line">	next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt; p-&gt;n<span class="number">-1</span>)&#123;</span><br><span class="line">		<span class="keyword">while</span>(k&gt;=<span class="number">0</span> &amp;&amp; p-&gt;c[i]!=p-&gt;c[k])&#123;</span><br><span class="line">			k = next[k];</span><br><span class="line">		&#125;</span><br><span class="line">		i++;k++;</span><br><span class="line">		<span class="keyword">if</span>(p-&gt;c[i] == p-&gt;c[k])&#123;</span><br><span class="line">			next[i] = next[k];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			next[i] = k;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>改进后算法分析
 算法 3.8 从形式上看是一个二重循环，每重循环最多执行 m次,最大运行时间
@@ -683,9 +566,9 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 </li>
 </ol>
 <p>要掌握性质7的证明</p>
-<p><img src="/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/posts/11144/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A87%E7%9A%84%E8%AF%81%E6%98%8E.jpg"></p>
 <h3 id="K叉树"><a href="#K叉树" class="headerlink" title="K叉树"></a>K叉树</h3><p>满（之后叶子和度为K的）K叉树；完全（顺序）K叉树；完全满K叉树</p>
-<h1 id="集合与字典"><a href="#集合与字典" class="headerlink" title="集合与字典"></a>集合与字典</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="基于位向量的集合"><a href="#基于位向量的集合" class="headerlink" title="基于位向量的集合"></a>基于位向量的集合</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">BitSet</span>&#123;<br>	<span class="hljs-type">int</span> size;<br>	<span class="hljs-type">char</span> *array;<span class="hljs-comment">//一个字节存储8个0或1</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="集合与字典"><a href="#集合与字典" class="headerlink" title="集合与字典"></a>集合与字典</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="基于位向量的集合"><a href="#基于位向量的集合" class="headerlink" title="基于位向量的集合"></a>基于位向量的集合</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">BitSet</span>&#123;</span><br><span class="line">	<span class="type">int</span> size;</span><br><span class="line">	<span class="type">char</span> *array;<span class="comment">//一个字节存储8个0或1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>size &#x3D; (n+7)&#x2F;8</li>
@@ -709,7 +592,7 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 <p>$$ ASL &#x3D; \sum_{i&#x3D;1}^n p_ic_i $$</p>
 <p>基本运算: 关键码和给定值的比较</p>
 <p>字典的表示: 顺序表、散列表、树表</p>
-<h3 id="顺序表检索"><a href="#顺序表检索" class="headerlink" title="顺序表检索"></a>顺序表检索</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">DicElement</span>&#123;<span class="hljs-comment">/*元素结构*/</span><br>	KeyType key;  <span class="hljs-comment">/*元素的关键码*/</span><br>	DataType other; <span class="hljs-comment">/*其它属性字段*/</span><br>&#125;; <br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">SeqDictionary</span>&#123; <span class="hljs-comment">/*字典结构*/</span><br>	DicElement elementMAXNUM]; <span class="hljs-comment">/*字典数组*/</span><br>	<span class="hljs-type">int</span> n; <span class="hljs-comment">/*实际元素个数*/</span><br>&#125;; <br></code></pre></td></tr></table></figure>
+<h3 id="顺序表检索"><a href="#顺序表检索" class="headerlink" title="顺序表检索"></a>顺序表检索</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">DicElement</span>&#123;<span class="comment">/*元素结构*/</span></span><br><span class="line">	KeyType key;  <span class="comment">/*元素的关键码*/</span></span><br><span class="line">	DataType other; <span class="comment">/*其它属性字段*/</span></span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SeqDictionary</span>&#123; <span class="comment">/*字典结构*/</span></span><br><span class="line">	DicElement elementMAXNUM]; <span class="comment">/*字典数组*/</span></span><br><span class="line">	<span class="type">int</span> n; <span class="comment">/*实际元素个数*/</span></span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure>
 
 <h3 id="顺序检索的ASL"><a href="#顺序检索的ASL" class="headerlink" title="顺序检索的ASL"></a>顺序检索的ASL</h3><ol>
 <li>顺序检索 O(n)</li>
@@ -721,7 +604,7 @@ next 数组，以此作为匹配过程的工具，从而提高了匹配的速度
 <h3 id="二分检索（折半检索）的ASL"><a href="#二分检索（折半检索）的ASL" class="headerlink" title="二分检索（折半检索）的ASL"></a>二分检索（折半检索）的ASL</h3><ol start="2">
 <li>二分法检索 中间: (最左+最后)&#x2F;2</li>
 </ol>
-<h3 id="顺序字典的二分查找"><a href="#顺序字典的二分查找" class="headerlink" title="顺序字典的二分查找"></a>顺序字典的二分查找</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">BinSearch</span><span class="hljs-params">(SeqDictionary *pdic, KeyType key, <span class="hljs-type">int</span> *pos)</span>&#123;<br>	<span class="hljs-type">int</span> low,mid,high;<br>	low = <span class="hljs-number">0</span>; high = pdic-&gt;n - <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span>(low &lt;= high)&#123; <span class="hljs-comment">//注意这里的判断</span><br>		‼️mid = (low + high) / <span class="hljs-number">2</span>; <span class="hljs-comment">//注意中间位置</span><br>		<span class="hljs-keyword">if</span>(key &lt; pdic-&gt;elem[mid].key)&#123;<br>			‼️high = mid - <span class="hljs-number">1</span>; <span class="hljs-comment">//注意边界变化</span><br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key &gt; pdic-&gt;elem[mid].key)&#123;<br>			‼️low = mid + <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意边界变化</span><br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			*pos = mid;<br>			<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>		&#125;<br>	&#125;<br>	‼️*pos = low; <span class="hljs-comment">//它“应该在”的位置,用于后续插入</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="顺序字典的二分查找"><a href="#顺序字典的二分查找" class="headerlink" title="顺序字典的二分查找"></a>顺序字典的二分查找</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">BinSearch</span><span class="params">(SeqDictionary *pdic, KeyType key, <span class="type">int</span> *pos)</span>&#123;</span><br><span class="line">	<span class="type">int</span> low,mid,high;</span><br><span class="line">	low = <span class="number">0</span>; high = pdic-&gt;n - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(low &lt;= high)&#123; <span class="comment">//注意这里的判断</span></span><br><span class="line">		‼️mid = (low + high) / <span class="number">2</span>; <span class="comment">//注意中间位置</span></span><br><span class="line">		<span class="keyword">if</span>(key &lt; pdic-&gt;elem[mid].key)&#123;</span><br><span class="line">			‼️high = mid - <span class="number">1</span>; <span class="comment">//注意边界变化</span></span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(key &gt; pdic-&gt;elem[mid].key)&#123;</span><br><span class="line">			‼️low = mid + <span class="number">1</span>; <span class="comment">// 注意边界变化</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			*pos = mid;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	‼️*pos = low; <span class="comment">//它“应该在”的位置,用于后续插入</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>全满二叉树中，</p>
 <p>$$ASL \approx log_2(n+1) - 1$$</p>
@@ -849,379 +732,284 @@ le(i) &amp;&#x3D; min( le(j) - d(i,j) )
 </ul>
 <p><em><strong>计算ee，le时需要按照一定顺序计算。这种顺序是拓扑序列</strong></em>。因此在算法中要首先执行拓扑排序。</p>
 
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>
-      
-        <a href="/tags/%E6%95%B0%E7%AE%97/">#数算</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>数算关键概念一览</div>
-      <div>https://justaloli.cn/posts/11144.html</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>justaLoli</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2023年4月10日</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>更新于</div>
-          <div>2023年6月10日</div>
-        </div>
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
-                    <i class="iconfont icon-nc"></i>
-                  </span>
-                </a>
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
-                    <i class="iconfont icon-sa"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/posts/7606.html" title="计算摄像学 第七讲 光度立体视觉">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算摄像学 第七讲 光度立体视觉</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/posts/63671.html" title="计算摄像学 第十二讲 图像反射消除">
-                        <span class="hidden-mobile">计算摄像学 第十二讲 图像反射消除</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
 
             
-          </article>
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">本文标题</span>：<span class="content">数算关键概念一览</span>
+        </li>
+        <li class="post-author">
+            <span class="type">本文作者</span>：<span class="content">justaLoli</span>
+        </li>
+        <li class="post-time">
+            <span class="type">创建时间</span>：<span class="content">2023-04-10 21:41:45</span>
+        </li>
+        <li class="post-link">
+            <span class="type">本文链接</span>：<span class="content">posts/11144.html</span>
+        </li>
+        <li class="post-license">
+            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%95%B0%E7%AE%97/">#数算</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/posts/7606.html"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">计算摄像学 第七讲 光度立体视觉</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/posts/63671.html"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">计算摄像学 第十二讲 图像反射消除</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
         </div>
-      </div>
-    </div>
 
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BE%E4%B8%8A%E8%AF%B4%E5%88%B0%E7%9A%84%E9%87%8D%E7%82%B9"><span class="nav-text">课上说到的重点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="nav-text">线性表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97"><span class="nav-text">栈与队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">树和二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91"><span class="nav-text">树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%80%A7%E8%B4%A8%EF%BC%9A"><span class="nav-text">二叉树的性质：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K%E5%8F%89%E6%A0%91"><span class="nav-text">K叉树</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E4%B8%8E%E5%AD%97%E5%85%B8"><span class="nav-text">集合与字典</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%BD%8D%E5%90%91%E9%87%8F%E7%9A%84%E9%9B%86%E5%90%88"><span class="nav-text">基于位向量的集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E9%93%BE%E8%A1%A8%E7%9A%84%E9%9B%86%E5%90%88-%E5%87%A0%E4%B9%8E%E7%94%A8%E4%B8%8D%E5%88%B0"><span class="nav-text">基于链表的集合(几乎用不到)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E6%A3%80%E7%B4%A2"><span class="nav-text">顺序表检索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%A3%80%E7%B4%A2%E7%9A%84ASL"><span class="nav-text">顺序检索的ASL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%A3%80%E7%B4%A2%EF%BC%88%E6%8A%98%E5%8D%8A%E6%A3%80%E7%B4%A2%EF%BC%89%E7%9A%84ASL"><span class="nav-text">二分检索（折半检索）的ASL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%97%E5%85%B8%E7%9A%84%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-text">顺序字典的二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E6%A3%80%E7%B4%A2%E7%9A%84ASL"><span class="nav-text">分块检索的ASL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E9%93%BE%E8%A1%A8%E6%A3%80%E7%B4%A2%E7%9A%84ASL"><span class="nav-text">散链表检索的ASL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%9A%84%E7%B1%BB%E5%88%AB%E5%92%8C%E6%80%A7%E8%83%BD"><span class="nav-text">排序的类别和性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E6%8E%92%E5%BA%8F"><span class="nav-text">shell排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE"><span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%A4%A7%E5%A0%86%E6%A6%82%E5%BF%B5"><span class="nav-text">一大堆概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="nav-text">两种表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%A8%E6%B8%B8"><span class="nav-text">周游</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-text">最小生成树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="nav-text">最短路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E6%BA%90%E6%9C%80%E6%AE%B5%E8%B7%AF"><span class="nav-text">单源最段路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF"><span class="nav-text">多源最短路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOV%E5%92%8C%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F"><span class="nav-text">AOV和拓扑排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOE%E5%92%8C%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84"><span class="nav-text">AOE和关键路径</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
 </div>
 
 
+                
+            </div>
 
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
-
-
-
-  
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">justaLoli</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
     </div>
-  </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
 </div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
 
     
 
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
     
-  </main>
+<script src="/js/code-block.js"></script>
 
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <p>Loli的杂货铺 | <a href="https://icp.gov.moe/?keyword=20239994" target="_blank">萌ICP备20239994号</a> <br><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> |  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </p> 
-    </div>
-  
-  
-  
-  
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
+        
+    
 </div>
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+    
+<script src="/js/libs/pjax.min.js"></script>
 
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
         });
-      </script>
-    
 
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
 
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
 
 
-  
 
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
 </body>
 </html>

@@ -1,393 +1,278 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
-  <link rel="icon" href="/img/avatar.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#161412">
-  <meta name="author" content="justaLoli">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="在c++实现一个(尽可能)像python一样优雅的列表. 并总结一些在进行类封装时遇到的坑和知识点.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++实现一个尽可能优雅的双向链表">
-<meta property="og:url" content="https://justaloli.cn/posts/46200.html">
-<meta property="og:site_name" content="Loli的杂货铺">
-<meta property="og:description" content="在c++实现一个(尽可能)像python一样优雅的列表. 并总结一些在进行类封装时遇到的坑和知识点.">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-25T04:58:55.000Z">
-<meta property="article:modified_time" content="2023-04-25T06:48:30.612Z">
-<meta property="article:author" content="justaLoli">
-<meta property="article:tag" content="编程">
-<meta property="article:tag" content="数算">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>C++实现一个尽可能优雅的双向链表 - Loli的杂货铺</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            C++实现一个尽可能优雅的双向链表 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
 
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
 
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"justaloli.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home"]},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#d92","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":[".jpeg",".png"]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
-
-
-  
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
 </head>
 
 
 <body>
-  
-
-  <header>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
     
 
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Loli的杂货铺</strong>
-    </a>
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/stuffs/">
-                <i class="iconfont icon-books"></i>
-                <span>杂货</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                <span>友链</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Loli的杂货铺
             </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/bannerbg.jpg') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle">C++实现一个尽可能优雅的双向链表</span>
-          
         </div>
 
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-25 12:58" pubdate>
-          2023年4月25日 下午
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          11k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          63 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar category-bar" style="margin-right: -1rem">
-    
-
-
-
-
-
-<div class="category-list">
-  
-  
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="编程"
-        id="heading-41282bf95e43c64d579757573a03cdde" role="tab" data-toggle="collapse" href="#collapse-41282bf95e43c64d579757573a03cdde"
-        aria-expanded="true"
-      >
-        编程
-        <span class="list-group-count">(5)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse show" id="collapse-41282bf95e43c64d579757573a03cdde"
-           role="tabpanel" aria-labelledby="heading-41282bf95e43c64d579757573a03cdde">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/46200.html" title="C++实现一个尽可能优雅的双向链表"
-           class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">C++实现一个尽可能优雅的双向链表</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/38043.html" title="C++面向对象编程经验1——概论、模版类、构造函数、析构函数."
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">C++面向对象编程经验1——概论、模版类、构造函数、析构函数.</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/32813.html" title="地图着色问题"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">地图着色问题</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/11144.html" title="数算关键概念一览"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">数算关键概念一览</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/300.html" title="计算概论A-不围棋"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">计算概论A-不围棋</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-</div>
-
-
-  </aside>
-
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">C++实现一个尽可能优雅的双向链表</h1>
-            
-            
-              <div class="markdown-body">
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives/"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags/"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories/"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links/"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
                 
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives/">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags/">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories/">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links/">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">C++实现一个尽可能优雅的双向链表</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">justaLoli</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-04-25 12:58:55</span>
+        <span class="mobile">2023-04-25 12:58</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-04-25 14:48:30</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%95%B0%E7%AE%97/">数算</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.7k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>14 分钟</span>
+        </span>
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>这是「数据结构与算法」课程的一部分. 在这门课中, 我们将接触各种常见的数据结构, 并了解它们各种基本操作的实现方式.</p>
 <p>这门课的第一章为顺序表, 其中包括一种数据结构“链表”. 我产生了一种想法, 为什么不借助C++强大的类封装能力, 实现一个自己的链表呢?</p>
 <p>我的目标是想让这个链表尽可能的“优雅”. 这要求在使用这个链表时, 各种操作应尽可能的简洁直观. 我的目标是做的比C++ STL模版库的链表易用(虽然性能可能略低), 并且尽可能靠近python的列表.</p>
@@ -395,385 +280,297 @@
 <p>注意: STL模版库的list是双向链表,但python的list, 据资料, 是基于变长顺序表. 这里说的靠近不是利用python list的底层逻辑, 而是实现和python list尽可能相似的调用方式.</p>
 </blockquote>
 <h2 id="使用例"><a href="#使用例" class="headerlink" title="使用例"></a>使用例</h2><p>话不多说, 先看使用例:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">/* 本程序需要引用的外部库仅iostream */</span><br><br><span class="hljs-comment">/* 例子1 简单的添加数据、打印数据 */</span><br>list&lt;<span class="hljs-type">int</span>&gt; list1;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; ++i)<br>&#123;<br>	list1.<span class="hljs-built_in">append</span>(i);<br>&#125;<br>cout &lt;&lt; list1 &lt;&lt; endl;<br><br><span class="hljs-comment">/* 例子2 列表嵌套 */</span><br>list&lt;list&lt;<span class="hljs-type">int</span>&gt;&gt; list2;<br><span class="hljs-type">int</span> num = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; ++i)<br>&#123;<br>	list&lt;<span class="hljs-type">int</span>&gt; templist;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; i; ++j,++num)<br>	&#123;<br>		templist.<span class="hljs-built_in">append</span>(num);<br>	&#125;<br>	list2.<span class="hljs-built_in">append</span>(templist);<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i)<br>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; list2[i].<span class="hljs-built_in">size</span>(); ++j)<br>	&#123;<br>		cout &lt;&lt; list2[i][j] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>	&#125;<br>	cout &lt;&lt; endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 本程序需要引用的外部库仅iostream */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 例子1 简单的添加数据、打印数据 */</span></span><br><span class="line">list&lt;<span class="type">int</span>&gt; list1;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">	list1.<span class="built_in">append</span>(i);</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; list1 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 例子2 列表嵌套 */</span></span><br><span class="line">list&lt;list&lt;<span class="type">int</span>&gt;&gt; list2;</span><br><span class="line"><span class="type">int</span> num = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">	list&lt;<span class="type">int</span>&gt; templist;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; ++j,++num)</span><br><span class="line">	&#123;</span><br><span class="line">		templist.<span class="built_in">append</span>(num);</span><br><span class="line">	&#125;</span><br><span class="line">	list2.<span class="built_in">append</span>(templist);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; list2[i].<span class="built_in">size</span>(); ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; list2[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>结果:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs text">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]<br>1 <br>2 3 <br>4 5 6 <br>7 8 9 10 <br>11 12 13 14 15 <br>16 17 18 19 20 21 <br>22 23 24 25 26 27 28 <br>29 30 31 32 33 34 35 36 <br>37 38 39 40 41 42 43 44 45 <br>46 47 48 49 50 51 52 53 54 55 <br>程序执行完成, 用时63微秒.<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span><br><span class="line">1 </span><br><span class="line">2 3 </span><br><span class="line">4 5 6 </span><br><span class="line">7 8 9 10 </span><br><span class="line">11 12 13 14 15 </span><br><span class="line">16 17 18 19 20 21 </span><br><span class="line">22 23 24 25 26 27 28 </span><br><span class="line">29 30 31 32 33 34 35 36 </span><br><span class="line">37 38 39 40 41 42 43 44 45 </span><br><span class="line">46 47 48 49 50 51 52 53 54 55 </span><br><span class="line">程序执行完成, 用时63微秒.</span><br></pre></td></tr></table></figure>
 
 <p>使用过python的人, 应该能看出我对python列表的借鉴(比如append()); 使用过C++ STL模版库的list的人, 应该能看出它比STL list在使用(尤其是遍历)上要简单一些.</p>
 <h2 id="类定义"><a href="#类定义" class="headerlink" title="类定义"></a>类定义</h2><p>列表的UML类图如下:</p>
-<pre><code class=" mermaid">classDiagram 
-	class node&#123;
-		+T data
-		+node* next
-		+node* prev
-	&#125;
-	class list&#123;
-		-node* head
-		-node* tail
-		-int _size
-		-node* temp
-		-int tempindex
-		
-		+copy() list
-		+slice(i1,i2,i3) list
-		+size() int
-		+append(data) int
-		+insert(index,data) void
-		+swap(i1,i2) void
-		+pop(i=-1) T
-		+remove(data) void
-		+clear() void
-		+operator[](index) T
-		+operator=(data) list
-		+operator+(data) list
-		+operator+=(data) list
-		#get(index) node*
-		#swap(node,node) void
-	&#125;
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">classDiagram </span><br><span class="line">	class node&#123;</span><br><span class="line">		+T data</span><br><span class="line">		+node* next</span><br><span class="line">		+node* prev</span><br><span class="line">	&#125;</span><br><span class="line">	class list&#123;</span><br><span class="line">		-node* head</span><br><span class="line">		-node* tail</span><br><span class="line">		-int _size</span><br><span class="line">		-node* temp</span><br><span class="line">		-int tempindex</span><br><span class="line">		</span><br><span class="line">		+copy() list</span><br><span class="line">		+slice(i1,i2,i3) list</span><br><span class="line">		+size() int</span><br><span class="line">		+append(data) int</span><br><span class="line">		+insert(index,data) void</span><br><span class="line">		+swap(i1,i2) void</span><br><span class="line">		+pop(i=-1) T</span><br><span class="line">		+remove(data) void</span><br><span class="line">		+clear() void</span><br><span class="line">		+operator[](index) T</span><br><span class="line">		+operator=(data) list</span><br><span class="line">		+operator+(data) list</span><br><span class="line">		+operator+=(data) list</span><br><span class="line">		#get(index) node*</span><br><span class="line">		#swap(node,node) void</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>在完善这个数据类型的过程中, 遇到了很多有趣的问题, 也学习到了很多C++语法特性, 比如模版类、析构函数、运算符重载、引用符<code>&amp;</code>等等. 之后也许会慢慢整理遇到的各种问题以及经验.</p>
 <h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>这里只是放上完整代码. 之后有机会新建帖子进行相关的解释.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> MYLIST</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MYLIST</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">namespace</span> my &#123;<br><br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LOG(args) printf(args);</span><br><br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">list</span>&#123;<br><span class="hljs-keyword">private</span>:<br>	<span class="hljs-keyword">class</span> <span class="hljs-title class_">node</span>&#123;<br>	<span class="hljs-keyword">public</span>:<br>		<span class="hljs-built_in">node</span>()&#123;&#125;<br>		<span class="hljs-built_in">node</span>(<span class="hljs-type">const</span> T&amp; dta)&#123;data = dta;&#125;<br>		T data;<br>		node* next=<span class="hljs-literal">nullptr</span>;<br>		node* prev=<span class="hljs-literal">nullptr</span>;<br>	&#125;;<br>	<span class="hljs-keyword">class</span> <span class="hljs-title class_">iterator_base</span>&#123;<br>	<span class="hljs-keyword">protected</span>:<br>		node* ptr;<br>	<span class="hljs-keyword">public</span>:<br>		<span class="hljs-built_in">iterator_base</span>(node* p):<span class="hljs-built_in">ptr</span>(p)&#123;&#125;<br>		<span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span>!=(<span class="hljs-type">const</span> iterator_base&amp; it)<span class="hljs-type">const</span>&#123;<span class="hljs-keyword">return</span> ptr!=it.ptr;&#125;<br>		<span class="hljs-type">void</span> <span class="hljs-keyword">operator</span>++()&#123;ptr=ptr-&gt;next;&#125;<span class="hljs-type">void</span> <span class="hljs-keyword">operator</span>++(<span class="hljs-type">int</span>)&#123;ptr=ptr-&gt;next;&#125;<br>	&#125;;<br>	<span class="hljs-keyword">class</span> <span class="hljs-title class_">iterator</span>:<span class="hljs-keyword">public</span> iterator_base&#123;<br>	<span class="hljs-keyword">public</span>:<br>		<span class="hljs-keyword">using</span> iterator_base::iterator_base,iterator_base::ptr;<br>		T&amp; <span class="hljs-keyword">operator</span>*()&#123;<span class="hljs-keyword">return</span> ptr-&gt;data;&#125;<br>	&#125;;<br>	<span class="hljs-keyword">class</span> <span class="hljs-title class_">const_iterator</span>:<span class="hljs-keyword">public</span> iterator_base&#123;<br>	<span class="hljs-keyword">public</span>:<br>		<span class="hljs-keyword">using</span> iterator_base::iterator_base,iterator_base::ptr;<br>		<span class="hljs-type">const</span> T&amp; <span class="hljs-keyword">operator</span>*()&#123;<span class="hljs-keyword">return</span> ptr-&gt;data;&#125;<br>	&#125;;<br>	node* head;<br>	node* tail;<br>	<span class="hljs-type">int</span> _size;<br>	node* temp;<br>	<span class="hljs-type">int</span> tempindex = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">public</span>:<br><br>	<span class="hljs-function">iterator <span class="hljs-title">begin</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">iterator</span>(head-&gt;next);&#125;<br>	<span class="hljs-function">iterator <span class="hljs-title">end</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">iterator</span>(tail);&#125;<br>	<span class="hljs-function">const_iterator <span class="hljs-title">begin</span><span class="hljs-params">()</span><span class="hljs-type">const</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">const_iterator</span>(head-&gt;next);&#125;<br>	<span class="hljs-function">const_iterator <span class="hljs-title">end</span><span class="hljs-params">()</span><span class="hljs-type">const</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">const_iterator</span>(tail);&#125;<br><br><br><br>	<span class="hljs-built_in">list</span>();<span class="hljs-comment">/* 构造函数 */</span><br><br>	<span class="hljs-built_in">list</span>(<span class="hljs-type">const</span> list&lt;T&gt;&amp;);<span class="hljs-comment">/* 拷贝重载，</span><br><span class="hljs-comment">	做了一些区分：用这个重载是做一个影子链表，用等号重载是做一个完整地拷贝。 */</span><br>	<span class="hljs-comment">/* 如此，在初始化和函数传递时默认时 */</span><br><br>	~<span class="hljs-built_in">list</span>();<span class="hljs-comment">/* 析构函数 */</span><br><br>	<span class="hljs-function">list&lt;T&gt; <span class="hljs-title">copy</span><span class="hljs-params">()</span></span>;<span class="hljs-comment">/* 复制 */</span><br><br>	<span class="hljs-function">list&lt;T&gt; <span class="hljs-title">slice</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span>,<span class="hljs-type">const</span> <span class="hljs-type">int</span>,<span class="hljs-type">const</span> <span class="hljs-type">int</span>)</span><span class="hljs-type">const</span></span>;<span class="hljs-comment">/* 切片 */</span><br><br>	<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span><span class="hljs-type">const</span></span>&#123;<span class="hljs-keyword">return</span> _size;&#125;<span class="hljs-comment">/* 得到长度 */</span><br><br>	<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">append</span><span class="hljs-params">(<span class="hljs-type">const</span> T&amp;)</span></span>;<span class="hljs-comment">/* 追加 */</span><br><br>	<span class="hljs-function">list&lt;T&gt;&amp; <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span>,<span class="hljs-type">const</span> T&amp;)</span></span>;<span class="hljs-comment">/* 插入 */</span><br><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span>,<span class="hljs-type">const</span> <span class="hljs-type">int</span>)</span></span>;<span class="hljs-comment">/* 交换 */</span><br><br>	<span class="hljs-function">T <span class="hljs-title">pop</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span> i=<span class="hljs-number">-1</span>)</span></span>;<span class="hljs-comment">/* 弹出并删除 */</span><br><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(<span class="hljs-type">const</span> T&amp;)</span></span>;<span class="hljs-comment">/* 删除所有和参数相同的元素 */</span><br><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span></span>;<span class="hljs-comment">/* 清空 */</span><br><br>	T&amp; <span class="hljs-keyword">operator</span>[](<span class="hljs-type">const</span> <span class="hljs-type">int</span>);<span class="hljs-comment">/* 索引[]运算 */</span><br><br>	list&lt;T&gt;&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-type">const</span> list&lt;T&gt;&amp;);<span class="hljs-comment">/* 赋值=运算 */</span><br><br>	list&lt;T&gt; <span class="hljs-keyword">operator</span>+(<span class="hljs-type">const</span> list&lt;T&gt;&amp;);<span class="hljs-comment">/* 加+运算 */</span><br><br>	<span class="hljs-type">void</span> <span class="hljs-keyword">operator</span>+=(list&lt;T&gt;&amp;);<span class="hljs-comment">/* 自增+=运算 */</span><br>	<br>	<span class="hljs-type">void</span> <span class="hljs-keyword">operator</span>+=(<span class="hljs-type">const</span> T&amp;);<span class="hljs-comment">/* 自增+=运算 */</span><br><br><br><span class="hljs-keyword">protected</span>:<br>	<span class="hljs-function">node* <span class="hljs-title">gethead</span><span class="hljs-params">()</span><span class="hljs-type">const</span></span>&#123;<span class="hljs-keyword">return</span> head;&#125;<br>	<span class="hljs-function">node* <span class="hljs-title">gettail</span><span class="hljs-params">()</span><span class="hljs-type">const</span></span>&#123;<span class="hljs-keyword">return</span> tail;&#125;<br>	<span class="hljs-function">node* <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span></span>;<span class="hljs-comment">/* 索引，得到节点指针 */</span><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(node*,node*)</span></span>;<span class="hljs-comment">/* 交换 */</span><br>	<span class="hljs-function">node* <span class="hljs-title">getFromHead</span><span class="hljs-params">(<span class="hljs-type">int</span>)</span></span>;<br>	<span class="hljs-function">node* <span class="hljs-title">getFromTail</span><span class="hljs-params">(<span class="hljs-type">int</span>)</span></span>;<br>	<span class="hljs-function">node* <span class="hljs-title">getFromTemp</span><span class="hljs-params">(<span class="hljs-type">int</span>)</span></span>;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resetTemp</span><span class="hljs-params">()</span></span>&#123;temp=head;tempindex = <span class="hljs-number">0</span>;&#125;<span class="hljs-comment">/* 重置temp指针保证它指向链中的某个项。 */</span><br>	<span class="hljs-comment">/* fun fact：虽然重置tempindex=0，但是现在temp指向head而不是第一个“元素”。</span><br><span class="hljs-comment">	但这无伤大雅。由于距离的最小值判定的逻辑，查找时会优先从head向后查找，而不是用temp查找。 */</span><br>	<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">dis</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;<span class="hljs-keyword">return</span> a&gt;=b?a-b:b-a;&#125;<br>&#125;;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>std::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(std::ostream&amp; out,<span class="hljs-type">const</span> list&lt;T&gt;&amp; L)&#123;<br>	<span class="hljs-comment">/* 运算符：重载cout输出 */</span><br>	out &lt;&lt; <span class="hljs-string">&quot;[&quot;</span>;<br>	<span class="hljs-type">bool</span> flag = <span class="hljs-literal">false</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i:L)&#123;<br>		<span class="hljs-keyword">if</span>(flag)&#123;<br>			out &lt;&lt; <span class="hljs-string">&quot;, &quot;</span>;<br>		&#125;<br>		<span class="hljs-keyword">else</span>&#123;<br>			flag = <span class="hljs-literal">true</span>;<br>		&#125;<br>		out &lt;&lt; i;<br>	&#125;<br>	out &lt;&lt; <span class="hljs-string">&quot;]&quot;</span>;<br>	<span class="hljs-keyword">return</span> out;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>T&amp; list&lt;T&gt;::<span class="hljs-keyword">operator</span>[](<span class="hljs-type">const</span> <span class="hljs-type">int</span> i)&#123;<br>	<span class="hljs-comment">/* 运算符：索引 */</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-built_in">get</span>(i)-&gt;data;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt;&amp; list&lt;T&gt;::<span class="hljs-keyword">operator</span>=(<span class="hljs-type">const</span> list&lt;T&gt; &amp;li)&#123;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>==&amp;li)<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>	<span class="hljs-comment">/* 运算符：赋值 */</span><br>	<span class="hljs-built_in">clear</span>();<br>	node* t = li.head-&gt;next;<br>	<span class="hljs-keyword">while</span>(t!=li.tail)&#123;<br>		<span class="hljs-built_in">append</span>(t-&gt;data);<br>		t = t-&gt;next;<br>	&#125;<br>	<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt; list&lt;T&gt;::<span class="hljs-keyword">operator</span>+(<span class="hljs-type">const</span> list&lt;T&gt;&amp; li)&#123;<br>	<span class="hljs-keyword">auto</span> rl = <span class="hljs-keyword">this</span>-&gt;<span class="hljs-built_in">copy</span>();<br><br>	node* t = li.head-&gt;next;<br>	<span class="hljs-keyword">while</span>(t!=li.tail)&#123;<br>		rl.<span class="hljs-built_in">append</span>(t-&gt;data);<br>		t = t-&gt;next;<br>	&#125;<br>	<span class="hljs-keyword">return</span> rl;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> list&lt;T&gt;::<span class="hljs-keyword">operator</span>+=(list&lt;T&gt;&amp; li)&#123;<br>	<span class="hljs-keyword">if</span>(&amp;li == <span class="hljs-keyword">this</span>)&#123;<br>		std::cout &lt;&lt; <span class="hljs-string">&quot;ERROR: self += detected. plz use + instead.&quot;</span>;<br>		<span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);<br>		<span class="hljs-keyword">return</span>;<br>	&#125;<br>	<span class="hljs-comment">/* O1,但是引用的li会清空 */</span><br>	<span class="hljs-comment">/* 把中间接上 */</span><br>	tail-&gt;prev-&gt;next = li.head-&gt;next;<br>	li.head-&gt;next-&gt;prev = tail-&gt;prev;<br>	<span class="hljs-comment">/* 把结尾接上 */</span><br>	tail-&gt;prev = li.tail-&gt;prev;<br>	tail-&gt;prev-&gt;next = tail;<br>	<span class="hljs-comment">/* 更新size */</span><br>	_size+=li.<span class="hljs-built_in">size</span>();<br>	<span class="hljs-comment">/* 让li首尾相接置空,但是不删除里面的元素(里面的元素归this了.) */</span><br>	li.head-&gt;next = li.tail;<br>	li.tail-&gt;prev = li.head;<br>	li._size = <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> list&lt;T&gt;::<span class="hljs-keyword">operator</span>+=(<span class="hljs-type">const</span> T&amp; dta)&#123;<br>	<span class="hljs-built_in">append</span>(dta);<br>&#125;<br><span class="hljs-comment">// list&lt;T&gt; list&lt;T&gt;::operator()(const int,const int,con s)&#123;&#125;</span><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt; list&lt;T&gt;::<span class="hljs-built_in">copy</span>()&#123;<br>	list&lt;T&gt; returnlist;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; _size; ++i)<br>	&#123;<br>		returnlist.<span class="hljs-built_in">append</span>((*<span class="hljs-keyword">this</span>)[i]);<br>	&#125;<br>	<span class="hljs-keyword">return</span> returnlist;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt; list&lt;T&gt;::<span class="hljs-built_in">slice</span>(<span class="hljs-type">int</span> p1, <span class="hljs-type">int</span> p2, <span class="hljs-type">int</span> p3) <span class="hljs-type">const</span>&#123;<br>	list&lt;T&gt; returnlist;<br>	<span class="hljs-keyword">if</span>(p3&gt;<span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = p1; i &lt; p2; i+=p3)<br>		&#123;<br>			returnlist.<span class="hljs-built_in">append</span>((*<span class="hljs-keyword">this</span>)[i]);<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(p3&lt;<span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = p1; i &gt; p2; i+=p3)<br>		&#123;<br>			returnlist.<span class="hljs-built_in">append</span>((*<span class="hljs-keyword">this</span>)[i]);<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> returnlist;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt;::<span class="hljs-built_in">list</span>()&#123;<br>	<span class="hljs-comment">// cout &lt;&lt; &quot;list() called&quot;&lt;&lt;endl;</span><br>	head = <span class="hljs-keyword">new</span> node;<br>	tail = <span class="hljs-keyword">new</span> node;<br><br>	<span class="hljs-built_in">resetTemp</span>();<br><br>	head-&gt;next = tail;<br>	tail-&gt;prev = head;<br>	_size = <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt;::<span class="hljs-built_in">list</span>(<span class="hljs-type">const</span> list&lt;T&gt;&amp; li):<span class="hljs-built_in">list</span>()&#123;<br>	<span class="hljs-keyword">operator</span>=(li);<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> list&lt;T&gt;::<span class="hljs-built_in">clear</span>()&#123;<br>	node *t = head-&gt;next;<br>	<span class="hljs-keyword">while</span>(t!=tail)&#123;<br>		t = t-&gt;next;<br>		<span class="hljs-keyword">delete</span> t-&gt;prev;<br>	&#125;<br>	head-&gt;next = tail;<br>	tail-&gt;prev = head;<br>	<span class="hljs-built_in">resetTemp</span>();<br>	_size=<span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt;::~<span class="hljs-built_in">list</span>()&#123;<br>	<span class="hljs-comment">// cout &lt;&lt; &quot;~list called for:&quot;&lt;&lt;*this&lt;&lt;endl;</span><br>	<span class="hljs-built_in">clear</span>();<br>	<span class="hljs-keyword">delete</span> head;<br>	<span class="hljs-keyword">delete</span> tail;<br>	head = <span class="hljs-literal">nullptr</span>;tail = <span class="hljs-literal">nullptr</span>;temp = <span class="hljs-literal">nullptr</span>;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">int</span> list&lt;T&gt;::<span class="hljs-built_in">append</span>(<span class="hljs-type">const</span> T&amp; dta)&#123;<br>	temp = <span class="hljs-keyword">new</span> <span class="hljs-built_in">node</span>(dta);<br>	tempindex = _size;<br>	<br>	tail-&gt;prev-&gt;next = temp;<br>	temp-&gt;prev = tail-&gt;prev;<br>	temp-&gt;next = tail;<br>	tail-&gt;prev = temp;<br>	_size++;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="hljs-built_in">get</span>(<span class="hljs-type">int</span> i)&#123;<br>	<span class="hljs-keyword">if</span>(i&gt;=_size||i&lt;-_size)&#123;<br>		<span class="hljs-built_in">LOG</span>(<span class="hljs-string">&quot;index out range&quot;</span>);<br>		<span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//这是个无效值</span><br>	&#125;<br>	<span class="hljs-type">int</span> mindis = <span class="hljs-number">0x7fffffff</span>;<br>	<span class="hljs-type">int</span> minway = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">dis</span>(i,<span class="hljs-number">0</span>)&lt;mindis)<br>		&#123;mindis = <span class="hljs-built_in">dis</span>(i, <span class="hljs-number">0</span>);minway = <span class="hljs-number">1</span>;&#125;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">dis</span>(i, -_size)&lt;mindis)<br>		&#123;mindis = <span class="hljs-built_in">dis</span>(i, -_size);minway = <span class="hljs-number">2</span>;&#125;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">dis</span>(i, _size<span class="hljs-number">-1</span>)&lt;mindis)<br>		&#123;mindis = <span class="hljs-built_in">dis</span>(i, _size<span class="hljs-number">-1</span>);minway = <span class="hljs-number">3</span>;&#125;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">dis</span>(i, <span class="hljs-number">-1</span>)&lt;mindis)<br>		&#123;mindis = <span class="hljs-built_in">dis</span>(i, <span class="hljs-number">-1</span>);minway = <span class="hljs-number">4</span>;&#125;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">dis</span>(i,tempindex)&lt;mindis)<br>		&#123;mindis = <span class="hljs-built_in">dis</span>(i,tempindex);minway = <span class="hljs-number">5</span>;&#125;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">dis</span>(i+_size,tempindex)&lt;mindis)<br>		&#123;mindis = <span class="hljs-built_in">dis</span>(i,tempindex);minway = <span class="hljs-number">6</span>;&#125;<br>	<span class="hljs-keyword">switch</span> (minway) &#123;<br>	<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<span class="hljs-keyword">return</span> <span class="hljs-built_in">getFromHead</span>(i);<br>	<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<span class="hljs-keyword">return</span> <span class="hljs-built_in">getFromHead</span>(i+_size);<br>	<span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:<span class="hljs-keyword">return</span> <span class="hljs-built_in">getFromTail</span>(i-_size);<br>	<span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:<span class="hljs-keyword">return</span> <span class="hljs-built_in">getFromTail</span>(i);<br>	<span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:<span class="hljs-keyword">return</span> <span class="hljs-built_in">getFromTemp</span>(i);<br>	<span class="hljs-keyword">default</span>:<span class="hljs-keyword">return</span> <span class="hljs-built_in">getFromTemp</span>(i+_size);<br>	&#125;<br><br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="hljs-built_in">getFromHead</span>(<span class="hljs-type">int</span> targeti)&#123;<br>	<span class="hljs-comment">// LOG(&quot;GFH called\n&quot;);</span><br>	temp = head-&gt;next;<br>	<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>(i!=targeti)&#123;<br>		temp = temp-&gt;next;<br>		i++;<br>	&#125;<br>	tempindex = targeti;<br>	<span class="hljs-keyword">return</span> temp;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="hljs-built_in">getFromTail</span>(<span class="hljs-type">int</span> negativeTargeti)&#123;<br>	<span class="hljs-comment">// LOG(&quot;GFT called\n&quot;);</span><br>	temp = tail-&gt;prev;<br>	<span class="hljs-type">int</span> i=<span class="hljs-number">-1</span>;<br>	<span class="hljs-keyword">while</span>(i!=negativeTargeti)&#123;<br>		temp = temp-&gt;prev;<br>		i--;<br>	&#125;<br>	tempindex = negativeTargeti+_size;<br>	<span class="hljs-keyword">return</span> temp;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="hljs-built_in">getFromTemp</span>(<span class="hljs-type">int</span> targeti)&#123;<br>	<span class="hljs-comment">// LOG(&quot;GFTMP called\n&quot;);</span><br>	<span class="hljs-keyword">while</span>(targeti&gt;tempindex)<br>	&#123;<br>		temp = temp-&gt;next;<br>		tempindex++;<br>	&#125;<br>	<span class="hljs-keyword">while</span>(targeti&lt;tempindex)&#123;<br>		temp = temp-&gt;prev;<br>		tempindex--;<br>	&#125;<br>	<span class="hljs-keyword">return</span> temp;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> list&lt;T&gt;::<span class="hljs-built_in">swap</span>(<span class="hljs-type">int</span> ia,<span class="hljs-type">int</span> ib)&#123;<br>	node* a = <span class="hljs-built_in">get</span>(ia);<br>	node* b = <span class="hljs-built_in">get</span>(ib);<br>	<span class="hljs-built_in">swap</span>(a,b);<br>	tempindex = ia;<span class="hljs-comment">//temp指向b,b的下标变为了ia.</span><br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> list&lt;T&gt;::<span class="hljs-built_in">swap</span>(node *a,node *b)&#123;<br>	node *anext = a-&gt;next;<br>	node *bnext = b-&gt;next;<br>	node *aprev = a-&gt;prev;<br>	node *bprev = b-&gt;prev;<br>	<span class="hljs-keyword">if</span>(a-&gt;next==b)&#123;<br>		b-&gt;prev = aprev;<br>		a-&gt;next = bnext;<br>		b-&gt;next = a;<br>		a-&gt;prev = b;<br>		bnext-&gt;prev = a;<br>		aprev-&gt;next = b;<br>	&#125;<br>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a-&gt;prev==b)&#123;<br>		b-&gt;next = anext;<br>		a-&gt;prev = bprev;<br>		a-&gt;next = b;<br>		b-&gt;prev = a;<br>		anext-&gt;prev = b;<br>		bprev-&gt;next = a;<br>	&#125;<br>	<span class="hljs-keyword">else</span>&#123;<br>		a-&gt;next = bnext;<br>		b-&gt;next = anext;<br>		a-&gt;prev = bprev;<br>		b-&gt;prev = aprev;<br>		anext-&gt;prev = b;<br>		aprev-&gt;next = b;<br>		bnext-&gt;prev = a;<br>		bprev-&gt;next = a;<br>	&#125;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>list&lt;T&gt;&amp; list&lt;T&gt;::<span class="hljs-built_in">insert</span>(<span class="hljs-type">int</span> i, <span class="hljs-type">const</span> T&amp; value)&#123;<br>	node *t;<br>	<span class="hljs-keyword">if</span>(i&gt;=_size)&#123;<br>		<span class="hljs-comment">//如果用户做了这样的输入，多半是想插入到末尾，而不是在最后一个位置的前面插入。故直接调用append</span><br>		<span class="hljs-built_in">append</span>(value);<br>		<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>	&#125;<br>	<span class="hljs-keyword">if</span>(i&lt;-_size)&#123;<br>		i = <span class="hljs-number">0</span>;<br>	&#125;<br>	t = <span class="hljs-built_in">get</span>(i);<br>	<span class="hljs-keyword">if</span>(!t)<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>	temp = <span class="hljs-keyword">new</span> <span class="hljs-built_in">node</span>(value);<br>	t-&gt;prev-&gt;next = temp;<br>	temp-&gt;prev = t-&gt;prev;<br>	temp-&gt;next = t;<br>	t-&gt;prev = temp;<br>	_size++;<br>	<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>T list&lt;T&gt;::<span class="hljs-built_in">pop</span>(<span class="hljs-type">int</span> i)&#123;<br>	node *t = <span class="hljs-built_in">get</span>(i);<br>	t-&gt;prev-&gt;next = t-&gt;next;<br>	t-&gt;next-&gt;prev = t-&gt;prev;<br><br>	T dta = t-&gt;data;<br><br>	temp = t-&gt;next;<span class="hljs-comment">//删除元素时，要把那个指向链表中间的temp指针指到一个在链上的节点。</span><br>	_size--;<br>	<span class="hljs-keyword">delete</span> t;<br>	<span class="hljs-keyword">return</span> dta;<br>&#125;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> list&lt;T&gt;::<span class="hljs-built_in">remove</span>(<span class="hljs-type">const</span> T&amp; target)&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; _size;)<br>	&#123;<br>		<span class="hljs-keyword">if</span>(<span class="hljs-built_in">get</span>(i)-&gt;data==target)&#123;<br>			<span class="hljs-built_in">pop</span>(i);<br>		&#125;<br>		<span class="hljs-keyword">else</span>&#123;<br>			i++;<br>		&#125;<br>	&#125;<br>&#125;<br><br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br></code></pre></td></tr></table></figure>
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>
-      
-        <a href="/tags/%E6%95%B0%E7%AE%97/">#数算</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>C++实现一个尽可能优雅的双向链表</div>
-      <div>https://justaloli.cn/posts/46200.html</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>justaLoli</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2023年4月25日</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>更新于</div>
-          <div>2023年4月25日</div>
-        </div>
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
-                    <i class="iconfont icon-nc"></i>
-                  </span>
-                </a>
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
-                    <i class="iconfont icon-sa"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/posts/44205.html" title="C++细节：无处不在的const修饰符">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++细节：无处不在的const修饰符</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/posts/33559.html" title="计算摄像学 第九讲 超分辨率">
-                        <span class="hidden-mobile">计算摄像学 第九讲 超分辨率</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MYLIST</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MYLIST</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG(args) printf(args);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">list</span>&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="built_in">node</span>()&#123;&#125;</span><br><span class="line">		<span class="built_in">node</span>(<span class="type">const</span> T&amp; dta)&#123;data = dta;&#125;</span><br><span class="line">		T data;</span><br><span class="line">		node* next=<span class="literal">nullptr</span>;</span><br><span class="line">		node* prev=<span class="literal">nullptr</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">iterator_base</span>&#123;</span><br><span class="line">	<span class="keyword">protected</span>:</span><br><span class="line">		node* ptr;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="built_in">iterator_base</span>(node* p):<span class="built_in">ptr</span>(p)&#123;&#125;</span><br><span class="line">		<span class="type">bool</span> <span class="keyword">operator</span>!=(<span class="type">const</span> iterator_base&amp; it)<span class="type">const</span>&#123;<span class="keyword">return</span> ptr!=it.ptr;&#125;</span><br><span class="line">		<span class="type">void</span> <span class="keyword">operator</span>++()&#123;ptr=ptr-&gt;next;&#125;<span class="type">void</span> <span class="keyword">operator</span>++(<span class="type">int</span>)&#123;ptr=ptr-&gt;next;&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">iterator</span>:<span class="keyword">public</span> iterator_base&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="keyword">using</span> iterator_base::iterator_base,iterator_base::ptr;</span><br><span class="line">		T&amp; <span class="keyword">operator</span>*()&#123;<span class="keyword">return</span> ptr-&gt;data;&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">const_iterator</span>:<span class="keyword">public</span> iterator_base&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="keyword">using</span> iterator_base::iterator_base,iterator_base::ptr;</span><br><span class="line">		<span class="type">const</span> T&amp; <span class="keyword">operator</span>*()&#123;<span class="keyword">return</span> ptr-&gt;data;&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	node* head;</span><br><span class="line">	node* tail;</span><br><span class="line">	<span class="type">int</span> _size;</span><br><span class="line">	node* temp;</span><br><span class="line">	<span class="type">int</span> tempindex = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="function">iterator <span class="title">begin</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="built_in">iterator</span>(head-&gt;next);&#125;</span><br><span class="line">	<span class="function">iterator <span class="title">end</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="built_in">iterator</span>(tail);&#125;</span><br><span class="line">	<span class="function">const_iterator <span class="title">begin</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> <span class="built_in">const_iterator</span>(head-&gt;next);&#125;</span><br><span class="line">	<span class="function">const_iterator <span class="title">end</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> <span class="built_in">const_iterator</span>(tail);&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">list</span>();<span class="comment">/* 构造函数 */</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">list</span>(<span class="type">const</span> list&lt;T&gt;&amp;);<span class="comment">/* 拷贝重载，</span></span><br><span class="line"><span class="comment">	做了一些区分：用这个重载是做一个影子链表，用等号重载是做一个完整地拷贝。 */</span></span><br><span class="line">	<span class="comment">/* 如此，在初始化和函数传递时默认时 */</span></span><br><span class="line"></span><br><span class="line">	~<span class="built_in">list</span>();<span class="comment">/* 析构函数 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function">list&lt;T&gt; <span class="title">copy</span><span class="params">()</span></span>;<span class="comment">/* 复制 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function">list&lt;T&gt; <span class="title">slice</span><span class="params">(<span class="type">const</span> <span class="type">int</span>,<span class="type">const</span> <span class="type">int</span>,<span class="type">const</span> <span class="type">int</span>)</span><span class="type">const</span></span>;<span class="comment">/* 切片 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> _size;&#125;<span class="comment">/* 得到长度 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">append</span><span class="params">(<span class="type">const</span> T&amp;)</span></span>;<span class="comment">/* 追加 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function">list&lt;T&gt;&amp; <span class="title">insert</span><span class="params">(<span class="type">const</span> <span class="type">int</span>,<span class="type">const</span> T&amp;)</span></span>;<span class="comment">/* 插入 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(<span class="type">const</span> <span class="type">int</span>,<span class="type">const</span> <span class="type">int</span>)</span></span>;<span class="comment">/* 交换 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function">T <span class="title">pop</span><span class="params">(<span class="type">const</span> <span class="type">int</span> i=<span class="number">-1</span>)</span></span>;<span class="comment">/* 弹出并删除 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">const</span> T&amp;)</span></span>;<span class="comment">/* 删除所有和参数相同的元素 */</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">clear</span><span class="params">()</span></span>;<span class="comment">/* 清空 */</span></span><br><span class="line"></span><br><span class="line">	T&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span>);<span class="comment">/* 索引[]运算 */</span></span><br><span class="line"></span><br><span class="line">	list&lt;T&gt;&amp; <span class="keyword">operator</span>=(<span class="type">const</span> list&lt;T&gt;&amp;);<span class="comment">/* 赋值=运算 */</span></span><br><span class="line"></span><br><span class="line">	list&lt;T&gt; <span class="keyword">operator</span>+(<span class="type">const</span> list&lt;T&gt;&amp;);<span class="comment">/* 加+运算 */</span></span><br><span class="line"></span><br><span class="line">	<span class="type">void</span> <span class="keyword">operator</span>+=(list&lt;T&gt;&amp;);<span class="comment">/* 自增+=运算 */</span></span><br><span class="line">	</span><br><span class="line">	<span class="type">void</span> <span class="keyword">operator</span>+=(<span class="type">const</span> T&amp;);<span class="comment">/* 自增+=运算 */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="function">node* <span class="title">gethead</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> head;&#125;</span><br><span class="line">	<span class="function">node* <span class="title">gettail</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> tail;&#125;</span><br><span class="line">	<span class="function">node* <span class="title">get</span><span class="params">(<span class="type">int</span> i)</span></span>;<span class="comment">/* 索引，得到节点指针 */</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(node*,node*)</span></span>;<span class="comment">/* 交换 */</span></span><br><span class="line">	<span class="function">node* <span class="title">getFromHead</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">	<span class="function">node* <span class="title">getFromTail</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">	<span class="function">node* <span class="title">getFromTemp</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">resetTemp</span><span class="params">()</span></span>&#123;temp=head;tempindex = <span class="number">0</span>;&#125;<span class="comment">/* 重置temp指针保证它指向链中的某个项。 */</span></span><br><span class="line">	<span class="comment">/* fun fact：虽然重置tempindex=0，但是现在temp指向head而不是第一个“元素”。</span></span><br><span class="line"><span class="comment">	但这无伤大雅。由于距离的最小值判定的逻辑，查找时会优先从head向后查找，而不是用temp查找。 */</span></span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">dis</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="keyword">return</span> a&gt;=b?a-b:b-a;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">std::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream&amp; out,<span class="type">const</span> list&lt;T&gt;&amp; L)&#123;</span><br><span class="line">	<span class="comment">/* 运算符：重载cout输出 */</span></span><br><span class="line">	out &lt;&lt; <span class="string">&quot;[&quot;</span>;</span><br><span class="line">	<span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> i:L)&#123;</span><br><span class="line">		<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">			out &lt;&lt; <span class="string">&quot;, &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		out &lt;&lt; i;</span><br><span class="line">	&#125;</span><br><span class="line">	out &lt;&lt; <span class="string">&quot;]&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">T&amp; list&lt;T&gt;::<span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> i)&#123;</span><br><span class="line">	<span class="comment">/* 运算符：索引 */</span></span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">get</span>(i)-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;&amp; list&lt;T&gt;::<span class="keyword">operator</span>=(<span class="type">const</span> list&lt;T&gt; &amp;li)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>==&amp;li)<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	<span class="comment">/* 运算符：赋值 */</span></span><br><span class="line">	<span class="built_in">clear</span>();</span><br><span class="line">	node* t = li.head-&gt;next;</span><br><span class="line">	<span class="keyword">while</span>(t!=li.tail)&#123;</span><br><span class="line">		<span class="built_in">append</span>(t-&gt;data);</span><br><span class="line">		t = t-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt; list&lt;T&gt;::<span class="keyword">operator</span>+(<span class="type">const</span> list&lt;T&gt;&amp; li)&#123;</span><br><span class="line">	<span class="keyword">auto</span> rl = <span class="keyword">this</span>-&gt;<span class="built_in">copy</span>();</span><br><span class="line"></span><br><span class="line">	node* t = li.head-&gt;next;</span><br><span class="line">	<span class="keyword">while</span>(t!=li.tail)&#123;</span><br><span class="line">		rl.<span class="built_in">append</span>(t-&gt;data);</span><br><span class="line">		t = t-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> rl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">void</span> list&lt;T&gt;::<span class="keyword">operator</span>+=(list&lt;T&gt;&amp; li)&#123;</span><br><span class="line">	<span class="keyword">if</span>(&amp;li == <span class="keyword">this</span>)&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;ERROR: self += detected. plz use + instead.&quot;</span>;</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* O1,但是引用的li会清空 */</span></span><br><span class="line">	<span class="comment">/* 把中间接上 */</span></span><br><span class="line">	tail-&gt;prev-&gt;next = li.head-&gt;next;</span><br><span class="line">	li.head-&gt;next-&gt;prev = tail-&gt;prev;</span><br><span class="line">	<span class="comment">/* 把结尾接上 */</span></span><br><span class="line">	tail-&gt;prev = li.tail-&gt;prev;</span><br><span class="line">	tail-&gt;prev-&gt;next = tail;</span><br><span class="line">	<span class="comment">/* 更新size */</span></span><br><span class="line">	_size+=li.<span class="built_in">size</span>();</span><br><span class="line">	<span class="comment">/* 让li首尾相接置空,但是不删除里面的元素(里面的元素归this了.) */</span></span><br><span class="line">	li.head-&gt;next = li.tail;</span><br><span class="line">	li.tail-&gt;prev = li.head;</span><br><span class="line">	li._size = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">void</span> list&lt;T&gt;::<span class="keyword">operator</span>+=(<span class="type">const</span> T&amp; dta)&#123;</span><br><span class="line">	<span class="built_in">append</span>(dta);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// list&lt;T&gt; list&lt;T&gt;::operator()(const int,const int,con s)&#123;&#125;</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt; list&lt;T&gt;::<span class="built_in">copy</span>()&#123;</span><br><span class="line">	list&lt;T&gt; returnlist;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; _size; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		returnlist.<span class="built_in">append</span>((*<span class="keyword">this</span>)[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> returnlist;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt; list&lt;T&gt;::<span class="built_in">slice</span>(<span class="type">int</span> p1, <span class="type">int</span> p2, <span class="type">int</span> p3) <span class="type">const</span>&#123;</span><br><span class="line">	list&lt;T&gt; returnlist;</span><br><span class="line">	<span class="keyword">if</span>(p3&gt;<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = p1; i &lt; p2; i+=p3)</span><br><span class="line">		&#123;</span><br><span class="line">			returnlist.<span class="built_in">append</span>((*<span class="keyword">this</span>)[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(p3&lt;<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = p1; i &gt; p2; i+=p3)</span><br><span class="line">		&#123;</span><br><span class="line">			returnlist.<span class="built_in">append</span>((*<span class="keyword">this</span>)[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> returnlist;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;::<span class="built_in">list</span>()&#123;</span><br><span class="line">	<span class="comment">// cout &lt;&lt; &quot;list() called&quot;&lt;&lt;endl;</span></span><br><span class="line">	head = <span class="keyword">new</span> node;</span><br><span class="line">	tail = <span class="keyword">new</span> node;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">resetTemp</span>();</span><br><span class="line"></span><br><span class="line">	head-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = head;</span><br><span class="line">	_size = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;::<span class="built_in">list</span>(<span class="type">const</span> list&lt;T&gt;&amp; li):<span class="built_in">list</span>()&#123;</span><br><span class="line">	<span class="keyword">operator</span>=(li);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">void</span> list&lt;T&gt;::<span class="built_in">clear</span>()&#123;</span><br><span class="line">	node *t = head-&gt;next;</span><br><span class="line">	<span class="keyword">while</span>(t!=tail)&#123;</span><br><span class="line">		t = t-&gt;next;</span><br><span class="line">		<span class="keyword">delete</span> t-&gt;prev;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = head;</span><br><span class="line">	<span class="built_in">resetTemp</span>();</span><br><span class="line">	_size=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;::~<span class="built_in">list</span>()&#123;</span><br><span class="line">	<span class="comment">// cout &lt;&lt; &quot;~list called for:&quot;&lt;&lt;*this&lt;&lt;endl;</span></span><br><span class="line">	<span class="built_in">clear</span>();</span><br><span class="line">	<span class="keyword">delete</span> head;</span><br><span class="line">	<span class="keyword">delete</span> tail;</span><br><span class="line">	head = <span class="literal">nullptr</span>;tail = <span class="literal">nullptr</span>;temp = <span class="literal">nullptr</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">int</span> list&lt;T&gt;::<span class="built_in">append</span>(<span class="type">const</span> T&amp; dta)&#123;</span><br><span class="line">	temp = <span class="keyword">new</span> <span class="built_in">node</span>(dta);</span><br><span class="line">	tempindex = _size;</span><br><span class="line">	</span><br><span class="line">	tail-&gt;prev-&gt;next = temp;</span><br><span class="line">	temp-&gt;prev = tail-&gt;prev;</span><br><span class="line">	temp-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = temp;</span><br><span class="line">	_size++;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="built_in">get</span>(<span class="type">int</span> i)&#123;</span><br><span class="line">	<span class="keyword">if</span>(i&gt;=_size||i&lt;-_size)&#123;</span><br><span class="line">		<span class="built_in">LOG</span>(<span class="string">&quot;index out range&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//这是个无效值</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mindis = <span class="number">0x7fffffff</span>;</span><br><span class="line">	<span class="type">int</span> minway = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">dis</span>(i,<span class="number">0</span>)&lt;mindis)</span><br><span class="line">		&#123;mindis = <span class="built_in">dis</span>(i, <span class="number">0</span>);minway = <span class="number">1</span>;&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">dis</span>(i, -_size)&lt;mindis)</span><br><span class="line">		&#123;mindis = <span class="built_in">dis</span>(i, -_size);minway = <span class="number">2</span>;&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">dis</span>(i, _size<span class="number">-1</span>)&lt;mindis)</span><br><span class="line">		&#123;mindis = <span class="built_in">dis</span>(i, _size<span class="number">-1</span>);minway = <span class="number">3</span>;&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">dis</span>(i, <span class="number">-1</span>)&lt;mindis)</span><br><span class="line">		&#123;mindis = <span class="built_in">dis</span>(i, <span class="number">-1</span>);minway = <span class="number">4</span>;&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">dis</span>(i,tempindex)&lt;mindis)</span><br><span class="line">		&#123;mindis = <span class="built_in">dis</span>(i,tempindex);minway = <span class="number">5</span>;&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">dis</span>(i+_size,tempindex)&lt;mindis)</span><br><span class="line">		&#123;mindis = <span class="built_in">dis</span>(i,tempindex);minway = <span class="number">6</span>;&#125;</span><br><span class="line">	<span class="keyword">switch</span> (minway) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:<span class="keyword">return</span> <span class="built_in">getFromHead</span>(i);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:<span class="keyword">return</span> <span class="built_in">getFromHead</span>(i+_size);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:<span class="keyword">return</span> <span class="built_in">getFromTail</span>(i-_size);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:<span class="keyword">return</span> <span class="built_in">getFromTail</span>(i);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:<span class="keyword">return</span> <span class="built_in">getFromTemp</span>(i);</span><br><span class="line">	<span class="keyword">default</span>:<span class="keyword">return</span> <span class="built_in">getFromTemp</span>(i+_size);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="built_in">getFromHead</span>(<span class="type">int</span> targeti)&#123;</span><br><span class="line">	<span class="comment">// LOG(&quot;GFH called\n&quot;);</span></span><br><span class="line">	temp = head-&gt;next;</span><br><span class="line">	<span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i!=targeti)&#123;</span><br><span class="line">		temp = temp-&gt;next;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	tempindex = targeti;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="built_in">getFromTail</span>(<span class="type">int</span> negativeTargeti)&#123;</span><br><span class="line">	<span class="comment">// LOG(&quot;GFT called\n&quot;);</span></span><br><span class="line">	temp = tail-&gt;prev;</span><br><span class="line">	<span class="type">int</span> i=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i!=negativeTargeti)&#123;</span><br><span class="line">		temp = temp-&gt;prev;</span><br><span class="line">		i--;</span><br><span class="line">	&#125;</span><br><span class="line">	tempindex = negativeTargeti+_size;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">typename</span> list&lt;T&gt;::node* list&lt;T&gt;::<span class="built_in">getFromTemp</span>(<span class="type">int</span> targeti)&#123;</span><br><span class="line">	<span class="comment">// LOG(&quot;GFTMP called\n&quot;);</span></span><br><span class="line">	<span class="keyword">while</span>(targeti&gt;tempindex)</span><br><span class="line">	&#123;</span><br><span class="line">		temp = temp-&gt;next;</span><br><span class="line">		tempindex++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(targeti&lt;tempindex)&#123;</span><br><span class="line">		temp = temp-&gt;prev;</span><br><span class="line">		tempindex--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">void</span> list&lt;T&gt;::<span class="built_in">swap</span>(<span class="type">int</span> ia,<span class="type">int</span> ib)&#123;</span><br><span class="line">	node* a = <span class="built_in">get</span>(ia);</span><br><span class="line">	node* b = <span class="built_in">get</span>(ib);</span><br><span class="line">	<span class="built_in">swap</span>(a,b);</span><br><span class="line">	tempindex = ia;<span class="comment">//temp指向b,b的下标变为了ia.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">void</span> list&lt;T&gt;::<span class="built_in">swap</span>(node *a,node *b)&#123;</span><br><span class="line">	node *anext = a-&gt;next;</span><br><span class="line">	node *bnext = b-&gt;next;</span><br><span class="line">	node *aprev = a-&gt;prev;</span><br><span class="line">	node *bprev = b-&gt;prev;</span><br><span class="line">	<span class="keyword">if</span>(a-&gt;next==b)&#123;</span><br><span class="line">		b-&gt;prev = aprev;</span><br><span class="line">		a-&gt;next = bnext;</span><br><span class="line">		b-&gt;next = a;</span><br><span class="line">		a-&gt;prev = b;</span><br><span class="line">		bnext-&gt;prev = a;</span><br><span class="line">		aprev-&gt;next = b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a-&gt;prev==b)&#123;</span><br><span class="line">		b-&gt;next = anext;</span><br><span class="line">		a-&gt;prev = bprev;</span><br><span class="line">		a-&gt;next = b;</span><br><span class="line">		b-&gt;prev = a;</span><br><span class="line">		anext-&gt;prev = b;</span><br><span class="line">		bprev-&gt;next = a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		a-&gt;next = bnext;</span><br><span class="line">		b-&gt;next = anext;</span><br><span class="line">		a-&gt;prev = bprev;</span><br><span class="line">		b-&gt;prev = aprev;</span><br><span class="line">		anext-&gt;prev = b;</span><br><span class="line">		aprev-&gt;next = b;</span><br><span class="line">		bnext-&gt;prev = a;</span><br><span class="line">		bprev-&gt;next = a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;&amp; list&lt;T&gt;::<span class="built_in">insert</span>(<span class="type">int</span> i, <span class="type">const</span> T&amp; value)&#123;</span><br><span class="line">	node *t;</span><br><span class="line">	<span class="keyword">if</span>(i&gt;=_size)&#123;</span><br><span class="line">		<span class="comment">//如果用户做了这样的输入，多半是想插入到末尾，而不是在最后一个位置的前面插入。故直接调用append</span></span><br><span class="line">		<span class="built_in">append</span>(value);</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(i&lt;-_size)&#123;</span><br><span class="line">		i = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	t = <span class="built_in">get</span>(i);</span><br><span class="line">	<span class="keyword">if</span>(!t)<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	temp = <span class="keyword">new</span> <span class="built_in">node</span>(value);</span><br><span class="line">	t-&gt;prev-&gt;next = temp;</span><br><span class="line">	temp-&gt;prev = t-&gt;prev;</span><br><span class="line">	temp-&gt;next = t;</span><br><span class="line">	t-&gt;prev = temp;</span><br><span class="line">	_size++;</span><br><span class="line">	<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">T list&lt;T&gt;::<span class="built_in">pop</span>(<span class="type">int</span> i)&#123;</span><br><span class="line">	node *t = <span class="built_in">get</span>(i);</span><br><span class="line">	t-&gt;prev-&gt;next = t-&gt;next;</span><br><span class="line">	t-&gt;next-&gt;prev = t-&gt;prev;</span><br><span class="line"></span><br><span class="line">	T dta = t-&gt;data;</span><br><span class="line"></span><br><span class="line">	temp = t-&gt;next;<span class="comment">//删除元素时，要把那个指向链表中间的temp指针指到一个在链上的节点。</span></span><br><span class="line">	_size--;</span><br><span class="line">	<span class="keyword">delete</span> t;</span><br><span class="line">	<span class="keyword">return</span> dta;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">void</span> list&lt;T&gt;::<span class="built_in">remove</span>(<span class="type">const</span> T&amp; target)&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; _size;)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">get</span>(i)-&gt;data==target)&#123;</span><br><span class="line">			<span class="built_in">pop</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
             </div>
 
             
-          </article>
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">本文标题</span>：<span class="content">C++实现一个尽可能优雅的双向链表</span>
+        </li>
+        <li class="post-author">
+            <span class="type">本文作者</span>：<span class="content">justaLoli</span>
+        </li>
+        <li class="post-time">
+            <span class="type">创建时间</span>：<span class="content">2023-04-25 12:58:55</span>
+        </li>
+        <li class="post-link">
+            <span class="type">本文链接</span>：<span class="content">posts/46200.html</span>
+        </li>
+        <li class="post-license">
+            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E7%BC%96%E7%A8%8B/">#编程</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%95%B0%E7%AE%97/">#数算</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/posts/51676.html"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">数算关键概念精简版</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/posts/33559.html"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">计算摄像学 第九讲 超分辨率</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
         </div>
-      </div>
-    </div>
 
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%BE%8B"><span class="nav-text">使用例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%AE%9A%E4%B9%89"><span class="nav-text">类定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">实现方式</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
 </div>
 
 
+                
+            </div>
 
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
-
-
-
-  
-
-
-
-  <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
-    mermaid.initialize({"theme":"default"});
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('mermaid' in window) {
-        mermaid.init();
-      }
-    });
-  });
-</script>
-
-
-
-
-
-
-    
-
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">justaLoli</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
     </div>
-  </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
 </div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
 
     
 
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
     
-  </main>
+<script src="/js/code-block.js"></script>
 
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <p>Loli的杂货铺 | <a href="https://icp.gov.moe/?keyword=20239994" target="_blank">萌ICP备20239994号</a> <br><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> |  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </p> 
-    </div>
-  
-  
-  
-  
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
+        
+    
 </div>
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+    
+<script src="/js/libs/pjax.min.js"></script>
 
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
 
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
     });
-  });
 </script>
 
 
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
 </body>
 </html>

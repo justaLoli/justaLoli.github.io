@@ -709,54 +709,5 @@ a shop&#x2F;store that sells <strong>food and other things</strong> used in the 
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-
-      <div id="sakana" style="position:fixed;right:0;bottom:20px;z-index:999;"></div>
-      <script async onload='initSakanaWidget({"enable":true,"character":"chisatoH","enable_mobile":true,"controls":true,"size":180,"bottom":"20px","threshold":0.5,"customCharacters":[{"base":"chisato","name":"chisatoH","image":"/img/sakana/chisato.png","i":0.09,"s":0.1,"d":0.95,"r":0,"y":5,"t":0,"w":0}],"autoFit":false,"stroke":{"color":"#b4b4b4","width":10},"rotate":0})' src="https://cdn.jsdelivr.net/npm/sakana-widget@2.3.0/lib/sakana.min.js"></script>
-      <script>
-      function log(msg) {
-        console.log("[hexo-sakana] " + msg);
-      }
-
-      function initSakanaWidget(config) {
-        if (
-          !config.enable_mobile &&
-          window.navigator.userAgent.match(
-            /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
-          )
-        ) {
-          log(
-            '检测为移动端，且配置中未开启在移动端启用组件，hexo-sakana 已禁用'
-          );
-          return;
-        }
-        for (character of config.customCharacters) {
-          if (!["takina", "chisato"].includes(character.base)) {
-            log(`无效基础角色 ${character.base}，取消注册`);
-            continue;
-          }
-          if (character.name === "") {
-            log("名称为空，取消注册");
-            continue;
-          }
-          const originCharacter = SakanaWidget.getCharacter(character.base);
-          originCharacter.initialState = {
-            ...originCharacter.initialState,
-            ...character,
-          };
-          originCharacter.image = !character.image ? originCharacter.image : character.image
-          SakanaWidget.registerCharacter(character.name, originCharacter);
-          log(`注册自定义角色：${character.name}`)
-        }
-        new SakanaWidget({
-          character: config.character,
-          size: config.size,
-          autoFit: config.autoFit,
-          controls: config.controls,
-          stroke: config.stroke,
-          threshold: config.threshold,
-          rotate: config.rotate,
-        }).mount("#sakana");
-      }
-  </script>
-    </body>
+</body>
 </html>

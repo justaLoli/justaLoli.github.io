@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -191,7 +191,6 @@
                     <div class="fade-in-down-animation">
     <div class="post-page-container">
         <div class="article-content-container">
-
             <div class="article-title">
                 <span class="title-hover-animation">C++细节：无处不在的const修饰符</span>
             </div>
@@ -244,47 +243,56 @@
                 </div>
             
 
+            
             <div class="article-content keep-markdown-body">
                 
 
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>const修饰符, 顾名思义是修饰某个东西为“常量”,不允许修改. 在C++中, 有很多地方需要用到const修饰符. 它不仅是一个良好的书写习惯, 在某些情况下, 它甚至是必要的. 这篇文章试图涵盖C++中所有const的出现情况.</p>
 <p>目录</p>
 <ul>
-<li>1 const与变量定义<ul>
+<li>1 const与变量定义
+<ul>
 <li>1.1 普通变量</li>
 <li>1.2 指针</li>
 <li>1.3 引用</li>
 </ul>
 </li>
-<li>2 const与函数<ul>
-<li>2.1 形参<ul>
+<li>2 const与函数
+<ul>
+<li>2.1 形参
+<ul>
 <li>普通</li>
 <li>指针</li>
 <li>引用</li>
 </ul>
 </li>
 <li>2.2 返回值</li>
-<li>2.3 案例: 一些特殊函数<ul>
+<li>2.3 案例: 一些特殊函数
+<ul>
 <li>比较运算符重载</li>
 <li>iostream的输入输出</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>3 cosnt与类<ul>
+<li>3 cosnt与类
+<ul>
 <li>3.1 属性</li>
-<li>3.2 方法<ul>
+<li>3.2 方法
+<ul>
 <li>3.2.1 方法的const</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="1-const-与-变量定义"><a href="#1-const-与-变量定义" class="headerlink" title="1. const 与 变量定义"></a>1. const 与 变量定义</h1><h2 id="1-1-const-与-普通变量"><a href="#1-1-const-与-普通变量" class="headerlink" title="1.1 const 与 普通变量"></a>1.1 const 与 普通变量</h2><p>这是最初级、最直观的用法: 普通变量的值可以变, 而被const修饰过的普通变量的值不能变. 由此引申出一个特性, 被const修饰的变量必须在声明时立刻初始化.</p>
+<h1 id="1-const-与-变量定义"><a class="header-anchor" href="#1-const-与-变量定义"></a>1. const 与 变量定义</h1>
+<h2 id="1-1-const-与-普通变量"><a class="header-anchor" href="#1-1-const-与-普通变量"></a>1.1 const 与 普通变量</h2>
+<p>这是最初级、最直观的用法: 普通变量的值可以变, 而被const修饰过的普通变量的值不能变. 由此引申出一个特性, 被const修饰的变量必须在声明时立刻初始化.</p>
 <p>下文基本上都用<code>int</code>作为普通变量的代表. 它原则上可以直接替换为任何基本变量、结构体、类.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 1.1.1 无修饰的普通变量 */</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">a = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 1.1.2 const修饰变量: 变量的值不能修改 */</span></span><br><span class="line"><span class="comment">/* const修饰的变量必须在声明时立刻初始化 */</span></span><br><span class="line"><span class="comment">// const int b; // 错误</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line">a = b; <span class="comment">// 正确</span></span><br><span class="line">b = <span class="number">1</span>; <span class="comment">// 错误, 不能修改b的值</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-const-与-指针变量"><a href="#1-2-const-与-指针变量" class="headerlink" title="1.2 const 与 指针变量"></a>1.2 const 与 指针变量</h2><p>我想我不用详细描述指针的作用. 指针相当于两层, 指针本身存储地址, 这是一层; 存储的地址对应一个变量, 这是第二层.</p>
+<h2 id="1-2-const-与-指针变量"><a class="header-anchor" href="#1-2-const-与-指针变量"></a>1.2 const 与 指针变量</h2>
+<p>我想我不用详细描述指针的作用. 指针相当于两层, 指针本身存储地址, 这是一层; 存储的地址对应一个变量, 这是第二层.</p>
 <p>由于指针的概念有两层, const的修饰也有两层: 是第一层, 指针存储的地址不能变呢? 还是第二层, 指针指向的变量的值不能变呢?</p>
 <p>从这两个维度出发, 可以绘制这样的表格:</p>
 <table>
@@ -295,7 +303,8 @@
 <th>不能变</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>能变</td>
 <td><code>int*</code></td>
 <td><code>const int*</code></td>
@@ -305,12 +314,13 @@
 <td><code>int* const</code></td>
 <td><code>const int* const</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>我觉得上表已经很简明的描述了这四种指针的定义以及主要特点. 读者可以对照下面的使用例来判断自己理解是否正确.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 1.2 const与指针 */</span></span><br><span class="line"><span class="type">int</span> c = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> d = <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> e = <span class="number">20</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> f = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 1.2.1 普通 int* 型指针: 指向 可变类型 的 可变指针 */</span></span><br><span class="line"><span class="type">int</span>* p1 = &amp;c; p1 = &amp;d; *p1 = <span class="number">1</span>; <span class="comment">// 都正确</span></span><br><span class="line"><span class="comment">/* 普通指针无法指向const修饰的变量 */</span></span><br><span class="line">p1 = &amp;e; <span class="comment">// 错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 1.2.2 const int* 型指针: 指向 不可变类型 的 可变指针</span></span><br><span class="line"><span class="comment">即: 指针指向的位置可以修改, 指针指向的位置的值不能修改 */</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* p2;</span><br><span class="line">p2 = &amp;e; <span class="comment">// 正确</span></span><br><span class="line"><span class="comment">/* const int* 可以指向普通变量, 此时直接访问普通变量可以修改其值, 但通过指针访问该变量则不能修改. */</span></span><br><span class="line">p2 = &amp;c; <span class="comment">// 正确</span></span><br><span class="line">c = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line">*p2 = <span class="number">1</span>; <span class="comment">// 错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 1.2.3 int* const 型指针: 指向 可变类型 的 不可变指针</span></span><br><span class="line"><span class="comment">即: 指针指向的位置不能修改, 指针指向的位置的值可以修改 */</span></span><br><span class="line"><span class="comment">/* 类似const修饰的普通变量, 这种指针也必须在声明时立刻初始化 */</span></span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> p3 = &amp;c;</span><br><span class="line">p3 = &amp;d; <span class="comment">// 错误</span></span><br><span class="line"><span class="comment">/* 和 */</span></span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> p4 = &amp;e; <span class="comment">// 错误, 和int* 类似, int* const指向的必须是可变类型, 不能指向const类型.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 1.2.4 const int* const型指针: 指向 不可变类型 的 不可变指针</span></span><br><span class="line"><span class="comment">略, 可以自行推理得到它的使用方式. */</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-const-与-引用"><a href="#1-3-const-与-引用" class="headerlink" title="1.3 const 与 引用"></a>1.3 const 与 引用</h2><p>引用是C++有别于C的一个特性. 由于引用本身也很有话题, 这里不做过多介绍, 只是简单的说明一下引用与const的关系.</p>
-<p>可以将引用粗略的理解为指针. 和指针不同在于: </p>
+<h2 id="1-3-const-与-引用"><a class="header-anchor" href="#1-3-const-与-引用"></a>1.3 const 与 引用</h2>
+<p>引用是C++有别于C的一个特性. 由于引用本身也很有话题, 这里不做过多介绍, 只是简单的说明一下引用与const的关系.</p>
+<p>可以将引用粗略的理解为指针. 和指针不同在于:</p>
 <ol>
 <li>首先, 它不需要<code>*</code>运算符就能直接取得其所引用的变量的值, 因此引用相当于其所引用的变量的“别名”</li>
 <li>其次, 它必须在声明时初始化, 之后不能再修改其所引用的是哪个变量.</li>
@@ -324,60 +334,60 @@
 <th>不能变</th>
 </tr>
 </thead>
-<tbody><tr>
-<td><del>能变(不存在)</del></td>
-<td><del>不存在</del></td>
-<td><del>不存在</del></td>
+<tbody>
+<tr>
+<td><s>能变(不存在)</s></td>
+<td><s>不存在</s></td>
+<td><s>不存在</s></td>
 </tr>
 <tr>
 <td>不能变</td>
 <td><code>int&amp;</code></td>
 <td><code>const int&amp;</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 1.3.1 普通引用无法引用const修饰过的变量 */</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> g = <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span>&amp; h = g <span class="comment">// 错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 1.3.3 形如 const int&amp; 的引用 */</span></span><br><span class="line"><span class="comment">/* 首先, 它类似const int*, 通过引用访问变量是不能修改变量的值的. */</span></span><br><span class="line"><span class="type">int</span> i = <span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; j = i; <span class="comment">// 正确</span></span><br><span class="line">j = <span class="number">1</span>; <span class="comment">// 错误</span></span><br><span class="line"><span class="comment">/* 其次, 由于引用本身的特性, 它和const int* 不同, 它引用的是哪一个变量, 这件事也不能修改.</span></span><br><span class="line"><span class="comment">也没有任何一个语法能让你修改. */</span></span><br></pre></td></tr></table></figure>
-
 <p><em><strong>需要格外注意的是: <code>const int&amp;</code> 有一个非常特殊的用法: 它可以直接引用一个字面量. 这是指针和无const修饰的引用都没有的特性. 在接下来的内容中, 读者将看到这种类型的重要性.</strong></em></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; k = <span class="number">3</span>; <span class="comment">// 正确</span></span><br><span class="line"><span class="type">int</span>&amp; l = <span class="number">3</span>; <span class="comment">// 错误, 不能将一个字面量赋值给一个普通引用.</span></span><br></pre></td></tr></table></figure>
-
 <p>这里不得不说明一下: 以下每一行内的几种写法是完全等价的:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *p;<span class="type">int</span>* p;<span class="type">int</span> * p;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* p; <span class="type">const</span> <span class="type">int</span> *p; <span class="type">const</span> <span class="type">int</span> * p;</span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> p; <span class="type">int</span> *<span class="type">const</span> p; <span class="type">int</span> * <span class="type">const</span> p;</span><br><span class="line"><span class="type">int</span>&amp; p; <span class="type">int</span> &amp;p; <span class="type">int</span> &amp; p;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; p; <span class="type">const</span> <span class="type">int</span> &amp;p; <span class="type">const</span> <span class="type">int</span> &amp; p;</span><br></pre></td></tr></table></figure>
-
 <p>简而言之, <code>*</code>, <code>&amp;</code>这样的修饰符, 紧挨着谁都是一样的. 而笔者主要使用第一种写法.</p>
-<h1 id="2-const-与-函数"><a href="#2-const-与-函数" class="headerlink" title="2. const 与 函数"></a>2. const 与 函数</h1><h2 id="2-1-const-与-函数形参"><a href="#2-1-const-与-函数形参" class="headerlink" title="2.1 const 与 函数形参"></a>2.1 const 与 函数形参</h2><p>这部分内容可以直接由上面关于变量的介绍平移而来. 下文推测读者已经基本了解C++函数参数传递的机制.</p>
-<h3 id="2-1-1-普通类型形参"><a href="#2-1-1-普通类型形参" class="headerlink" title="2.1.1 普通类型形参"></a>2.1.1 普通类型形参</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	<span class="comment">/* const修饰的效果: 在函数体内,形参a的值无法被更改 */</span></span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="2-const-与-函数"><a class="header-anchor" href="#2-const-与-函数"></a>2. const 与 函数</h1>
+<h2 id="2-1-const-与-函数形参"><a class="header-anchor" href="#2-1-const-与-函数形参"></a>2.1 const 与 函数形参</h2>
+<p>这部分内容可以直接由上面关于变量的介绍平移而来. 下文推测读者已经基本了解C++函数参数传递的机制.</p>
+<h3 id="2-1-1-普通类型形参"><a class="header-anchor" href="#2-1-1-普通类型形参"></a>2.1.1 普通类型形参</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	<span class="comment">/* const修饰的效果: 在函数体内,形参a的值无法被更改 */</span></span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于参数传递机制,这两个函数都可以接收普通和const修饰的int变量</p>
-<h3 id="2-1-2-指针形参"><a href="#2-1-2-指针形参" class="headerlink" title="2.1.2 指针形参"></a>2.1.2 指针形参</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>* a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun3</span><span class="params">(<span class="type">int</span>* <span class="type">const</span> a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun4</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="2-1-2-指针形参"><a class="header-anchor" href="#2-1-2-指针形参"></a>2.1.2 指针形参</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>* a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun3</span><span class="params">(<span class="type">int</span>* <span class="type">const</span> a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun4</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这四个函数都可以传入普通变量的地址. 普通变量的地址被拷贝如函数后, 会被自动加上const修饰.</p>
-<p>而只有fun2和fun4可以传入const修饰的变量的地址. </p>
+<p>而只有fun2和fun4可以传入const修饰的变量的地址.</p>
 <p>为什么不能传入fun1和fun3?可以这样理解:</p>
 <blockquote>
 <p>编译器: 这个变量本身是const保护的, 传给函数之后, 这个保护就没有了! 在fun1和fun3中, 是允许通过指针a修改变量的值的, 而这个值本身却是const保护的! 这怎么办, 算了给个error吧.</p>
 </blockquote>
 <p>即: 在传递时, 允许加强const条件, 不允许丢掉const条件(这很直观).</p>
 <p>其中, fun2是格外有用的. 如果你 <em><strong>不想在参数传递时拷贝原有数据的值</strong></em> ,
-又希望函数 <em><strong>以只读的方式访问某个变量</strong></em> ,fun2是一个好选择. </p>
-<h3 id="2-1-3-引用形参"><a href="#2-1-3-引用形参" class="headerlink" title="2.1.3 引用形参"></a>2.1.3 引用形参</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>&amp; a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+又希望函数 <em><strong>以只读的方式访问某个变量</strong></em> ,fun2是一个好选择.</p>
+<h3 id="2-1-3-引用形参"><a class="header-anchor" href="#2-1-3-引用形参"></a>2.1.3 引用形参</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>&amp; a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>类似的, 两个函数都能传入普通变量. 而fun1不能传入带const修饰的变量.</p>
 <p><em><strong>此外,十分重要的: fun2可以传入字面量! 这很特殊</strong></em></p>
 <p>其中, fun2是格外有用的. 如果你 <em><strong>不想在参数传递时拷贝原有数据的值</strong></em> ,
-又希望函数 <em><strong>以只读的方式访问某个变量</strong></em> , 还希望 <em><strong>函数内部不要出现指针的<code>*</code>和<code>-&gt;</code>操作, 调用函数不要出现取地址<code>&amp;</code>操作</strong></em> , 还希望它 <em><strong>能传入字面量</strong></em> , fun2是一个好选择. </p>
-<h2 id="2-2-const-与-函数返回值"><a href="#2-2-const-与-函数返回值" class="headerlink" title="2.2 const 与 函数返回值"></a>2.2 const 与 函数返回值</h2><p>这在某些场合是有点莫名其妙的命题. 比如这样</p>
+又希望函数 <em><strong>以只读的方式访问某个变量</strong></em> , 还希望 <em><strong>函数内部不要出现指针的<code>*</code>和<code>-&gt;</code>操作, 调用函数不要出现取地址<code>&amp;</code>操作</strong></em> , 还希望它 <em><strong>能传入字面量</strong></em> , fun2是一个好选择.</p>
+<h2 id="2-2-const-与-函数返回值"><a class="header-anchor" href="#2-2-const-与-函数返回值"></a>2.2 const 与 函数返回值</h2>
+<p>这在某些场合是有点莫名其妙的命题. 比如这样</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>对函数返回值传递机制稍有了解便能知道, 这个const是完全无用的. </p>
+<p>对函数返回值传递机制稍有了解便能知道, 这个const是完全无用的.</p>
 <p>但在某些情况它会不同, 比如:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>* <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span>* <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>就有不同了. fun()返回的指针可以修改所指位置的值, 而fun2()返回的指针不能.</p>
 <p>类似的, 对于引用, 有:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	*p = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">return</span> *p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span>&amp; <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> p = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>它们也是不同的. 不过这两个函数单看其实有些奇怪. 我们之后会在 <strong>类</strong> 那一部分更深入的探讨它们的区别和各自运用.</p>
-<h2 id="2-3-案例-const-在几种特殊函数中的作用"><a href="#2-3-案例-const-在几种特殊函数中的作用" class="headerlink" title="2.3 案例: const 在几种特殊函数中的作用"></a>2.3 案例: const 在几种特殊函数中的作用</h2><p>在2.1.3, 我提到了: </p>
+<h2 id="2-3-案例-const-在几种特殊函数中的作用"><a class="header-anchor" href="#2-3-案例-const-在几种特殊函数中的作用"></a>2.3 案例: const 在几种特殊函数中的作用</h2>
+<p>在2.1.3, 我提到了:</p>
 <blockquote>
 <p>如果你 <em><strong>不想在参数传递时拷贝原有数据的值</strong></em> ,
 又希望函数 <em><strong>以只读的方式访问某个变量</strong></em> , 还希望 <em><strong>函数内部不要出现指针的<code>*</code>和<code>-&gt;</code>操作, 调用函数不要出现取地址<code>&amp;</code>操作</strong></em> , 还希望它 <em><strong>能传入字面量</strong></em> , fun2是一个好选择.</p>
@@ -388,31 +398,30 @@
 <p>这里着重举两个例子.</p>
 <p>以这样一个结构体为例</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Int</span>&#123;</span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-1-类-或结构体-的比较运算符重载"><a href="#2-3-1-类-或结构体-的比较运算符重载" class="headerlink" title="2.3.1 类(或结构体)的比较运算符重载"></a>2.3.1 类(或结构体)的比较运算符重载</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Int&amp; a,<span class="type">const</span> Int&amp; b)&#123;</span><br><span class="line">	<span class="keyword">return</span> a.data &lt; b.data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="2-3-1-类-或结构体-的比较运算符重载"><a class="header-anchor" href="#2-3-1-类-或结构体-的比较运算符重载"></a>2.3.1 类(或结构体)的比较运算符重载</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Int&amp; a,<span class="type">const</span> Int&amp; b)&#123;</span><br><span class="line">	<span class="keyword">return</span> a.data &lt; b.data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这是比较规范的运算符重载写法. 注意这里的<code>const Int&amp;</code>, 需要const修饰.</p>
 <p>如果不加const,只保留&amp;,那么这个运算符将不能处理右值(可以理解为常量和字面量);</p>
 <p>如果不加const,也不保留&amp;,那么调用运算符会进行值的拷贝, 这在Int是一个复杂的数据类型时, 会凭空增加内存消耗, 也很耗时.</p>
-<h3 id="2-3-2-输入输出重载"><a href="#2-3-2-输入输出重载" class="headerlink" title="2.3.2 输入输出重载"></a>2.3.2 输入输出重载</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">std::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream&amp; out,<span class="type">const</span> Int&amp; a)&#123;</span><br><span class="line">	out &lt;&lt; a.data;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line">std::istream&amp; <span class="keyword">operator</span>&gt;&gt;(std::istream&amp; in,Int&amp; a)&#123;</span><br><span class="line">	in &gt;&gt; a.data;</span><br><span class="line">	<span class="keyword">return</span> in;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="2-3-2-输入输出重载"><a class="header-anchor" href="#2-3-2-输入输出重载"></a>2.3.2 输入输出重载</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">std::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream&amp; out,<span class="type">const</span> Int&amp; a)&#123;</span><br><span class="line">	out &lt;&lt; a.data;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line">std::istream&amp; <span class="keyword">operator</span>&gt;&gt;(std::istream&amp; in,Int&amp; a)&#123;</span><br><span class="line">	in &gt;&gt; a.data;</span><br><span class="line">	<span class="keyword">return</span> in;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这是比较规范的输入输出流重载写法. 注意在输出时需要加const修饰(否则无法输出字面量), 而输入时不能加const修饰(否则无法修改). 这里也能看出引用<code>&amp;</code>符的巨大作用.</p>
-<h1 id="3-const-与-类"><a href="#3-const-与-类" class="headerlink" title="3. const 与 类"></a>3. const 与 类</h1><h2 id="3-1-const-与-类的属性"><a href="#3-1-const-与-类的属性" class="headerlink" title="3.1 const 与 类的属性"></a>3.1 const 与 类的属性</h2><p>基本和变量完全一致.</p>
-<h2 id="3-2-const-与-类的方法"><a href="#3-2-const-与-类的方法" class="headerlink" title="3.2 const 与 类的方法"></a>3.2 const 与 类的方法</h2><p>比如这样一个类:</p>
+<h1 id="3-const-与-类"><a class="header-anchor" href="#3-const-与-类"></a>3. const 与 类</h1>
+<h2 id="3-1-const-与-类的属性"><a class="header-anchor" href="#3-1-const-与-类的属性"></a>3.1 const 与 类的属性</h2>
+<p>基本和变量完全一致.</p>
+<h2 id="3-2-const-与-类的方法"><a class="header-anchor" href="#3-2-const-与-类的方法"></a>3.2 const 与 类的方法</h2>
+<p>比如这样一个类:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>方法和函数在很多方面是类似的. 它也有参数的const, 和返回值的const. 这里着重介绍另一种: <strong>方法的const.</strong></p>
-<h3 id="3-2-1-方法的const"><a href="#3-2-1-方法的const" class="headerlink" title="3.2.1 方法的const"></a>3.2.1 方法的const</h3><p>为什么需要方法const? 因为对象可能被const修饰了.</p>
+<h3 id="3-2-1-方法的const"><a class="header-anchor" href="#3-2-1-方法的const"></a>3.2.1 方法的const</h3>
+<p>为什么需要方法const? 因为对象可能被const修饰了.</p>
 <p>比如, 假设string有一个方法size:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">strlen</span>(str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>对于一个普通string对象, 我们可以执行size(). </p>
+<p>对于一个普通string对象, 我们可以执行size().</p>
 <p>然而, 对于一个 <strong>加了const修饰的string对象</strong> , 还能执行size()吗? 对于一个const修饰的对象, 其中的所有属性都自动增加了const修饰. 然而, <em>系统不知道这个size()方法会不会修改这些被加了const修饰属性</em>. 因此, 对于const string对象, 系统不会允许执行这个size()方法, 会报错.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line">s.<span class="built_in">size</span>();<span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> string s2;</span><br><span class="line">s2.<span class="built_in">size</span>(); <span class="comment">// 错误</span></span><br><span class="line"><span class="comment">/* 报错信息: &#x27;this&#x27; argument to member function &#x27;size&#x27; has type &#x27; const string&#x27;</span></span><br><span class="line"><span class="comment">but function is not marked const  */</span></span><br></pre></td></tr></table></figure>
-
 <p>然而, 事实上这个size()方法并不会修改对象的属性. 我们的确想让const string对象也能执行size()方法. 因此, <strong>我们要给size()对象增加const修饰</strong>, 就像这样:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span><span class="type">const</span></span>&#123; <span class="comment">//注意这里的const!</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">strlen</span>(str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>这样, 对于const string对象, 也可以正常执行size()方法了.</p>
 <p><em><strong>这里, const修饰就是告诉编译器: 这个方法内的所有代码都不会修改当前类的属性值.</strong></em></p>
 <p>const修饰的方法有以下几个特性:</p>
@@ -424,18 +433,15 @@
 </ol>
 <p><em><strong>Remark: 关于特性4, 有以下的例子:</strong></em></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">array</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* data;</span><br><span class="line">	<span class="built_in">array</span>()&#123;data = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">20</span>];&#125;</span><br><span class="line">	~<span class="built_in">array</span>()&#123;<span class="keyword">delete</span> [] data;&#125;</span><br><span class="line">	<span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)&#123;<span class="keyword">return</span> data[index];&#125;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)<span class="type">const</span>&#123;<span class="keyword">return</span> data[index];&#125;</span><br><span class="line">&#125;;</span><br><span class="line">array a1;</span><br><span class="line">a1[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> array a2;</span><br><span class="line">a2[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 错误, 调用第二个方法, 返回const int&amp;不能被修改.</span></span><br></pre></td></tr></table></figure>
-
 <p><em><strong>Remark2: const保护并不代表万无一失. 对上面的例子稍作修改:</strong></em></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">array</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* data;</span><br><span class="line">	<span class="built_in">array</span>()&#123;data = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">20</span>];&#125;</span><br><span class="line">	~<span class="built_in">array</span>()&#123;<span class="keyword">delete</span> [] data;&#125;</span><br><span class="line">	<span class="comment">//我们直接给它加上const呢?</span></span><br><span class="line">	<span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)<span class="type">const</span>&#123;<span class="keyword">return</span> data[index];&#125; </span><br><span class="line">&#125;;</span><br><span class="line">array a1;</span><br><span class="line">a1[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> array a2;</span><br><span class="line">a2[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br></pre></td></tr></table></figure>
-
 <p><em><strong>程序会完全正确的运行.</strong></em> 因为, const只保护了data指针, 没有保护data指向的那片空间. 因此, 它是允许你修改诸如 <code>data[0]</code> 的内容的. 但是, 这并不符合我们的预期. 我们给一个array增加const修饰, 当然是想让里面的值不被修改.</p>
 <p>因此, 如果你想确保const修饰过的类按你的预期不被修改, 你需要 <em><strong>自觉做到</strong></em> 在const修饰过的方法中不去修改相关的值. 没人能帮你检查.</p>
 <p>这个const修饰还有一个常见的应用: 类内部的运算符重载(尤其是<code>==</code>的重载). 请看:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* p;</span><br><span class="line">	<span class="built_in">test</span>()&#123;p = <span class="keyword">new</span> <span class="type">int</span>;&#125;</span><br><span class="line">	~<span class="built_in">test</span>()&#123;<span class="keyword">delete</span> p;&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">()</span><span class="type">const</span></span>&#123;</span><br><span class="line">		*p = <span class="number">5</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>==(<span class="type">const</span> test&amp; b)&#123; <span class="comment">// 不够好</span></span><br><span class="line">		<span class="keyword">return</span> *p == *b.p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>==(<span class="type">const</span> test&amp; b)<span class="type">const</span>&#123; <span class="comment">//正确的写法</span></span><br><span class="line">		<span class="keyword">return</span> *p == *b.p;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	test t,t2;</span><br><span class="line">	<span class="keyword">if</span>(t==t2)&#123; <span class="comment">// 如果用第一种写法,这里会报warning</span></span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这里会报一个warning:</p>
 <blockquote>
-<p>ISO C++20 considers use of overloaded operator ‘&#x3D;&#x3D;’ (with operand types test’ and ‘test’） to be ambiguous despite
+<p>ISO C++20 considers use of overloaded operator ‘==’ (with operand types test’ and ‘test’） to be ambiguous despite
 there being a unique best viable function.</p>
 </blockquote>
 <p>这是为什么呢? 我的理解是, 相等运算<code>==</code>左右两边应当是对等的. 而这个重载的<code>==</code>运算, 由于没有加const修饰, 左右两边变得不对等了. 由于参数加了const, 而方法没有加const, 这意味着进行运算时, 有一方的属性可能被修改, 而另一方的属性标记了不会被修改. 这是不对等的.</p>
@@ -474,7 +480,7 @@ there being a unique best viable function.</p>
             
 
             
-
+            
             
                 <div class="article-nav">
                     
@@ -556,8 +562,10 @@ there being a unique best viable function.</p>
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -599,6 +607,10 @@ there being a unique best viable function.</p>
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -609,11 +621,6 @@ there being a unique best viable function.</p>
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -630,7 +637,15 @@ there being a unique best viable function.</p>
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 <script src="/js/utils.js"></script>
 
@@ -642,6 +657,34 @@ there being a unique best viable function.</p>
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

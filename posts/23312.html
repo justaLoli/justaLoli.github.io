@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -191,7 +191,6 @@
                     <div class="fade-in-down-animation">
     <div class="post-page-container">
         <div class="article-content-container">
-
             <div class="article-title">
                 <span class="title-hover-animation">计算摄像学 第二讲 数字摄像流程</span>
             </div>
@@ -266,16 +265,16 @@
                 </div>
             
 
+            
             <div class="article-content keep-markdown-body">
                 
 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="第二讲-数字摄像流程（Digital-Photography-Pipeline"><a href="#第二讲-数字摄像流程（Digital-Photography-Pipeline" class="headerlink" title="第二讲 数字摄像流程（Digital Photography Pipeline"></a>第二讲 数字摄像流程（Digital Photography Pipeline</h2><!-- ISP -->
-
-
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="第二讲-数字摄像流程（Digital-Photography-Pipeline"><a class="header-anchor" href="#第二讲-数字摄像流程（Digital-Photography-Pipeline"></a>第二讲 数字摄像流程（Digital Photography Pipeline</h2>
+<!-- ISP -->
 <p>参考书：</p>
 <ol>
 <li><a class="link" target="_blank" rel="noopener" href="http://szeliski.org/book">http://szeliski.org/book<i class="fas fa-external-link-alt"></i></a> 《Computer Vision: Algorithms and Applications, 2nd ed.》</li>
-<li><a class="link" target="_blank" rel="noopener" href="https://imagingtext.github.io/">https://imagingtext.github.io<i class="fas fa-external-link-alt"></i></a> 《Computational Imaging》</li>
+<li><a class="link" target="_blank" rel="noopener" href="https://imagingtext.github.io">https://imagingtext.github.io<i class="fas fa-external-link-alt"></i></a> 《Computational Imaging》</li>
 <li><a class="link" target="_blank" rel="noopener" href="https://link.springer.com/referencework/10.1007/978-3-030-63416-2">https://link.springer.com/referencework/10.1007/978-3-030-63416-2<i class="fas fa-external-link-alt"></i></a> 第二版</li>
 </ol>
 <p>计算摄像的三个处理位置：成像之前，成像，成像之后</p>
@@ -288,10 +287,10 @@
 <li>相机内部的图像处理（ISP</li>
 </ul>
 <!-- 视频：手机和相机的拍照对比，好机友姜唯。 -->
-
-<h3 id="图像传感器-Imaging-Sensor"><a href="#图像传感器-Imaging-Sensor" class="headerlink" title="图像传感器 Imaging Sensor"></a>图像传感器 Imaging Sensor</h3><p>拍照：快门打开-&gt;传感器接收光子、储存光子-&gt;快门关闭，曝光结束-&gt;将光子转化成数字信号处理。</p>
+<h3 id="图像传感器-Imaging-Sensor"><a class="header-anchor" href="#图像传感器-Imaging-Sensor"></a>图像传感器 Imaging Sensor</h3>
+<p>拍照：快门打开-&gt;传感器接收光子、储存光子-&gt;快门关闭，曝光结束-&gt;将光子转化成数字信号处理。</p>
 <p>核心的感光组件：光电二极管（产生电子）、势井（存储电子）。</p>
-<p>衡量光电二极管的一个指标：QE &#x3D; 光子量&#x2F;电子量</p>
+<p>衡量光电二极管的一个指标：QE = 光子量/电子量</p>
 <p>过曝：光子过多，势井饱和；欠曝：光子过少，随机性太高。除此以外的情况，电子数基本上<strong>线性的反映光子数</strong>。</p>
 <p>两种图像传感器的芯片：CCD &amp; CMOS</p>
 <table>
@@ -301,7 +300,8 @@
 <th>CMOS</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>更高感光度</td>
 <td>更快读出</td>
 </tr>
@@ -309,14 +309,17 @@
 <td>更低噪声</td>
 <td>更低成本</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>目前CMOS已经能达到接近CCD的性能。</p>
-<h3 id="模拟前端"><a href="#模拟前端" class="headerlink" title="模拟前端"></a>模拟前端</h3><p>将传感器得到的光子（电压，模拟信号）转化为数字信号</p>
+<h3 id="模拟前端"><a class="header-anchor" href="#模拟前端"></a>模拟前端</h3>
+<p>将传感器得到的光子（电压，模拟信号）转化为数字信号</p>
 <p>电压-&gt;「模拟放大器」-&gt;模拟电压-&gt;「模数转换器」-&gt;数字信号-&gt;「编码」-&gt;数字信号</p>
 <blockquote>
 <p>fun fact: ISO调整的是「模拟放大器」的强度。</p>
 </blockquote>
-<h3 id="颜色滤波器"><a href="#颜色滤波器" class="headerlink" title="颜色滤波器"></a>颜色滤波器</h3><p>可见光：400-700nm波长</p>
+<h3 id="颜色滤波器"><a class="header-anchor" href="#颜色滤波器"></a>颜色滤波器</h3>
+<p>可见光：400-700nm波长</p>
 <p>大多数光源含有不止一种波长的光。</p>
 <p>不同的光谱频率分布可以产生类似或者相同的颜色感知。</p>
 <p>色温。</p>
@@ -325,9 +328,11 @@
 <p>滤波器在传感器上的分布？拜耳阵列（RGGB</p>
 <p>为什么要更多绿色？简而言之，研究认为人眼对绿色更敏感。</p>
 <p>颜色滤波没有标准答案。滤波会带来颜色风格的细微差异。</p>
-<h3 id="相机内部对图像的处理（ISP"><a href="#相机内部对图像的处理（ISP" class="headerlink" title="相机内部对图像的处理（ISP"></a>相机内部对图像的处理（ISP</h3><p>ISP: Image Singal Processor: 广义的指将原始图像转换为“正常”图像的一系列图像处理操作。</p>
+<h3 id="相机内部对图像的处理（ISP"><a class="header-anchor" href="#相机内部对图像的处理（ISP"></a>相机内部对图像的处理（ISP</h3>
+<p>ISP: Image Singal Processor: 广义的指将原始图像转换为“正常”图像的一系列图像处理操作。</p>
 <p>白平衡；去马赛克；降噪；色调再现；压缩；etc。</p>
-<h4 id="白平衡-White-Balance-WB"><a href="#白平衡-White-Balance-WB" class="headerlink" title="白平衡 White Balance WB"></a>白平衡 White Balance WB</h4><ul>
+<h4 id="白平衡-White-Balance-WB"><a class="header-anchor" href="#白平衡-White-Balance-WB"></a>白平衡 White Balance WB</h4>
+<ul>
 <li>人眼可以在不同光照环境下正确感知“白色是白色”。</li>
 </ul>
 <p>白平衡：不管在任何光源下，都能将白色物体还原成白色，用于校准色温的偏差。</p>
@@ -339,22 +344,26 @@
 <p>经典的自动白平衡算法：</p>
 <p>利用白平衡的特性：全局偏差，让全局RGB分别的统计值变成相同的，就白了。</p>
 <ul>
-<li>灰色世界假设<ul>
+<li>灰色世界假设
+<ul>
 <li>逐通道计算RGB<strong>平均值</strong></li>
 <li>逐通道利用<strong>平均值</strong>归一化</li>
 <li>乘以“绿色通道的<strong>平均值</strong>”作为增益</li>
 </ul>
 </li>
-<li>白色世界假设<ul>
+<li>白色世界假设
+<ul>
 <li>逐通道计算RGB<strong>最大值</strong></li>
 <li>逐通道利用<strong>最大值</strong>归一化</li>
 <li>乘以“绿色通道的<strong>最大值</strong>”作为增益</li>
 </ul>
 </li>
 </ul>
-<h4 id="去马赛克"><a href="#去马赛克" class="headerlink" title="去马赛克"></a>去马赛克</h4><p>拜耳阵列中，每个像素感受到不同颜色光，产生“马赛克效果”，需要去除。</p>
+<h4 id="去马赛克"><a class="header-anchor" href="#去马赛克"></a>去马赛克</h4>
+<p>拜耳阵列中，每个像素感受到不同颜色光，产生“马赛克效果”，需要去除。</p>
 <p>用相邻的其它颜色像素取平均，得到当前像素的其它颜色值。</p>
-<h4 id="降噪-Denoising"><a href="#降噪-Denoising" class="headerlink" title="降噪 Denoising"></a>降噪 Denoising</h4><p>噪声在低光照时尤为明显。</p>
+<h4 id="降噪-Denoising"><a class="header-anchor" href="#降噪-Denoising"></a>降噪 Denoising</h4>
+<p>噪声在低光照时尤为明显。</p>
 <p>噪声的来源比较复杂：</p>
 <ul>
 <li>散粒噪声：光子到达服从泊松分布</li>
@@ -363,19 +372,24 @@
 </ul>
 <p>简单降噪算法：平均滤波（卷积，利用周围像素），中值滤波</p>
 <p>更复杂的降噪算法</p>
-<h4 id="（色彩空间转化）"><a href="#（色彩空间转化）" class="headerlink" title="（色彩空间转化）"></a>（色彩空间转化）</h4><p>相机内部可能会把RGB色彩空间转化成HSV色彩空间。</p>
+<h4 id="（色彩空间转化）"><a class="header-anchor" href="#（色彩空间转化）"></a>（色彩空间转化）</h4>
+<p>相机内部可能会把RGB色彩空间转化成HSV色彩空间。</p>
 <p>这件事的意义：将RGB分离成更加独立的变量，方便研究。</p>
-<h4 id="色调再现（伽马矫正"><a href="#色调再现（伽马矫正" class="headerlink" title="色调再现（伽马矫正"></a>色调再现（伽马矫正</h4><p>最初是因为CRT显示器对颜色的现实是非线性的。</p>
+<h4 id="色调再现（伽马矫正"><a class="header-anchor" href="#色调再现（伽马矫正"></a>色调再现（伽马矫正</h4>
+<p>最初是因为CRT显示器对颜色的现实是非线性的。</p>
 <p>目前伽马矫正与CRT无关。</p>
 <p>人眼对低亮度更敏感，因此将相机的线性感光修正为适合人眼的非线性感光。</p>
-<h4 id="（图像压缩）"><a href="#（图像压缩）" class="headerlink" title="（图像压缩）"></a>（图像压缩）</h4><p>略</p>
-<h4 id="补充：RAW图像格式的意义：线性！"><a href="#补充：RAW图像格式的意义：线性！" class="headerlink" title="补充：RAW图像格式的意义：线性！"></a>补充：RAW图像格式的意义：线性！</h4><p>ISP处理后的图像和原始光强是非线性的。这不利于研究。</p>
+<h4 id="（图像压缩）"><a class="header-anchor" href="#（图像压缩）"></a>（图像压缩）</h4>
+<p>略</p>
+<h4 id="补充：RAW图像格式的意义：线性！"><a class="header-anchor" href="#补充：RAW图像格式的意义：线性！"></a>补充：RAW图像格式的意义：线性！</h4>
+<p>ISP处理后的图像和原始光强是非线性的。这不利于研究。</p>
 <p>RAW图像仍然保持了和环境光强的良好的线性性。对计算机视觉而言非常有用:D</p>
 <p>对一般人：保存更多信息，后期空间。</p>
 <p>RAW的坏处：噪声，无压缩，降低连拍速度</p>
 <p>注：RAW可能也经过了一些与处理，比如去马赛克。</p>
 <p>将jpeg还原为RAW是一件非常困难的事情。</p>
-<h3 id="扩展内容"><a href="#扩展内容" class="headerlink" title="扩展内容"></a>扩展内容</h3><p>ISP深入理解： <a class="link" target="_blank" rel="noopener" href="https://www.eecs.yorku.ca/~mbrown/ICCV2019_Brown.html">https://www.eecs.yorku.ca/~mbrown/ICCV2019_Brown.html<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="扩展内容"><a class="header-anchor" href="#扩展内容"></a>扩展内容</h3>
+<p>ISP深入理解： <a class="link" target="_blank" rel="noopener" href="https://www.eecs.yorku.ca/~mbrown/ICCV2019_Brown.html">https://www.eecs.yorku.ca/~mbrown/ICCV2019_Brown.html<i class="fas fa-external-link-alt"></i></a></p>
 <p>更好的看paper的方法：two minute papers youtube</p>
 <p>用卷积神经网络进行超暗照片的增强 Learning to see in the dark. ChenChen UIUC等 2018；</p>
 <p>Day-to-Night image Synthesis for Training Nighttime Neural ISPs</p>
@@ -420,7 +434,7 @@
                     
                 </ul>
             
-
+            
             
                 <div class="article-nav">
                     
@@ -502,8 +516,10 @@
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -545,6 +561,10 @@
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -555,11 +575,6 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -576,7 +591,15 @@
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 <script src="/js/utils.js"></script>
 
@@ -588,6 +611,34 @@
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

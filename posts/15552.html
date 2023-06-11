@@ -32,13 +32,125 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -191,7 +303,6 @@
                     <div class="fade-in-down-animation">
     <div class="post-page-container">
         <div class="article-content-container">
-
             <div class="article-title">
                 <span class="title-hover-animation">地震概论内容整理</span>
             </div>
@@ -219,7 +330,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-10 15:30:31</span>
+        <span class="pc">2023-06-11 11:46:02</span>
     </span>
     
     
@@ -244,6 +355,7 @@
                 </div>
             
 
+            
             <div class="article-content keep-markdown-body">
                 
 
@@ -251,11 +363,15 @@
 <p>编者按：地震概论完全不是水课！一定要好好听讲。地概内容很丰富，不了解老师的重点，基本是很难复习的——来自考试时好多知识点根本没复习到的倒霉编者。</p>
 <p>注：下文是小组合作产物，我不完全享有著作权。未经同意不得转载这篇文章。</p>
 </blockquote>
-<h1 id="第一章-概论"><a href="#第一章-概论" class="headerlink" title="第一章 概论"></a>第一章 概论</h1><h2 id="地震"><a href="#地震" class="headerlink" title="地震"></a>地震</h2><p>上世纪200万人死于地震，21世纪将有约1500万人死于地震；</p>
+<h1 id="第一章-概论"><a class="header-anchor" href="#第一章-概论"></a>第一章 概论</h1>
+<h2 id="地震"><a class="header-anchor" href="#地震"></a>地震</h2>
+<p>上世纪200万人死于地震，21世纪将有约1500万人死于地震；</p>
 <p>全球有记录以来死亡人数超过20万人的地震有6次，中国占4次；</p>
-<h2 id="什么是地震学"><a href="#什么是地震学" class="headerlink" title="什么是地震学"></a>什么是地震学</h2><p>地震学是关于地震的科学；</p>
+<h2 id="什么是地震学"><a class="header-anchor" href="#什么是地震学"></a>什么是地震学</h2>
+<p>地震学是关于地震的科学；</p>
 <p>地震学的研究范围：宏观地震学、地震波的传播理论，测震学。</p>
-<h2 id="地震分类"><a href="#地震分类" class="headerlink" title="地震分类"></a>地震分类</h2><p>地震按震源深度分：</p>
+<h2 id="地震分类"><a class="header-anchor" href="#地震分类"></a>地震分类</h2>
+<p>地震按震源深度分：</p>
 <p>浅源地震：震源&lt;60km；</p>
 <p>深源地震：震源&gt;300km；</p>
 <p>中源地震：震源60-300km。</p>
@@ -263,50 +379,73 @@
 <p>近震：震中距&lt;1000km；</p>
 <p>远震：震中距&gt;1000km；</p>
 <p>地方震：震中距&lt;100km。</p>
-<h2 id="古代对地震的认识"><a href="#古代对地震的认识" class="headerlink" title="古代对地震的认识"></a>古代对地震的认识</h2><p>古代地震成因推测：古希腊—气动说，日本—地下鲶鱼，中国—天戒论，高山族—地牛，印第安人—乌龟；</p>
+<h2 id="古代对地震的认识"><a class="header-anchor" href="#古代对地震的认识"></a>古代对地震的认识</h2>
+<p>古代地震成因推测：古希腊—气动说，日本—地下鲶鱼，中国—天戒论，高山族—地牛，印第安人—乌龟；</p>
 <p>1755年里斯本大地震 大大使地震学从神学禁锢解脱</p>
-<h2 id="地震学简史"><a href="#地震学简史" class="headerlink" title="地震学简史"></a>地震学简史</h2><p>1900年奥尔德姆地震图上识别P、S和面波，</p>
+<h2 id="地震学简史"><a class="header-anchor" href="#地震学简史"></a>地震学简史</h2>
+<p>1900年奥尔德姆地震图上识别P、S和面波，</p>
 <p>1906年发现地核 (奥尔德姆空区)</p>
-<p>1909年南斯拉夫莫霍洛维奇发现地壳和地壳下物质分界面 (莫霍面&#x2F;M界面)</p>
-<p>1914年德国古登堡发现核慢界面 (古登堡面&#x2F;G界面)</p>
-<p>1936年莱曼发现固体内核及内外核分界面 (L界面) –杰弗里斯和布伦公布了震相走时表</p>
-<h2 id="中国的地震学"><a href="#中国的地震学" class="headerlink" title="中国的地震学"></a>中国的地震学</h2><p>1966年邢台大地震</p>
+<p>1909年南斯拉夫莫霍洛维奇发现地壳和地壳下物质分界面 (莫霍面/M界面)</p>
+<p>1914年德国古登堡发现核慢界面 (古登堡面/G界面)</p>
+<p>1936年莱曼发现固体内核及内外核分界面 (L界面) --杰弗里斯和布伦公布了震相走时表</p>
+<h2 id="中国的地震学"><a class="header-anchor" href="#中国的地震学"></a>中国的地震学</h2>
+<p>1966年邢台大地震</p>
 <p>1971年 国家地震局成立（中国是唯一一个设立了国家机构来统一开展预测和预防工作的）</p>
-<h2 id="地震学的基本名词和概念（了解）"><a href="#地震学的基本名词和概念（了解）" class="headerlink" title="地震学的基本名词和概念（了解）"></a>地震学的基本名词和概念（了解）</h2><ul>
+<h2 id="地震学的基本名词和概念（了解）"><a class="header-anchor" href="#地震学的基本名词和概念（了解）"></a>地震学的基本名词和概念（了解）</h2>
+<ul>
 <li>震源：地球内部发生地震的地方称为震源(或称震源区)。</li>
 </ul>
 <p>震源深度：将震源看做一个点，此点到地面的垂直距离称为震源深度，一般	用字母h表示。</p>
 <ul>
-<li><p>震中：震源在地面上的投影点称为震中(或称震中区)。同时,地面上受	破坏最严重的地区叫极震区,理论上震中区和极震区是相同的,实上由于地	表局部地质条件的影响,极震区不一定是震中区。</p>
+<li>
+<p>震中：震源在地面上的投影点称为震中(或称震中区)。同时,地面上受	破坏最严重的地区叫极震区,理论上震中区和极震区是相同的,实上由于地	表局部地质条件的影响,极震区不一定是震中区。</p>
 </li>
-<li><p>震中距离:在地面上,从震中到任一点沿大圆弧测量的距离称为震中距	离用△表示。</p>
+<li>
+<p>震中距离:在地面上,从震中到任一点沿大圆弧测量的距离称为震中距	离用△表示。</p>
 </li>
-<li><p>发震时刻:发生地震的时刻，一般用字母 O或 T。来表示。我国以北京	时间，比格林威治时间早 8 小时。</p>
+<li>
+<p>发震时刻:发生地震的时刻，一般用字母 O或 T。来表示。我国以北京	时间，比格林威治时间早 8 小时。</p>
 </li>
-<li><p>地震波:发生于震源并在地球表面和内部传播的弹性波称为地震波。波	传播经的路径称为地震射线。</p>
+<li>
+<p>地震波:发生于震源并在地球表面和内部传播的弹性波称为地震波。波	传播经的路径称为地震射线。</p>
 </li>
 </ul>
 <p><img src="/posts/15552/1-1.png" alt="示意图"></p>
-<h1 id="第二章-地震波"><a href="#第二章-地震波" class="headerlink" title="第二章 地震波"></a>第二章 地震波</h1><h2 id="第一节-机械波"><a href="#第一节-机械波" class="headerlink" title="第一节 机械波"></a>第一节 机械波</h2><h3 id="机械波产生的条件"><a href="#机械波产生的条件" class="headerlink" title="机械波产生的条件"></a>机械波产生的条件</h3><ol>
-<li><p>波源：产生机械振动的振源</p>
+<h1 id="第二章-地震波"><a class="header-anchor" href="#第二章-地震波"></a>第二章 地震波</h1>
+<h2 id="第一节-机械波"><a class="header-anchor" href="#第一节-机械波"></a>第一节 机械波</h2>
+<h3 id="机械波产生的条件"><a class="header-anchor" href="#机械波产生的条件"></a>机械波产生的条件</h3>
+<ol>
+<li>
+<p>波源：产生机械振动的振源</p>
 </li>
-<li><p>弹性介质：传播机械振动的介质</p>
+<li>
+<p>弹性介质：传播机械振动的介质</p>
 </li>
 </ol>
-<h3 id="波动的基本关系"><a href="#波动的基本关系" class="headerlink" title="波动的基本关系"></a>波动的基本关系</h3><p>$$v &#x3D; \frac\lambda T &#x3D; \lambda f$$</p>
-<h2 id="第二节-地震波"><a href="#第二节-地震波" class="headerlink" title="第二节 地震波"></a>第二节 地震波</h2><h2 id="泊松比-横向长度相对变化率与纵向长度相对变化率之比"><a href="#泊松比-横向长度相对变化率与纵向长度相对变化率之比" class="headerlink" title="泊松比:横向长度相对变化率与纵向长度相对变化率之比"></a>泊松比:横向长度相对变化率与纵向长度相对变化率之比</h2><p>地球介质地幔为1&#x2F;4，外核为1&#x2F;2</p>
-<h2 id="横波和纵波："><a href="#横波和纵波：" class="headerlink" title="横波和纵波："></a>横波和纵波：</h2><ul>
-<li><p>横波（P波）：质点的振动方向和波的传播方向垂直。（对应体变）</p>
+<h3 id="波动的基本关系"><a class="header-anchor" href="#波动的基本关系"></a>波动的基本关系</h3>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.552ex;" xmlns="http://www.w3.org/2000/svg" width="12.283ex" height="4.652ex" role="img" focusable="false" viewbox="0 -1370 5429.1 2056"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/></g><g data-mml-node="mo" transform="translate(762.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mfrac" transform="translate(1818.6,0)"><g data-mml-node="mi" transform="translate(280.5,676)"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"/></g><g data-mml-node="mi" transform="translate(220,-686)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"/></g><rect width="904" height="60" x="120" y="220"/></g><g data-mml-node="mo" transform="translate(3240.3,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(4296.1,0)"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"/></g><g data-mml-node="mi" transform="translate(4879.1,0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"/></g></g></g></svg></mjx-container></p>
+<h2 id="第二节-地震波"><a class="header-anchor" href="#第二节-地震波"></a>第二节 地震波</h2>
+<h2 id="泊松比-横向长度相对变化率与纵向长度相对变化率之比"><a class="header-anchor" href="#泊松比-横向长度相对变化率与纵向长度相对变化率之比"></a>泊松比:横向长度相对变化率与纵向长度相对变化率之比</h2>
+<p>地球介质地幔为1/4，外核为1/2</p>
+<h2 id="横波和纵波："><a class="header-anchor" href="#横波和纵波："></a>横波和纵波：</h2>
+<ul>
+<li>
+<p>横波（P波）：质点的振动方向和波的传播方向垂直。（对应体变）</p>
 </li>
-<li><p>纵波（S波）：质点的振动方向和波的传播方向平行。（对应切变）</p>
+<li>
+<p>纵波（S波）：质点的振动方向和波的传播方向平行。（对应切变）</p>
 </li>
 </ul>
 <p>在固体中可以传播横波或纵波，在液体、气体中只能传播纵波。</p>
-<p>纵波速度比横波速度大（P波约为S波速度的 $\sqrt3$ 倍)</p>
+<p>纵波速度比横波速度大（P波约为S波速度的 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.251ex;" xmlns="http://www.w3.org/2000/svg" width="3.061ex" height="2.398ex" role="img" focusable="false" viewbox="0 -949 1353 1060"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msqrt"><g transform="translate(853,0)"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"/></g></g><g data-mml-node="mo" transform="translate(0,89)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"/></g><rect width="500" height="60" x="853" y="829"/></g></g></g></svg></mjx-container> 倍)</p>
 <p>因此地震记录上P波先	到达。</p>
-<h2 id="第三节-地震波的类型"><a href="#第三节-地震波的类型" class="headerlink" title="第三节 地震波的类型"></a>第三节 地震波的类型</h2><h3 id="体波"><a href="#体波" class="headerlink" title="体波"></a>体波</h3><h4 id="S波的分解"><a href="#S波的分解" class="headerlink" title="S波的分解"></a>S波的分解</h4><p>分解为SH波(平行于界面的分量)</p>
+<h2 id="第三节-地震波的类型"><a class="header-anchor" href="#第三节-地震波的类型"></a>第三节 地震波的类型</h2>
+<h3 id="体波"><a class="header-anchor" href="#体波"></a>体波</h3>
+<h4 id="S波的分解"><a class="header-anchor" href="#S波的分解"></a>S波的分解</h4>
+<p>分解为SH波(平行于界面的分量)</p>
 <p>SV波(在入射线和界面法线构成的平面（称为入射面）上的分量)</p>
-<h4 id="P波和S波的差异"><a href="#P波和S波的差异" class="headerlink" title="P波和S波的差异"></a>P波和S波的差异</h4><ol>
+<h4 id="P波和S波的差异"><a class="header-anchor" href="#P波和S波的差异"></a>P波和S波的差异</h4>
+<ol>
 <li>P波和S波的质点振动方向相互垂直</li>
 <li>一般情况下，P波的垂直传播，S波的水平传播，P波和S波质点振动方向互相垂直。</li>
 <li>S波的低频成分更丰富</li>
@@ -314,7 +453,8 @@
 <li>P波通过时体积变化，不转动，无旋波</li>
 <li>S波通过时无体积变化，有转动，无散等容波</li>
 </ol>
-<h3 id="面波：沿地球表面传播，在于界面垂直的方向上振幅急剧衰减。"><a href="#面波：沿地球表面传播，在于界面垂直的方向上振幅急剧衰减。" class="headerlink" title="面波：沿地球表面传播，在于界面垂直的方向上振幅急剧衰减。"></a>面波：沿地球表面传播，在于界面垂直的方向上振幅急剧衰减。</h3><p>性质：能量分布；频散特征。</p>
+<h3 id="面波：沿地球表面传播，在于界面垂直的方向上振幅急剧衰减。"><a class="header-anchor" href="#面波：沿地球表面传播，在于界面垂直的方向上振幅急剧衰减。"></a>面波：沿地球表面传播，在于界面垂直的方向上振幅急剧衰减。</h3>
+<p>性质：能量分布；频散特征。</p>
 <p>主要分类：洛夫波和瑞利波</p>
 <p>主要区别：介质质点振动方式不同</p>
 <ul>
@@ -333,68 +473,93 @@
 <li>洛夫波虽然无垂直震动，但是可能破坏性最大（因为其振幅最大且施加剪切力）</li>
 </ul>
 <p><img src="/posts/15552/2-%E9%9D%A2%E6%B3%A2.png" alt="面波的震动图像"></p>
-<h2 id="第四节-波序"><a href="#第四节-波序" class="headerlink" title="第四节 波序"></a>第四节 波序</h2><p>地震波的波序: P-S-洛夫波-瑞利波-地震尾波</p>
+<h2 id="第四节-波序"><a class="header-anchor" href="#第四节-波序"></a>第四节 波序</h2>
+<p>地震波的波序: P-S-洛夫波-瑞利波-地震尾波</p>
 <p>P波破坏性最小，产生上下颠动;S波、洛夫波带来左右摇晃;瑞利波导致滚动</p>
 <p>离震源远的地方，感知最强的是面波。</p>
-<h1 id="第三章-地震波的传播理论"><a href="#第三章-地震波的传播理论" class="headerlink" title="第三章 地震波的传播理论"></a>第三章 地震波的传播理论</h1><ol>
-<li><p>地震波是地下传播的振动，必然与岩石的弹性有关，一般假定岩石是一种完全弹性体。一般计算中，地球介质可以作为各向同性的完全弹性体来对待。</p>
+<h1 id="第三章-地震波的传播理论"><a class="header-anchor" href="#第三章-地震波的传播理论"></a>第三章 地震波的传播理论</h1>
+<ol>
+<li>
+<p>地震波是地下传播的振动，必然与岩石的弹性有关，一般假定岩石是一种完全弹性体。一般计算中，地球介质可以作为各向同性的完全弹性体来对待。</p>
 </li>
-<li><p>首波（侧面波、折射波、衍射波、行走反射波，等等）大于一定临界距离时，首波比直达波先到达，所以地震勘测就是使用首波。p和s都有首波但是一般s观察不到。首波能量很小.</p>
+<li>
+<p>首波（侧面波、折射波、衍射波、行走反射波，等等）大于一定临界距离时，首波比直达波先到达，所以地震勘测就是使用首波。p和s都有首波但是一般s观察不到。首波能量很小.</p>
 </li>
-<li><p>地震波随时间、随空间都指数衰减。</p>
+<li>
+<p>地震波随时间、随空间都指数衰减。</p>
 </li>
-<li><p>震中距：震中（震源在地表的垂直投影）到观测台的距离，单位km。一度震中距大约110km</p>
+<li>
+<p>震中距：震中（震源在地表的垂直投影）到观测台的距离，单位km。一度震中距大约110km</p>
 </li>
 </ol>
-<h2 id="地震波传播基本理论：射线理论（地震学中成立条件：高频情况。）"><a href="#地震波传播基本理论：射线理论（地震学中成立条件：高频情况。）" class="headerlink" title="地震波传播基本理论：射线理论（地震学中成立条件：高频情况。）"></a>地震波传播基本理论：射线理论（地震学中成立条件：高频情况。）</h2><ul>
+<h2 id="地震波传播基本理论：射线理论（地震学中成立条件：高频情况。）"><a class="header-anchor" href="#地震波传播基本理论：射线理论（地震学中成立条件：高频情况。）"></a>地震波传播基本理论：射线理论（地震学中成立条件：高频情况。）</h2>
+<ul>
 <li>费马原理：最短路径。</li>
 </ul>
 <p>在地球非均匀介质中，地震射线总是向上弯曲，因此一定到达地表</p>
 <ul>
 <li>斯涅尔定律：</li>
 </ul>
-<p>$$\frac{sin\theta}{v} &#x3D; Const$$</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.577ex;" xmlns="http://www.w3.org/2000/svg" width="14.325ex" height="4.701ex" role="img" focusable="false" viewbox="0 -1381 6331.6 2078"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mi" transform="translate(469,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(814,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1414,0)"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/></g></g><g data-mml-node="mi" transform="translate(919,-686)"><path data-c="1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/></g><rect width="2083" height="60" x="120" y="220"/></g><g data-mml-node="mo" transform="translate(2600.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(3656.6,0)"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"/></g><g data-mml-node="mi" transform="translate(4416.6,0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/></g><g data-mml-node="mi" transform="translate(4901.6,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(5501.6,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mi" transform="translate(5970.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g></g></g></svg></mjx-container></p>
 <p>射线理论的缺陷：只适用于高频，对于长周期或者陡的速度梯度的介质行不通。对于非几何效应的问题也不容易处理。</p>
 <p>一般情况下随深度的增加，传播速度增加。</p>
-<h2 id="折射、反射和转换"><a href="#折射、反射和转换" class="headerlink" title="折射、反射和转换"></a>折射、反射和转换</h2><ul>
-<li><p>近震</p>
+<h2 id="折射、反射和转换"><a class="header-anchor" href="#折射、反射和转换"></a>折射、反射和转换</h2>
+<ul>
+<li>
+<p>近震</p>
 <ol>
 <li>p波会发生反射、折射和转换，形成反射p波、折射p波和反射转换sv波、折射转换sv波</li>
 <li>sv波与p波类似</li>
 <li>sh波只能产生反射sh和折射sh</li>
 <li>莫霍面的首波是pn</li>
-<li>射线参数 $p &#x3D; \frac{sin\theta}{v}$</li>
+<li>射线参数 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="8.163ex" height="2.817ex" role="img" focusable="false" viewbox="0 -892.5 3608 1245.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"/></g><g data-mml-node="mo" transform="translate(780.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mfrac" transform="translate(1836.6,0)"><g data-mml-node="mrow" transform="translate(220,394) scale(0.707)"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mi" transform="translate(469,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(814,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1414,0)"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/></g></g><g data-mml-node="mi" transform="translate(714.3,-345) scale(0.707)"><path data-c="1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/></g><rect width="1531.5" height="60" x="120" y="220"/></g></g></g></svg></mjx-container></li>
 </ol>
 </li>
-<li><p>远震（地球曲率不能忽略）</p>
+<li>
+<p>远震（地球曲率不能忽略）</p>
 </li>
 </ul>
 <p>球对称介质的折射定律</p>
-<p>$$\frac{rsin[i(r)]}{v(r)} &#x3D; p(射线参数)$$</p>
-<h2 id="地震波的走时方程"><a href="#地震波的走时方程" class="headerlink" title="地震波的走时方程"></a>地震波的走时方程</h2><h3 id="水平单层层状介质"><a href="#水平单层层状介质" class="headerlink" title="水平单层层状介质"></a>水平单层层状介质</h3><p><img src="/posts/15552/3-%E6%B0%B4%E5%B9%B3%E5%8D%95%E5%B1%82%E5%B1%82%E7%8A%B6%E4%BB%8B%E8%B4%A8.png" alt="水平单层层状介质"></p>
-<h3 id="直达波"><a href="#直达波" class="headerlink" title="直达波"></a>直达波</h3><p>勾股定理，X&gt;&gt;h成立</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.948ex;" xmlns="http://www.w3.org/2000/svg" width="24.361ex" height="5.251ex" role="img" focusable="false" viewbox="0 -1460 10767.6 2321"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,710)"><g data-mml-node="mi"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(451,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mi" transform="translate(920,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1265,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(1865,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"/></g><g data-mml-node="mi" transform="translate(2143,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2488,0)"><g data-mml-node="mo"><path data-c="AE" d="M915 266Q915 140 852 38T689 -120T474 -175Q312 -175 188 -71T38 190Q32 220 32 266V287Q32 345 57 416T129 545Q192 624 282 666T464 709Q513 709 522 708Q599 698 665 666T776 590T853 493T900 387T915 287V266ZM875 285Q875 339 853 399T789 517T676 616T519 668Q510 669 465 669Q380 669 299 630T155 514T77 336Q72 312 72 285V266V256Q72 123 163 11Q290 -135 474 -135Q614 -135 727 -46Q875 81 875 266V285ZM276 457Q275 458 274 460T272 463T270 465T267 467T264 469T258 471T252 472T243 473T232 474T218 474H204V514H335Q477 514 499 510Q560 502 610 467T661 375Q661 362 658 350T648 327T635 308T618 292T601 280T583 269T568 262T554 256L547 253Q548 252 556 247T570 237T586 223T602 202T614 174Q616 169 626 123T638 72Q652 23 683 23Q715 23 720 68Q721 78 724 81T740 84T756 82T760 70Q760 47 747 25T715 -7Q700 -14 673 -14Q672 -14 662 -14T643 -12T619 -7T593 2T568 16T547 37T534 67Q531 80 531 97Q531 103 531 116T532 136Q532 218 472 236Q466 238 413 239H360V148L361 58Q366 47 375 44T418 40H432V0H424Q409 3 318 3T212 0H204V40H218Q242 40 253 42T268 47T276 58V457ZM376 473Q365 471 363 464T360 430V366V276H416Q421 276 434 276T453 276T469 277T486 279T501 282T517 287T529 294T542 305Q561 324 561 375Q561 424 545 444T482 472Q478 473 427 474Q415 474 403 474T384 474L376 473Z"/></g></g><g data-mml-node="mo" transform="translate(3435,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"/></g></g><g data-mml-node="mrow" transform="translate(1360.5,-686)"><g data-mml-node="mi"><path data-c="1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(485,0)"><g data-mml-node="mo"><path data-c="AE" d="M915 266Q915 140 852 38T689 -120T474 -175Q312 -175 188 -71T38 190Q32 220 32 266V287Q32 345 57 416T129 545Q192 624 282 666T464 709Q513 709 522 708Q599 698 665 666T776 590T853 493T900 387T915 287V266ZM875 285Q875 339 853 399T789 517T676 616T519 668Q510 669 465 669Q380 669 299 630T155 514T77 336Q72 312 72 285V266V256Q72 123 163 11Q290 -135 474 -135Q614 -135 727 -46Q875 81 875 266V285ZM276 457Q275 458 274 460T272 463T270 465T267 467T264 469T258 471T252 472T243 473T232 474T218 474H204V514H335Q477 514 499 510Q560 502 610 467T661 375Q661 362 658 350T648 327T635 308T618 292T601 280T583 269T568 262T554 256L547 253Q548 252 556 247T570 237T586 223T602 202T614 174Q616 169 626 123T638 72Q652 23 683 23Q715 23 720 68Q721 78 724 81T740 84T756 82T760 70Q760 47 747 25T715 -7Q700 -14 673 -14Q672 -14 662 -14T643 -12T619 -7T593 2T568 16T547 37T534 67Q531 80 531 97Q531 103 531 116T532 136Q532 218 472 236Q466 238 413 239H360V148L361 58Q366 47 375 44T418 40H432V0H424Q409 3 318 3T212 0H204V40H218Q242 40 253 42T268 47T276 58V457ZM376 473Q365 471 363 464T360 430V366V276H416Q421 276 434 276T453 276T469 277T486 279T501 282T517 287T529 294T542 305Q561 324 561 375Q561 424 545 444T482 472Q478 473 427 474Q415 474 403 474T384 474L376 473Z"/></g></g></g><rect width="3913" height="60" x="120" y="220"/></g><g data-mml-node="mo" transform="translate(4430.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(5486.6,0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"/></g><g data-mml-node="mo" transform="translate(5989.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(6378.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">射</text></g><g data-mml-node="mi" transform="translate(7378.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">线</text></g><g data-mml-node="mi" transform="translate(8378.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">参</text></g><g data-mml-node="mi" transform="translate(9378.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mo" transform="translate(10378.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></p>
+<h2 id="地震波的走时方程"><a class="header-anchor" href="#地震波的走时方程"></a>地震波的走时方程</h2>
+<h3 id="水平单层层状介质"><a class="header-anchor" href="#水平单层层状介质"></a>水平单层层状介质</h3>
+<p><img src="/posts/15552/3-%E6%B0%B4%E5%B9%B3%E5%8D%95%E5%B1%82%E5%B1%82%E7%8A%B6%E4%BB%8B%E8%B4%A8.png" alt="水平单层层状介质"></p>
+<h3 id="直达波"><a class="header-anchor" href="#直达波"></a>直达波</h3>
+<p>勾股定理，X&gt;&gt;h成立</p>
 <p><img src="/posts/15552/3-%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86.png" alt="直达波"></p>
 <p><img src="/posts/15552/3-%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86%E7%9A%84%E8%A7%A3.png" alt="直达波"></p>
-<h3 id="反射波"><a href="#反射波" class="headerlink" title="反射波"></a>反射波</h3><p><img src="/posts/15552/3-%E5%8F%8D%E5%B0%84%E6%B3%A2.png" alt="反射波"></p>
+<h3 id="反射波"><a class="header-anchor" href="#反射波"></a>反射波</h3>
+<p><img src="/posts/15552/3-%E5%8F%8D%E5%B0%84%E6%B3%A2.png" alt="反射波"></p>
 <p>当震中距较大，反射波走时曲线更趋近于直达波的走时方程</p>
-<h3 id="首波"><a href="#首波" class="headerlink" title="首波"></a>首波</h3><p><img src="/posts/15552/3-%E9%A6%96%E6%B3%A2.png" alt="首波"></p>
-<h3 id="第一临界震中距"><a href="#第一临界震中距" class="headerlink" title="第一临界震中距"></a>第一临界震中距</h3><p><img src="/posts/15552/3-%E7%AC%AC%E4%B8%80%E4%B8%B4%E7%95%8C%E9%9C%87%E4%B8%AD%E8%B7%9D.png"></p>
-<h3 id="第二临界震中距"><a href="#第二临界震中距" class="headerlink" title="第二临界震中距"></a>第二临界震中距</h3><p><img src="/posts/15552/3-%E7%AC%AC%E4%BA%8C%E4%B8%B4%E7%95%8C%E9%9C%87%E4%B8%AD%E8%B7%9D.png"></p>
+<h3 id="首波"><a class="header-anchor" href="#首波"></a>首波</h3>
+<p><img src="/posts/15552/3-%E9%A6%96%E6%B3%A2.png" alt="首波"></p>
+<h3 id="第一临界震中距"><a class="header-anchor" href="#第一临界震中距"></a>第一临界震中距</h3>
+<p><img src="/posts/15552/3-%E7%AC%AC%E4%B8%80%E4%B8%B4%E7%95%8C%E9%9C%87%E4%B8%AD%E8%B7%9D.png" alt></p>
+<h3 id="第二临界震中距"><a class="header-anchor" href="#第二临界震中距"></a>第二临界震中距</h3>
+<p><img src="/posts/15552/3-%E7%AC%AC%E4%BA%8C%E4%B8%B4%E7%95%8C%E9%9C%87%E4%B8%AD%E8%B7%9D.png" alt></p>
 <p>我们认为第二临界震中距约等于211km</p>
-<h2 id="高速区和低速区的影响"><a href="#高速区和低速区的影响" class="headerlink" title="高速区和低速区的影响"></a>高速区和低速区的影响</h2><ul>
-<li><p>我们一般认为随着深度增加，速度变大，但是有一些例外</p>
+<h2 id="高速区和低速区的影响"><a class="header-anchor" href="#高速区和低速区的影响"></a>高速区和低速区的影响</h2>
+<ul>
+<li>
+<p>我们一般认为随着深度增加，速度变大，但是有一些例外</p>
 </li>
-<li><p>如果存在低速区，走时图出现空白</p>
+<li>
+<p>如果存在低速区，走时图出现空白</p>
 </li>
-<li><p>如果存在高速区，走时图出现回折</p>
+<li>
+<p>如果存在高速区，走时图出现回折</p>
 </li>
 </ul>
-<h2 id="体波各种震相和走时表"><a href="#体波各种震相和走时表" class="headerlink" title="体波各种震相和走时表"></a>体波各种震相和走时表</h2><ul>
-<li><p>近震体波震相：直达波Pg、Sg，反射波PmP、PmS、SmP、SmS，经莫霍面的首波Pn、Sn。</p>
-</li>
-<li><p>远震体波震相</p>
+<h2 id="体波各种震相和走时表"><a class="header-anchor" href="#体波各种震相和走时表"></a>体波各种震相和走时表</h2>
 <ul>
-<li>震相基本写法<ol>
+<li>
+<p>近震体波震相：直达波Pg、Sg，反射波PmP、PmS、SmP、SmS，经莫霍面的首波Pn、Sn。</p>
+</li>
+<li>
+<p>远震体波震相</p>
+<ul>
+<li>震相基本写法
+<ol>
 <li>P：地幔中，震源发出，向下传播的P波</li>
 <li>S：地幔中，震源发出，向下传播的S波</li>
 <li>p：地幔中，由震源发出，直接向地表传播的P波</li>
@@ -415,7 +580,8 @@
 <li>pP、sS常用与P、S的到时差用于确定震源深度。</li>
 </ul>
 </li>
-<li><p>地震走时表</p>
+<li>
+<p>地震走时表</p>
 <ul>
 <li>地震波在不同震中距上传播的时间表</li>
 <li>体波走时曲线的斜率随震中距的加大而减小，表明地球深处体波速度更大</li>
@@ -424,37 +590,53 @@
 </ul>
 </li>
 </ul>
-<h1 id="第四章-地球内部的结构"><a href="#第四章-地球内部的结构" class="headerlink" title="第四章 地球内部的结构"></a>第四章 地球内部的结构</h1><h2 id="第一节-地球内部的结构的发现"><a href="#第一节-地球内部的结构的发现" class="headerlink" title="第一节 地球内部的结构的发现"></a>第一节 地球内部的结构的发现</h2><h3 id="一-探索的历史"><a href="#一-探索的历史" class="headerlink" title="一 探索的历史"></a>一 探索的历史</h3><p>1522年，麦哲伦船队完成了环球航行。</p>
-<p>卡文迪许计算得到地球的平均密度为 $5.45g&#x2F;cm^3$ 说明地球内部非常致密。</p>
+<h1 id="第四章-地球内部的结构"><a class="header-anchor" href="#第四章-地球内部的结构"></a>第四章 地球内部的结构</h1>
+<h2 id="第一节-地球内部的结构的发现"><a class="header-anchor" href="#第一节-地球内部的结构的发现"></a>第一节 地球内部的结构的发现</h2>
+<h3 id="一-探索的历史"><a class="header-anchor" href="#一-探索的历史"></a>一 探索的历史</h3>
+<p>1522年，麦哲伦船队完成了环球航行。</p>
+<p>卡文迪许计算得到地球的平均密度为 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="10.187ex" height="2.451ex" role="img" focusable="false" viewbox="0 -833.2 4502.6 1083.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"/><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"/><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(778,0)"/><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(1278,0)"/></g><g data-mml-node="mi" transform="translate(1778,0)"><path data-c="1D454" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2255,0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"/></g></g><g data-mml-node="mi" transform="translate(2755,0)"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/></g><g data-mml-node="msup" transform="translate(3188,0)"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(911,363) scale(0.707)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"/></g></g></g></g></svg></mjx-container> 说明地球内部非常致密。</p>
 <p>一个说明地球内部不是液体的逻辑：如果地球内部是液体，在月球引力作用下，地表和海洋一样有潮汐涨落，因此将看不到海洋的潮汐现象。</p>
-<h3 id="二-地壳的探究"><a href="#二-地壳的探究" class="headerlink" title="二 地壳的探究"></a>二 地壳的探究</h3><h4 id="1-一个误区"><a href="#1-一个误区" class="headerlink" title="1. 一个误区"></a>1. 一个误区</h4><p>地壳很薄很脆，地球内部比地壳硬。</p>
-<h4 id="2-地壳底部的发现"><a href="#2-地壳底部的发现" class="headerlink" title="2. 地壳底部的发现"></a>2. 地壳底部的发现</h4><h5 id="莫霍面是地壳和地幔的分界"><a href="#莫霍面是地壳和地幔的分界" class="headerlink" title="莫霍面是地壳和地幔的分界"></a>莫霍面是地壳和地幔的分界</h5><p>1909年，莫霍罗维奇研究地震波，并推断存在一个界面（即莫霍面）。</p>
+<h3 id="二-地壳的探究"><a class="header-anchor" href="#二-地壳的探究"></a>二 地壳的探究</h3>
+<h4 id="1-一个误区"><a class="header-anchor" href="#1-一个误区"></a>1. 一个误区</h4>
+<p>地壳很薄很脆，地球内部比地壳硬。</p>
+<h4 id="2-地壳底部的发现"><a class="header-anchor" href="#2-地壳底部的发现"></a>2. 地壳底部的发现</h4>
+<h5 id="莫霍面是地壳和地幔的分界"><a class="header-anchor" href="#莫霍面是地壳和地幔的分界"></a>莫霍面是地壳和地幔的分界</h5>
+<p>1909年，莫霍罗维奇研究地震波，并推断存在一个界面（即莫霍面）。</p>
 <p>莫霍面的发现是通过分析首波得到的。</p>
-<h5 id="地壳的厚度"><a href="#地壳的厚度" class="headerlink" title="地壳的厚度"></a>地壳的厚度</h5><p>大陆地区平均厚度 $35km$ ，山高的地方会厚一些；海洋地壳的厚度只有 $5-8km$ 。</p>
-<h4 id="3-海洋和大陆地壳的区别"><a href="#3-海洋和大陆地壳的区别" class="headerlink" title="3. 海洋和大陆地壳的区别"></a>3. 海洋和大陆地壳的区别</h4><h5 id="研究的方法"><a href="#研究的方法" class="headerlink" title="研究的方法"></a>研究的方法</h5><p>通过研究面波。不能用体波！（体波主要携带地球内部信息）</p>
-<h5 id="面波的主要不同"><a href="#面波的主要不同" class="headerlink" title="面波的主要不同"></a>面波的主要不同</h5><ol>
+<h5 id="地壳的厚度"><a class="header-anchor" href="#地壳的厚度"></a>地壳的厚度</h5>
+<p>大陆地区平均厚度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="5.428ex" height="1.62ex" role="img" focusable="false" viewbox="0 -694 2399 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"/><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500,0)"/></g><g data-mml-node="mi" transform="translate(1000,0)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/></g><g data-mml-node="mi" transform="translate(1521,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g></g></g></svg></mjx-container> ，山高的地方会厚一些；海洋地壳的厚度只有 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="8.193ex" height="1.756ex" role="img" focusable="false" viewbox="0 -694 3621.4 776"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"/></g><g data-mml-node="mo" transform="translate(722.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/></g><g data-mml-node="mn" transform="translate(1722.4,0)"><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"/></g><g data-mml-node="mi" transform="translate(2222.4,0)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/></g><g data-mml-node="mi" transform="translate(2743.4,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g></g></g></svg></mjx-container> 。</p>
+<h4 id="3-海洋和大陆地壳的区别"><a class="header-anchor" href="#3-海洋和大陆地壳的区别"></a>3. 海洋和大陆地壳的区别</h4>
+<h5 id="研究的方法"><a class="header-anchor" href="#研究的方法"></a>研究的方法</h5>
+<p>通过研究面波。不能用体波！（体波主要携带地球内部信息）</p>
+<h5 id="面波的主要不同"><a class="header-anchor" href="#面波的主要不同"></a>面波的主要不同</h5>
+<ol>
 <li>沿大洋途径传播的瑞利波扩散成的波列可以以15秒为周期持续许多分钟；而沿大陆途径传播同等距离的瑞利波记录则不出现这种长而单调的波列。</li>
 <li>各种周期的大洋勒夫波几乎以同样速度传播，它们同时到达，产生突出的 G脉动；相反的，大陆勒夫波的速度随周期逐渐变化，使之频散。</li>
 </ol>
-<h5 id="研究的结论"><a href="#研究的结论" class="headerlink" title="研究的结论"></a>研究的结论</h5><p>海洋地壳的厚度在 $5-8km$ 。</p>
+<h5 id="研究的结论"><a class="header-anchor" href="#研究的结论"></a>研究的结论</h5>
+<p>海洋地壳的厚度在 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="8.193ex" height="1.756ex" role="img" focusable="false" viewbox="0 -694 3621.4 776"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"/></g><g data-mml-node="mo" transform="translate(722.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/></g><g data-mml-node="mn" transform="translate(1722.4,0)"><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"/></g><g data-mml-node="mi" transform="translate(2222.4,0)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"/></g><g data-mml-node="mi" transform="translate(2743.4,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g></g></g></svg></mjx-container> 。</p>
 <p>用于分析海洋和大陆地壳的地质成分，并发现大陆和海洋的地质不同。这在一个关键问题上支持了大陆漂移的观点。</p>
-<h3 id="三-地幔结构"><a href="#三-地幔结构" class="headerlink" title="三 地幔结构"></a>三 地幔结构</h3><p>存在410km和670km的两个二级速度间断面。</p>
+<h3 id="三-地幔结构"><a class="header-anchor" href="#三-地幔结构"></a>三 地幔结构</h3>
+<p>存在410km和670km的两个二级速度间断面。</p>
 <p>进一步被分为上地幔，过渡层，下地幔。</p>
 <p>上地幔中存在软流层和“低速层”。但是软流层和地震研究中的“低速层”不是一个概念。</p>
 <p>全球地震活动图像显示，在700公里以下，地球内部没有发现地震活动。因此下地幔被认为是板块俯冲深度的终结层。下地幔的速度梯度较小，速度的变化也较为均匀。</p>
 <p>由于地幔可以传播S（剪切）波，地震学中通常视地幔为固体。</p>
-<h3 id="四-液体地核的发现"><a href="#四-液体地核的发现" class="headerlink" title="四 液体地核的发现"></a>四 液体地核的发现</h3><p>奥尔德姆在1906年通过研究地震波的走时判断了地核的存在。</p>
+<h3 id="四-液体地核的发现"><a class="header-anchor" href="#四-液体地核的发现"></a>四 液体地核的发现</h3>
+<p>奥尔德姆在1906年通过研究地震波的走时判断了地核的存在。</p>
 <p>1914年，古登堡准确的估计地核深度为2900km（真实值2891km）。</p>
-<h3 id="五-地球内核的发现"><a href="#五-地球内核的发现" class="headerlink" title="五 地球内核的发现"></a>五 地球内核的发现</h3><p>1936年，英格·莱曼（女）</p>
+<h3 id="五-地球内核的发现"><a class="header-anchor" href="#五-地球内核的发现"></a>五 地球内核的发现</h3>
+<p>1936年，英格·莱曼（女）</p>
 <p>莱曼面（L面）</p>
-<h2 id="第二节-地球内部的圈层结构"><a href="#第二节-地球内部的圈层结构" class="headerlink" title="第二节 地球内部的圈层结构"></a>第二节 地球内部的圈层结构</h2><ol>
+<h2 id="第二节-地球内部的圈层结构"><a class="header-anchor" href="#第二节-地球内部的圈层结构"></a>第二节 地球内部的圈层结构</h2>
+<ol>
 <li>壳幔界面</li>
 </ol>
-<p>在地下30—60km深度处,纵波速度从6-7km&#x2F;s,跳到8km&#x2F;s以上,它是地壳与地幔的分界面。这个界面是莫霍洛维奇在1909年研究Pn震相时提出来的,因此, 该界面又称为莫霍面(M面)。</p>
+<p>在地下30—60km深度处,纵波速度从6-7km/s,跳到8km/s以上,它是地壳与地幔的分界面。这个界面是莫霍洛维奇在1909年研究Pn震相时提出来的,因此, 该界面又称为莫霍面(M面)。</p>
 <ol start="2">
 <li>幔核界面</li>
 </ol>
-<p>在地幔内,速度随深度而增加。在大约2900km处,P波速度突然从13km&#x2F;s下降到8km&#x2F;s左右,出现地球内部第二大间断面。这是古登堡在1914年首先较精确地计算出其深度的,因此该界面又称为古登堡面(G面)。</p>
+<p>在地幔内,速度随深度而增加。在大约2900km处,P波速度突然从13km/s下降到8km/s左右,出现地球内部第二大间断面。这是古登堡在1914年首先较精确地计算出其深度的,因此该界面又称为古登堡面(G面)。</p>
 <ol start="3">
 <li>内外核分界面</li>
 </ol>
@@ -463,16 +645,21 @@
 <li>上下地幔的过渡层</li>
 </ol>
 <p>从1956年开始,布伦对地幔做了进一步分层的研究,认为地幔由上地幔(与20º走时曲线的间断相联系)、过渡层(速度变化不均匀)和下地幔(速度变化均匀)组成。</p>
-<h3 id="布伦模型"><a href="#布伦模型" class="headerlink" title="布伦模型"></a>布伦模型</h3><p>图：A(地壳),B(上地幔),C(过渡层),D(下地幔),E(外核),F(间断面), G(内核)。</p>
+<h3 id="布伦模型"><a class="header-anchor" href="#布伦模型"></a>布伦模型</h3>
+<p>图：A(地壳),B(上地幔),C(过渡层),D(下地幔),E(外核),F(间断面), G(内核)。</p>
 <p><img src="/posts/15552/4-%E5%9C%B0%E7%90%83%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B.jpg" alt="地球分层"></p>
 <p>注意莫霍面和古登堡面的深度</p>
-<h3 id="初步地球参考模型PREM"><a href="#初步地球参考模型PREM" class="headerlink" title="初步地球参考模型PREM"></a>初步地球参考模型PREM</h3><p>（不太重要）</p>
-<h2 id="第三节-反演问题"><a href="#第三节-反演问题" class="headerlink" title="第三节 反演问题"></a>第三节 反演问题</h2><p>正演：知道地球结构，求波速，走时；</p>
+<h3 id="初步地球参考模型PREM"><a class="header-anchor" href="#初步地球参考模型PREM"></a>初步地球参考模型PREM</h3>
+<p>（不太重要）</p>
+<h2 id="第三节-反演问题"><a class="header-anchor" href="#第三节-反演问题"></a>第三节 反演问题</h2>
+<p>正演：知道地球结构，求波速，走时；</p>
 <p>反演：知道波速，走时，求地球结构。</p>
 <p>地震学的任务之一就是分析、解释各种震相的起因和物理意义，并利用各种震相走时曲线推测地球内部的速度结构。</p>
 <p>这种方法和光学或声学中的反演方法相似。</p>
-<h2 id="第四节-地球层析成像，地球内部三维结构"><a href="#第四节-地球层析成像，地球内部三维结构" class="headerlink" title="第四节 地球层析成像，地球内部三维结构"></a>第四节 地球层析成像，地球内部三维结构</h2><p>没有什么内容。</p>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><ol>
+<h2 id="第四节-地球层析成像，地球内部三维结构"><a class="header-anchor" href="#第四节-地球层析成像，地球内部三维结构"></a>第四节 地球层析成像，地球内部三维结构</h2>
+<p>没有什么内容。</p>
+<h2 id="思考题"><a class="header-anchor" href="#思考题"></a>思考题</h2>
+<ol>
 <li>英格·莱曼发现地球内核的思路</li>
 </ol>
 <p>“正演问题”，提出可能的模型，并计算、预测理论走时，将预测结果同实际结果相比较。</p>
@@ -480,7 +667,9 @@
 <li>为什么地震学中把地幔视为固体</li>
 </ol>
 <p>因为可以传递横波（S波），能够承载剪切力。</p>
-<h1 id="第五章-地震机制"><a href="#第五章-地震机制" class="headerlink" title="第五章  地震机制"></a>第五章  地震机制</h1><h2 id="第一节-断层"><a href="#第一节-断层" class="headerlink" title="第一节 断层"></a>第一节 断层</h2><p>断层（fault）是沿破裂面两侧岩块发生显著相对位移的断裂构造。</p>
+<h1 id="第五章-地震机制"><a class="header-anchor" href="#第五章-地震机制"></a>第五章  地震机制</h1>
+<h2 id="第一节-断层"><a class="header-anchor" href="#第一节-断层"></a>第一节 断层</h2>
+<p>断层（fault）是沿破裂面两侧岩块发生显著相对位移的断裂构造。</p>
 <p>受力状态下，岩石发生变形。</p>
 <p>冷的脆性岩石容易发生脆性破裂（断层），从而导致天然地震。</p>
 <p>地球深部的岩石由于温度较高，在受力状态下岩石容易发生弯曲或流动。</p>
@@ -490,36 +679,48 @@
 <p>这时岩石的表现叫弹性体。</p>
 <p>断层的几何术语：</p>
 <ul>
-<li><p>断层上盘、下盘</p>
+<li>
+<p>断层上盘、下盘</p>
 </li>
-<li><p>走向：站在断层的地表面上，上盘在正右方，面对的方向是走向方向。断层面和地表交线的走向方向与正北的顺时针夹角叫断层的走向</p>
+<li>
+<p>走向：站在断层的地表面上，上盘在正右方，面对的方向是走向方向。断层面和地表交线的走向方向与正北的顺时针夹角叫断层的走向</p>
 </li>
-<li><p>倾角：和水平地面的夹角</p>
+<li>
+<p>倾角：和水平地面的夹角</p>
 </li>
-<li><p>滑移：上盘相对于下盘的滑动方向。</p>
+<li>
+<p>滑移：上盘相对于下盘的滑动方向。</p>
 </li>
 </ul>
 <p>断层类型：</p>
 <ul>
-<li><p>正断层：上盘往下滑（正常就是向下滑）。</p>
+<li>
+<p>正断层：上盘往下滑（正常就是向下滑）。</p>
 </li>
-<li><p>逆断层：上盘往上滑。</p>
+<li>
+<p>逆断层：上盘往上滑。</p>
 </li>
-<li><p>（左&#x2F;右旋）走滑断层：站在右面看左边，左边往左是左旋，左边往右是右旋。</p>
+<li>
+<p>（左/右旋）走滑断层：站在右面看左边，左边往左是左旋，左边往右是右旋。</p>
 </li>
-<li><p>斜滑断层</p>
+<li>
+<p>斜滑断层</p>
 </li>
 </ul>
 <p><img src="/posts/15552/5-%E6%96%AD%E5%B1%82.png" alt="断层"></p>
 <p>应力</p>
 <ul>
-<li><p>断层面上的应力超过其摩擦力时断层发生滑动。</p>
+<li>
+<p>断层面上的应力超过其摩擦力时断层发生滑动。</p>
 </li>
-<li><p>我们用三种应力来描述地球内部的应力状况，两个水平的一个垂直的.</p>
+<li>
+<p>我们用三种应力来描述地球内部的应力状况，两个水平的一个垂直的.</p>
 </li>
-<li><p>三种主应力作用在断层上，两个水平的一个垂直的。</p>
+<li>
+<p>三种主应力作用在断层上，两个水平的一个垂直的。</p>
 <ul>
-<li>如果垂直压应力：<ul>
+<li>如果垂直压应力：
+<ul>
 <li>最大－正断层</li>
 <li>最小－ 逆断层</li>
 <li>中等－走滑断层</li>
@@ -531,25 +732,32 @@
 <p><img src="/posts/15552/5-%E5%BA%94%E5%8A%9B-1.png" alt="断层">
 <img src="/posts/15552/5-%E5%BA%94%E5%8A%9B-2.png" alt="断层">
 <img src="/posts/15552/5-%E5%BA%94%E5%8A%9B-3.png" alt="断层"></p>
-<h2 id="第二节-弹性回跳原理"><a href="#第二节-弹性回跳原理" class="headerlink" title="第二节 弹性回跳原理"></a>第二节 弹性回跳原理</h2><p>地震时发生的唯一物质移动是破裂面两边的物质向减少弹性应变的方向突然发生弹性回跳。这种移动随着破裂面的距离增大逐渐衰减，通常延伸仅数千米</p>
+<h2 id="第二节-弹性回跳原理"><a class="header-anchor" href="#第二节-弹性回跳原理"></a>第二节 弹性回跳原理</h2>
+<p>地震时发生的唯一物质移动是破裂面两边的物质向减少弹性应变的方向突然发生弹性回跳。这种移动随着破裂面的距离增大逐渐衰减，通常延伸仅数千米</p>
 <p>弹性回跳理论的主要论点</p>
 <ol>
-<li><p>造成构造地震的岩石体破裂是由于岩石体周围地壳的相对位移产生的应变超过岩石强度的结果；</p>
+<li>
+<p>造成构造地震的岩石体破裂是由于岩石体周围地壳的相对位移产生的应变超过岩石强度的结果；</p>
 </li>
-<li><p>这种相对位移不是在破裂时突然产生的，而是在一个比较长的时期内逐渐达到其最大值的；</p>
+<li>
+<p>这种相对位移不是在破裂时突然产生的，而是在一个比较长的时期内逐渐达到其最大值的；</p>
 </li>
-<li><p>地震时发生的唯一物质移动是破裂面两边的物质向减少弹性应变的方向突然发生弹性回跳。这种移动随着破裂面的距离增大而逐渐衰减，通常延伸仅数千米；</p>
+<li>
+<p>地震时发生的唯一物质移动是破裂面两边的物质向减少弹性应变的方向突然发生弹性回跳。这种移动随着破裂面的距离增大而逐渐衰减，通常延伸仅数千米；</p>
 </li>
-<li><p>地震引起的振动源于破裂面。破裂起始的表面开始很小，很快扩展得非常大，但是其扩展速率不会超过岩石中P波的传播速度；</p>
+<li>
+<p>地震引起的振动源于破裂面。破裂起始的表面开始很小，很快扩展得非常大，但是其扩展速率不会超过岩石中P波的传播速度；</p>
 </li>
-<li><p>地震时释放的能量在岩石破裂前是以弹性应变能的形式储存在岩石中的。</p>
+<li>
+<p>地震时释放的能量在岩石破裂前是以弹性应变能的形式储存在岩石中的。</p>
 </li>
 </ol>
 <p>地震能</p>
 <p>地震发生时，大部分应变能转化为热能(克服擦力而消耗掉了)，只有百分之几的应变能转为地震波。</p>
-<p>地震能&#x3D;克服摩擦力消耗的热能+地震波能量</p>
-<p>地震效率&#x3D;地震波能量 &#x2F;地震能，在7.5%~15%之间，小于20%</p>
-<h2 id="第三节-震源机制解"><a href="#第三节-震源机制解" class="headerlink" title="第三节 震源机制解"></a>第三节 震源机制解</h2><p>震源辐射图案，黑色代表挤压，白色代表拉伸</p>
+<p>地震能=克服摩擦力消耗的热能+地震波能量</p>
+<p>地震效率=地震波能量 /地震能，在7.5%~15%之间，小于20%</p>
+<h2 id="第三节-震源机制解"><a class="header-anchor" href="#第三节-震源机制解"></a>第三节 震源机制解</h2>
+<p>震源辐射图案，黑色代表挤压，白色代表拉伸</p>
 <p><img src="/posts/15552/5-%E9%9C%87%E6%BA%90%E8%BE%90%E5%B0%84%E5%9B%BE%E6%A1%88.jpg" alt="辐射图案"></p>
 <p>初动：地震到来如果向上则为挤压</p>
 <p>震源机制解</p>
@@ -560,7 +768,8 @@
 <p>逆断层</p>
 <p><img src="/posts/15552/5-%E9%80%86%E6%96%AD%E5%B1%82.png" alt="逆断层"></p>
 <p>哪个是断层面？</p>
-<h2 id="第四节-板块构造学说"><a href="#第四节-板块构造学说" class="headerlink" title="第四节 板块构造学说"></a>第四节 板块构造学说</h2><p>板块构造学说发展的三个阶段：大陆漂移、海底扩张、板块构造</p>
+<h2 id="第四节-板块构造学说"><a class="header-anchor" href="#第四节-板块构造学说"></a>第四节 板块构造学说</h2>
+<p>板块构造学说发展的三个阶段：大陆漂移、海底扩张、板块构造</p>
 <p>板块—刚性（或半刚性的）固态的巨大板状岩石块体。</p>
 <p>板块构造—地球的最外层由若干个大小不等的板块组成，他们飘浮在相对较软的流动的热物质上作相互运动。</p>
 <p>大陆漂移：1915年，由Wegner提出大陆象一副巨型七巧板拼在一起成为一个超级大陆Pangaea</p>
@@ -576,16 +785,18 @@
 <p>板块边界区域—有一定宽度的带，没有清晰的板块边界，相互作用不清楚。</p>
 <p>板块理论的补充－地幔热柱：绝大多数地震和火山都发生在板块边界上，但也有一些地震和火山发生在板块的内部。</p>
 <p>断层作用反映了板块运动。</p>
-<p>扩散边界 &#x3D; 正断层</p>
-<p>汇聚边界 &#x3D; 逆断层</p>
-<p>走滑边界 &#x3D; 走滑断层</p>
+<p>扩散边界 = 正断层</p>
+<p>汇聚边界 = 逆断层</p>
+<p>走滑边界 = 走滑断层</p>
 <p>海底扩张在板块构造的重要意义：</p>
 <p>海底扩张阐明了大陆漂移的物理机制：大陆随着海洋地壳一起漂移，海洋地壳在洋中脊处产生，在海沟处消亡。</p>
-<p>板块 &#x3D; 地壳 + 地幔上层比较坚硬的岩石部分</p>
-<h2 id="第五节-全球地震活动概况"><a href="#第五节-全球地震活动概况" class="headerlink" title="第五节  全球地震活动概况"></a>第五节  全球地震活动概况</h2><p>全球性的地震带有三个：环太平洋地震带、阿尔卑斯—喜马拉雅地震带(即欧亚地震带)和海岭（大洋中脊）地震带。</p>
+<p>板块 = 地壳 + 地幔上层比较坚硬的岩石部分</p>
+<h2 id="第五节-全球地震活动概况"><a class="header-anchor" href="#第五节-全球地震活动概况"></a>第五节  全球地震活动概况</h2>
+<p>全球性的地震带有三个：环太平洋地震带、阿尔卑斯—喜马拉雅地震带(即欧亚地震带)和海岭（大洋中脊）地震带。</p>
 <p>大约全球百分之八十的浅震、百分之九十的中源地震以及全部深震都集中在环太平洋地震带上。</p>
 <p>中国<strong>不</strong>是地震最强烈的国家</p>
-<h2 id="第六节-不同类型的地震"><a href="#第六节-不同类型的地震" class="headerlink" title="第六节  不同类型的地震"></a>第六节  不同类型的地震</h2><p>不同类型的地震：天然地震（构造&#x2F;断层地震、火山地震、陷落地震&#x3D;90：7：3）、非天然地震</p>
+<h2 id="第六节-不同类型的地震"><a class="header-anchor" href="#第六节-不同类型的地震"></a>第六节  不同类型的地震</h2>
+<p>不同类型的地震：天然地震（构造/断层地震、火山地震、陷落地震=90：7：3）、非天然地震</p>
 <p>92%的地震发生在地壳中， 其余的发生在地幔上部</p>
 <p>鉴别地下核试验的地震学方法：</p>
 <p>震中位置和震源深度</p>
@@ -595,66 +806,88 @@
 <p>地震波频谱</p>
 <p>震级比（mb:Ms）</p>
 <p>地下核爆炸引起的地震的效率小于千分之一</p>
-<h1 id="第六章-地震仪及地震基本参数的测定"><a href="#第六章-地震仪及地震基本参数的测定" class="headerlink" title="第六章 地震仪及地震基本参数的测定"></a>第六章 地震仪及地震基本参数的测定</h1><p>录播：4.14后半截+4.21前半截</p>
+<h1 id="第六章-地震仪及地震基本参数的测定"><a class="header-anchor" href="#第六章-地震仪及地震基本参数的测定"></a>第六章 地震仪及地震基本参数的测定</h1>
+<p>录播：4.14后半截+4.21前半截</p>
 <p>第一节  张衡的候风地动仪</p>
 <p>第二节  现代地震仪</p>
 <p>第三节  地震台与地震观测台网</p>
 <p>第四节  地震定位</p>
 <p>第五节  震级测定</p>
 <ul>
-<li><p>地震观测推动了地震学的诞生和发展，地震观测是地震学的基础，它对地震学乃至整个地球科学的发展起着极其重要的作用。</p>
+<li>
+<p>地震观测推动了地震学的诞生和发展，地震观测是地震学的基础，它对地震学乃至整个地球科学的发展起着极其重要的作用。</p>
 </li>
-<li><p>地震仪(seismograph)是一种可以接收地面振动，并将其以某种方式记录下来的装置。</p>
+<li>
+<p>地震仪(seismograph)是一种可以接收地面振动，并将其以某种方式记录下来的装置。</p>
 </li>
-<li><p>仅记录地震波到达时间的仪器只能叫验震器。</p>
+<li>
+<p>仅记录地震波到达时间的仪器只能叫验震器。</p>
 </li>
-<li><p>由于地震动的振幅和频率变化大，地震记录仪器是很恨复杂的。真正可以有效记录地震细节的地震仪价值不菲。</p>
-</li>
-</ul>
-<h2 id="第一节-张衡的候风地动仪"><a href="#第一节-张衡的候风地动仪" class="headerlink" title="第一节  张衡的候风地动仪"></a>第一节  张衡的候风地动仪</h2><ul>
-<li><p>候风地动仪是中国古代观测地震的仪器，是<em><strong>东汉张衡于公元132年创制的</strong></em>。【板书标红】</p>
-</li>
-<li><p>候风地动仪是利用惯性原理，在仪器内底部中央，立有一根都柱，即倒立的惯性振摆。围绕都柱设有八条滑道。滑道上面，装有八组“牙机”，即传动杠杆，其外端呈曲尺形，穿有枢轴，通出仪器外面与龙头上颌接合。</p>
-</li>
-<li><p>候风地动仪的灵敏度很高，据史料记载，候风地动仪曾接收到震中在陇西、而洛阳人未曾感觉到的地震所引起的地面振动。</p>
-</li>
-<li><p>随着自然科学和社会科学的发展，张衡的这项发明引起国内外高度的重视和深入的研究。（扯淡，是外国人先发现）</p>
+<li>
+<p>由于地震动的振幅和频率变化大，地震记录仪器是很恨复杂的。真正可以有效记录地震细节的地震仪价值不菲。</p>
 </li>
 </ul>
-<p><em><strong>张衡地震仪是验震器，不是地震仪&#x2F;地震预警仪器&#x2F;地震预报仪。【板书】</strong></em></p>
-<h3 id="复原研究的三个里程碑"><a href="#复原研究的三个里程碑" class="headerlink" title="复原研究的三个里程碑"></a>复原研究的三个里程碑</h3><ul>
+<h2 id="第一节-张衡的候风地动仪"><a class="header-anchor" href="#第一节-张衡的候风地动仪"></a>第一节  张衡的候风地动仪</h2>
+<ul>
+<li>
+<p>候风地动仪是中国古代观测地震的仪器，是<em><strong>东汉张衡于公元132年创制的</strong></em>。【板书标红】</p>
+</li>
+<li>
+<p>候风地动仪是利用惯性原理，在仪器内底部中央，立有一根都柱，即倒立的惯性振摆。围绕都柱设有八条滑道。滑道上面，装有八组“牙机”，即传动杠杆，其外端呈曲尺形，穿有枢轴，通出仪器外面与龙头上颌接合。</p>
+</li>
+<li>
+<p>候风地动仪的灵敏度很高，据史料记载，候风地动仪曾接收到震中在陇西、而洛阳人未曾感觉到的地震所引起的地面振动。</p>
+</li>
+<li>
+<p>随着自然科学和社会科学的发展，张衡的这项发明引起国内外高度的重视和深入的研究。（扯淡，是外国人先发现）</p>
+</li>
+</ul>
+<p><em><strong>张衡地震仪是验震器，不是地震仪/地震预警仪器/地震预报仪。【板书】</strong></em></p>
+<h3 id="复原研究的三个里程碑"><a class="header-anchor" href="#复原研究的三个里程碑"></a>复原研究的三个里程碑</h3>
+<ul>
 <li>1875年，日本人服部一三，文字变猜想图形</li>
 <li>1951年，王振铎，变成展览模型</li>
 <li>2008年，科学复原，变成科学仪器，具有了科学生命</li>
 </ul>
 <hr>
 <ul>
-<li><p>王振铎经过对历史资料的整理和研究，并总结了一些地震学家的研究成果，于1959年又将张衡的候风地动仪重新复原，陈列在中国历史博物馆内。</p>
+<li>
+<p>王振铎经过对历史资料的整理和研究，并总结了一些地震学家的研究成果，于1959年又将张衡的候风地动仪重新复原，陈列在中国历史博物馆内。</p>
 </li>
-<li><p>以中国地震局地球物理研究所冯锐研究员为首的候风地动仪课题组，希望研制出和原先一样的候风地动仪</p>
+<li>
+<p>以中国地震局地球物理研究所冯锐研究员为首的候风地动仪课题组，希望研制出和原先一样的候风地动仪</p>
 </li>
 </ul>
 <p>地动仪是验震器——不是地震它不动，只有地震它才晃</p>
 <p>报警器——只要地动，我就动</p>
 <ul>
-<li><p>限于工艺，张衡的地动仪不会是非常精致的。</p>
+<li>
+<p>限于工艺，张衡的地动仪不会是非常精致的。</p>
 </li>
-<li><p>从近代科学意义上看，候风地动仪不应该算作地震仪，只能是验震器，除了功能不如近代地震仪，主要原因是它没有时间记录。</p>
+<li>
+<p>从近代科学意义上看，候风地动仪不应该算作地震仪，只能是验震器，除了功能不如近代地震仪，主要原因是它没有时间记录。</p>
 </li>
-<li><p>即使地面震动晃动地动仪内的摆，摆的方向也不一定能惟一地显示出震源方向。</p>
+<li>
+<p>即使地面震动晃动地动仪内的摆，摆的方向也不一定能惟一地显示出震源方向。</p>
 </li>
-<li><p>遗憾的是，这精巧的仪器失传了，而且，详细的内部机制也没有被记录流传下来。（仪器生产肯定是因为不好、没用了…）</p>
+<li>
+<p>遗憾的是，这精巧的仪器失传了，而且，详细的内部机制也没有被记录流传下来。（仪器生产肯定是因为不好、没用了…）</p>
 </li>
-<li><p>直到很久以后，才发明了能真实测量地动整个过程的地震仪。</p>
+<li>
+<p>直到很久以后，才发明了能真实测量地动整个过程的地震仪。</p>
 </li>
-<li><p>现代地震仪和地动仪一样，利用的是摆的惯性原理。肯定地说，地动仪是现代地震仪的先驱。国外一千多年后才出现类似的仪器。</p>
+<li>
+<p>现代地震仪和地动仪一样，利用的是摆的惯性原理。肯定地说，地动仪是现代地震仪的先驱。国外一千多年后才出现类似的仪器。</p>
 </li>
 </ul>
 <p>但还是科学瑰宝：知道是惯性问题</p>
-<h2 id="第二节-现代地震仪"><a href="#第二节-现代地震仪" class="headerlink" title="第二节  现代地震仪"></a>第二节  现代地震仪</h2><h3 id="一、现代地震仪的诞生"><a href="#一、现代地震仪的诞生" class="headerlink" title="一、现代地震仪的诞生"></a>一、现代地震仪的诞生</h3><p>18世纪早期，在欧洲才出现记录地震的仪器，当时是用摆显示地动。然而，地震仪的发展是缓慢的，早期的验震器不能记录地震波到达的时间，也不能给出地震动的永久记录。</p>
+<h2 id="第二节-现代地震仪"><a class="header-anchor" href="#第二节-现代地震仪"></a>第二节  现代地震仪</h2>
+<h3 id="一、现代地震仪的诞生"><a class="header-anchor" href="#一、现代地震仪的诞生"></a>一、现代地震仪的诞生</h3>
+<p>18世纪早期，在欧洲才出现记录地震的仪器，当时是用摆显示地动。然而，地震仪的发展是缓慢的，早期的验震器不能记录地震波到达的时间，也不能给出地震动的永久记录。</p>
 <p>1880至1890，访日的英国人约翰·米尔恩、詹姆斯·尤因和托马斯·格雷，在日本研制出记录地震动随时间变化的第一架具有科学意义而且较为实用的地震仪。</p>
 <p>二战后，地震仪的放大倍数提高到数万倍甚至数百万倍，同时也展宽了观测频率范围。新的仪器不断出现，运用计算机快速处理和储存地震资料，使地震学的发展步入了一个崭新的阶段。</p>
-<h3 id="二、现代地震仪工作原理"><a href="#二、现代地震仪工作原理" class="headerlink" title="二、现代地震仪工作原理"></a>二、现代地震仪工作原理</h3><p>虽然现代地震仪比米尔恩的地震仪复杂得多，但是所依据的基本原理是一样的，原理就是惯性。</p>
+<h3 id="二、现代地震仪工作原理"><a class="header-anchor" href="#二、现代地震仪工作原理"></a>二、现代地震仪工作原理</h3>
+<p>虽然现代地震仪比米尔恩的地震仪复杂得多，但是所依据的基本原理是一样的，原理就是惯性。</p>
 <p>地震时，地面同时在三个方向上运动：上下、东西和南北。地面运动可以是位移、速度或加速度，它们是随时间变化的三维矢量，为了研究完整的地面运动，一定要将这三个分量都记录下来。</p>
 <p>地面振动幅度的大小在很大一个量级范围内变化。</p>
 <p>记录不同频段地震波的长周期、短周期、中长周期及宽频带等具有不同频率响应特性的地震仪。</p>
@@ -670,13 +903,16 @@
 <p>地震仪的放大技术是逐渐发展的。最早采用的是机械放大和光杠杆放大，将摆的运动通过杠杆放大，直接在熏烟纸上记录或由摆反射的光写在相纸上。这种早期地震仪的放大倍数到千倍级已经很有难度了。现代地震仪基本采用电子放大器以提高地震仪的灵敏度。<em><strong>此时就必须采用换能装置，先将地面运动的机械信号转换成电信号。</strong></em></p>
 <p>由于模拟记录图上的地震震相到时及地震波振幅大小只能靠人工用刻度尺读取，存在较大误差；如要借用计算机进行波形分析，还需要将地震波形记录进行数字化处理；此外，模拟记录的保存及传输、交换均不方便。</p>
 <p>随着数字电路技术的高速发展和普及，传统的模拟记录正逐步被数字记录所取代。</p>
-<h2 id="第三节-地震台与地震观测台网"><a href="#第三节-地震台与地震观测台网" class="headerlink" title="第三节  地震台与地震观测台网"></a>第三节  地震台与地震观测台网</h2><h3 id="一、地震台"><a href="#一、地震台" class="headerlink" title="一、地震台"></a>一、地震台</h3><p>地震台（seismic station）是指利用各种地震仪器进行地震观测的观测点，是开展地震观测和地震科学研究的基层机构。</p>
+<h2 id="第三节-地震台与地震观测台网"><a class="header-anchor" href="#第三节-地震台与地震观测台网"></a>第三节  地震台与地震观测台网</h2>
+<h3 id="一、地震台"><a class="header-anchor" href="#一、地震台"></a>一、地震台</h3>
+<p>地震台（seismic station）是指利用各种地震仪器进行地震观测的观测点，是开展地震观测和地震科学研究的基层机构。</p>
 <p>很久以前的地震台多是建在天文台附近，因为可以获得准确的时间。</p>
 <p>米尔恩1895年从日本回到英国，在怀特岛的赛德建立了地震台，后来该台成为著名的地震研究中心。不到几年时间，他就组建了第一个全球地震台网，10个台在大不列颠，30个台在国外。</p>
 <p>随着在赛德的记录积累，他开始系统地分析地震类型。地震台的数目稳步增加，到1957年国际地震概要（International Seismological Summary）列入了大约600个地震台。国际地震概要是由米尔恩的赛德台的继承者在英国操作的一个国际组织。</p>
 <p><em><strong>由于米尔恩对地震观测的贡献，他被称为现代地震学的奠基人。</strong></em></p>
 <p>北京国家地球观象台（简称北京台）的前身是鹫峰地震台．鹫峰地震台是我国自己创建的最早的地震台，1930年开始记录，1937年因日军大举侵略中国而被迫停止运行．1955年，地震台改建在北京西郊白家疃，1957年恢复地震观测，同时增加地磁观测项目．1982年年底在台站南侧约2千米处修建了长202米的大型山洞，为开展高灵敏度地球物理观测和仪器研制、运行试验提供了良好的环境。1983年5月北京台被国家地震局（现中国地震局）确定为<em><strong>中美合作中国数字地震台网（CDSN)的示范性数字地震观站</strong></em></p>
-<h3 id="二、地震观测台网"><a href="#二、地震观测台网" class="headerlink" title="二、地震观测台网"></a>二、地震观测台网</h3><p>地震台网（seismologic network）是由各级地震台、 站所构成的观测网络。按其控制震级的大小分为微震台网和强震台网；按监视范围分为全球地震台网、国家地震台网和区域地震台网；按台站仪器设置分为长周期地震台网和短周期地震台网；按信息记录方式还可分为模拟地震台网和数字地震台网等。</p>
+<h3 id="二、地震观测台网"><a class="header-anchor" href="#二、地震观测台网"></a>二、地震观测台网</h3>
+<p>地震台网（seismologic network）是由各级地震台、 站所构成的观测网络。按其控制震级的大小分为微震台网和强震台网；按监视范围分为全球地震台网、国家地震台网和区域地震台网；按台站仪器设置分为长周期地震台网和短周期地震台网；按信息记录方式还可分为模拟地震台网和数字地震台网等。</p>
 <p>地震台网内观测数据由各台站定时发往地震数据处理及分析预报中心，中心负责数据的收集、整理、编辑和储存以及对数据的综合分析研究。</p>
 <p>为记录不同震级和距离的地震一般要设置短、中长和长周期地震仪；相应的记录器也要有大、中、小的振幅类型 才能获得适合于分析用的真实的记录。</p>
 <ul>
@@ -684,7 +920,8 @@
 </ul>
 <p>由128个超宽频带数字式观测台组成</p>
 <p>为研究地球构造与地震而设立的极高质量的标准地震台</p>
-<h2 id="第四节-地震定位"><a href="#第四节-地震定位" class="headerlink" title="第四节  地震定位"></a>第四节  地震定位</h2><p>地震定位是地震学中最经典、最基本的问题之一，提高定位精度也一直是地震学应用研究的重要课题之一。</p>
+<h2 id="第四节-地震定位"><a class="header-anchor" href="#第四节-地震定位"></a>第四节  地震定位</h2>
+<p>地震定位是地震学中最经典、最基本的问题之一，提高定位精度也一直是地震学应用研究的重要课题之一。</p>
 <p>地震学家们在建立地震台（网）后的首要任务就是找一种方法精确地确定震中。如果可能的话，也确定每次记录到的地震的震源。</p>
 <p>1879年之前，没有地震仪，通常把地震破坏罪严重的地方定为震中，也叫宏观震中。</p>
 <p>利用仪器记录进行震源定位始于欧洲和日本，最初使用方位角法，随后是几何作图法和地球投影法。</p>
@@ -701,13 +938,14 @@
 <p>为保证精度，地震台站必须合理地均匀地围绕着震中布设，而且应该有近台A和远台的均匀分布。</p>
 <p>通过对在同一地区已知位置地震的先前记录的校对计算，可以更精确地定位震源。</p>
 <p>今天在世界的多数地区，<em><strong>震中定位的精度大约为10千米，震源深度的精度更差，大约为20千米。【红字板书】</strong></em></p>
-<h2 id="第五节-震级测定"><a href="#第五节-震级测定" class="headerlink" title="第五节  震级测定"></a>第五节  震级测定</h2><p>震级是表示地震大小的等级。依据释放能量多少，地震分为不同震级，震级越高，释放能量越多，破坏力越大。</p>
+<h2 id="第五节-震级测定"><a class="header-anchor" href="#第五节-震级测定"></a>第五节  震级测定</h2>
+<p>震级是表示地震大小的等级。依据释放能量多少，地震分为不同震级，震级越高，释放能量越多，破坏力越大。</p>
 <p>世界上常用“里氏震级”标准区分地震震级。</p>
 <p>“里氏震级”最初由地震学家查尔斯·里克特（Charles Ricer）（下页图）1935年在美国加州理工学院发明的。里克特提出按照地震仪器探测到的地震波的振幅将地震分级。</p>
 <p>这种分级系统最初只用于衡量南加州当地的地震的大小，<em><strong>现在全世界地震的研究都使用这种分级系统。</strong></em></p>
 <p>因为地震的大小变化范围很大，所以用对数来压缩测量到的地震波振幅是很方便的。</p>
 <p>精确的定义是：里氏震级ML是最大地震波振幅（以微米为单位）以10为底的对数。</p>
-<p>$$M_L &#x3D; lg(A)$$</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="11.699ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 5171.1 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D440" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"/></g><g data-mml-node="mi" transform="translate(1003,-150) scale(0.707)"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"/></g></g><g data-mml-node="mo" transform="translate(1812.3,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(2868.1,0)"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"/></g><g data-mml-node="mi" transform="translate(3166.1,0)"><path data-c="1D454" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"/></g><g data-mml-node="mo" transform="translate(3643.1,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(4032.1,0)"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/></g><g data-mml-node="mo" transform="translate(4782.1,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></p>
 <p><em><strong>(板书)</strong></em></p>
 <p>一种被称之为伍德-安德森（Wood-Anderson）的特殊地震仪记录到的振幅测量精度达到1‰毫米。里克特没有指定特殊的波型，因此最大振幅可以从有最高振幅的任何波形上取得。</p>
 <p><em><strong>由于一般振幅随着距离增大而减少，里克特选择距震中100千米的距离为标准。</strong></em></p>
@@ -715,22 +953,23 @@
 <p>例: 振幅是一毫米，震级是3</p>
 <p>用一张特殊的标度图，计算一个地震的ML的过程是很简单的：</p>
 <ol>
-<li>用S波与P波到达的时间差，计算出距震源的距离（S-P&#x3D;24秒）；</li>
+<li>用S波与P波到达的时间差，计算出距震源的距离（S-P=24秒）；</li>
 <li>在地震图上测量出波运动的最大振幅（23毫米）；</li>
-<li>在框图3.2左边选取适当的距离（左边）点，在右边选取适当的振幅点，两点联一直线，从它与中央震级标度线相交点可读出ML&#x3D;5.0。</li>
+<li>在框图3.2左边选取适当的距离（左边）点，在右边选取适当的振幅点，两点联一直线，从它与中央震级标度线相交点可读出ML=5.0。</li>
 </ol>
 <p>震级本身没有任何上下限（虽然地震大小有上限）。自本世纪有了地震仪以后所记录到的地震仅有几次震级达到8.5级以上（下页图）。例如，1964年3月27日在阿拉斯加威廉王子海湾的大地震的里氏震级约为8.6。另一方面，小断层的滑动可能产生小于零震级的地震（即负值）。</p>
 <p>在局部地区记录的非常灵敏的地震仪可探测到小于-2.0级的地震。<em><strong>这种地震释放的能量大约相当于一块砖头从桌子上掉到地面的能量。</strong></em></p>
-<h3 id="关于媒体常用的里氏震级的说明"><a href="#关于媒体常用的里氏震级的说明" class="headerlink" title="关于媒体常用的里氏震级的说明"></a>关于媒体常用的里氏震级的说明</h3><p>地震台常用的震级已经包括3种新的震级，标为MS、mb和Mw。</p>
+<h3 id="关于媒体常用的里氏震级的说明"><a class="header-anchor" href="#关于媒体常用的里氏震级的说明"></a>关于媒体常用的里氏震级的说明</h3>
+<p>地震台常用的震级已经包括3种新的震级，标为MS、mb和Mw。</p>
 <p>在新闻介和大众中仍然使用里氏震级ML。这是媒体引起的错误，因为ML起初是专为测定南加州地方小震的大小而创立的震级，对较大的地震并不适合，例如说汶川大地震是里氏8.0级是不对的，其实是面波震级MS。</p>
 <p>但是，地震学界也不打算纠正这种民众的错误，主要大家已经习惯了里氏震级。</p>
-<h3 id="ML、MS和mb三种震级都属里氏震级系统"><a href="#ML、MS和mb三种震级都属里氏震级系统" class="headerlink" title="ML、MS和mb三种震级都属里氏震级系统"></a>ML、MS和mb三种震级都属里氏震级系统</h3><p>由于里氏震级所用的波形没有被限定，而且伍德-安德森地震仪仅有有限的记录能力，因此在地震研究中ML不再广泛使用。由于浅源地震具有易记录到的面波，地震学家们选择周期近20秒的面波的最大振幅计算震级，这样求出的震级称作<em><strong>面波震级MS</strong></em>，ML震级是为了用于当地地震而提出的，而MS震级可用于距接收台站相当遥远的地震。对于远距离的地震，MS值近似地给出当地里氏震级的补充，并且综合地给出中强地震带来的潜在损失的合理估计。</p>
+<h3 id="ML、MS和mb三种震级都属里氏震级系统"><a class="header-anchor" href="#ML、MS和mb三种震级都属里氏震级系统"></a>ML、MS和mb三种震级都属里氏震级系统</h3>
+<p>由于里氏震级所用的波形没有被限定，而且伍德-安德森地震仪仅有有限的记录能力，因此在地震研究中ML不再广泛使用。由于浅源地震具有易记录到的面波，地震学家们选择周期近20秒的面波的最大振幅计算震级，这样求出的震级称作<em><strong>面波震级MS</strong></em>，ML震级是为了用于当地地震而提出的，而MS震级可用于距接收台站相当遥远的地震。对于远距离的地震，MS值近似地给出当地里氏震级的补充，并且综合地给出中强地震带来的潜在损失的合理估计。</p>
 <p>MS震级不能用于深源地震，因为深源地震不能激发显著的面波。所以地震学家们发展了第二种震级，mb，它是根据P波的大小而不是根据面波的大小确定地震的震级。所有的地震都可以清楚地读到P波的初始，因此用P波震级mb有很大优点，它可以提供深源、浅源甚至远距离的任何地震的震级值。</p>
  <!-- 这个公式不需要会 -->
-
-
 <p>对同一地震采用不同的震级标度测量，测量值是不同的。为了统一，在各种震级标度间建立了用于换算的一系列经验性公式。</p>
-<h3 id="地震矩"><a href="#地震矩" class="headerlink" title="地震矩"></a>地震矩</h3><p>对于特大型地震，用里氏系列的震级标度测量将出现“饱和”问题。</p>
+<h3 id="地震矩"><a class="header-anchor" href="#地震矩"></a>地震矩</h3>
+<p>对于特大型地震，用里氏系列的震级标度测量将出现“饱和”问题。</p>
 <p>用震级描述地震的大小或强度非常方便，但是这个参数没有物理意义。</p>
 <p><em><strong>地震矩</strong></em>是由受构造应力影响使断裂面突然滑移的力学模型，推导出来的地震整体大小的量度。它是1966年美国地震学家安艺（Aki）提出的。</p>
 <p>现在受到地震学界欢迎，因为它与断裂破裂过程的物理实质直接联系。根据它能推断活动断裂带的地质特性。</p>
@@ -748,7 +987,8 @@
 <li>地震信息的完整</li>
 </ul>
 <p><img src="/posts/15552/6-%E6%9D%BF%E4%B9%A6.jpg" alt="板书"></p>
-<h1 id="第七章-地震预报"><a href="#第七章-地震预报" class="headerlink" title="第七章 地震预报"></a>第七章 地震预报</h1><p>·有记录以来最大的地震：智利地震</p>
+<h1 id="第七章-地震预报"><a class="header-anchor" href="#第七章-地震预报"></a>第七章 地震预报</h1>
+<p>·有记录以来最大的地震：智利地震</p>
 <p><img src="/posts/15552/7-%E5%BC%BA%E9%9C%87%E5%8E%86%E5%8F%B2.png" alt="较大地震记录"></p>
 <p>地震灾害与其他灾害相比不同的特点：突发性强、破坏大，成灾广泛、社会影响深远、防御难度大、次生灾害多、持续时间长、地震灾害具有某种周期性；</p>
 <p>地震预报从20世纪60年代开始在全球进行，但目前为止唯一成功预报的是</p>
@@ -762,7 +1002,8 @@
 <ol>
 <li>地震地质方法：地震是地下构造活动的反应，理应发生在地质上比较活动的地方，尤其在
 最新构造运动的地区；断层成因方面地震是岩层段错（由于剪切应力）的结果，地面上应首
-先关注剪切应力表现最大的地区；但地质方法时间尺度太大，需要与其他方法配合使用：<ol>
+先关注剪切应力表现最大的地区；但地质方法时间尺度太大，需要与其他方法配合使用：
+<ol>
 <li>大地震常发生在现代构造差异运动最强烈的地区或活动的大断裂附近，</li>
 <li>受构造活动影响的体积和岩层的强度越大，可能产生的地震越大；</li>
 <li>构造运动的速度越大，岩石强度越弱，地震频度越高；</li>
@@ -773,81 +1014,105 @@
 <li>地震前兆方法：重点是识别和观察；</li>
 </ol>
 <p>古登堡-里克特关系</p>
-<p>$$logN &#x3D; a-bM$$</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="15.188ex" height="2.034ex" role="img" focusable="false" viewbox="0 -694 6713 899"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"/></g><g data-mml-node="mi" transform="translate(298,0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/></g><g data-mml-node="mi" transform="translate(783,0)"><path data-c="1D454" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"/></g><g data-mml-node="mi" transform="translate(1260,0)"><path data-c="1D441" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"/></g><g data-mml-node="mo" transform="translate(2425.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(3481.6,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mo" transform="translate(4232.8,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"/></g><g data-mml-node="mi" transform="translate(5233,0)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"/></g><g data-mml-node="mi" transform="translate(5662,0)"><path data-c="1D440" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"/></g></g></g></svg></mjx-container></p>
 <p>地震级降低一级，地震发生次数变为原来 10 倍；</p>
 <p>地震空区：有地震倾向、地震的能量释放低于平均水平的区域如环太平洋地区；</p>
 <p>地震是高度非线性过程，迄今地震学家未找出一种确定性的地震前兆；</p>
-<p>小补充——如何地震预报：地点——找构造活动强烈的地区，由大到小慢慢锁定，再通过异常出现的次序，最先出现的可能是震中，参考过去历史资料；时间：看异常现象发生的速度量变 &#x2F; 质变？异常诱导因素；强度：异常现象的发生规模&amp;参考历史地震资料；</p>
+<p>小补充——如何地震预报：地点——找构造活动强烈的地区，由大到小慢慢锁定，再通过异常出现的次序，最先出现的可能是震中，参考过去历史资料；时间：看异常现象发生的速度量变 / 质变？异常诱导因素；强度：异常现象的发生规模&amp;参考历史地震资料；</p>
 <p>（这章内容少，比较简单，记忆性和了解性比较多）</p>
-<h1 id="第八章-宏观地震学"><a href="#第八章-宏观地震学" class="headerlink" title="第八章 宏观地震学"></a>第八章 宏观地震学</h1><p><img src="/posts/15552/8-1.jpg" alt="笔记1"></p>
+<h1 id="第八章-宏观地震学"><a class="header-anchor" href="#第八章-宏观地震学"></a>第八章 宏观地震学</h1>
+<p><img src="/posts/15552/8-1.jpg" alt="笔记1"></p>
 <p><img src="/posts/15552/8-2.jpg" alt="笔记1">
 <img src="/posts/15552/8-3.jpg" alt="笔记1"></p>
-<h1 id="第九章-勘探地震学"><a href="#第九章-勘探地震学" class="headerlink" title="第九章 勘探地震学"></a>第九章 勘探地震学</h1><p>（这章内容很少，只需要记住下面两个知识点！）</p>
+<h1 id="第九章-勘探地震学"><a class="header-anchor" href="#第九章-勘探地震学"></a>第九章 勘探地震学</h1>
+<p>（这章内容很少，只需要记住下面两个知识点！）</p>
 <ol>
-<li><p>勘探地震学是应用在石油勘探中的一项重要技术。石油勘探主要有三大类方法：地质法、地球物理方法（物探）、钻探法。</p>
+<li>
+<p>勘探地震学是应用在石油勘探中的一项重要技术。石油勘探主要有三大类方法：地质法、地球物理方法（物探）、钻探法。</p>
 </li>
-<li><p>勘探地震学的地震资料解释成功率一般在10-30%，在如今的实际生产中解释成功率达到30%已经是相当不错的水平了。</p>
+<li>
+<p>勘探地震学的地震资料解释成功率一般在10-30%，在如今的实际生产中解释成功率达到30%已经是相当不错的水平了。</p>
 </li>
 </ol>
 <p><img src="/posts/15552/9-%E7%AC%94%E8%AE%B0.jpeg" alt="课堂笔记"></p>
-<h1 id="第十章-海啸"><a href="#第十章-海啸" class="headerlink" title="第十章 海啸"></a>第十章 海啸</h1><h2 id="海啸定义："><a href="#海啸定义：" class="headerlink" title="海啸定义："></a>海啸定义：</h2><p>海啸是一种波长很长的水波，由海底突然垂直位移或任何积水体的破坏产生。海啸与潮汐、风或风暴无关。海啸可以由地震以外的机制产生（如山崩、陨石海啸等）。</p>
-<h2 id="海啸的产生机制："><a href="#海啸的产生机制：" class="headerlink" title="海啸的产生机制："></a>海啸的产生机制：</h2><p>海啸通常由海底地震引起。地震发生时 <em><strong>断层两侧的板块如果产生垂直方向的相对位移</strong></em> ，则覆盖的海水也会随之产生垂直方向上的相对位移，这样海水原本的平衡状态就会被破坏，抬升板块上方的海水会变高，势能增加，然后向势能比较低的下沉板块方向流动。</p>
+<h1 id="第十章-海啸"><a class="header-anchor" href="#第十章-海啸"></a>第十章 海啸</h1>
+<h2 id="海啸定义："><a class="header-anchor" href="#海啸定义："></a>海啸定义：</h2>
+<p>海啸是一种波长很长的水波，由海底突然垂直位移或任何积水体的破坏产生。海啸与潮汐、风或风暴无关。海啸可以由地震以外的机制产生（如山崩、陨石海啸等）。</p>
+<h2 id="海啸的产生机制："><a class="header-anchor" href="#海啸的产生机制："></a>海啸的产生机制：</h2>
+<p>海啸通常由海底地震引起。地震发生时 <em><strong>断层两侧的板块如果产生垂直方向的相对位移</strong></em> ，则覆盖的海水也会随之产生垂直方向上的相对位移，这样海水原本的平衡状态就会被破坏，抬升板块上方的海水会变高，势能增加，然后向势能比较低的下沉板块方向流动。</p>
 <p>也就是说， <em><strong>海底地震会使震中附近的海水突然获得大量势能</strong></em> ，在引力的作用下，这个势能会很快的 <em><strong>转化为动能</strong></em> ，使海水具有很高的速度，形成巨浪向四周扩散，从而引发海啸。</p>
 <p>最可能引发海啸的是断层破裂面在海底地表的逆冲断层地震</p>
-<h2 id="海啸的产生条件："><a href="#海啸的产生条件：" class="headerlink" title="海啸的产生条件："></a>海啸的产生条件：</h2><ol>
-<li><p>地震要发生在深海区：地震释放的能量要想转变为巨大水体的波动能量并具有很强的破坏力，地震必须要发生在深海，只有这样海底上方才会有足够的水体，发生在浅海地区的地震是产生不了海啸的</p>
+<h2 id="海啸的产生条件："><a class="header-anchor" href="#海啸的产生条件："></a>海啸的产生条件：</h2>
+<ol>
+<li>
+<p>地震要发生在深海区：地震释放的能量要想转变为巨大水体的波动能量并具有很强的破坏力，地震必须要发生在深海，只有这样海底上方才会有足够的水体，发生在浅海地区的地震是产生不了海啸的</p>
 </li>
-<li><p>地震震级要大：浪高是海啸最重要的特征，海岸上观测到的海啸浪高的对数就是海啸的等级。通常用海啸的等级来表示海啸的规模</p>
+<li>
+<p>地震震级要大：浪高是海啸最重要的特征，海岸上观测到的海啸浪高的对数就是海啸的等级。通常用海啸的等级来表示海啸的规模</p>
 </li>
 </ol>
 <p>注：海啸等级m和地震震级M的统计关系：</p>
-<p>$$m&#x3D;2.61M﹣18.44$$</p>
-<p><em><strong>$M＞6.5$ 的海底地震才有可能引发灾害性的海啸</strong></em></p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="18.82ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 8318.6 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(1155.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mn" transform="translate(2211.6,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"/><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(778,0)"/><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1278,0)"/></g><g data-mml-node="mi" transform="translate(3989.6,0)"><path data-c="1D440" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(5040.6,0)"><g data-mml-node="mo"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">﹣</text></g></g><g data-mml-node="mn" transform="translate(6040.6,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z" transform="translate(500,0)"/><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(1000,0)"/><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(1278,0)"/><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(1778,0)"/></g></g></g></svg></mjx-container></p>
+<p><em><strong><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="7.532ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 3329 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D440" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"/></g><g data-mml-node="mi" transform="translate(1051,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">＞</text></g><g data-mml-node="mn" transform="translate(2051,0)"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"/><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"/><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(778,0)"/></g></g></g></svg></mjx-container> 的海底地震才有可能引发灾害性的海啸</strong></em></p>
 <p>太平洋海啸预警中心发布海啸警报的必要条件是：①海底地震的震源深度小于60km，②同时地震的震级需要大于7.8级</p>
 <ol start="3">
 <li>具备开阔并逐渐变浅的海岸条件：近海岸的海水波速减慢，后面的海水高速前涌，波高急剧抬高，形成高能量的“水墙”</li>
 </ol>
-<h2 id="海啸和风浪的差异："><a href="#海啸和风浪的差异：" class="headerlink" title="海啸和风浪的差异："></a>海啸和风浪的差异：</h2><p>多数海水的波是表面波，随着深度增加，质点运动越来越小</p>
+<h2 id="海啸和风浪的差异："><a class="header-anchor" href="#海啸和风浪的差异："></a>海啸和风浪的差异：</h2>
+<p>多数海水的波是表面波，随着深度增加，质点运动越来越小</p>
 <p>海啸是从深海海底到海面的整个水体的波动</p>
 <p><img src="/posts/15552/10-%E6%B0%B4%E6%B3%A2.jpg" alt="水波或地震面波中水或岩石质点的椭圆运动轨迹"></p>
-<h2 id="浅水波："><a href="#浅水波：" class="headerlink" title="浅水波："></a>浅水波：</h2><p>波长远大于水深</p>
+<h2 id="浅水波："><a class="header-anchor" href="#浅水波："></a>浅水波：</h2>
+<p>波长远大于水深</p>
 <p>海啸是一种特殊的浅水波，其特殊之处在于它的动力来自海底地震或火山，而非风力，并且海水的深度很大，这些决定了海啸具有长波长，能量大和传播速度快三个特点</p>
 <p>海啸速度</p>
-<p>$$V&#x3D;\sqrt{g\cdot d}, d为水深$$</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.544ex;" xmlns="http://www.w3.org/2000/svg" width="19.925ex" height="2.851ex" role="img" focusable="false" viewbox="0 -1019.7 8806.7 1260"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"/></g><g data-mml-node="mo" transform="translate(1046.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="msqrt" transform="translate(2102.6,0)"><g transform="translate(1020,0)"><g data-mml-node="mi"><path data-c="1D454" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"/></g><g data-mml-node="mo" transform="translate(699.2,0)"><path data-c="22C5" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"/></g><g data-mml-node="mi" transform="translate(1199.4,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g></g><g data-mml-node="mo" transform="translate(0,109.7)"><path data-c="221A" d="M263 249Q264 249 315 130T417 -108T470 -228L725 302Q981 837 982 839Q989 850 1001 850Q1008 850 1013 844T1020 832V826L741 243Q645 43 540 -176Q479 -303 469 -324T453 -348Q449 -350 436 -350L424 -349L315 -96Q206 156 205 156L171 130Q138 104 137 104L111 130L263 249Z"/></g><rect width="1719.4" height="60" x="1020" y="899.7"/></g><g data-mml-node="mo" transform="translate(4842,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mi" transform="translate(5286.7,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g><g data-mml-node="mi" transform="translate(5806.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">为</text></g><g data-mml-node="mi" transform="translate(6806.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">水</text></g><g data-mml-node="mi" transform="translate(7806.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">深</text></g></g></g></svg></mjx-container></p>
 <p>地震发生的地方海水越深，海啸速度越快</p>
-<p>波的频率和周期只与震源有关，所以由深水波变成浅水波的这一过程里，海浪的周期和频率不变。速度变小，周期不变，由V&#x3D;L&#x2F;T知波长变小；速度和波长均变小，由于机械波携带的能量守恒，振幅变大</p>
+<p>波的频率和周期只与震源有关，所以由深水波变成浅水波的这一过程里，海浪的周期和频率不变。速度变小，周期不变，由V=L/T知波长变小；速度和波长均变小，由于机械波携带的能量守恒，振幅变大</p>
 <p><img src="/posts/15552/10-%E9%A3%8E%E6%B5%AA%E5%92%8C%E6%B5%B7%E5%95%B8.png" alt="风浪和海啸的尺度对比"></p>
 <p>海啸的波长远远大于海浪，同时，它的振幅（浪高）又比海浪小，所以在深水区，船舶是几乎无法感知的</p>
-<h2 id="海啸按成因可分为三类：地震海啸、火山海啸和滑坡海啸。"><a href="#海啸按成因可分为三类：地震海啸、火山海啸和滑坡海啸。" class="headerlink" title="海啸按成因可分为三类：地震海啸、火山海啸和滑坡海啸。"></a>海啸按成因可分为三类：地震海啸、火山海啸和滑坡海啸。</h2><ol>
+<h2 id="海啸按成因可分为三类：地震海啸、火山海啸和滑坡海啸。"><a class="header-anchor" href="#海啸按成因可分为三类：地震海啸、火山海啸和滑坡海啸。"></a>海啸按成因可分为三类：地震海啸、火山海啸和滑坡海啸。</h2>
+<ol>
 <li>地震海啸：</li>
 </ol>
 <p>海底发生地震时，海底地形发生急剧升降变动引起海水强烈扰动。其机制有两种形式：“下降型”海啸和“隆起型”海啸。</p>
 <ol start="2">
-<li><p>火山海啸</p>
+<li>
+<p>火山海啸</p>
 </li>
-<li><p>滑坡海啸</p>
+<li>
+<p>滑坡海啸</p>
 </li>
 </ol>
 <p>大多数海啸都是地震海啸，火山海啸和滑坡海啸很少发生，即使发生，破坏力也比较小。</p>
-<h2 id="相对受灾区来讲，海啸可分为近海海啸和远洋海啸两类。"><a href="#相对受灾区来讲，海啸可分为近海海啸和远洋海啸两类。" class="headerlink" title="相对受灾区来讲，海啸可分为近海海啸和远洋海啸两类。"></a>相对受灾区来讲，海啸可分为近海海啸和远洋海啸两类。</h2><p>远洋海啸和近海海啸的分类是相对的。</p>
-<h2 id="全球的海啸灾害"><a href="#全球的海啸灾害" class="headerlink" title="全球的海啸灾害"></a>全球的海啸灾害</h2><p>全球海啸发生区的分布基本上与地震带的分布一致，主要集中在 <em><strong>环太平洋地区和地中海-中亚地区</strong></em> 。日本是地震频繁发生的国家，也是世界上经常遭受海啸袭击的国家之一。</p>
-<h2 id="中国的海啸灾害"><a href="#中国的海啸灾害" class="headerlink" title="中国的海啸灾害"></a>中国的海啸灾害</h2><p>虽然中国海区地处太平洋西部，濒临西北太平洋地震带，有很长的海岸线，但是中国的近海发生地震海啸的可能性很小。</p>
+<h2 id="相对受灾区来讲，海啸可分为近海海啸和远洋海啸两类。"><a class="header-anchor" href="#相对受灾区来讲，海啸可分为近海海啸和远洋海啸两类。"></a>相对受灾区来讲，海啸可分为近海海啸和远洋海啸两类。</h2>
+<p>远洋海啸和近海海啸的分类是相对的。</p>
+<h2 id="全球的海啸灾害"><a class="header-anchor" href="#全球的海啸灾害"></a>全球的海啸灾害</h2>
+<p>全球海啸发生区的分布基本上与地震带的分布一致，主要集中在 <em><strong>环太平洋地区和地中海-中亚地区</strong></em> 。日本是地震频繁发生的国家，也是世界上经常遭受海啸袭击的国家之一。</p>
+<h2 id="中国的海啸灾害"><a class="header-anchor" href="#中国的海啸灾害"></a>中国的海啸灾害</h2>
+<p>虽然中国海区地处太平洋西部，濒临西北太平洋地震带，有很长的海岸线，但是中国的近海发生地震海啸的可能性很小。</p>
 <p>原因：</p>
 <ol>
-<li><p>中国海区处于宽广大陆架上，近海总体水深都不大，不利于地震海啸的形成与传播；</p>
+<li>
+<p>中国海区处于宽广大陆架上，近海总体水深都不大，不利于地震海啸的形成与传播；</p>
 </li>
-<li><p>从地质构造上看，中国除了郯城-庐江大断裂纵贯渤海外，沿海地区很少有大断裂层和断裂带，在中国海区内也很少有岛弧和海沟，因此，中国大部分海域地震产生本地海啸的可能性比较小。</p>
+<li>
+<p>从地质构造上看，中国除了郯城-庐江大断裂纵贯渤海外，沿海地区很少有大断裂层和断裂带，在中国海区内也很少有岛弧和海沟，因此，中国大部分海域地震产生本地海啸的可能性比较小。</p>
 </li>
 </ol>
 <p>太平洋地震产生的远洋海啸对中国沿海地区的影响：</p>
 <ol>
-<li><p>中国辽阔的近海海域内的众多岛屿构成了一个环绕大陆的弧形圈，形成一道海上屏障。在中国近海外侧又有日本九洲、琉球群岛，以及菲律宾诸岛拱卫，又构成另一道天然的防波堤，抵御着外海海啸波的猛烈冲击。这两道天然岛弧屏蔽了中国大部分的海岸线；</p>
+<li>
+<p>中国辽阔的近海海域内的众多岛屿构成了一个环绕大陆的弧形圈，形成一道海上屏障。在中国近海外侧又有日本九洲、琉球群岛，以及菲律宾诸岛拱卫，又构成另一道天然的防波堤，抵御着外海海啸波的猛烈冲击。这两道天然岛弧屏蔽了中国大部分的海岸线；</p>
 </li>
-<li><p>中国的海域大都是浅水大陆架地带。向外延伸远，海底地形平缓而开阔，不像印度洋海啸影响的许多地区那样，海底逐渐由深变浅，中间没有一个平缓的缓冲带</p>
+<li>
+<p>中国的海域大都是浅水大陆架地带。向外延伸远，海底地形平缓而开阔，不像印度洋海啸影响的许多地区那样，海底逐渐由深变浅，中间没有一个平缓的缓冲带</p>
 </li>
 </ol>
-<h2 id="地震的预兆："><a href="#地震的预兆：" class="headerlink" title="地震的预兆："></a>地震的预兆：</h2><p>由于地震波先于海啸到达近海岸，地震是海啸最明显的前兆，沿海水域的快速下降或上升也可能如此。</p>
-<h2 id="海啸来临时的逃生办法：（了解即可）"><a href="#海啸来临时的逃生办法：（了解即可）" class="headerlink" title="海啸来临时的逃生办法：（了解即可）"></a>海啸来临时的逃生办法：（了解即可）</h2><ul>
+<h2 id="地震的预兆："><a class="header-anchor" href="#地震的预兆："></a>地震的预兆：</h2>
+<p>由于地震波先于海啸到达近海岸，地震是海啸最明显的前兆，沿海水域的快速下降或上升也可能如此。</p>
+<h2 id="海啸来临时的逃生办法：（了解即可）"><a class="header-anchor" href="#海啸来临时的逃生办法：（了解即可）"></a>海啸来临时的逃生办法：（了解即可）</h2>
+<ul>
 <li>如果在海滩或邻近海的地方感到地震，应马上向高处跑去；海啸所造成的危害，往往在第一个波浪涌至后数小时内仍然持续，所以谨慎行事，即使警告看起来模棱两可，或者您认为危险已经过去。</li>
 <li>放弃财物，拯救你的生命，而不是你的财产</li>
 <li>只有当被困且无法到达高地时，才能去坚固建筑物的上层或爬上屋顶</li>
@@ -856,7 +1121,8 @@
 <li>在海水里不要喝水</li>
 <li>注意保暖</li>
 </ul>
-<h1 id="讨论课"><a href="#讨论课" class="headerlink" title="讨论课"></a>讨论课</h1><p>板书, 引发地震海啸的主要因素:</p>
+<h1 id="讨论课"><a class="header-anchor" href="#讨论课"></a>讨论课</h1>
+<p>板书, 引发地震海啸的主要因素:</p>
 <ul>
 <li>地震大小</li>
 <li>震源机制</li>
@@ -896,7 +1162,7 @@
             
 
             
-
+            
             
                 <div class="article-nav">
                     
@@ -978,8 +1244,10 @@
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -1021,6 +1289,10 @@
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -1031,11 +1303,6 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -1052,7 +1319,15 @@
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 <script src="/js/utils.js"></script>
 
@@ -1064,6 +1339,34 @@
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -191,7 +191,6 @@
                     <div class="fade-in-down-animation">
     <div class="post-page-container">
         <div class="article-content-container">
-
             <div class="article-title">
                 <span class="title-hover-animation">车辆管理</span>
             </div>
@@ -228,7 +227,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>991 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>983 字</span>
         </span>
     
     
@@ -244,11 +243,15 @@
                 </div>
             
 
+            
             <div class="article-content keep-markdown-body">
                 
 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-车辆管理"><a href="#问题-车辆管理" class="headerlink" title="问题: 车辆管理"></a>问题: 车辆管理</h1><h3 id="问题简介"><a href="#问题简介" class="headerlink" title="问题简介"></a>问题简介</h3><p>某单位最多100辆车辆，每辆车的基本信息包括:车号、车型、购买日期、购 买价格、驾驶员名称、违章记录等。其中，各辆车的违章次数可能差别很大(有的一次没有，有的可能有数十次)。每次违章记录中包括:违章时间、违章地点、违章代码(如闯红灯、违规停车等)、违章处理等。</p>
-<h3 id="问题理解"><a href="#问题理解" class="headerlink" title="问题理解"></a>问题理解</h3><p>需要实现的功能包括:</p>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-车辆管理"><a class="header-anchor" href="#问题-车辆管理"></a>问题: 车辆管理</h1>
+<h3 id="问题简介"><a class="header-anchor" href="#问题简介"></a>问题简介</h3>
+<p>某单位最多100辆车辆，每辆车的基本信息包括:车号、车型、购买日期、购 买价格、驾驶员名称、违章记录等。其中，各辆车的违章次数可能差别很大(有的一次没有，有的可能有数十次)。每次违章记录中包括:违章时间、违章地点、违章代码(如闯红灯、违规停车等)、违章处理等。</p>
+<h3 id="问题理解"><a class="header-anchor" href="#问题理解"></a>问题理解</h3>
+<p>需要实现的功能包括:</p>
 <ul>
 <li>查找某辆车的违章信息</li>
 <li>统计某个时间段内的所有车的违章记录</li>
@@ -257,13 +260,31 @@
 <li>车辆的添加、报废(增删)</li>
 <li>违章记录的增删改.</li>
 </ul>
-<h2 id="设计与实现"><a href="#设计与实现" class="headerlink" title="设计与实现."></a>设计与实现.</h2><h3 id="程序实现的数据结构"><a href="#程序实现的数据结构" class="headerlink" title="程序实现的数据结构"></a>程序实现的数据结构</h3><p>本程序将使用笔者编写的双向链表作为线性表的实现. 为了测试并完善双向链表数据结构的稳健性, 本程序的车辆线性表和违章记录线性表都由双向链表实现. 双向链表集成了增、删、改、查等各操作及运算, 在此不做赘述.</p>
+<h2 id="设计与实现"><a class="header-anchor" href="#设计与实现"></a>设计与实现.</h2>
+<h3 id="程序实现的数据结构"><a class="header-anchor" href="#程序实现的数据结构"></a>程序实现的数据结构</h3>
+<p>本程序将使用笔者编写的双向链表作为线性表的实现. 为了测试并完善双向链表数据结构的稳健性, 本程序的车辆线性表和违章记录线性表都由双向链表实现. 双向链表集成了增、删、改、查等各操作及运算, 在此不做赘述.</p>
 <p>为了存储车辆和违章信息, 笔者分别建立了一个Car类和一个WZ类, 其UML图如下.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">	class WZ&#123;</span><br><span class="line">		+string time</span><br><span class="line">		+string place</span><br><span class="line">		+int code</span><br><span class="line">		+bool ok</span><br><span class="line">	&#125;</span><br><span class="line">    class Car&#123;</span><br><span class="line">    	+int id</span><br><span class="line">    	+string type</span><br><span class="line">    	+string buydate</span><br><span class="line">    	+float price</span><br><span class="line">    	+string driver</span><br><span class="line">    	+list&lt;WZ&gt; WZs	</span><br><span class="line">    &#125;</span><br><span class="line">    Car --&gt; WZ</span><br></pre></td></tr></table></figure>
-
+<pre class="mermaid">classDiagram
+	class WZ{
+		+string time
+		+string place
+		+int code
+		+bool ok
+	}
+    class Car{
+    	+int id
+    	+string type
+    	+string buydate
+    	+float price
+    	+string driver
+    	+list<WZ> WZs	
+    }
+    Car --> WZ</WZ></pre>
 <p>所有<code>Car</code>存储在双向链表<code>list&lt;Car&gt;</code>中.</p>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境:"></a>环境:</h3><p><code>g++ -std=c++11</code>. 在win10,x64及MacOS,arm64上测试.</p>
-<h3 id="程序架构"><a href="#程序架构" class="headerlink" title="程序架构"></a>程序架构</h3><p>在main()函数中，将先开始计时，并执行 <code>list&lt;Car&gt; finput()</code>函数，从文件中读取车辆信息，返回车辆链表。再创建输出文件<code>fileo.txt</code>和输出文件流<code>fout</code>。随后顺序运行：</p>
+<h3 id="环境"><a class="header-anchor" href="#环境"></a>环境:</h3>
+<p><code>g++ -std=c++11</code>. 在win10,x64及MacOS,arm64上测试.</p>
+<h3 id="程序架构"><a class="header-anchor" href="#程序架构"></a>程序架构</h3>
+<p>在main()函数中，将先开始计时，并执行 <code>list&lt;Car&gt; finput()</code>函数，从文件中读取车辆信息，返回车辆链表。再创建输出文件<code>fileo.txt</code>和输出文件流<code>fout</code>。随后顺序运行：</p>
 <ul>
 <li><code>void fun1_print_all(list&lt;Car&gt;&amp;)</code>函数，传入车辆链表，将读取的信息再输出。</li>
 <li><code>void fun2_sort_cars(list&lt;Car&gt;&amp;)</code>函数，传入车辆链表，将车辆按违章数量多少进行冒泡排序。无返回，直接在链表内操作。</li>
@@ -273,14 +294,17 @@
 <li><code>void fun6_find_WZ_by_code(list&lt;Car&gt;&amp; cars, int code)</code>函数，传入车辆链表和违章代码，查找这个违章代码的所有违章记录。无返回，直接输出。</li>
 </ul>
 <p>随后在main()函数内执行车辆的增减、违章记录的增减等功能。最后停止计时，输出程序用时，并关闭文件，结束程序。</p>
-<h3 id="程序输入输出"><a href="#程序输入输出" class="headerlink" title="程序输入输出"></a>程序输入输出</h3><p>输入: 从程序运行目录下的<code>filei.txt</code>得到数据.</p>
+<h3 id="程序输入输出"><a class="header-anchor" href="#程序输入输出"></a>程序输入输出</h3>
+<p>输入: 从程序运行目录下的<code>filei.txt</code>得到数据.</p>
 <p>输出: 输出到程序运行目录下的<code>fileo.txt</code>.输出内容包括每一个功能的执行结果,以及必要的提示信息. 最后输出程序执行时间.</p>
 <p>由于输出的内容很长，无法在一页上机报告中囊括。详细输出请看<code>fileo.txt</code>.</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>收获: 实现了一个相对完备的双向链表.</p>
+<h2 id="总结"><a class="header-anchor" href="#总结"></a>总结</h2>
+<p>收获: 实现了一个相对完备的双向链表.</p>
 <p>遇到的问题与解决办法:</p>
 <ul>
 <li>问题: 实现的列表类作为参数在函数之间传递时会产生异常.</li>
-<li>解决办法: <ul>
+<li>解决办法:
+<ul>
 <li>在不需要复制列表的情况下, 将函数的参数改为列表的引用<code>list&lt;Car&gt;&amp;</code>而非列表<code>list&lt;Car&gt;</code>本身</li>
 <li>查阅资料, 重载了一个类复制的构造函数,在需要传递列表时对列表进行复制,解决了此问题.</li>
 </ul>
@@ -319,7 +343,7 @@
             
 
             
-
+            
             
                 <div class="article-nav">
                     
@@ -401,8 +425,10 @@
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -444,6 +470,10 @@
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -454,11 +484,6 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -475,7 +500,15 @@
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 <script src="/js/utils.js"></script>
 
@@ -487,6 +520,34 @@
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -191,7 +191,6 @@
                     <div class="fade-in-down-animation">
     <div class="post-page-container">
         <div class="article-content-container">
-
             <div class="article-title">
                 <span class="title-hover-animation">上机作业 索引词表的建立</span>
             </div>
@@ -228,7 +227,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>492 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>482 字</span>
         </span>
     
     
@@ -244,31 +243,49 @@
                 </div>
             
 
+            
             <div class="article-content keep-markdown-body">
                 
 
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-索引词表的建立"><a href="#问题-索引词表的建立" class="headerlink" title="问题: 索引词表的建立"></a>问题: 索引词表的建立</h1><h3 id="问题简介"><a href="#问题简介" class="headerlink" title="问题简介"></a>问题简介</h3><p>根据书名和书号，建立书名关键词到书号的索引词表。</p>
-<h3 id="问题理解"><a href="#问题理解" class="headerlink" title="问题理解"></a>问题理解</h3><p>需要实现的功能包括:</p>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-索引词表的建立"><a class="header-anchor" href="#问题-索引词表的建立"></a>问题: 索引词表的建立</h1>
+<h3 id="问题简介"><a class="header-anchor" href="#问题简介"></a>问题简介</h3>
+<p>根据书名和书号，建立书名关键词到书号的索引词表。</p>
+<h3 id="问题理解"><a class="header-anchor" href="#问题理解"></a>问题理解</h3>
+<p>需要实现的功能包括:</p>
 <ul>
 <li>从文件中读入书号和书名</li>
 <li>计算索引词表</li>
 <li>向文件输出词表。</li>
 </ul>
 <p>从面向对象角度，主要的对象为书籍和关键词。书籍具有书号、书名等属性；关键词具有词条、书号列表等属性。</p>
-<h2 id="设计与实现"><a href="#设计与实现" class="headerlink" title="设计与实现."></a>设计与实现.</h2><h3 id="程序实现的数据结构"><a href="#程序实现的数据结构" class="headerlink" title="程序实现的数据结构"></a>程序实现的数据结构</h3><p>本程序将使用 <strong>笔者编写的顺序表、双向链表、字符串类</strong> 作为数据结构的实现. 顺序表<code>vector</code>、双向链表<code>list</code>、字符串<code>string</code>类具有的属性和方法在此不做赘述。</p>
+<h2 id="设计与实现"><a class="header-anchor" href="#设计与实现"></a>设计与实现.</h2>
+<h3 id="程序实现的数据结构"><a class="header-anchor" href="#程序实现的数据结构"></a>程序实现的数据结构</h3>
+<p>本程序将使用 <strong>笔者编写的顺序表、双向链表、字符串类</strong> 作为数据结构的实现. 顺序表<code>vector</code>、双向链表<code>list</code>、字符串<code>string</code>类具有的属性和方法在此不做赘述。</p>
 <p>基于问题理解，建立<code>Book</code>类和<code>Keyword</code>类。 其UML图如下.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">	class Book&#123;</span><br><span class="line">		+int id;</span><br><span class="line">		+string name;</span><br><span class="line">		+generatekeywords() list&lt;string&gt; </span><br><span class="line">	&#125;</span><br><span class="line">	class Keyword&#123;</span><br><span class="line">		+string word;</span><br><span class="line">		+list&lt;int&gt; ids;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class="mermaid">classDiagram
+	class Book{
+		+int id;
+		+string name;
+		+generatekeywords() list<string> 
+	}
+	class Keyword{
+		+string word;
+		+list<int> ids;
+	}</int></string></pre>
 <p>所有<code>Book</code>存储在<code>vector&lt;Book&gt;</code>顺序表中；所有<code>Keyword</code>存储在<code>vector&lt;Keyword&gt;</code>顺序表中。</p>
 <p>程序顺序执行<code>loaddata(string fp)</code>, <code>generatekeywordvector(vector&lt;Book&gt;&amp;)</code>, <code>dumpdata(std::fstream&amp;,vector&lt;Keywords&gt;)</code>三个函数，完成程序的三个功能。</p>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境:"></a>环境:</h3><p><code>g++ -std=c++11</code>. 在MacOS,arm64上测试.</p>
-<h3 id="程序输入输出"><a href="#程序输入输出" class="headerlink" title="程序输入输出"></a>程序输入输出</h3><p>输入: 从程序运行目录下的<code>filei.txt</code>得到数据.</p>
+<h3 id="环境"><a class="header-anchor" href="#环境"></a>环境:</h3>
+<p><code>g++ -std=c++11</code>. 在MacOS,arm64上测试.</p>
+<h3 id="程序输入输出"><a class="header-anchor" href="#程序输入输出"></a>程序输入输出</h3>
+<p>输入: 从程序运行目录下的<code>filei.txt</code>得到数据.</p>
 <p>输出: 输出到程序运行目录下的<code>fileo.txt</code>.输出内容包括词条总数，每个词条对应的书号，以及程序运行时间。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>收获: 封装了相对完备的双向链表、线性表、字符串.</p>
+<h2 id="总结"><a class="header-anchor" href="#总结"></a>总结</h2>
+<p>收获: 封装了相对完备的双向链表、线性表、字符串.</p>
 <p>遇到的问题与解决办法:</p>
 <ul>
 <li>问题：如何将字符串按照字典序排序</li>
-<li>解决办法：<ul>
+<li>解决办法：
+<ul>
 <li>利用<code>string.h</code>中的<code>strcmp</code>函数可以按照字典序比大小。</li>
 <li>在<code>string</code>类中重载大于、小于等五个大小判断运算符，让运算符返回strcmp的结果</li>
 <li>在<code>vector</code>类中增加<code>sortappend</code>方法，在添加时比较大小，建立有序顺序表。</li>
@@ -308,7 +325,7 @@
             
 
             
-
+            
             
                 <div class="article-nav">
                     
@@ -390,8 +407,10 @@
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -433,6 +452,10 @@
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -443,11 +466,6 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -464,7 +482,15 @@
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 <script src="/js/utils.js"></script>
 
@@ -476,6 +502,34 @@
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

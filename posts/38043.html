@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -191,7 +191,6 @@
                     <div class="fade-in-down-animation">
     <div class="post-page-container">
         <div class="article-content-container">
-
             <div class="article-title">
                 <span class="title-hover-animation">C++面向对象编程经验1——概论、模版类、构造函数、析构函数.</span>
             </div>
@@ -274,6 +273,7 @@
                 </div>
             
 
+            
             <div class="article-content keep-markdown-body">
                 
 
@@ -281,57 +281,50 @@
 <p><strong>警告⚠️本文章逻辑略混乱，请谨慎阅读。</strong></p>
 </blockquote>
 <p>如<a href="https://justaloli.cn/posts/46200.html">上一篇文章</a>所言, 接下来我将以我的双向链表为案例, 分享一些在C++进行类封装及面向对象编程时积累的经验. 本文主要涉及概论、构造函数和析构函数.</p>
-<h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><p>对象可以理解为现实世界的各个实体. 现实中的实体, 往往具有一些属性(比如物理属性、几何属性等等属性), 也往往具有一些操作或行为(比如猫会叫). </p>
+<h2 id="概论"><a class="header-anchor" href="#概论"></a>概论</h2>
+<p>对象可以理解为现实世界的各个实体. 现实中的实体, 往往具有一些属性(比如物理属性、几何属性等等属性), 也往往具有一些操作或行为(比如猫会叫).</p>
 <p>在面向对象编程时, 所有操作都是针对<strong>对象</strong>进行的. 可以和面向过程编程做出一些比较. 面向对象编程的主体是对象, 即实体; 面向过程编程的主体是过程, 即操作本身.</p>
 <p>以猫猫叫这件事情为例. 面向对象关注的是对象, 即猫. 在面向对象编程中, 猫叫被形容为</p>
 <p><code>猫-&gt;叫</code>, <code>Cat.meow()</code>, 表示是猫这个对象做出了某种行为, 重点在猫.</p>
 <p>而在面向过程编程中, 猫叫被形容为</p>
 <p><code>叫:猫</code>, <code>meow(Cat)</code>, 表示叫这个行为被执行了, 重点在叫这个动作.</p>
 <p>可以看出, 面向对象的描述方式更符合人类的直观.</p>
-<p>实体之间有相互关系. 最重要的关系是, 实体可以分类. 一<strong>类</strong>实体往往具有相似甚至相同的属性, 并且具备一些相同的行为. 比如所有的猫可以归为一<strong>类</strong>猫. </p>
+<p>实体之间有相互关系. 最重要的关系是, 实体可以分类. 一<strong>类</strong>实体往往具有相似甚至相同的属性, 并且具备一些相同的行为. 比如所有的猫可以归为一<strong>类</strong>猫.</p>
 <p>描述一类事物应当具有哪些属性和行为(更准确的说法是方法)的过程称作类的定义. 根据类的定义, 创建一个具体的对象的过程叫类的实例化. 类是抽象概念, 对象是具体概念. 这很符合人们的常识.</p>
-<p>类之间也有相互关系, 比如包含(更准确的说法是继承), 引用等等. </p>
+<p>类之间也有相互关系, 比如包含(更准确的说法是继承), 引用等等.</p>
 <p>类的属性和方法有权限之分. 有些属性和方法可以外人访问和调用, 而有些属性和方法只能内部访问和调用.</p>
 <p>定义一个类有多种方式. 我们当然可以用自然语言定义类:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">手机</span><br><span class="line">具有的属性:</span><br><span class="line">长、宽、高</span><br><span class="line">型号、品牌、……</span><br><span class="line">具有的操作:</span><br><span class="line">开机、拨号、上网、打开程序……</span><br></pre></td></tr></table></figure>
-
 <p>类的定义在C++语言中可以描述为这样:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Phone</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span> len;</span><br><span class="line">	<span class="type">int</span> width;</span><br><span class="line">	<span class="type">int</span> height;</span><br><span class="line">	<span class="comment">//...etc</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">open</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="comment">//...etc</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="模版类"><a href="#模版类" class="headerlink" title="模版类."></a>模版类.</h2><blockquote>
+<h2 id="模版类"><a class="header-anchor" href="#模版类"></a>模版类.</h2>
+<blockquote>
 <p>注意:从下文开始, 笔者假定读者有基本的C++编程基础. 并且明白双向链表的工作原理.</p>
 </blockquote>
 <p>模版是C++的一个语法特性. 利用模版, 我们可以创建一个含有未定数据类型的成员的类. 从代码上讲, 一个双向链表的节点可以这样定义.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	T data</span><br><span class="line">	Node&lt;T&gt;* next;</span><br><span class="line">	Node&lt;T&gt;* prev;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//到这里为止,是template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">//的作用范围.在这个作用范围内,T就指代了一个数据类型.</span></span><br><span class="line"><span class="comment">//这个数据类型在实例化Node类时才被明确.</span></span><br></pre></td></tr></table></figure>
-
 <p>实例化Node类时,就需要明确模版T对应的具体类型,如</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Node&lt;<span class="type">int</span>&gt; n;<span class="comment">//创建对象</span></span><br></pre></td></tr></table></figure>
-
 <p>由于双向链表内部需要创建Node,因此双向链表的list类也需要笼罩在一个模版下.故list的定义需要:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">list</span>&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Node&lt;T&gt;* head;</span><br><span class="line">	Node&lt;T&gt;* tail;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>类似的,实例化list需要明确模版T对应的类型.如:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list&lt;<span class="type">int</span>&gt; li;</span><br></pre></td></tr></table></figure>
-
 <p><strong>Remark:</strong> 类也是类型.因此这样:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list&lt;list&lt;<span class="type">int</span>&gt;&gt; li;</span><br></pre></td></tr></table></figure>
-
-<p>是合法的.你不过是创建了一个类型T为<code>list&lt;int&gt;</code>的列表. </p>
-<p>不过需要注意, <strong>应当确保传入的类型具有你对类型T进行的运算</strong>. 比如你在对类型T进行了加减法, 你就需要确保你传入的类型具有加减法. </p>
-<h2 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数."></a>构造函数和析构函数.</h2><p>在对象创建时, 将执行构造函数; 在对象销毁时, 将执行析构函数.</p>
+<p>是合法的.你不过是创建了一个类型T为<code>list&lt;int&gt;</code>的列表.</p>
+<p>不过需要注意, <strong>应当确保传入的类型具有你对类型T进行的运算</strong>. 比如你在对类型T进行了加减法, 你就需要确保你传入的类型具有加减法.</p>
+<h2 id="构造函数和析构函数"><a class="header-anchor" href="#构造函数和析构函数"></a>构造函数和析构函数.</h2>
+<p>在对象创建时, 将执行构造函数; 在对象销毁时, 将执行析构函数.</p>
 <p>对于普通的情况, 程序将生成默认的构造函数和析构函数. 不过有时候, 我们需要在创建和删除类的时候进行复杂的操作, 这时就不能依靠默认的构造和析构函数了. 我们要自己写.</p>
 <p>构造函数是一个名称和类名称相同,不填写返回值的函数.析构函数是一个波浪线<code>~</code>+类名称,不填写返回值的函数. 它们的定义方式如下:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">list</span>&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Node&lt;T&gt;* head;</span><br><span class="line">	Node&lt;T&gt;* tail;</span><br><span class="line">	<span class="type">int</span> _size;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">list</span>();<span class="comment">//定义构造函数.</span></span><br><span class="line">	~<span class="built_in">list</span>();<span class="comment">//定义析构函数.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>构造函数的实现如下:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//填写构造函数的具体内容</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;::<span class="built_in">list</span>()&#123;</span><br><span class="line">	head = <span class="keyword">new</span> node&lt;T&gt;;</span><br><span class="line">	tail = <span class="keyword">new</span> node&lt;T&gt;;</span><br><span class="line"></span><br><span class="line">	head-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = head;</span><br><span class="line">	_size = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这里, <code>list&lt;T&gt;::</code>代表这是list这个类的函数(方法). 描述类方法的方式有两种: 在类内部定义,在类外部定义. 个人喜欢外部定义. 在外部定义时,需要<code>list&lt;T&gt;::</code>以明确这是list类的方法.同时需要加上<code>template &lt;typename T&gt;</code></p>
 <p>在构造函数中, 我们创建了head和tail两个节点, 并让head和tail首尾相接. 这之后,我们让存储链表长度的变量_size设置为0. 这样, 在实例化一个list时,这些指令会被执行,从而完成链表的初始化.</p>
 <p>一般我们不需要重写析构函数.系统会自动释放类里面的所有内存.但是这是链表,还有许多节点零散地分配在内存空间中,你不能保证系统知道它们是相连地,然后帮你释放它们.所以我们要自己实现析构函数.</p>
 <p>析构函数的实现如下:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;::~<span class="built_in">list</span>()&#123;</span><br><span class="line">	node&lt;T&gt; *t = head-&gt;next;</span><br><span class="line">	<span class="keyword">while</span>(t!=tail)&#123;</span><br><span class="line">		t = t-&gt;next;</span><br><span class="line">		<span class="keyword">delete</span> t-&gt;prev;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = head;</span><br><span class="line">	_size=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">delete</span> head;</span><br><span class="line">	<span class="keyword">delete</span> tail;</span><br><span class="line">	head = <span class="literal">nullptr</span>;tail = <span class="literal">nullptr</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>我们先删除链表里的所有元素,最后删除头和尾. 由于在使用中, 我们偶尔也想清空链表,因此可以把清空链表的部分拿出来,单独作为一个函数(方法).</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">list</span>&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">list</span>();<span class="comment">//定义构造函数.</span></span><br><span class="line">	~<span class="built_in">list</span>();<span class="comment">//定义析构函数.</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">clear</span><span class="params">()</span></span>;<span class="comment">//定义方法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;::<span class="built_in">list</span>()&#123;...&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="type">void</span> list&lt;T&gt;::<span class="built_in">clear</span>()&#123;</span><br><span class="line">	node&lt;T&gt; *t = head-&gt;next;</span><br><span class="line">	<span class="keyword">while</span>(t!=tail)&#123;</span><br><span class="line">		t = t-&gt;next;</span><br><span class="line">		<span class="keyword">delete</span> t-&gt;prev;</span><br><span class="line">	&#125;</span><br><span class="line">	head-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = head;</span><br><span class="line">	_size=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">list&lt;T&gt;::~<span class="built_in">list</span>()&#123;</span><br><span class="line">	<span class="built_in">clear</span>();</span><br><span class="line">	<span class="keyword">delete</span> head;</span><br><span class="line">	<span class="keyword">delete</span> tail;</span><br><span class="line">	head = <span class="literal">nullptr</span>;tail = <span class="literal">nullptr</span>;temp = <span class="literal">nullptr</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -383,7 +376,7 @@
                     
                 </ul>
             
-
+            
             
                 <div class="article-nav">
                     
@@ -465,8 +458,10 @@
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -508,6 +503,10 @@
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -518,11 +517,6 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -539,7 +533,15 @@
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 <script src="/js/utils.js"></script>
 
@@ -551,6 +553,34 @@
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

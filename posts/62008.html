@@ -32,13 +32,125 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -191,7 +303,6 @@
                     <div class="fade-in-down-animation">
     <div class="post-page-container">
         <div class="article-content-container">
-
             <div class="article-title">
                 <span class="title-hover-animation">计算摄像学 第三讲 相机几何模型</span>
             </div>
@@ -219,7 +330,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-04-10 21:45:43</span>
+        <span class="pc">2023-06-11 11:46:06</span>
     </span>
     
     
@@ -250,7 +361,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>733 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>728 字</span>
         </span>
     
     
@@ -266,6 +377,7 @@
                 </div>
             
 
+            
             <div class="article-content keep-markdown-body">
                 
 
@@ -277,12 +389,15 @@
 <li>传感器上对光信号的计算</li>
 <li>传感器到图像之间的计算</li>
 </ol>
-<h2 id="引言：相机想知道的东西"><a href="#引言：相机想知道的东西" class="headerlink" title="引言：相机想知道的东西"></a>引言：相机想知道的东西</h2><ol>
+<h2 id="引言：相机想知道的东西"><a class="header-anchor" href="#引言：相机想知道的东西"></a>引言：相机想知道的东西</h2>
+<ol>
 <li>我在哪里——相机的空间位置</li>
 <li>我看到的世界——相机看到的物体的空间位置</li>
 </ol>
-<h2 id="裸传感器成像"><a href="#裸传感器成像" class="headerlink" title="裸传感器成像"></a>裸传感器成像</h2><p>空间每个点的漫反射光都被传感器每个像素点接收——几乎无法成像。</p>
-<h2 id="针孔相机成像"><a href="#针孔相机成像" class="headerlink" title="针孔相机成像"></a>针孔相机成像</h2><p>针孔对光线路径做出了选择，可以得到一个倒像。</p>
+<h2 id="裸传感器成像"><a class="header-anchor" href="#裸传感器成像"></a>裸传感器成像</h2>
+<p>空间每个点的漫反射光都被传感器每个像素点接收——几乎无法成像。</p>
+<h2 id="针孔相机成像"><a class="header-anchor" href="#针孔相机成像"></a>针孔相机成像</h2>
+<p>针孔对光线路径做出了选择，可以得到一个倒像。</p>
 <p>相机术语：</p>
 <ul>
 <li>投影中心：即小孔位置</li>
@@ -294,19 +409,26 @@
 <p>进光效率：孔直径大，进光大；焦距短，接收光的效果好</p>
 <p>档：（f值）：焦距除以针孔直径。</p>
 <p><strong>针孔相机的成像模型可以帮助理解现代相机。</strong></p>
-<h2 id="相机矩阵：三维到二维的坐标变换"><a href="#相机矩阵：三维到二维的坐标变换" class="headerlink" title="相机矩阵：三维到二维的坐标变换"></a>相机矩阵：三维到二维的坐标变换</h2><p>用于解释开头的两个问题。</p>
+<h2 id="相机矩阵：三维到二维的坐标变换"><a class="header-anchor" href="#相机矩阵：三维到二维的坐标变换"></a>相机矩阵：三维到二维的坐标变换</h2>
+<p>用于解释开头的两个问题。</p>
 <p>一些数学</p>
 <p><img src="/posts/62008/%E7%9B%B8%E6%9C%BA%E7%9F%A9%E9%98%B5.png" alt="相机将三维世界的坐标（大X）通过线性变换转化为二维大图像坐标（小x的前两个分量）"></p>
-<p>x &#x3D; f X&#x2F;Z; y &#x3D; f Y&#x2F;Z</p>
-<p>P &#x3D; K[R|t]X, P(x,y,z)’ 为相机上的图像坐标，K(3 * 3)为内参矩阵，R(3 * 3)为相机在世界坐标系的旋转，t(3 * 1)为相机坐标系在世界坐标系中的平移，X为物体在世界的坐标(X,Y,Z,1)’ </p>
+<p>x = f X/Z; y = f Y/Z</p>
+<p>P = K[R|t]X, P(x,y,z)’ 为相机上的图像坐标，K(3 * 3)为内参矩阵，R(3 * 3)为相机在世界坐标系的旋转，t(3 * 1)为相机坐标系在世界坐标系中的平移，X为物体在世界的坐标(X,Y,Z,1)’</p>
 <p><strong>外参矩阵蕴含了相机在空间的平移和旋转；内参矩阵蕴含了相机将外界投影到照片的方式。二者分别回答“我在哪里”和“我眼中的世界”的问题</strong></p>
-<h3 id="透视"><a href="#透视" class="headerlink" title="透视"></a>透视</h3><p>让景物变大：增加焦距？减小物体到针孔的距离？效果不同！</p>
+<h3 id="透视"><a class="header-anchor" href="#透视"></a>透视</h3>
+<p>让景物变大：增加焦距？减小物体到针孔的距离？效果不同！</p>
 <p>应用：“眩晕效果（滑动变焦）”，固定前景的大小，同时改变焦距和物体距离，制造景深的变化。</p>
 <p>极端情况：正交投影：超级超级超级长焦，深度对大小不影响。（常见于游戏。</p>
-<h2 id="相机几何标定"><a href="#相机几何标定" class="headerlink" title="相机几何标定"></a>相机几何标定</h2><h3 id="三维匹配点标定法"><a href="#三维匹配点标定法" class="headerlink" title="三维匹配点标定法"></a>三维匹配点标定法</h3><p>利用一些已知的三维空间点-相机图像坐标的对应关系，推知整个相机矩阵。</p>
+<h2 id="相机几何标定"><a class="header-anchor" href="#相机几何标定"></a>相机几何标定</h2>
+<h3 id="三维匹配点标定法"><a class="header-anchor" href="#三维匹配点标定法"></a>三维匹配点标定法</h3>
+<p>利用一些已知的三维空间点-相机图像坐标的对应关系，推知整个相机矩阵。</p>
 <p>再利用算出的矩阵分析焦距、中心点等参数（得到一个上三角矩阵和正交矩阵，分别是相机的内部参数和外部坐标旋转）。</p>
-<h3 id="非线性优化算法，处理类似畸变问题"><a href="#非线性优化算法，处理类似畸变问题" class="headerlink" title="非线性优化算法，处理类似畸变问题"></a>非线性优化算法，处理类似畸变问题</h3><h3 id="多图棋盘格标定法"><a href="#多图棋盘格标定法" class="headerlink" title="多图棋盘格标定法"></a>多图棋盘格标定法</h3><p>已经很成熟。</p>
-<h2 id="学术前沿"><a href="#学术前沿" class="headerlink" title="学术前沿"></a>学术前沿</h2><ol>
+<h3 id="非线性优化算法，处理类似畸变问题"><a class="header-anchor" href="#非线性优化算法，处理类似畸变问题"></a>非线性优化算法，处理类似畸变问题</h3>
+<h3 id="多图棋盘格标定法"><a class="header-anchor" href="#多图棋盘格标定法"></a>多图棋盘格标定法</h3>
+<p>已经很成熟。</p>
+<h2 id="学术前沿"><a class="header-anchor" href="#学术前沿"></a>学术前沿</h2>
+<ol>
 <li>大规模的相机几何标定</li>
 <li>利用深度学习进行相机几何标定</li>
 <li>利用图像的“消失点”“消失线”进行几何标定</li>
@@ -354,7 +476,7 @@
                     
                 </ul>
             
-
+            
             
                 <div class="article-nav">
                     
@@ -436,8 +558,10 @@
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -479,6 +603,10 @@
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -489,11 +617,6 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -510,7 +633,15 @@
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 <script src="/js/utils.js"></script>
 
@@ -522,6 +653,34 @@
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

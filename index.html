@@ -30,13 +30,125 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#D6AB4A","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":null,"description":"让我们期待明天会更好🎵","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"center","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -83,6 +195,19 @@
                 
                     
                 
+                    
+                        
+                        <div class="tooltip s-icon-item "
+                             data-content="Email"
+                             data-name="email"
+                             
+                        >
+                            
+                                <a href="mailto:justaloli@163.com">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            
+                        </div>
                     
                 
             </div>
@@ -225,7 +350,6 @@
                     <div class="home-content-container fade-in-down-animation">
     <ul class="home-article-list">
         
-
                 <li class="home-article-item">
                     
                         <i class="fas fa-thumbtack top-icon"></i>
@@ -273,43 +397,6 @@
                 </li>
 
         
-
-                <li class="home-article-item">
-                    
-
-                    <h3 class="home-article-title">
-                        <a href="/posts/57577.html">
-                            天空之城世界简史
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            在我们一般理解的人类文明之外，地球上存在另一个文明：拉普达（laputa）文明。
-生理上，拉普达文明的人应当和普通人类没有区别，因为在拉普达文明毁灭之后，拉普达的王族能以平凡人的身份生活在人类社会中。
-尽管如此，拉普达文明有远超正常人类文明的科技水平...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span>
-            <i class="fas fa-history"></i>&nbsp;
-            <span class="home-article-date" data-updated="Wed Jun 07 2023 17:46:28 GMT+0800">
-                2023-06-07
-            </span>
-        </span>
-        
-        
-    </div>
-
-    <a class="read-more" href="/posts/57577.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-                </li>
-
-        
-
                 <li class="home-article-item">
                     
 
@@ -325,7 +412,9 @@
 编者按：地震概论完全不是水课！一定要好好听讲。地概内容很丰富，不了解老师的重点，基本是很难复习的——来自考试时好多知识点根本没复习到的倒霉编者。
 注：下文是小组合作产物，我不完全享有著作权。未经同意不得转载这篇文章。
 
-第一章 概论地震上世纪200...
+第一章 概论
+地震
+上世纪2...
                         
                     </div>
 
@@ -333,8 +422,8 @@
     <div class="home-article-meta-info">
         <span>
             <i class="fas fa-history"></i>&nbsp;
-            <span class="home-article-date" data-updated="Sat Jun 10 2023 15:30:31 GMT+0800">
-                2023-06-10
+            <span class="home-article-date" data-updated="Sun Jun 11 2023 11:46:02 GMT+0800">
+                2023-06-11
             </span>
         </span>
         
@@ -347,7 +436,6 @@
                 </li>
 
         
-
                 <li class="home-article-item">
                     
 
@@ -368,7 +456,7 @@
     <div class="home-article-meta-info">
         <span>
             <i class="fas fa-history"></i>&nbsp;
-            <span class="home-article-date" data-updated="Sun Jun 11 2023 00:11:50 GMT+0800">
+            <span class="home-article-date" data-updated="Sun Jun 11 2023 12:20:05 GMT+0800">
                 2023-06-11
             </span>
         </span>
@@ -382,7 +470,6 @@
                 </li>
 
         
-
                 <li class="home-article-item">
                     
 
@@ -416,133 +503,6 @@
                 </li>
 
         
-
-                <li class="home-article-item">
-                    
-
-                    <h3 class="home-article-title">
-                        <a href="/posts/39276.html">
-                            数算示例程序
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            顺序字典的二分查找1234567891011121314151617int BinSearch(SeqDictionary *pdic, KeyType key, int *pos)&#123;	int low,mid,high;	low = 0; ...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span>
-            <i class="fas fa-history"></i>&nbsp;
-            <span class="home-article-date" data-updated="Sat Jun 10 2023 15:32:28 GMT+0800">
-                2023-06-10
-            </span>
-        </span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%95%B0%E7%AE%97/">数算</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a class="read-more" href="/posts/39276.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-                </li>
-
-        
-
-                <li class="home-article-item">
-                    
-
-                    <h3 class="home-article-title">
-                        <a href="/posts/51676.html">
-                            数算关键概念精简版
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            呕
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span>
-            <i class="fas fa-history"></i>&nbsp;
-            <span class="home-article-date" data-updated="Sat Jun 10 2023 15:32:25 GMT+0800">
-                2023-06-10
-            </span>
-        </span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%95%B0%E7%AE%97/">数算</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a class="read-more" href="/posts/51676.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-                </li>
-
-        
-
                 <li class="home-article-item">
                     
 
@@ -605,7 +565,6 @@
                 </li>
 
         
-
                 <li class="home-article-item">
                     
 
@@ -618,7 +577,8 @@
                     <div class="home-article-content keep-markdown-body">
                         
                             更清晰、更远的变焦!
-介绍传感器的分辨率是有限的.
+介绍
+传感器的分辨率是有限的.
 意义:
 
 提升视觉质量!
@@ -626,7 +586,7 @@
 
 https://github.com/bloc97/Anime4K/releases
 https://jpgHD.com
-基于子像素位移的多帧方法-传...
+基于子像素位移的多帧方法-...
                         
                     </div>
 
@@ -672,7 +632,6 @@ https://jpgHD.com
                 </li>
 
         
-
                 <li class="home-article-item">
                     
 
@@ -690,11 +649,11 @@ https://jpgHD.com
 图像的存储
 多帧合成的动态范围
 
-动态范围场景中最亮和最暗的部分之间的亮度比。
+动态范围
+场景中最亮和最暗的部分之间的亮度比。
 人眼能适应的动态范围极高，完全覆盖真实世界的常见场景。
 HDR期望能覆盖真实世界的常见场景。
-但还有一个问题：显示器的动态范围很低
-...
+但还有一个问题：显示器的动态范围很低...
                         
                     </div>
 
@@ -735,6 +694,206 @@ HDR期望能覆盖真实世界的常见场景。
     </div>
 
     <a class="read-more" href="/posts/21773.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+                </li>
+
+        
+                <li class="home-article-item">
+                    
+
+                    <h3 class="home-article-title">
+                        <a href="/posts/7606.html">
+                            计算摄像学 第七讲 光度立体视觉
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            计算摄像：通过计算获取普通相机拍摄图像之外的信息
+例如：通过相机获取三维形状
+光度法恢复物体形状：主要通过多张图
+光度方法只能获得物体一面的3d信息（背面看不到），但是，可以获得的很精确。
+回顾：BRDF、电光源、平行光源、朗伯反射
+朗伯反射：
+i ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Tue Apr 11 2023 14:12:03 GMT+0800">
+                2023-04-11
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/posts/7606.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+                </li>
+
+        
+                <li class="home-article-item">
+                    
+
+                    <h3 class="home-article-title">
+                        <a href="/posts/11144.html">
+                            数算关键概念一览
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            讨厌这个。
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 11 2023 11:46:02 GMT+0800">
+                2023-06-11
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%95%B0%E7%AE%97/">数算</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/posts/11144.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+                </li>
+
+        
+                <li class="home-article-item">
+                    
+
+                    <h3 class="home-article-title">
+                        <a href="/posts/63671.html">
+                            计算摄像学 第十二讲 图像反射消除
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            （为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。
+讲者1 常亚坤
+主要内容：
+
+背景介绍
+
+成像模型、反射特性
+
+
+经典优化求解
+基准评价数据集
+基于深度学习的方法。
+
+1.背景介绍
+
+反射的成因（经典物理图像
+反射的特性
+
+若反射...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Tue Apr 18 2023 13:00:46 GMT+0800">
+                2023-04-18
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/posts/63671.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
                 </li>
@@ -784,8 +943,10 @@ HDR期望能覆盖真实世界的常见场景。
         
         
     </div>
-</footer>
 
+
+
+</footer>
         </div>
     </div>
 
@@ -810,6 +971,10 @@ HDR期望能覆盖真实世界的常见场景。
         
 
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -820,11 +985,6 @@ HDR期望能覆盖真实世界的常见场景。
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
         
     </ul>
 </div>
@@ -841,7 +1001,15 @@ HDR期望能覆盖真实世界的常见场景。
 </main>
 
 
-
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
 
 
 <script src="/js/utils.js"></script>
@@ -854,6 +1022,34 @@ HDR期望能覆盖真实世界的常见场景。
 
 <script src="/js/dark-light-toggle.js"></script>
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script>
+"use strict";function _objectSpread(a){for(var b=1;b<arguments.length;b++){var c=null==arguments[b]?{}:arguments[b],d=Object.keys(c);"function"==typeof Object.getOwnPropertySymbols&&(d=d.concat(Object.getOwnPropertySymbols(c).filter(function(a){return Object.getOwnPropertyDescriptor(c,a).enumerable}))),d.forEach(function(b){_defineProperty(a,b,c[b])})}return a}function _defineProperty(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}class MetingJSElement extends HTMLElement{connectedCallback(){window.APlayer&&window.fetch&&(this._init(),this._parse())}disconnectedCallback(){this.lock||this.aplayer.destroy()}_camelize(a){return a.replace(/^[_.\- ]+/,"").toLowerCase().replace(/[_.\- ]+(\w|$)/g,(a,b)=>b.toUpperCase())}_init(){let a={};for(let b=0;b<this.attributes.length;b+=1)a[this._camelize(this.attributes[b].name)]=this.attributes[b].value;let b=["server","type","id","api","auth","auto","lock","name","title","artist","author","url","cover","pic","lyric","lrc"];this.meta={};for(var c=0;c<b.length;c++){let d=b[c];this.meta[d]=a[d],delete a[d]}this.config=a,this.api=this.meta.api||window.meting_api||"https://meting.yany.ml/api?server=:server&type=:type&id=:id&r=:r",this.meta.auto&&this._parse_link()}_parse_link(){let a=[["music.163.com.*song.*id=(\\d+)","netease","song"],["music.163.com.*album.*id=(\\d+)","netease","album"],["music.163.com.*artist.*id=(\\d+)","netease","artist"],["music.163.com.*playlist.*id=(\\d+)","netease","playlist"],["music.163.com.*discover/toplist.*id=(\\d+)","netease","playlist"],["y.qq.com.*song/(\\w+).html","tencent","song"],["y.qq.com.*album/(\\w+).html","tencent","album"],["y.qq.com.*singer/(\\w+).html","tencent","artist"],["y.qq.com.*playsquare/(\\w+).html","tencent","playlist"],["y.qq.com.*playlist/(\\w+).html","tencent","playlist"],["xiami.com.*song/(\\w+)","xiami","song"],["xiami.com.*album/(\\w+)","xiami","album"],["xiami.com.*artist/(\\w+)","xiami","artist"],["xiami.com.*collect/(\\w+)","xiami","playlist"]];for(var b=0;b<a.length;b++){let c=a[b],d=new RegExp(c[0]),e=d.exec(this.meta.auto);if(null!==e)return this.meta.server=c[1],this.meta.type=c[2],void(this.meta.id=e[1])}}_parse(){if(this.meta.url){let a={name:this.meta.name||this.meta.title||"Audio name",artist:this.meta.artist||this.meta.author||"Audio artist",url:this.meta.url,cover:this.meta.cover||this.meta.pic,lrc:this.meta.lrc||this.meta.lyric||"",type:this.meta.type||"auto"};return a.lrc||(this.meta.lrcType=0),this.innerText&&(a.lrc=this.innerText,this.meta.lrcType=2),void this._loadPlayer([a])}let a=this.api.replace(":server",this.meta.server).replace(":type",this.meta.type).replace(":id",this.meta.id).replace(":auth",this.meta.auth).replace(":r",Math.random());fetch(a).then(a=>a.json()).then(a=>this._loadPlayer(a))}_loadPlayer(a){let b={audio:a,mutex:!0,lrcType:this.meta.lrcType||3,storageName:"metingjs"};if(a.length){let a=_objectSpread({},b,this.config);for(let b in a)("true"===a[b]||"false"===a[b])&&(a[b]="true"===a[b]);let c=document.createElement("div");a.container=c,this.appendChild(c),this.aplayer=new APlayer(a)}}}console.log("\n %c MetingJS v2.0.1 %c https://github.com/metowolf/MetingJS \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),window.customElements&&!window.customElements.get("meting-js")&&(window.MetingJSElement=MetingJSElement,window.customElements.define("meting-js",MetingJSElement));
+</script>
+
+
+
+
+        
+      <script src='https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js'></script>
+     <script>
+      $(document).ready(function() {
+        var mermaid_config = {
+            startOnLoad: true,
+            theme: '',
+            flowchart:{
+                useMaxWidth: false,
+                htmlLabels: true
+            }                
+        }
+        mermaid.initialize(mermaid_config);
+    });
+    </script>
+    
 
 
 

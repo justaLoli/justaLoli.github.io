@@ -1,4 +1,6 @@
 :root {
+  --firstscreen-background-img: url("/img/bg-day.jpg");
+  --firstscreen-font-color: #000;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -35,6 +37,8 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
+    --firstscreen-background-img: url("/img/bg-day.jpg");
+    --firstscreen-font-color: #000;
     --primary-color: #d6ab4a;
     --primary-color-light-1: #dab35c;
     --primary-color-light-2: #debc6e;
@@ -72,6 +76,8 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --firstscreen-background-img: url("/img/bg-sunset.jpg");
+    --firstscreen-font-color: #fff;
     --primary-color: #d6ab4a;
     --primary-color-light-1: #dab35c;
     --primary-color-light-2: #debc6e;
@@ -108,6 +114,8 @@
   }
 }
 .light-mode {
+  --firstscreen-background-img: url("/img/bg-day.jpg");
+  --firstscreen-font-color: #000;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -143,6 +151,8 @@
   --article-aging-tips-border-color: rgba(183,141,15,0.6);
 }
 .dark-mode {
+  --firstscreen-background-img: url("/img/bg-sunset.jpg");
+  --firstscreen-font-color: #fff;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -773,6 +783,8 @@ button {
   background-color: var(--background-color-2);
 }
 :root {
+  --firstscreen-background-img: url("/img/bg-day.jpg");
+  --firstscreen-font-color: #000;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -809,6 +821,8 @@ button {
 }
 @media (prefers-color-scheme: light) {
   :root {
+    --firstscreen-background-img: url("/img/bg-day.jpg");
+    --firstscreen-font-color: #000;
     --primary-color: #d6ab4a;
     --primary-color-light-1: #dab35c;
     --primary-color-light-2: #debc6e;
@@ -846,6 +860,8 @@ button {
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --firstscreen-background-img: url("/img/bg-sunset.jpg");
+    --firstscreen-font-color: #fff;
     --primary-color: #d6ab4a;
     --primary-color-light-1: #dab35c;
     --primary-color-light-2: #debc6e;
@@ -882,6 +898,8 @@ button {
   }
 }
 .light-mode {
+  --firstscreen-background-img: url("/img/bg-day.jpg");
+  --firstscreen-font-color: #000;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -917,6 +935,8 @@ button {
   --article-aging-tips-border-color: rgba(183,141,15,0.6);
 }
 .dark-mode {
+  --firstscreen-background-img: url("/img/bg-sunset.jpg");
+  --firstscreen-font-color: #fff;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -1327,6 +1347,8 @@ pre .javascript .function {
   height: 0;
 }
 :root {
+  --firstscreen-background-img: url("/img/bg-day.jpg");
+  --firstscreen-font-color: #000;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -1363,6 +1385,8 @@ pre .javascript .function {
 }
 @media (prefers-color-scheme: light) {
   :root {
+    --firstscreen-background-img: url("/img/bg-day.jpg");
+    --firstscreen-font-color: #000;
     --primary-color: #d6ab4a;
     --primary-color-light-1: #dab35c;
     --primary-color-light-2: #debc6e;
@@ -1400,6 +1424,8 @@ pre .javascript .function {
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --firstscreen-background-img: url("/img/bg-sunset.jpg");
+    --firstscreen-font-color: #fff;
     --primary-color: #d6ab4a;
     --primary-color-light-1: #dab35c;
     --primary-color-light-2: #debc6e;
@@ -1436,6 +1462,8 @@ pre .javascript .function {
   }
 }
 .light-mode {
+  --firstscreen-background-img: url("/img/bg-day.jpg");
+  --firstscreen-font-color: #000;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -1471,6 +1499,8 @@ pre .javascript .function {
   --article-aging-tips-border-color: rgba(183,141,15,0.6);
 }
 .dark-mode {
+  --firstscreen-background-img: url("/img/bg-sunset.jpg");
+  --firstscreen-font-color: #fff;
   --primary-color: #d6ab4a;
   --primary-color-light-1: #dab35c;
   --primary-color-light-2: #debc6e;
@@ -2712,7 +2742,7 @@ pre .javascript .function {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: url("/images/bg.svg") center center/cover no-repeat;
+  background: var(--firstscreen-background-img) center center/cover no-repeat;
 }
 .first-screen-container .content {
   position: relative;
@@ -2722,14 +2752,15 @@ pre .javascript .function {
   padding-top: 2rem;
 }
 .first-screen-container .content .description {
-  color: var(--text-color-3);
+  color: var(--firstscreen-font-color);
   font-weight: bold;
   font-size: 2rem;
   line-height: 1.8;
   text-align: center;
 }
 .first-screen-container .content .description .desc-item {
-  color: var(--text-color-3);
+  color: var(--firstscreen-font-color);
+  font-family: STSong;
 }
 @media (max-width: 800px) {
   .first-screen-container .content .description {

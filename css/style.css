@@ -586,6 +586,9 @@ button {
   display: block;
   max-height: 10rem;
 }
+figcaption {
+  text-align: center;
+}
 .keep-markdown-body {
   font-size: 1rem;
 }

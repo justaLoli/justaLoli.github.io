@@ -361,7 +361,7 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>728 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>764 字</span>
         </span>
     
     
@@ -412,7 +412,12 @@ mjx-container[display="true"] + br {
 <h2 id="相机矩阵：三维到二维的坐标变换"><a class="header-anchor" href="#相机矩阵：三维到二维的坐标变换"></a>相机矩阵：三维到二维的坐标变换</h2>
 <p>用于解释开头的两个问题。</p>
 <p>一些数学</p>
-<p><img src="/posts/62008/%E7%9B%B8%E6%9C%BA%E7%9F%A9%E9%98%B5.png" alt="相机将三维世界的坐标（大X）通过线性变换转化为二维大图像坐标（小x的前两个分量）"></p>
+<p>
+      <figure>
+        <img src="/posts/62008/%E7%9B%B8%E6%9C%BA%E7%9F%A9%E9%98%B5.png" alt="相机将三维世界的坐标（大X）通过线性变换转化为二维大图像坐标（小x的前两个分量）">
+        <figcaption>相机将三维世界的坐标（大X）通过线性变换转化为二维大图像坐标（小x的前两个分量）</figcaption>
+      </figure>
+    </p>
 <p>x = f X/Z; y = f Y/Z</p>
 <p>P = K[R|t]X, P(x,y,z)’ 为相机上的图像坐标，K(3 * 3)为内参矩阵，R(3 * 3)为相机在世界坐标系的旋转，t(3 * 1)为相机坐标系在世界坐标系中的平移，X为物体在世界的坐标(X,Y,Z,1)’</p>
 <p><strong>外参矩阵蕴含了相机在空间的平移和旋转；内参矩阵蕴含了相机将外界投影到照片的方式。二者分别回答“我在哪里”和“我眼中的世界”的问题</strong></p>

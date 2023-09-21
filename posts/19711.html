@@ -291,228 +291,210 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本博客的搭建，离不开我的一位高中同学兼好友的指路： <a class="link" target="_blank" rel="noopener" href="https://mug-chen.github.io/posts/23043.html">https://mug-chen.github.io/posts/23043.html<i class="fas fa-external-link-alt"></i></a> 。他的文章简明且直击要害，为这个博客的搭建起到了灯塔一般的作用。</p>
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本博客的搭建，离不开我的一位高中同学兼好友的指路：
+https://mug-chen.github.io/posts/23043.html
+。他的文章简明且直击要害，为这个博客的搭建起到了灯塔一般的作用。</p>
 <p>不过，由于过于简明，初阅他的文章有一定难度。本文主要在这篇文章的基础上，补充一些知识点。</p>
-<h2 id="1-什么是hexo？为什么用hexo而不用wordpress之类的？"><a class="header-anchor" href="#1-什么是hexo？为什么用hexo而不用wordpress之类的？"></a>1. 什么是hexo？为什么用hexo而不用wordpress之类的？</h2>
+<h2 id="什么是hexo为什么用hexo而不用wordpress之类的">1.
+什么是hexo？为什么用hexo而不用wordpress之类的？</h2>
 <p>在这之前，我们先要明确一个网站的基本构成。</p>
 <p>十分粗略的说，一个网页（的前端）包含三个部分：HTML，CSS，JS。直观的说，HTML负责告诉浏览器：网页上需要显示哪些内容；CSS负责告诉浏览器：这些内容以何种样式（例如：字体大小和颜色）显示；JS负责告诉浏览器：网页将如何反馈用户的操作。再形象一些，如果将网页比作人体，HTML是骨架，CSS是皮肤，JS是肌肉（人的动作）。</p>
 <p>因此，如果要建立一个网页，至少需要熟悉上述三个部分以及它们之间的相互作用，这无疑非常困难。好在，这世上不乏现成的工具，我们只需要对这些工具进行简单的操作，它们就能帮我们生成所需的HTML，CSS，JS，以及一系列网页所需的文件。</p>
-<p><strong>hexo</strong> 就是这样的一个工具。<code>hexo</code>是一个专门的博客框架。有了它，我们只需要埋头撰写博文，无需在意HTML、CSS、JS一流，它会自动由我们的博文生成精美的网页。</p>
-<p>虽然世上还有<code>wordpress</code>等博客框架，但是选择<code>hexo</code>几乎是一个必然。我和我朋友的博客是利用 <code>Github Page</code> 呈现的。 <code>Github Page</code> 的优势是免费，劣势是其显示的网页必须是 <strong>静态</strong> 的。<code>wordpress</code>是动态的，必须建立在服务器上。这意味着，建立一个<code>wordpress</code>博客需要租服务器，并掏钱。而<code>hexo</code>生成的正好是静态网页。</p>
-<p><s>你做静态网页的时候很爽，你部署之后不断刷新网页的样子也很狼狈（这句话的意思：静态网页导致整个网页都能被缓存，而由于缓存的存在，上传的更改无法被及时体现在网页上），大概要延后几分钟</s></p>
+<p><strong>hexo</strong>
+就是这样的一个工具。<code>hexo</code>是一个专门的博客框架。有了它，我们只需要埋头撰写博文，无需在意HTML、CSS、JS一流，它会自动由我们的博文生成精美的网页。</p>
+<p>虽然世上还有<code>wordpress</code>等博客框架，但是选择<code>hexo</code>几乎是一个必然。我和我朋友的博客是利用
+<code>Github Page</code> 呈现的。 <code>Github Page</code>
+的优势是免费，劣势是其显示的网页必须是 <strong>静态</strong>
+的。<code>wordpress</code>是动态的，必须建立在服务器上。这意味着，建立一个<code>wordpress</code>博客需要租服务器，并掏钱。而<code>hexo</code>生成的正好是静态网页。</p>
+<p><del>你做静态网页的时候很爽，你部署之后不断刷新网页的样子也很狼狈（这句话的意思：静态网页导致整个网页都能被缓存，而由于缓存的存在，上传的更改无法被及时体现在网页上），大概要延后几分钟</del></p>
 <blockquote>
 <p>关于为什么使用<code>hexo</code>，更多内容可以参阅：</p>
-<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/xinghaikongmeng/article/details/107399643">https://blog.csdn.net/xinghaikongmeng/article/details/107399643<i class="fas fa-external-link-alt"></i></a></p>
+<p>https://blog.csdn.net/xinghaikongmeng/article/details/107399643</p>
 </blockquote>
-<h2 id="2-后续内容：一些自定义和美化经验"><a class="header-anchor" href="#2-后续内容：一些自定义和美化经验"></a>2. 后续内容：一些自定义和美化经验</h2>
-<h3 id="1-配置-config-yml"><a class="header-anchor" href="#1-配置-config-yml"></a>1. 配置<code>_config.yml</code></h3>
+<h2 id="后续内容一些自定义和美化经验">2.
+后续内容：一些自定义和美化经验</h2>
+<h3 id="配置_config.yml">1. 配置<code>_config.yml</code></h3>
 <p>里面包含博客的诸多基本设置，可以自行设置更改。其中各项栏目的作用可以参见：</p>
 <blockquote>
-<p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127786638">https://zhuanlan.zhihu.com/p/127786638<i class="fas fa-external-link-alt"></i></a></p>
+<p>https://zhuanlan.zhihu.com/p/127786638</p>
 </blockquote>
-<h3 id="2-自定义主题"><a class="header-anchor" href="#2-自定义主题"></a>2. 自定义主题</h3>
-<p>最好的做法是自行检索，推荐的关键词“hexo”“主题”。最好是：先看看主题推荐的文章，确定自己想使用的主题 -&gt; 直接搜索主题名称，按照官网的提示和文档进行设置。</p>
-<p>主题设置在 <code>_config.主题名称.yml</code> 中，需要按照主题给出的官方文档进行修改。</p>
+<h3 id="自定义主题">2. 自定义主题</h3>
+<p>最好的做法是自行检索，推荐的关键词“hexo”“主题”。最好是：先看看主题推荐的文章，确定自己想使用的主题
+-&gt; 直接搜索主题名称，按照官网的提示和文档进行设置。</p>
+<p>主题设置在 <code>_config.主题名称.yml</code>
+中，需要按照主题给出的官方文档进行修改。</p>
 <p>在我看来，美化博客好比装修自己的家，繁琐但有趣。希望你享受这个过程:D</p>
-<h3 id="3-一些使用小组件"><a class="header-anchor" href="#3-一些使用小组件"></a>3. 一些使用小组件</h3>
-<ol>
+<h3 id="一些使用小组件">3. 一些使用小组件</h3>
+<ol type="1">
 <li>不在url中使用中文的组件：abbrlink</li>
 <li>方便管理图片的组件：asset-image</li>
 </ol>
 <blockquote>
 <p>参阅：</p>
-<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42780289/article/details/102662091">https://blog.csdn.net/qq_42780289/article/details/102662091<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link" target="_blank" rel="noopener" href="https://www.cnblogs.com/QianBoy/p/8721529.html">https://www.cnblogs.com/QianBoy/p/8721529.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>https://blog.csdn.net/qq_42780289/article/details/102662091</p>
+<p>https://www.cnblogs.com/QianBoy/p/8721529.html</p>
 </blockquote>
-<h3 id="4-cdn加速"><a class="header-anchor" href="#4-cdn加速"></a>4. cdn加速</h3>
+<h3 id="cdn加速">4. cdn加速</h3>
 <ul>
-<li>提前说：这个部分 <strong>要花钱，且要持续花钱（域名基本只租不卖）</strong></li>
+<li>提前说：这个部分
+<strong>要花钱，且要持续花钱（域名基本只租不卖）</strong></li>
 </ul>
-<h4 id="为什么需要cdn加速？"><a class="header-anchor" href="#为什么需要cdn加速？"></a>为什么需要cdn加速？</h4>
+<h4 id="为什么需要cdn加速">为什么需要cdn加速？</h4>
 <p>因为众所周知的原因，<code>Github Page</code> 打开，太慢了。</p>
-<h4 id="什么是cdn加速？"><a class="header-anchor" href="#什么是cdn加速？"></a>什么是cdn加速？</h4>
+<h4 id="什么是cdn加速">什么是cdn加速？</h4>
 <p>一个简单的理解是，cdn是一些缓存服务器，将你网页的资源存放在距离用户更近的服务器中。这样，可以加速内容的访问，同时缓解主服务器的压力。</p>
-<h4 id="配置cdn加速"><a class="header-anchor" href="#配置cdn加速"></a>配置cdn加速</h4>
+<h4 id="配置cdn加速">配置cdn加速</h4>
 <p>这里选择cloudflare提供的cdn服务（注：主要的原因是匿名且免费。cloudflare虽然不在中国，但访问速度比github快不少）。</p>
 <p><strong>不过，要注意，在cdn加速前我们需要先拥有一个域名</strong>，而这常常是花钱的。</p>
 <p>这里以腾讯云为例。</p>
-<h5 id="1-购买域名"><a class="header-anchor" href="#1-购买域名"></a>1. 购买域名</h5>
-<p>直接到腾讯云域名购买，输入想要的域名，对应价格购买就行了。不同顶级域的价格会有差距。像这个 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a> ,  第一年仅需8元，童叟无欺。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D.jpeg" alt>
-        <figcaption></figcaption>
-      </figure>
-    </p>
+<h5 id="购买域名">1. 购买域名</h5>
+<p>直接到腾讯云域名购买，输入想要的域名，对应价格购买就行了。不同顶级域的价格会有差距。像这个
+<a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a> ,
+第一年仅需8元，童叟无欺。</p>
+<p><img src="/posts/19711/购买域名.jpeg"></p>
 <p>注意：国内的域名购买<strong>需要实名</strong>；需要等待一段时间审核域名才能正式使用。</p>
 <div style="width:30%;margin:auto">
-<p>
-      <figure>
-        <img src="/posts/19711/%E4%BA%92%E8%81%94%E7%BD%91%E5%B9%B6%E9%9D%9E%E6%B3%95%E5%A4%96%E4%B9%8B%E5%9C%B0.jpg" alt="互联网并非法外之地！">
-        <figcaption>互联网并非法外之地！</figcaption>
-      </figure>
-    </p>
+<figure>
+<img src="/posts/19711/互联网并非法外之地.jpg" alt="互联网并非法外之地！">
+<figcaption aria-hidden="true">互联网并非法外之地！</figcaption>
+</figure>
 </div>
-<h5 id="2-注册cloudflare"><a class="header-anchor" href="#2-注册cloudflare"></a>2. 注册cloudflare</h5>
+<h5 id="注册cloudflare">2. 注册cloudflare</h5>
 <p>注册后点击“添加站点”，输入刚刚购买的域名 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a>，下一步选择免费计划，然后继续。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/%E9%80%89%E6%8B%A9%E8%AE%A1%E5%88%92.jpeg" alt>
-        <figcaption></figcaption>
-      </figure>
-    </p>
-<h5 id="3-向cloudflare给出dns记录。"><a class="header-anchor" href="#3-向cloudflare给出dns记录。"></a>3. 向cloudflare给出dns记录。</h5>
+<p><img src="/posts/19711/选择计划.jpeg"></p>
+<h5 id="向cloudflare给出dns记录">3. 向cloudflare给出dns记录。</h5>
 <p>这一步紧随第二步，就是网站的下一页。在这里我们要手动指出 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a> 要指向哪个ip地址。</p>
-<p><strong>首先：</strong> 我们要明确我们网页的ip地址。博客目前的域名仍然是<code>justaloli.github.io</code>，我们在命令行输入：</p>
+<p><strong>首先：</strong>
+我们要明确我们网页的ip地址。博客目前的域名仍然是<code>justaloli.github.io</code>，我们在命令行输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Windows</span></span><br><span class="line">ping justaloli.github.io</span><br><span class="line"><span class="comment">#MacOS或Linux</span></span><br><span class="line">dig justaloli.github.io</span><br></pre></td></tr></table></figure>
 <p>在输出中可以找到服务器的ip地址。我们只需要从这些ipv4地址中选一个就可以了。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/%E7%A1%AE%E5%AE%9Aip.jpeg" alt>
-        <figcaption></figcaption>
-      </figure>
-    </p>
-<p><strong>其次：</strong> 在cloudflare上手动添加dns记录。每条记录主要有三项：类型、名称、地址。我们至少需要两条。</p>
+<p><img src="/posts/19711/确定ip.jpeg"></p>
+<p><strong>其次：</strong>
+在cloudflare上手动添加dns记录。每条记录主要有三项：类型、名称、地址。我们至少需要两条。</p>
 <ul>
 <li>第一条：类型填<code>A</code>，名称填<code>@</code>，地址填上文找到的ip；</li>
 <li>第二条：类型填<code>A</code>，名称填<code>www</code>，地址填上文找到的ip。</li>
 </ul>
 <p>这个操作是在指示cloudflare，将<code>justaloli.site</code>和<code>www.justaloli.site</code>的域名解析到我们网站的ip。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/%E6%B7%BB%E5%8A%A0dns%E8%AE%B0%E5%BD%95.jpeg" alt>
-        <figcaption></figcaption>
-      </figure>
-    </p>
+<p><img src="/posts/19711/添加dns记录.jpeg"></p>
 <p>你可能会注意到记录左侧有橙色小三角。无需理会，继续。</p>
-<p><strong>最后：</strong> 将我们注册的<code>justaloli.site</code>的域名服务器改成cloudflare的服务器。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/cloudflare%E6%8F%90%E7%A4%BA%E4%BF%AE%E6%94%B9dns%E6%9C%8D%E5%8A%A1%E5%99%A8.jpeg" alt="cloudflare网站上的指示">
-        <figcaption>cloudflare网站上的指示</figcaption>
-      </figure>
-    </p>
-<p>打开腾讯云的控制台，进入域名的 <code>概况</code> 页面，左下角 <code>DNS解析</code>，进行修改，将腾讯云内置的DNS服务器改成cloudflare网页上给出的服务器。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/%E4%BF%AE%E6%94%B9dns.jpeg" alt>
-        <figcaption></figcaption>
-      </figure>
-    </p>
-<p><strong>完成后回到cloudflare。后续还有一些选项，建议开启HTTPS，并且将SSL策略设置为<code>完全</code> (这很重要)</strong></p>
-<h5 id="4-把-Github-Page-的域名调整为-justaloli-site"><a class="header-anchor" href="#4-把-Github-Page-的域名调整为-justaloli-site"></a>4. 把 <code>Github Page</code> 的域名调整为 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a></h5>
-<p>在项目的<code>Settings-Pages</code>中，在下方的 <code>Custom domain</code> 位置填写 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a>。并保存。这时，如果前面一切顺利，github将自动完成DNS检测。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/github%E7%9A%84dns%E6%A3%80%E6%B5%8B.jpeg" alt>
-        <figcaption></figcaption>
-      </figure>
-    </p>
+<p><strong>最后：</strong>
+将我们注册的<code>justaloli.site</code>的域名服务器改成cloudflare的服务器。</p>
+<figure>
+<img src="/posts/19711/cloudflare提示修改dns服务器.jpeg" alt="cloudflare网站上的指示">
+<figcaption aria-hidden="true">cloudflare网站上的指示</figcaption>
+</figure>
+<p>打开腾讯云的控制台，进入域名的 <code>概况</code> 页面，左下角
+<code>DNS解析</code>，进行修改，将腾讯云内置的DNS服务器改成cloudflare网页上给出的服务器。</p>
+<p><img src="/posts/19711/修改dns.jpeg"></p>
+<p><strong>完成后回到cloudflare。后续还有一些选项，建议开启HTTPS，并且将SSL策略设置为<code>完全</code>
+(这很重要)</strong></p>
+<h5 id="把-github-page-的域名调整为-justaloli.site">4. 把
+<code>Github Page</code> 的域名调整为 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a></h5>
+<p>在项目的<code>Settings-Pages</code>中，在下方的
+<code>Custom domain</code> 位置填写 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a>。并保存。这时，如果前面一切顺利，github将自动完成DNS检测。</p>
+<p><img src="/posts/19711/github的dns检测.jpeg"></p>
 <p>完成后，建议勾选下面的强制HTTPS。</p>
-<h5 id="5-同步我们本地的项目"><a class="header-anchor" href="#5-同步我们本地的项目"></a>5. 同步我们本地的项目</h5>
+<h5 id="同步我们本地的项目">5. 同步我们本地的项目</h5>
 <p>完成后，回到Github项目主页，会发现多了一个<code>CNAME</code>文件。</p>
-<p>
-      <figure>
-        <img src="/posts/19711/%E9%A1%B9%E7%9B%AE.jpeg" alt>
-        <figcaption></figcaption>
-      </figure>
-    </p>
+<p><img src="/posts/19711/项目.jpeg"></p>
 <p>这个文件内容只有一行，就是我们的自定义域名 <a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a>。</p>
-<p>这时，我们要在我们本地项目的 <code>/source/</code> 目录下创建一个一模一样的 <code>CNAME</code> 文件，填入我们的自定义域名。</p>
-<p><strong>这很重要！否则我们在本地 <code>hexo d</code> 后，<code>Github</code> 上的 <code>CNAME</code> 文件会消失，自定义域名的设置会随之消失。</strong></p>
+<p>这时，我们要在我们本地项目的 <code>/source/</code>
+目录下创建一个一模一样的 <code>CNAME</code>
+文件，填入我们的自定义域名。</p>
+<p><strong>这很重要！否则我们在本地 <code>hexo d</code>
+后，<code>Github</code> 上的 <code>CNAME</code>
+文件会消失，自定义域名的设置会随之消失。</strong></p>
 <p>一系列步骤完成后，就可以使用自定义的<a class="link" target="_blank" rel="noopener" href="https://justaloli.site">justaloli.site<i class="fas fa-external-link-alt"></i></a>访问博客了。</p>
-<p>**Remark：**如果中途出现哪一步有问题，不要着急，可以先等一小会，服务器更新需要时间。</p>
+<p><strong>Remark：</strong>如果中途出现哪一步有问题，不要着急，可以先等一小会，服务器更新需要时间。</p>
 <blockquote>
 <p>cdn部分可以参见：</p>
-<p><a class="link" target="_blank" rel="noopener" href="https://www.cnblogs.com/yuelblog/p/15829774.html">https://www.cnblogs.com/yuelblog/p/15829774.html<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/question/28814437">https://www.zhihu.com/question/28814437<i class="fas fa-external-link-alt"></i></a></p>
+<p>https://www.cnblogs.com/yuelblog/p/15829774.html</p>
+<p>https://www.zhihu.com/question/28814437</p>
 </blockquote>
-<h2 id="附：Mac-linux部署hexo博客的方式（比windows简单很多！）和一些截图"><a class="header-anchor" href="#附：Mac-linux部署hexo博客的方式（比windows简单很多！）和一些截图"></a>附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图</h2>
+<h2 id="附maclinux部署hexo博客的方式比windows简单很多和一些截图">附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图</h2>
 <p>以Mac为例。</p>
-<h3 id="前提条件"><a class="header-anchor" href="#前提条件"></a>前提条件</h3>
-<ol>
+<h3 id="前提条件">前提条件</h3>
+<ol type="1">
 <li>确保安装了homebrew，并确保homebrew使用了国内镜像</li>
 <li>确保安装了git，并确保git可以通过代理等方式正确访问github</li>
 </ol>
 <p>上两条测试方式：在终端运行brew、再运行git，看是否有输出。</p>
 <blockquote>
 <p>关于终端的git如何使用代理，可以参阅：</p>
-<p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/481574024">https://zhuanlan.zhihu.com/p/481574024<i class="fas fa-external-link-alt"></i></a></p>
+<p>https://zhuanlan.zhihu.com/p/481574024</p>
 </blockquote>
-<h3 id="第一步：安装-node-js-和-hexo"><a class="header-anchor" href="#第一步：安装-node-js-和-hexo"></a>第一步：安装 node.js 和 hexo</h3>
-<ol>
+<h3 id="第一步安装-node.js-和-hexo">第一步：安装 node.js 和 hexo</h3>
+<ol type="1">
 <li>node.js安装：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<p>
-      <figure>
-        <img src="/posts/19711/%E5%AE%89%E8%A3%85nodejs.jpeg" alt="安装node.js">
-        <figcaption>安装node.js</figcaption>
-      </figure>
-    </p>
-<ol start="2">
+<figure>
+<img src="/posts/19711/安装nodejs.jpeg" alt="安装node.js">
+<figcaption aria-hidden="true">安装node.js</figcaption>
+</figure>
+<ol start="2" type="1">
 <li>hexo 安装：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>
-      <figure>
-        <img src="/posts/19711/%E5%AE%89%E8%A3%85hexo.jpeg" alt="安装hexo">
-        <figcaption>安装hexo</figcaption>
-      </figure>
-    </p>
-<h3 id="第二步：创建项目，初始化hexo"><a class="header-anchor" href="#第二步：创建项目，初始化hexo"></a>第二步：创建项目，初始化hexo</h3>
-<ol>
+<figure>
+<img src="/posts/19711/安装hexo.jpeg" alt="安装hexo">
+<figcaption aria-hidden="true">安装hexo</figcaption>
+</figure>
+<h3 id="第二步创建项目初始化hexo">第二步：创建项目，初始化hexo</h3>
+<ol type="1">
 <li>在某个位置，创建一个 <strong>空的</strong> 文件夹。</li>
 <li>初始化hexo</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先cd到创建的目录</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>
-      <figure>
-        <img src="/posts/19711/%E5%88%9D%E5%A7%8B%E5%8C%96hexo.jpeg" alt="初始化hexo">
-        <figcaption>初始化hexo</figcaption>
-      </figure>
-    </p>
+<figure>
+<img src="/posts/19711/初始化hexo.jpeg" alt="初始化hexo">
+<figcaption aria-hidden="true">初始化hexo</figcaption>
+</figure>
 <p>注意：如果报错，请确认git配置了代理。</p>
-<ol start="3">
+<ol start="3" type="1">
 <li>在localhost运行hexo</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#s是sever的简称</span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>
-      <figure>
-        <img src="/posts/19711/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8Chexo%E6%9C%8D%E5%8A%A1.jpeg" alt="hexo s">
-        <figcaption>hexo s</figcaption>
-      </figure>
-    </p>
-<h3 id="第三步：将项目上传到Github，建立Github-Page"><a class="header-anchor" href="#第三步：将项目上传到Github，建立Github-Page"></a>第三步：将项目上传到Github，建立Github Page</h3>
-<ol>
+<figure>
+<img src="/posts/19711/在本地服务器运行hexo服务.jpeg" alt="hexo s">
+<figcaption aria-hidden="true">hexo s</figcaption>
+</figure>
+<h3 id="第三步将项目上传到github建立github-page">第三步：将项目上传到Github，建立Github
+Page</h3>
+<ol type="1">
 <li>创建github项目</li>
 </ol>
 <blockquote>
 <p>可以参阅：</p>
-<p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28321740">https://zhuanlan.zhihu.com/p/28321740<i class="fas fa-external-link-alt"></i></a></p>
+<p>https://zhuanlan.zhihu.com/p/28321740</p>
 </blockquote>
 <p>看到 <em>2.开始搭建博客</em> 的前一点部分就好了。</p>
-<ol start="2">
+<ol start="2" type="1">
 <li>配置本地的hexo项目</li>
 </ol>
 <p>这部分直接参阅友链的<a class="link" target="_blank" rel="noopener" href="https://mug-chen.github.io/posts/23043.html">文章<i class="fas fa-external-link-alt"></i></a>就好啦！</p>
 <p>关于Git命令，文章里提供的是SSH连接策略，这里再提供有关HTTPS连接策略的内容：</p>
 <blockquote>
-<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38800316/article/details/120679506">https://blog.csdn.net/qq_38800316/article/details/120679506<i class="fas fa-external-link-alt"></i></a></p>
+<p>https://blog.csdn.net/qq_38800316/article/details/120679506</p>
 </blockquote>
-<p>总之就是，如果HTTPS登录时提示 <code>Support for password authentication was removed on August 13,2021.</code> ，就按照文中做法，将“密码”一栏改成在Github上创建的token即可。</p>
-<ol start="3">
+<p>总之就是，如果HTTPS登录时提示
+<code>Support for password authentication was removed on August 13,2021.</code>
+，就按照文中做法，将“密码”一栏改成在Github上创建的token即可。</p>
+<ol start="3" type="1">
 <li>将本地的hexo项目“部署”到Github上</li>
 </ol>
 <p>还有很多近义词如“同步”“上传”“push”方便理解这项操作。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这是安装hexo的一个组件，hexo将用这个组建调用git</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="comment">#g是generate的简称</span></span><br><span class="line">hexo g </span><br><span class="line"><span class="comment">#d是deploy的简称</span></span><br><span class="line">hexo d </span><br></pre></td></tr></table></figure>
-<h3 id="第四步：撰写博文"><a class="header-anchor" href="#第四步：撰写博文"></a>第四步：撰写博文</h3>
+<h3 id="第四步撰写博文">第四步：撰写博文</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new post 你的博文名字</span><br><span class="line">hexo s</span><br><span class="line"><span class="comment">#用你喜欢的方式打开 /source/_posts/你的博文名字.md 并撰写，保存。</span></span><br></pre></td></tr></table></figure>
-<p><strong>Remark：</strong> 撰写时，可以保持<code>hexo s</code>始终运行。这样，在你保存md文件后，刷新<code>localhost</code>，就能立刻看到效果。</p>
+<p><strong>Remark：</strong>
+撰写时，可以保持<code>hexo s</code>始终运行。这样，在你保存md文件后，刷新<code>localhost</code>，就能立刻看到效果。</p>
 <p>上传修改到<code>Github Page</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h1 id="引用"><a class="header-anchor" href="#引用"></a>引用</h1>
-<p>文中引用的各类文章很多，不再一一列出。再次对 <code>MUG-chen</code> 以及文内所有引用源的作者表示感谢！</p>
+<h1 id="引用">引用</h1>
+<p>文中引用的各类文章很多，不再一一列出。再次对 <code>MUG-chen</code>
+以及文内所有引用源的作者表示感谢！</p>
 
                 </div>
 
@@ -636,7 +618,11 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFhexo%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8hexo%E8%80%8C%E4%B8%8D%E7%94%A8wordpress%E4%B9%8B%E7%B1%BB%E7%9A%84%EF%BC%9F"><span class="nav-text">1. 什么是hexo？为什么用hexo而不用wordpress之类的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%90%8E%E7%BB%AD%E5%86%85%E5%AE%B9%EF%BC%9A%E4%B8%80%E4%BA%9B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%92%8C%E7%BE%8E%E5%8C%96%E7%BB%8F%E9%AA%8C"><span class="nav-text">2. 后续内容：一些自定义和美化经验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AE-config-yml"><span class="nav-text">1. 配置_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98"><span class="nav-text">2. 自定义主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%84%E4%BB%B6"><span class="nav-text">3. 一些使用小组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-cdn%E5%8A%A0%E9%80%9F"><span class="nav-text">4. cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81cdn%E5%8A%A0%E9%80%9F%EF%BC%9F"><span class="nav-text">为什么需要cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFcdn%E5%8A%A0%E9%80%9F%EF%BC%9F"><span class="nav-text">什么是cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEcdn%E5%8A%A0%E9%80%9F"><span class="nav-text">配置cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-text">1. 购买域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E6%B3%A8%E5%86%8Ccloudflare"><span class="nav-text">2. 注册cloudflare</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%90%91cloudflare%E7%BB%99%E5%87%BAdns%E8%AE%B0%E5%BD%95%E3%80%82"><span class="nav-text">3. 向cloudflare给出dns记录。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E6%8A%8A-Github-Page-%E7%9A%84%E5%9F%9F%E5%90%8D%E8%B0%83%E6%95%B4%E4%B8%BA-justaloli-site"><span class="nav-text">4. 把 Github Page 的域名调整为 justaloli.site</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E5%90%8C%E6%AD%A5%E6%88%91%E4%BB%AC%E6%9C%AC%E5%9C%B0%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="nav-text">5. 同步我们本地的项目</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%EF%BC%9AMac-linux%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%88%E6%AF%94windows%E7%AE%80%E5%8D%95%E5%BE%88%E5%A4%9A%EF%BC%81%EF%BC%89%E5%92%8C%E4%B8%80%E4%BA%9B%E6%88%AA%E5%9B%BE"><span class="nav-text">附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="nav-text">前提条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85-node-js-%E5%92%8C-hexo"><span class="nav-text">第一步：安装 node.js 和 hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-text">第二步：创建项目，初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%B0%86%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0Github%EF%BC%8C%E5%BB%BA%E7%AB%8BGithub-Page"><span class="nav-text">第三步：将项目上传到Github，建立Github Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E6%92%B0%E5%86%99%E5%8D%9A%E6%96%87"><span class="nav-text">第四步：撰写博文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFhexo%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8hexo%E8%80%8C%E4%B8%8D%E7%94%A8wordpress%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-text">1.
+什么是hexo？为什么用hexo而不用wordpress之类的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E5%86%85%E5%AE%B9%E4%B8%80%E4%BA%9B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%92%8C%E7%BE%8E%E5%8C%96%E7%BB%8F%E9%AA%8C"><span class="nav-text">2.
+后续内容：一些自定义和美化经验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE_config.yml"><span class="nav-text">1. 配置_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98"><span class="nav-text">2. 自定义主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%84%E4%BB%B6"><span class="nav-text">3. 一些使用小组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cdn%E5%8A%A0%E9%80%9F"><span class="nav-text">4. cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81cdn%E5%8A%A0%E9%80%9F"><span class="nav-text">为什么需要cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFcdn%E5%8A%A0%E9%80%9F"><span class="nav-text">什么是cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEcdn%E5%8A%A0%E9%80%9F"><span class="nav-text">配置cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-text">1. 购买域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E5%86%8Ccloudflare"><span class="nav-text">2. 注册cloudflare</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91cloudflare%E7%BB%99%E5%87%BAdns%E8%AE%B0%E5%BD%95"><span class="nav-text">3. 向cloudflare给出dns记录。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%8A-github-page-%E7%9A%84%E5%9F%9F%E5%90%8D%E8%B0%83%E6%95%B4%E4%B8%BA-justaloli.site"><span class="nav-text">4. 把
+Github Page 的域名调整为 justaloli.site</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%88%91%E4%BB%AC%E6%9C%AC%E5%9C%B0%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="nav-text">5. 同步我们本地的项目</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84maclinux%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%B9%E5%BC%8F%E6%AF%94windows%E7%AE%80%E5%8D%95%E5%BE%88%E5%A4%9A%E5%92%8C%E4%B8%80%E4%BA%9B%E6%88%AA%E5%9B%BE"><span class="nav-text">附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="nav-text">前提条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85-node.js-%E5%92%8C-hexo"><span class="nav-text">第一步：安装 node.js 和 hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-text">第二步：创建项目，初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%B0%86%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0github%E5%BB%BA%E7%AB%8Bgithub-page"><span class="nav-text">第三步：将项目上传到Github，建立Github
+Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E6%92%B0%E5%86%99%E5%8D%9A%E6%96%87"><span class="nav-text">第四步：撰写博文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a>
     </div>
 </div>
 
@@ -723,6 +709,15 @@
 
         <!-- rss -->
         
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
 
         
             <li class="tools-item tool-scroll-to-top flex-center">
@@ -769,7 +764,11 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFhexo%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8hexo%E8%80%8C%E4%B8%8D%E7%94%A8wordpress%E4%B9%8B%E7%B1%BB%E7%9A%84%EF%BC%9F"><span class="nav-text">1. 什么是hexo？为什么用hexo而不用wordpress之类的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%90%8E%E7%BB%AD%E5%86%85%E5%AE%B9%EF%BC%9A%E4%B8%80%E4%BA%9B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%92%8C%E7%BE%8E%E5%8C%96%E7%BB%8F%E9%AA%8C"><span class="nav-text">2. 后续内容：一些自定义和美化经验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AE-config-yml"><span class="nav-text">1. 配置_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98"><span class="nav-text">2. 自定义主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%84%E4%BB%B6"><span class="nav-text">3. 一些使用小组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-cdn%E5%8A%A0%E9%80%9F"><span class="nav-text">4. cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81cdn%E5%8A%A0%E9%80%9F%EF%BC%9F"><span class="nav-text">为什么需要cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFcdn%E5%8A%A0%E9%80%9F%EF%BC%9F"><span class="nav-text">什么是cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEcdn%E5%8A%A0%E9%80%9F"><span class="nav-text">配置cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-text">1. 购买域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E6%B3%A8%E5%86%8Ccloudflare"><span class="nav-text">2. 注册cloudflare</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%90%91cloudflare%E7%BB%99%E5%87%BAdns%E8%AE%B0%E5%BD%95%E3%80%82"><span class="nav-text">3. 向cloudflare给出dns记录。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E6%8A%8A-Github-Page-%E7%9A%84%E5%9F%9F%E5%90%8D%E8%B0%83%E6%95%B4%E4%B8%BA-justaloli-site"><span class="nav-text">4. 把 Github Page 的域名调整为 justaloli.site</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E5%90%8C%E6%AD%A5%E6%88%91%E4%BB%AC%E6%9C%AC%E5%9C%B0%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="nav-text">5. 同步我们本地的项目</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%EF%BC%9AMac-linux%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%88%E6%AF%94windows%E7%AE%80%E5%8D%95%E5%BE%88%E5%A4%9A%EF%BC%81%EF%BC%89%E5%92%8C%E4%B8%80%E4%BA%9B%E6%88%AA%E5%9B%BE"><span class="nav-text">附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="nav-text">前提条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85-node-js-%E5%92%8C-hexo"><span class="nav-text">第一步：安装 node.js 和 hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-text">第二步：创建项目，初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%B0%86%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0Github%EF%BC%8C%E5%BB%BA%E7%AB%8BGithub-Page"><span class="nav-text">第三步：将项目上传到Github，建立Github Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E6%92%B0%E5%86%99%E5%8D%9A%E6%96%87"><span class="nav-text">第四步：撰写博文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFhexo%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8hexo%E8%80%8C%E4%B8%8D%E7%94%A8wordpress%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-text">1.
+什么是hexo？为什么用hexo而不用wordpress之类的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E5%86%85%E5%AE%B9%E4%B8%80%E4%BA%9B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%92%8C%E7%BE%8E%E5%8C%96%E7%BB%8F%E9%AA%8C"><span class="nav-text">2.
+后续内容：一些自定义和美化经验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE_config.yml"><span class="nav-text">1. 配置_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98"><span class="nav-text">2. 自定义主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%84%E4%BB%B6"><span class="nav-text">3. 一些使用小组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cdn%E5%8A%A0%E9%80%9F"><span class="nav-text">4. cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81cdn%E5%8A%A0%E9%80%9F"><span class="nav-text">为什么需要cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFcdn%E5%8A%A0%E9%80%9F"><span class="nav-text">什么是cdn加速？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEcdn%E5%8A%A0%E9%80%9F"><span class="nav-text">配置cdn加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-text">1. 购买域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E5%86%8Ccloudflare"><span class="nav-text">2. 注册cloudflare</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91cloudflare%E7%BB%99%E5%87%BAdns%E8%AE%B0%E5%BD%95"><span class="nav-text">3. 向cloudflare给出dns记录。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%8A-github-page-%E7%9A%84%E5%9F%9F%E5%90%8D%E8%B0%83%E6%95%B4%E4%B8%BA-justaloli.site"><span class="nav-text">4. 把
+Github Page 的域名调整为 justaloli.site</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%88%91%E4%BB%AC%E6%9C%AC%E5%9C%B0%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="nav-text">5. 同步我们本地的项目</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84maclinux%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%B9%E5%BC%8F%E6%AF%94windows%E7%AE%80%E5%8D%95%E5%BE%88%E5%A4%9A%E5%92%8C%E4%B8%80%E4%BA%9B%E6%88%AA%E5%9B%BE"><span class="nav-text">附：Mac&amp;linux部署hexo博客的方式（比windows简单很多！）和一些截图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="nav-text">前提条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85-node.js-%E5%92%8C-hexo"><span class="nav-text">第一步：安装 node.js 和 hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-text">第二步：创建项目，初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%B0%86%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0github%E5%BB%BA%E7%AB%8Bgithub-page"><span class="nav-text">第三步：将项目上传到Github，建立Github
+Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E6%92%B0%E5%86%99%E5%8D%9A%E6%96%87"><span class="nav-text">第四步：撰写博文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a>
     </div>
 </div>
 

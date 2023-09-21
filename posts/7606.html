@@ -297,23 +297,25 @@
 <p>光度方法只能获得物体一面的3d信息（背面看不到），但是，可以获得的很精确。</p>
 <p>回顾：BRDF、电光源、平行光源、朗伯反射</p>
 <p>朗伯反射：</p>
-<p>i 像素值 正比于 光强 x 表面反射率 x 表面法向和光源方向的夹角（写成n点乘l）</p>
+<p>i 像素值 正比于 光强 x 表面反射率 x
+表面法向和光源方向的夹角（写成n点乘l）</p>
 <p><strong>光度立体视觉：假设物体表面反射符合朗伯成像模型，给定多张不同平行光光照下的图片（I），以及光源方向（L），求解每个像素的法线方向（N）。</strong></p>
 <p>对于每个像素点：</p>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">i1</span> <span class="operator">=</span> n · l1</span><br><span class="line"><span class="attribute">i2</span> <span class="operator">=</span> n · l2</span><br><span class="line"><span class="attribute">i3</span> <span class="operator">=</span> n · l3</span><br><span class="line">...</span><br><span class="line"><span class="attribute">iF</span> <span class="operator">=</span> n · lF</span><br></pre></td></tr></table></figure>
-<p>可以总结为矩阵 <em><strong>I = N * L</strong></em> I是图像数据，N是代求每个位置的法向量，L为每张图片的光源方向。用IL求N。</p>
+<p>可以总结为矩阵 <strong><em>I = N </em> L</strong>*
+I是图像数据，N是代求每个位置的法向量，L为每张图片的光源方向。用IL求N。</p>
 <p>至少需要三张光线方向不共面的照片，能得到唯一解。当然多了更好</p>
 <p>I可以从图像（经过光度标定的图）直接得到</p>
 <p>L如何得到？利用镜面球进行光源标定（其实最好的是台球）。（利用球面上的亮点）</p>
 <p>接下来，可以进一步求解表面的漫反射率</p>
 <p>问题：</p>
-<ol>
+<ol type="1">
 <li>朗伯反射物体很难找</li>
 <li>平行光很难找（太阳光是不可以的，因为它的轨迹在短时间内在同一平面（见上面第40行</li>
 <li>要求先进行光度标定</li>
 </ol>
 <p>更多的研究方向：</p>
-<ol>
+<ol type="1">
 <li>减少光源数量</li>
 <li>非标定的光源</li>
 <li>非标定的自然光</li>
@@ -532,6 +534,15 @@
         </li>
 
         <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
         
 
         

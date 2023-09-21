@@ -282,10 +282,11 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-车辆管理"><a class="header-anchor" href="#问题-车辆管理"></a>问题: 车辆管理</h1>
-<h3 id="问题简介"><a class="header-anchor" href="#问题简介"></a>问题简介</h3>
-<p>某单位最多100辆车辆，每辆车的基本信息包括:车号、车型、购买日期、购 买价格、驾驶员名称、违章记录等。其中，各辆车的违章次数可能差别很大(有的一次没有，有的可能有数十次)。每次违章记录中包括:违章时间、违章地点、违章代码(如闯红灯、违规停车等)、违章处理等。</p>
-<h3 id="问题理解"><a class="header-anchor" href="#问题理解"></a>问题理解</h3>
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-车辆管理">问题: 车辆管理</h1>
+<h3 id="问题简介">问题简介</h3>
+<p>某单位最多100辆车辆，每辆车的基本信息包括:车号、车型、购买日期、购
+买价格、驾驶员名称、违章记录等。其中，各辆车的违章次数可能差别很大(有的一次没有，有的可能有数十次)。每次违章记录中包括:违章时间、违章地点、违章代码(如闯红灯、违规停车等)、违章处理等。</p>
+<h3 id="问题理解">问题理解</h3>
 <p>需要实现的功能包括:</p>
 <ul>
 <li>查找某辆车的违章信息</li>
@@ -295,31 +296,36 @@
 <li>车辆的添加、报废(增删)</li>
 <li>违章记录的增删改.</li>
 </ul>
-<h2 id="设计与实现"><a class="header-anchor" href="#设计与实现"></a>设计与实现.</h2>
-<h3 id="程序实现的数据结构"><a class="header-anchor" href="#程序实现的数据结构"></a>程序实现的数据结构</h3>
-<p>本程序将使用笔者编写的双向链表作为线性表的实现. 为了测试并完善双向链表数据结构的稳健性, 本程序的车辆线性表和违章记录线性表都由双向链表实现. 双向链表集成了增、删、改、查等各操作及运算, 在此不做赘述.</p>
-<p>为了存储车辆和违章信息, 笔者分别建立了一个Car类和一个WZ类, 其UML图如下.</p>
+<h2 id="设计与实现.">设计与实现.</h2>
+<h3 id="程序实现的数据结构">程序实现的数据结构</h3>
+<p>本程序将使用笔者编写的双向链表作为线性表的实现.
+为了测试并完善双向链表数据结构的稳健性,
+本程序的车辆线性表和违章记录线性表都由双向链表实现.
+双向链表集成了增、删、改、查等各操作及运算, 在此不做赘述.</p>
+<p>为了存储车辆和违章信息, 笔者分别建立了一个Car类和一个WZ类,
+其UML图如下.</p>
 <pre class="mermaid">classDiagram
-	class WZ{
-		+string time
-		+string place
-		+int code
-		+bool ok
-	}
+    class WZ{
+        +string time
+        +string place
+        +int code
+        +bool ok
+    }
     class Car{
-    	+int id
-    	+string type
-    	+string buydate
-    	+float price
-    	+string driver
-    	+list<WZ> WZs	
+        +int id
+        +string type
+        +string buydate
+        +float price
+        +string driver
+        +list<WZ> WZs   
     }
     Car --> WZ</WZ></pre>
 <p>所有<code>Car</code>存储在双向链表<code>list&lt;Car&gt;</code>中.</p>
-<h3 id="环境"><a class="header-anchor" href="#环境"></a>环境:</h3>
+<h3 id="环境">环境:</h3>
 <p><code>g++ -std=c++11</code>. 在win10,x64及MacOS,arm64上测试.</p>
-<h3 id="程序架构"><a class="header-anchor" href="#程序架构"></a>程序架构</h3>
-<p>在main()函数中，将先开始计时，并执行 <code>list&lt;Car&gt; finput()</code>函数，从文件中读取车辆信息，返回车辆链表。再创建输出文件<code>fileo.txt</code>和输出文件流<code>fout</code>。随后顺序运行：</p>
+<h3 id="程序架构">程序架构</h3>
+<p>在main()函数中，将先开始计时，并执行
+<code>list&lt;Car&gt; finput()</code>函数，从文件中读取车辆信息，返回车辆链表。再创建输出文件<code>fileo.txt</code>和输出文件流<code>fout</code>。随后顺序运行：</p>
 <ul>
 <li><code>void fun1_print_all(list&lt;Car&gt;&amp;)</code>函数，传入车辆链表，将读取的信息再输出。</li>
 <li><code>void fun2_sort_cars(list&lt;Car&gt;&amp;)</code>函数，传入车辆链表，将车辆按违章数量多少进行冒泡排序。无返回，直接在链表内操作。</li>
@@ -329,21 +335,24 @@
 <li><code>void fun6_find_WZ_by_code(list&lt;Car&gt;&amp; cars, int code)</code>函数，传入车辆链表和违章代码，查找这个违章代码的所有违章记录。无返回，直接输出。</li>
 </ul>
 <p>随后在main()函数内执行车辆的增减、违章记录的增减等功能。最后停止计时，输出程序用时，并关闭文件，结束程序。</p>
-<h3 id="程序输入输出"><a class="header-anchor" href="#程序输入输出"></a>程序输入输出</h3>
+<h3 id="程序输入输出">程序输入输出</h3>
 <p>输入: 从程序运行目录下的<code>filei.txt</code>得到数据.</p>
-<p>输出: 输出到程序运行目录下的<code>fileo.txt</code>.输出内容包括每一个功能的执行结果,以及必要的提示信息. 最后输出程序执行时间.</p>
+<p>输出:
+输出到程序运行目录下的<code>fileo.txt</code>.输出内容包括每一个功能的执行结果,以及必要的提示信息.
+最后输出程序执行时间.</p>
 <p>由于输出的内容很长，无法在一页上机报告中囊括。详细输出请看<code>fileo.txt</code>.</p>
-<h2 id="总结"><a class="header-anchor" href="#总结"></a>总结</h2>
+<h2 id="总结">总结</h2>
 <p>收获: 实现了一个相对完备的双向链表.</p>
 <p>遇到的问题与解决办法:</p>
 <ul>
 <li>问题: 实现的列表类作为参数在函数之间传递时会产生异常.</li>
 <li>解决办法:
 <ul>
-<li>在不需要复制列表的情况下, 将函数的参数改为列表的引用<code>list&lt;Car&gt;&amp;</code>而非列表<code>list&lt;Car&gt;</code>本身</li>
-<li>查阅资料, 重载了一个类复制的构造函数,在需要传递列表时对列表进行复制,解决了此问题.</li>
-</ul>
-</li>
+<li>在不需要复制列表的情况下,
+将函数的参数改为列表的引用<code>list&lt;Car&gt;&amp;</code>而非列表<code>list&lt;Car&gt;</code>本身</li>
+<li>查阅资料,
+重载了一个类复制的构造函数,在需要传递列表时对列表进行复制,解决了此问题.</li>
+</ul></li>
 </ul>
 
                 </div>
@@ -460,7 +469,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E8%BD%A6%E8%BE%86%E7%AE%A1%E7%90%86"><span class="nav-text">问题: 车辆管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E4%BB%8B"><span class="nav-text">问题简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%90%86%E8%A7%A3"><span class="nav-text">问题理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="nav-text">设计与实现.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">程序实现的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-text">环境:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84"><span class="nav-text">程序架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">程序输入输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E8%BD%A6%E8%BE%86%E7%AE%A1%E7%90%86"><span class="nav-text">问题: 车辆管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E4%BB%8B"><span class="nav-text">问题简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%90%86%E8%A7%A3"><span class="nav-text">问题理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0."><span class="nav-text">设计与实现.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">程序实现的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-text">环境:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84"><span class="nav-text">程序架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">程序输入输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -547,6 +556,15 @@
 
         <!-- rss -->
         
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
 
         
             <li class="tools-item tool-scroll-to-top flex-center">
@@ -593,7 +611,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E8%BD%A6%E8%BE%86%E7%AE%A1%E7%90%86"><span class="nav-text">问题: 车辆管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E4%BB%8B"><span class="nav-text">问题简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%90%86%E8%A7%A3"><span class="nav-text">问题理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="nav-text">设计与实现.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">程序实现的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-text">环境:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84"><span class="nav-text">程序架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">程序输入输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E8%BD%A6%E8%BE%86%E7%AE%A1%E7%90%86"><span class="nav-text">问题: 车辆管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E4%BB%8B"><span class="nav-text">问题简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%90%86%E8%A7%A3"><span class="nav-text">问题理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0."><span class="nav-text">设计与实现.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">程序实现的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-text">环境:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84"><span class="nav-text">程序架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">程序输入输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
     </div>
 </div>
 

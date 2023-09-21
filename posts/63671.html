@@ -294,59 +294,52 @@
                     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。</p>
 <p>讲者1 常亚坤</p>
 <p>主要内容：</p>
-<ol>
+<ol type="1">
 <li>背景介绍
 <ul>
 <li>成像模型、反射特性</li>
-</ul>
-</li>
+</ul></li>
 <li>经典优化求解</li>
 <li>基准评价数据集</li>
 <li>基于深度学习的方法。</li>
 </ol>
-<h3 id="1-背景介绍"><a class="header-anchor" href="#1-背景介绍"></a>1.背景介绍</h3>
-<ol>
+<h3 id="背景介绍">1.背景介绍</h3>
+<ol type="1">
 <li>反射的成因（经典物理图像</li>
 <li>反射的特性
-<ol>
+<ol type="1">
 <li>若反射和背景都在景深内，结果相当于线性叠加</li>
 <li>若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积</li>
 <li>若反射镜有厚度，将出现重影</li>
-</ol>
-</li>
+</ol></li>
 <li>反射的（不利）影响
-<ol>
+<ol type="1">
 <li>例子：对着玻璃拍容易不美观</li>
 <li>对后期计算造成干扰</li>
-</ol>
-</li>
+</ol></li>
 <li>反射的消除</li>
 </ol>
-<h3 id="2-传统方法"><a class="header-anchor" href="#2-传统方法"></a>2. 传统方法</h3>
-<ol>
+<h3 id="传统方法">2. 传统方法</h3>
+<ol type="1">
 <li>“人力驱动”，手工标记数据</li>
 </ol>
 <p>它基于了“背景图层和反射图层一定程度上是独立的”的假设。</p>
 <p>主要过程：第一阶段：边缘标记和边缘分类-&gt;第二阶段：反射消除</p>
-<ol start="2">
+<ol start="2" type="1">
 <li>景深引导的反射消除</li>
 </ol>
 <p>主要依据：背景清晰时，反射多半会模糊。在梯度分布中也能看出。如果清晰的图像被模糊，梯度值更聚集于0（图像变化更平滑）；如果原本模糊的图像被模糊，则梯度直方图没有太大变化。</p>
-<ol start="3">
-<li>
-<p>基于相对平滑性</p>
-</li>
-<li>
-<p>基于多张图像：基于两层图像的位移不一致。</p>
-</li>
+<ol start="3" type="1">
+<li><p>基于相对平滑性</p></li>
+<li><p>基于多张图像：基于两层图像的位移不一致。</p></li>
 </ol>
 <p>变换相机角度，拍摄多张图像。移动时，背景的边缘移动和反射的边缘移动有不同。</p>
-<h3 id="基准评价数据集"><a class="header-anchor" href="#基准评价数据集"></a>基准评价数据集</h3>
+<h3 id="基准评价数据集">基准评价数据集</h3>
 <p>讲者：万人杰</p>
 <p>量化地评价消除反射的效果。</p>
 <p>SIR2数据集；SIR2+数据集</p>
 <p>（后面还有一下东西，没仔细听了呜呜</p>
-<h3 id="深度学习去反射"><a class="header-anchor" href="#深度学习去反射"></a>深度学习去反射</h3>
+<h3 id="深度学习去反射">深度学习去反射</h3>
 <p>第一篇（CN ACCV 16</p>
 <p>借鉴了传统方法的思路，对深度进行分类，然后进行剔除</p>
 <p>Fan ICCV 17</p>
@@ -483,7 +476,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-text">1.背景介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95"><span class="nav-text">2. 传统方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E5%87%86%E8%AF%84%E4%BB%B7%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">基准评价数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8E%BB%E5%8F%8D%E5%B0%84"><span class="nav-text">深度学习去反射</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-text">1.背景介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95"><span class="nav-text">2. 传统方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E5%87%86%E8%AF%84%E4%BB%B7%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">基准评价数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8E%BB%E5%8F%8D%E5%B0%84"><span class="nav-text">深度学习去反射</span></a></li></ol>
     </div>
 </div>
 
@@ -570,6 +563,15 @@
 
         <!-- rss -->
         
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
 
         
             <li class="tools-item tool-scroll-to-top flex-center">
@@ -616,7 +618,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-text">1.背景介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95"><span class="nav-text">2. 传统方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E5%87%86%E8%AF%84%E4%BB%B7%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">基准评价数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8E%BB%E5%8F%8D%E5%B0%84"><span class="nav-text">深度学习去反射</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-text">1.背景介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95"><span class="nav-text">2. 传统方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E5%87%86%E8%AF%84%E4%BB%B7%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">基准评价数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8E%BB%E5%8F%8D%E5%B0%84"><span class="nav-text">深度学习去反射</span></a></li></ol>
     </div>
 </div>
 

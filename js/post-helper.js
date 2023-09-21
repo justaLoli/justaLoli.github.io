@@ -3,21 +3,39 @@
 function initToggleShowToc() {
   KEEP.utils.postHelper = {
     postPageContainerDom: document.querySelector('.post-page-container'),
-    toggleShowTocBtnDom: document.querySelector('.toggle-show-toc'),
+    toggleShowTocBtn: document.querySelector('.toggle-show-toc'),
+    toggleShowTocTabletBtn: document.querySelector('.toggle-show-toc-tablet'),
     toggleShowTocIcon: document.querySelector('.toggle-show-toc i'),
     mainContentDom: document.querySelector('.main-content'),
     postToolsDom: document.querySelector('.post-tools'),
-    goToCommentsDom: document.querySelector('.post-tools .go-to-comments'),
 
     isShowToc: false,
 
     initToggleToc() {
-      this.toggleShowTocBtnDom &&
-        this.toggleShowTocBtnDom.addEventListener('click', () => {
+      this.toggleShowTocBtn &&
+        this.toggleShowTocBtn.addEventListener('click', () => {
           this.isShowToc = !this.isShowToc
           KEEP.styleStatus.isShowToc = this.isShowToc
           KEEP.setStyleStatus()
           this.handleToggleToc(this.isShowToc)
+        })
+
+      this.toggleShowTocTabletBtn &&
+        this.toggleShowTocTabletBtn.addEventListener('click', () => {
+          const tabletTocMask = document.querySelector('.tablet-post-toc-mask')
+          const tabletToc = tabletTocMask.querySelector('.tablet-post-toc')
+
+          document.body.style.overflow = `hidden`
+          tabletTocMask.style.background = `rgba(0, 0, 0, 0.25)`
+          tabletTocMask.style.visibility = `visible`
+          tabletToc.style.transform = `translateX(0)`
+
+          tabletTocMask.addEventListener('click', () => {
+            document.body.style.overflow = ''
+            tabletTocMask.style.background = `rgba(0, 0, 0, 0)`
+            tabletTocMask.style.visibility = `hidden`
+            tabletToc.style.transform = `translateX(-100%)`
+          })
         })
     },
 
@@ -31,17 +49,19 @@ function initToggleShowToc() {
       }
 
       setTimeout(() => {
-        this.setPostToolsLeft()
+        this.setPostToolsLayout()
       }, 120)
     },
 
     hasToc(isOpen) {
-      this.toggleShowTocBtnDom.style.display = 'flex'
-      this.isShowToc = isOpen
-      this.handleToggleToc(isOpen)
+      if (this.toggleShowTocBtn) {
+        this.toggleShowTocBtn.style.display = 'flex'
+        this.isShowToc = isOpen
+        this.handleToggleToc(isOpen)
+      }
     },
 
-    setPostToolsLeft(mcw) {
+    setPostToolsLayout(mcw) {
       const mainContainerWidth = mcw
         ? mcw
         : this.mainContentDom.getBoundingClientRect().width.toFixed(0)
@@ -51,42 +71,52 @@ function initToggleShowToc() {
         offsetX = 3
       }
 
+      const layout = KEEP.theme_config.toc?.layout === 'left' ? 'right' : 'left'
       this.postToolsDom.style.opacity = `1`
-      this.postToolsDom.style.left = `calc((100vw - ${mainContainerWidth}px) / 2 - ${offsetX}rem)`
+      this.postToolsDom.style[
+        layout
+      ] = `calc((100vw - ${mainContainerWidth}px) / 2 - ${offsetX}rem)`
     },
 
     initSetPostToolsLeft() {
       setTimeout(() => {
-        this.setPostToolsLeft()
+        this.setPostToolsLayout()
       }, 150)
 
       window.addEventListener('resize', () => {
-        this.setPostToolsLeft()
+        this.setPostToolsLayout()
       })
     },
 
     // go comment anchor
     goToComments() {
       const commentsAnchor = document.querySelector('#comments-anchor')
-      if (this.goToCommentsDom && commentsAnchor) {
-        this.goToCommentsDom.addEventListener('click', (event) => {
-          event.preventDefault()
-          let winScrollY = window.scrollY
-          winScrollY = winScrollY === 0 ? -20 : winScrollY
-          const offset = commentsAnchor.getBoundingClientRect().top + winScrollY
-          window.anime({
-            targets: document.scrollingElement,
-            duration: 300,
-            easing: 'linear',
-            scrollTop: offset,
-            complete: () => {
-              setTimeout(() => {
-                KEEP.utils.pageTop_dom.classList.add('hide')
-              }, 150)
-            }
+      const goToCommentsBtnList = [
+        document.querySelector('.post-tools .go-to-comments'),
+        document.querySelector('.exposed-tools-list .go-to-comments-tablet')
+      ]
+
+      goToCommentsBtnList.forEach((btn) => {
+        if (btn && commentsAnchor) {
+          btn.addEventListener('click', (event) => {
+            event.preventDefault()
+            let winScrollY = window.scrollY
+            winScrollY = winScrollY === 0 ? -20 : winScrollY
+            const offset = commentsAnchor.getBoundingClientRect().top + winScrollY
+            window.anime({
+              targets: document.scrollingElement,
+              duration: 300,
+              easing: 'linear',
+              scrollTop: offset,
+              complete: () => {
+                setTimeout(() => {
+                  KEEP.utils.pageTopDom.classList.add('hide')
+                }, 150)
+              }
+            })
           })
-        })
-      }
+        }
+      })
     },
 
     // watch comments count
@@ -116,9 +146,7 @@ function initToggleShowToc() {
 
     // set post link
     initSetPostLink() {
-      const postLinkContentDom = document.querySelector(
-        '.copyright-info-content .post-link .content'
-      )
+      const postLinkContentDom = document.querySelector('.copyright-info-content .post-link')
       postLinkContentDom && (postLinkContentDom.innerHTML = decodeURI(window.location.href))
     },
 
@@ -146,7 +174,7 @@ function initToggleShowToc() {
       copyDom.addEventListener('click', () => {
         if (!isCopied) {
           const author = cicDom.querySelector('.post-author .content').innerHTML
-          const link = cicDom.querySelector('.post-link .content').innerHTML
+          const link = cicDom.querySelector('.post-link').innerHTML
           const tgtTxt = `${ccLang.author}${colon}${author}\n${ccLang.link}${colon}${link}`
           navigator.clipboard.writeText(tgtTxt).then(() => {
             setCopyDomContent('fa-copy', 'fa-check', ccLang.copied, true)
@@ -177,18 +205,61 @@ function initToggleShowToc() {
           agingTipsDom.style.display = 'block'
         }
       }
+    },
+
+    formatDatetime(fmt = 'YYYY-MM-DD hh:mm:ss', timestamp = Date.now()) {
+      function padLeftZero(str) {
+        return `00${str}`.substr(str.length)
+      }
+
+      const date = new Date(timestamp)
+
+      if (/(y+)/.test(fmt) || /(Y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, `${date.getFullYear()}`.substr(4 - RegExp.$1.length))
+      }
+
+      const obj = {
+        'M+': date.getMonth() + 1,
+        'D+': date.getDate(),
+        'd+': date.getDate(),
+        'H+': date.getHours(),
+        'h+': date.getHours(),
+        'm+': date.getMinutes(),
+        's+': date.getSeconds()
+      }
+
+      for (const key in obj) {
+        if (new RegExp(`(${key})`).test(fmt)) {
+          const str = `${obj[key]}`
+          fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? str : padLeftZero(str))
+        }
+      }
+      return fmt
+    },
+
+    resetPostUpdateDate() {
+      const updateDateDom = document.querySelector(
+        '.article-meta-info-container .article-update-date .pc'
+      )
+      const updated = new Date(updateDateDom.dataset.updated).getTime()
+      const format = KEEP.theme_config.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss'
+      updateDateDom.innerHTML = this.formatDatetime(format, updated)
     }
   }
+
   KEEP.utils.postHelper.initSetPostToolsLeft()
   KEEP.utils.postHelper.setArticleAgingDays()
+  KEEP.utils.postHelper.resetPostUpdateDate()
 
   if (KEEP.theme_config.toc?.enable === true) {
     KEEP.utils.postHelper.initToggleToc()
   }
+
   if (KEEP.theme_config.comment?.enable === true) {
     KEEP.utils.postHelper.goToComments()
     KEEP.utils.postHelper.watchPostCommentsCount()
   }
+
   if (KEEP.theme_config.post?.copyright_info === true) {
     KEEP.utils.postHelper.initSetPostLink()
     KEEP.utils.postHelper.copyCopyrightInfo()

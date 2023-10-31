@@ -236,7 +236,7 @@
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Fri Jul 14 2023 12:19:01 GMT+0800">2023-07-14 12:19:01</span>
+                <span class="pc" data-updated="Tue Oct 31 2023 12:58:43 GMT+0800">2023-10-31 12:58:43</span>
             </span>
         
 
@@ -272,12 +272,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>767 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>845 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -294,16 +294,22 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="section">2023-07-11</h2>
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="section">2023-10-31</h2>
+<p>优化数学渲染。从结果上，从svg改成html-css渲染。</p>
+<p>细节上，卸载了<code>hexo-filter-mathjax</code>，安装<code>hexo-randerer-mathjax</code>.</p>
+<p>不过autotag出现了问题。它不给渲染tag了:(</p>
+<p>先这样吧，我搞不懂了。</p>
+<p>还有nm的pjax。。。我先deploy一下看看显示效果吧。。管不了了。</p>
+<h2 id="section-1">2023-07-11</h2>
 <p>图片增加<code>caption</code>。</p>
 <p>方法：渲染器设置为<code>markdown-it</code>（这一步怎么做的忘了</p>
 <p>安装 <code>markdown-it-figure-caption</code></p>
 <p>在<code>markdown-it</code>的配置里面加入。</p>
 <p>在<code>keep</code>主题的<code>markdown.styl</code>中加入代码，让<code>caption</code>居中。完成。</p>
-<h2 id="section-1">2023-06-12</h2>
+<h2 id="section-2">2023-06-12</h2>
 <p>修改<code>keep</code>主题源码，头图和首页<code>slogan</code>可针对浅色、深色背景分别设置。</p>
 <p>增加友链页。修改<code>keep</code>主题源码，调整友链页内容和链接出现的顺序。</p>
-<h2 id="section-2">2023-06-11</h2>
+<h2 id="section-3">2023-06-11</h2>
 <p>试着换了主题为<code>keep</code>，并进行魔改。</p>
 <p>修改了<code>hexo-generator-index的generator.js</code>，过滤了<code>hide</code>为<code>true</code>的页面。</p>
 <p>现在只有首页隐藏了标记hide的文章。</p>
@@ -316,35 +322,35 @@
 <p>尾注会出现两个序号，非常之蠢。</p>
 <p>友链尚未增加，该按钮没用。</p>
 <p>原来的“杂货”窗口也没有增加。</p>
-<h2 id="section-3">2023-03-01</h2>
+<h2 id="section-4">2023-03-01</h2>
 <p>将domain换成了 <code>justaloli.cn</code>
 。原有域名，如果可能，将重定向到这个域名。</p>
-<h2 id="section-4">2023-02-26</h2>
+<h2 id="section-5">2023-02-26</h2>
 <p>一定程度上修复了音乐播放器，换回了Aplayer。但是由于没有PJAX，依旧只将播放器放在了杂货的一个页面中。</p>
-<h2 id="section-5">2023-02-25</h2>
+<h2 id="section-6">2023-02-25</h2>
 <p>新增RSS。入口在杂货。</p>
-<h2 id="section-6">2023-02-07</h2>
+<h2 id="section-7">2023-02-07</h2>
 <p>发现文章页面底部的「引用」板块显示的链接还是旧的<code>justaloli.github.io</code>。修改了一下。</p>
-<h2 id="section-7">2023-01-18</h2>
+<h2 id="section-8">2023-01-18</h2>
 <p>尝试了很多，最终增加了一个<code>Aplayer</code>音乐播放器。</p>
 <p><strong>issue</strong>：很遗憾，由于Fluid主题不支持Pjax，音乐在页面跳转时将暂停。为此我只能求其次，只在某几个页面显示音乐播放器。</p>
 <p>让Fluid支持Pjax，或者让Aplayer不被重新加载，目前都不在我的能力范围内。后续会持续学习。</p>
 <p><strong>追加issue</strong>
 玩脱了，整个播放器都没有了。完全不知道出了什么问题 无语。</p>
 <p>做了很多好像什么都没有做。暂时搁置。</p>
-<h2 id="section-8">2023-01-17</h2>
+<h2 id="section-9">2023-01-17</h2>
 <p>对站点进行了萌ICP备案</p>
 <p>给网页增加了一个<code>sakana🐟～</code>小组件，好玩！</p>
-<h2 id="section-9">2023-01-16</h2>
+<h2 id="section-10">2023-01-16</h2>
 <p>对 <code>fluid</code>
 主题源码进行了一些修改，调整了「友链」（在这个博客下叫做杂货铺！）的布局和写作方式。</p>
 <p>不过这些改变不是通过注入自己的代码实现的，而是直接修改fluid主题源码实现的，有一些不优雅。不过我比较满意。梦想是做成瀑布流，不过对我而言太困难。</p>
-<h2 id="section-10">2023-01-15</h2>
+<h2 id="section-11">2023-01-15</h2>
 <p>更换了网站头图，并彻底调整了网页配色。</p>
-<h2 id="section-11">2023-01-13</h2>
+<h2 id="section-12">2023-01-13</h2>
 <p>注册了新域名
 <code>justaloli.site</code>，做了域名解析和cloudflare的CDN加速</p>
-<h2 id="section-12">2023-01-12</h2>
+<h2 id="section-13">2023-01-12</h2>
 <p>建站第一天。部署在Github
 Page<code>justaloli.github.io</code>。确定了博客框架<code>hexo</code>，确定了主题<code>fluid</code>，确定了网站名<code>Loli的杂货铺</code>。</p>
 
@@ -474,7 +480,7 @@ Page<code>justaloli.github.io</code>。确定了博客框架<code>hexo</code>，
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-text">2023-07-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-text">2023-06-12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-text">2023-06-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-text">2023-03-01</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-text">2023-02-26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-5"><span class="nav-text">2023-02-25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-6"><span class="nav-text">2023-02-07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-7"><span class="nav-text">2023-01-18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-8"><span class="nav-text">2023-01-17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-9"><span class="nav-text">2023-01-16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-10"><span class="nav-text">2023-01-15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-11"><span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-12"><span class="nav-text">2023-01-12</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-text">2023-10-31</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-text">2023-07-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-text">2023-06-12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-text">2023-06-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-text">2023-03-01</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-5"><span class="nav-text">2023-02-26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-6"><span class="nav-text">2023-02-25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-7"><span class="nav-text">2023-02-07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-8"><span class="nav-text">2023-01-18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-9"><span class="nav-text">2023-01-17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-10"><span class="nav-text">2023-01-16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-11"><span class="nav-text">2023-01-15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-12"><span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-13"><span class="nav-text">2023-01-12</span></a></li></ol>
     </div>
 </div>
 
@@ -616,7 +622,7 @@ Page<code>justaloli.github.io</code>。确定了博客框架<code>hexo</code>，
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-text">2023-07-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-text">2023-06-12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-text">2023-06-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-text">2023-03-01</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-text">2023-02-26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-5"><span class="nav-text">2023-02-25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-6"><span class="nav-text">2023-02-07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-7"><span class="nav-text">2023-01-18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-8"><span class="nav-text">2023-01-17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-9"><span class="nav-text">2023-01-16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-10"><span class="nav-text">2023-01-15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-11"><span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-12"><span class="nav-text">2023-01-12</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-text">2023-10-31</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-text">2023-07-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-text">2023-06-12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-3"><span class="nav-text">2023-06-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-4"><span class="nav-text">2023-03-01</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-5"><span class="nav-text">2023-02-26</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-6"><span class="nav-text">2023-02-25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-7"><span class="nav-text">2023-02-07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-8"><span class="nav-text">2023-01-18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-9"><span class="nav-text">2023-01-17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-10"><span class="nav-text">2023-01-16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-11"><span class="nav-text">2023-01-15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-12"><span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-13"><span class="nav-text">2023-01-12</span></a></li></ol>
     </div>
 </div>
 
@@ -707,6 +713,77 @@ Page<code>justaloli.github.io</code>。确定了博客框架<code>hexo</code>，
 
 
 
+<script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
+  extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+    equationNumbers: { autoNumber: "AMS" }
+  }
+});
+</script>
 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script> -->
+<script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
+  extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+    equationNumbers: { autoNumber: "AMS" }
+  }
+});
+</script>
+<!-- <script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  tex2jax: {
+    tags: 'ams',
+    inlineMath: [ ['
+</html>
+,'
+</html>
+], ["\\(","\\)"] ],
+    displayMath: [ ['$','$'], ["\\[","\\]"] ],
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+    processEscapes: true,
+    processEnvironments: true,
+    // ignoreClass: ".*|",
+    // processClass: "arithmatex"
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});
+</script> -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

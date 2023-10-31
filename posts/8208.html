@@ -236,7 +236,7 @@
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Tue Oct 31 2023 12:25:51 GMT+0800">2023-10-31 12:25:51</span>
+                <span class="pc" data-updated="Tue Oct 31 2023 14:22:13 GMT+0800">2023-10-31 14:22:13</span>
             </span>
         
 
@@ -260,7 +260,7 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>988 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>989 字</span>
             </span>
         
         
@@ -287,18 +287,18 @@
 (p_xx-Et)} \]</span></p>
 <p>其中：</p>
 <p><span class="math display">\[ p_x = mv = \frac{h}\lambda
-为粒子动量；\]</span></p>
+\text{为粒子动量；}\]</span></p>
 <p><span class="math display">\[ E = mc^2 = h\nu
-为粒子能量；\]</span></p>
+\text{为粒子能量；}\]</span></p>
 <p><span class="math display">\[ \hbar = \frac{h}{2\pi}\]</span></p>
 <p>note: 可以类比机械波方程：</p>
 <p><span class="math display">\[ y(x,t) = A\cos(kx - \omega t)
 \]</span></p>
 <p>其中：</p>
-<p><span class="math display">\[ k = \frac{2\pi}\lambda 为波数
+<p><span class="math display">\[ k = \frac{2\pi}\lambda \text{为波数}
 \]</span></p>
 <p>对波函数微分：</p>
-<p><span class="math display">\[ \begin{equation}\label{解释E}
+<p><span class="math display">\[ \begin{equation}\label{1}
 \frac{\partial\Psi(x,t)}{\partial t} = -\frac{iE}\hbar \Psi(x,t)
 \end{equation}\]</span></p>
 <p><span class="math display">\[ \frac{\partial^2\Psi(x,t)}{\partial
@@ -330,7 +330,7 @@ U(\vec{r},t) \]</span></p>
 \frac1{f(t)} = E\]</span></p>
 <blockquote>
 <p>为什么等于能量E？</p>
-<p>上文 <span class="math inline">\((\ref{解释E})\)</span>
+<p>上文 <span class="math inline">\((\ref{1})\)</span>
 中，对波函数微分：</p>
 <p><span class="math display">\[ \frac{\partial\Psi(x,t)}{\partial t} =
 -\frac{iE}\hbar \Psi(x,t) \]</span></p>
@@ -419,8 +419,9 @@ $$\int_\tau |\Psi|^2 d\tau = C^2\int_0^a sin^2(\frac{n_x\pi}{a}x)dx\int_0^a sin^
 \frac{(n_x^2+n_y^2+n_z^2)\pi^2\hbar^2}{2ma^2}\]</span>
 为该电子的能量（能级）。</p>
 <p><span class="math display">\[\Psi(x,y,z,t) = \sqrt{\frac8{a^3}}
-sin(\frac{n_x\pi x}{a})sin(\frac{n_y\pi y}{a})sin(\frac{n_z\pi z}{a})
-e^{-i\frac{(n_x^2+n_y^2+n_z^2)\pi^2\hbar}{2ma^2}t} \]</span></p>
+\sin(\frac{n_x\pi x}{a})\sin(\frac{n_y\pi y}{a})\sin(\frac{n_z\pi z}{a})
+\exp\left({-i\frac{(n_x^2+n_y^2+n_z^2)\pi^2\hbar}{2ma^2}t}\right)
+\]</span></p>
 
                 </div>
 
@@ -769,77 +770,27 @@ e^{-i\frac{(n_x^2+n_y^2+n_z^2)\pi^2\hbar}{2ma^2}t} \]</span></p>
 
 
 
-<script>MathJax.Hub.Config({
-  config: ["MMLorHTML.js"],
-  jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-  extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-  TeX: {
-    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
-    equationNumbers: { autoNumber: "AMS" }
-  }
-});
-</script>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-<!-- <script type="text/x-mathjax-config">
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
             processEscapes: true
-        }
+        },
+        TeX: {
+            equationNumbers: {
+                autoNumber: "AMS"
+            }
+        },
     });
     MathJax.Hub.Queue(function() {
         var all = MathJax.Hub.getAllJax();
         for (var i = 0; i < all.length; ++i)
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
-</script> -->
-<script>MathJax.Hub.Config({
-  config: ["MMLorHTML.js"],
-  jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-  extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-  TeX: {
-    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
-    equationNumbers: { autoNumber: "AMS" }
-  }
-});
 </script>
-<!-- <script>MathJax.Hub.Config({
-  config: ["MMLorHTML.js"],
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
-  tex2jax: {
-    tags: 'ams',
-    inlineMath: [ ['
-</html>
-,'
-</html>
-], ["\\(","\\)"] ],
-    displayMath: [ ['$','$'], ["\\[","\\]"] ],
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-    processEscapes: true,
-    processEnvironments: true,
-    // ignoreClass: ".*|",
-    // processClass: "arithmatex"
-  },
-  TeX: {
-    extensions: ["AMSmath.js", "AMSsymbols.js"],
-    TagSide: "right",
-    TagIndent: ".8em",
-    MultLineWidth: "85%",
-    equationNumbers: {
-      autoNumber: "AMS",
-    },
-    unicode: {
-      fonts: "STIXGeneral,'Arial Unicode MS'"
-    }
-  },
-  showProcessingMessages: false,
-  messageStyle: 'none'
-});
-</script> -->
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

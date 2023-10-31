@@ -35,12 +35,124 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"style":{"primary_color":"#D6AB4A","logo":"/img/avatar.png","favicon":"/img/avatar.png","avatar":"/img/avatar.png","first_screen":{"enable":true,"header_transparent":true,"background_img":"/img/bg-day.jpg","description":"让我们期待明天会更好🎵","hitokoto":false,"background_img_dark":"/img/bg-sunset.jpg","font_color":"#000000","font_color_dark":"#ffffff"},"scroll":{"progress_bar":true,"percent":false},"font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":true,"enable":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"img_align":"center"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.7.7"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"style":{"primary_color":"#D6AB4A","logo":"/img/avatar.png","favicon":"/img/avatar.png","avatar":"/img/avatar.png","first_screen":{"enable":true,"header_transparent":true,"background_img":"/img/bg-day.jpg","description":"让我们期待明天会更好🎵","hitokoto":false,"background_img_dark":"/img/bg-sunset.jpg","font_color":"#000000","font_color_dark":"#ffffff"},"scroll":{"progress_bar":true,"percent":false},"font_size":null,"font_family":null,"hover":{"shadow":false,"scale":true}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":true,"enable":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"img_align":"center"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.7.7"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
 </head>
 
 
@@ -50,6 +162,9 @@
         <span class="scroll-progress-bar"></span>
     
 
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
     
 </div>
 
@@ -266,12 +381,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>3.9k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>3.8k 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>15 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>14 分钟</span>
             </span>
         
         
@@ -411,10 +526,10 @@
 <p>这部分内容可以直接由上面关于变量的介绍平移而来.
 下文推测读者已经基本了解C++函数参数传递的机制.</p>
 <h3 id="普通类型形参">2.1.1 普通类型形参</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	<span class="comment">/* const修饰的效果: 在函数体内,形参a的值无法被更改 */</span></span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span> a)</span></span>{</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span> a)</span></span>{</span><br><span class="line">	<span class="comment">/* const修饰的效果: 在函数体内,形参a的值无法被更改 */</span></span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误.</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>由于参数传递机制,这两个函数都可以接收普通和const修饰的int变量</p>
 <h3 id="指针形参">2.1.2 指针形参</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>* a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun3</span><span class="params">(<span class="type">int</span>* <span class="type">const</span> a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun4</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>* a)</span></span>{</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* a)</span></span>{</span><br><span class="line">	*a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 正确</span></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun3</span><span class="params">(<span class="type">int</span>* <span class="type">const</span> a)</span></span>{</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun4</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> a)</span></span>{</span><br><span class="line">	*a = <span class="number">2</span>; <span class="comment">// 错误</span></span><br><span class="line">	a = <span class="literal">nullptr</span>; <span class="comment">// 错误</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>这四个函数都可以传入普通变量的地址. 普通变量的地址被拷贝如函数后,
 会被自动加上const修饰.</p>
 <p>而只有fun2和fun4可以传入const修饰的变量的地址.</p>
@@ -430,7 +545,7 @@
 <strong><em>以只读的方式访问某个变量</em></strong>
 ,fun2是一个好选择.</p>
 <h3 id="引用形参">2.1.3 引用形参</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>&amp; a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun1</span><span class="params">(<span class="type">int</span>&amp; a)</span></span>{</span><br><span class="line">	a = <span class="number">2</span>; <span class="comment">// 正确</span></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; a)</span></span>{</span><br><span class="line">	a = <span class="number">3</span>; <span class="comment">// 错误</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>类似的, 两个函数都能传入普通变量.
 而fun1不能传入带const修饰的变量.</p>
 <p><strong><em>此外,十分重要的: fun2可以传入字面量!
@@ -443,14 +558,14 @@
 <strong><em>能传入字面量</em></strong> , fun2是一个好选择.</p>
 <h2 id="const-与-函数返回值">2.2 const 与 函数返回值</h2>
 <p>这在某些场合是有点莫名其妙的命题. 比如这样</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span> <span class="title">fun</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>对函数返回值传递机制稍有了解便能知道, 这个const是完全无用的.</p>
 <p>但在某些情况它会不同, 比如:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>* <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span>* <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>* <span class="title">fun</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span>* <span class="title">fun2</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>就有不同了. fun()返回的指针可以修改所指位置的值,
 而fun2()返回的指针不能.</p>
 <p>类似的, 对于引用, 有:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	*p = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">return</span> *p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span>&amp; <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> p = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">fun</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;</span><br><span class="line">	*p = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">return</span> *p;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span>&amp; <span class="title">fun2</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">int</span> p = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>它们也是不同的. 不过这两个函数单看其实有些奇怪. 我们之后会在
 <strong>类</strong> 那一部分更深入的探讨它们的区别和各自运用.</p>
 <h2 id="案例-const-在几种特殊函数中的作用">2.3 案例: const
@@ -470,17 +585,17 @@
 另一种是定义在类内部的.</p>
 <p>这里着重举两个例子.</p>
 <p>以这样一个结构体为例</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Int</span>&#123;</span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Int</span>{</span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 <h3 id="类或结构体的比较运算符重载">2.3.1
 类(或结构体)的比较运算符重载</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Int&amp; a,<span class="type">const</span> Int&amp; b)&#123;</span><br><span class="line">	<span class="keyword">return</span> a.data &lt; b.data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Int&amp; a,<span class="type">const</span> Int&amp; b){</span><br><span class="line">	<span class="keyword">return</span> a.data &lt; b.data;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>这是比较规范的运算符重载写法. 注意这里的<code>const Int&amp;</code>,
 需要const修饰.</p>
 <p>如果不加const,只保留&amp;,那么这个运算符将不能处理右值(可以理解为常量和字面量);</p>
 <p>如果不加const,也不保留&amp;,那么调用运算符会进行值的拷贝,
 这在Int是一个复杂的数据类型时, 会凭空增加内存消耗, 也很耗时.</p>
 <h3 id="输入输出重载">2.3.2 输入输出重载</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">std::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream&amp; out,<span class="type">const</span> Int&amp; a)&#123;</span><br><span class="line">	out &lt;&lt; a.data;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line">std::istream&amp; <span class="keyword">operator</span>&gt;&gt;(std::istream&amp; in,Int&amp; a)&#123;</span><br><span class="line">	in &gt;&gt; a.data;</span><br><span class="line">	<span class="keyword">return</span> in;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">std::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream&amp; out,<span class="type">const</span> Int&amp; a){</span><br><span class="line">	out &lt;&lt; a.data;</span><br><span class="line">	<span class="keyword">return</span> out;</span><br><span class="line">}</span><br><span class="line">std::istream&amp; <span class="keyword">operator</span>&gt;&gt;(std::istream&amp; in,Int&amp; a){</span><br><span class="line">	in &gt;&gt; a.data;</span><br><span class="line">	<span class="keyword">return</span> in;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>这是比较规范的输入输出流重载写法.
 注意在输出时需要加const修饰(否则无法输出字面量),
 而输入时不能加const修饰(否则无法修改).
@@ -490,24 +605,24 @@
 <p>基本和变量完全一致.</p>
 <h2 id="const-与-类的方法">3.2 const 与 类的方法</h2>
 <p>比如这样一个类:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>方法和函数在很多方面是类似的. 它也有参数的const, 和返回值的const.
 这里着重介绍另一种: <strong>方法的const.</strong></p>
 <h3 id="方法的const">3.2.1 方法的const</h3>
 <p>为什么需要方法const? 因为对象可能被const修饰了.</p>
 <p>比如, 假设string有一个方法size:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">strlen</span>(str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span></span>{</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">strlen</span>(str);</span><br><span class="line">	}</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 <p>对于一个普通string对象, 我们可以执行size().</p>
 <p>然而, 对于一个 <strong>加了const修饰的string对象</strong> ,
 还能执行size()吗? 对于一个const修饰的对象,
 其中的所有属性都自动增加了const修饰. 然而,
 <em>系统不知道这个size()方法会不会修改这些被加了const修饰属性</em>.
 因此, 对于const string对象, 系统不会允许执行这个size()方法, 会报错.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line">s.<span class="built_in">size</span>();<span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> string s2;</span><br><span class="line">s2.<span class="built_in">size</span>(); <span class="comment">// 错误</span></span><br><span class="line"><span class="comment">/* 报错信息: &#x27;this&#x27; argument to member function &#x27;size&#x27; has type &#x27; const string&#x27;</span></span><br><span class="line"><span class="comment">but function is not marked const  */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string s;</span><br><span class="line">s.<span class="built_in">size</span>();<span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> string s2;</span><br><span class="line">s2.<span class="built_in">size</span>(); <span class="comment">// 错误</span></span><br><span class="line"><span class="comment">/* 报错信息: 'this' argument to member function 'size' has type ' const string'</span></span><br><span class="line"><span class="comment">but function is not marked const  */</span></span><br></pre></td></tr></table></figure>
 <p>然而, 事实上这个size()方法并不会修改对象的属性. 我们的确想让const
 string对象也能执行size()方法. 因此,
 <strong>我们要给size()对象增加const修饰</strong>, 就像这样:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span><span class="type">const</span></span>&#123; <span class="comment">//注意这里的const!</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">strlen</span>(str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">string</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> str[<span class="number">100</span>];</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span><span class="type">const</span></span>{ <span class="comment">//注意这里的const!</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">strlen</span>(str);</span><br><span class="line">	}</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 <p>这样, 对于const string对象, 也可以正常执行size()方法了.</p>
 <p><strong><em>这里, const修饰就是告诉编译器:
 这个方法内的所有代码都不会修改当前类的属性值.</em></strong></p>
@@ -520,10 +635,10 @@ string对象也能执行size()方法. 因此,
 程序会自动根据对象有没有const选择执行哪一个.</li>
 </ol>
 <p><strong><em>Remark: 关于特性4, 有以下的例子:</em></strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">array</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* data;</span><br><span class="line">	<span class="built_in">array</span>()&#123;data = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">20</span>];&#125;</span><br><span class="line">	~<span class="built_in">array</span>()&#123;<span class="keyword">delete</span> [] data;&#125;</span><br><span class="line">	<span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)&#123;<span class="keyword">return</span> data[index];&#125;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)<span class="type">const</span>&#123;<span class="keyword">return</span> data[index];&#125;</span><br><span class="line">&#125;;</span><br><span class="line">array a1;</span><br><span class="line">a1[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> array a2;</span><br><span class="line">a2[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 错误, 调用第二个方法, 返回const int&amp;不能被修改.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">array</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* data;</span><br><span class="line">	<span class="built_in">array</span>(){data = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">20</span>];}</span><br><span class="line">	~<span class="built_in">array</span>(){<span class="keyword">delete</span> [] data;}</span><br><span class="line">	<span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index){<span class="keyword">return</span> data[index];}</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)<span class="type">const</span>{<span class="keyword">return</span> data[index];}</span><br><span class="line">};</span><br><span class="line">array a1;</span><br><span class="line">a1[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> array a2;</span><br><span class="line">a2[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 错误, 调用第二个方法, 返回const int&amp;不能被修改.</span></span><br></pre></td></tr></table></figure>
 <p><strong><em>Remark2: const保护并不代表万无一失.
 对上面的例子稍作修改:</em></strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">array</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* data;</span><br><span class="line">	<span class="built_in">array</span>()&#123;data = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">20</span>];&#125;</span><br><span class="line">	~<span class="built_in">array</span>()&#123;<span class="keyword">delete</span> [] data;&#125;</span><br><span class="line">	<span class="comment">//我们直接给它加上const呢?</span></span><br><span class="line">	<span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)<span class="type">const</span>&#123;<span class="keyword">return</span> data[index];&#125; </span><br><span class="line">&#125;;</span><br><span class="line">array a1;</span><br><span class="line">a1[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> array a2;</span><br><span class="line">a2[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">array</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* data;</span><br><span class="line">	<span class="built_in">array</span>(){data = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">20</span>];}</span><br><span class="line">	~<span class="built_in">array</span>(){<span class="keyword">delete</span> [] data;}</span><br><span class="line">	<span class="comment">//我们直接给它加上const呢?</span></span><br><span class="line">	<span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">const</span> <span class="type">int</span> index)<span class="type">const</span>{<span class="keyword">return</span> data[index];} </span><br><span class="line">};</span><br><span class="line">array a1;</span><br><span class="line">a1[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br><span class="line"><span class="type">const</span> array a2;</span><br><span class="line">a2[<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 正确</span></span><br></pre></td></tr></table></figure>
 <p><strong><em>程序会完全正确的运行.</em></strong> 因为,
 const只保护了data指针, 没有保护data指向的那片空间. 因此,
 它是允许你修改诸如 <code>data[0]</code> 的内容的. 但是,
@@ -534,7 +649,7 @@ const只保护了data指针, 没有保护data指向的那片空间. 因此,
 在const修饰过的方法中不去修改相关的值. 没人能帮你检查.</p>
 <p>这个const修饰还有一个常见的应用:
 类内部的运算符重载(尤其是<code>==</code>的重载). 请看:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* p;</span><br><span class="line">	<span class="built_in">test</span>()&#123;p = <span class="keyword">new</span> <span class="type">int</span>;&#125;</span><br><span class="line">	~<span class="built_in">test</span>()&#123;<span class="keyword">delete</span> p;&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">()</span><span class="type">const</span></span>&#123;</span><br><span class="line">		*p = <span class="number">5</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>==(<span class="type">const</span> test&amp; b)&#123; <span class="comment">// 不够好</span></span><br><span class="line">		<span class="keyword">return</span> *p == *b.p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>==(<span class="type">const</span> test&amp; b)<span class="type">const</span>&#123; <span class="comment">//正确的写法</span></span><br><span class="line">		<span class="keyword">return</span> *p == *b.p;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	test t,t2;</span><br><span class="line">	<span class="keyword">if</span>(t==t2)&#123; <span class="comment">// 如果用第一种写法,这里会报warning</span></span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">test</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span>* p;</span><br><span class="line">	<span class="built_in">test</span>(){p = <span class="keyword">new</span> <span class="type">int</span>;}</span><br><span class="line">	~<span class="built_in">test</span>(){<span class="keyword">delete</span> p;}</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">()</span><span class="type">const</span></span>{</span><br><span class="line">		*p = <span class="number">5</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>==(<span class="type">const</span> test&amp; b){ <span class="comment">// 不够好</span></span><br><span class="line">		<span class="keyword">return</span> *p == *b.p;</span><br><span class="line">	}</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>==(<span class="type">const</span> test&amp; b)<span class="type">const</span>{ <span class="comment">//正确的写法</span></span><br><span class="line">		<span class="keyword">return</span> *p == *b.p;</span><br><span class="line">	}</span><br><span class="line">};</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	test t,t2;</span><br><span class="line">	<span class="keyword">if</span>(t==t2){ <span class="comment">// 如果用第一种写法,这里会报warning</span></span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>这里会报一个warning:</p>
 <blockquote>
 <p>ISO C++20 considers use of overloaded operator ‘==’ (with operand
@@ -550,7 +665,7 @@ best viable function.</p>
 <p>这只是我的粗浅理解. 总之, 给这个方法增加const修饰,
 这个warning就消失了.</p>
 <p>以上是我目前能想到的全部内容.</p>
-
+<svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>
                 </div>
 
                 
@@ -854,7 +969,7 @@ best viable function.</p>
 
 
 
-<div class="post-scripts">
+<div class="post-scripts pjax">
     
         
 <script src="/js/post-helper.js"></script>
@@ -873,6 +988,40 @@ best viable function.</p>
     
     
 </div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
 
 
 

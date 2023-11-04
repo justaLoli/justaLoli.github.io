@@ -1,0 +1,5 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">/* 注入 CSS 文件修改 CSS 变量使用示例 */
+
+:root {
+   --base-font-family STSong;
+}<svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>

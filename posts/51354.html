@@ -50,8 +50,7 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -163,7 +162,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -358,7 +358,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Nov 05 2023 00:34:18 GMT+0800">2023-11-05 00:34:18</span>
+                <span class="pc" data-updated="Wed Nov 08 2023 15:11:25 GMT+0800">2023-11-08 15:11:25</span>
             </span>
         
 
@@ -420,7 +420,7 @@ mjx-container[display="true"] + br {
 <p>衬线字体。</p>
 <p>在
 <code>/hexo-theme-keep/source/css/common/css-variables.styl</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">--base-font-family</span> Noto Serif SC !important,STSong,SimSun,serif;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> url(<span class="string">'https://fonts.googleapis.com/css2?family=Noto+Serif+SC&amp;display=swap'</span>);</span><br><span class="line"><span class="selector-pseudo">:root</span> {</span><br><span class="line">  <span class="attr">--base-font-family</span> STSong,Noto Serif SC;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <h2 id="section-1">2023-10-31 (2)</h2>
 <p>换回了<code>hexo-filter-mathjax</code></p>
 <p>不过其svg的渲染效果依旧不让人满意。渲染代码在<code>/lib/filter.js</code>，目前内容如下：</p>

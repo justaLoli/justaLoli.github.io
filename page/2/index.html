@@ -43,7 +43,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"style":{"primary_color":"#D6AB4A","logo":"/img/avatar.png","favicon":"/img/avatar.png","avatar":"/img/avatar.png","first_screen":{"enable":true,"header_transparent":true,"background_img":"/img/bg-day.jpg","description":"让我们期待明天会更好🎵","hitokoto":false,"background_img_dark":"/img/bg-sunset.jpg","font_color":"#000000","font_color_dark":"#ffffff"},"scroll":{"progress_bar":true,"percent":false},"font_size":null,"font_family":"STSong","hover":{"shadow":false,"scale":true}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":true,"enable":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"img_align":"center"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.7.7"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"style":{"primary_color":"#D6AB4A","logo":"/img/avatar.png","favicon":"/img/avatar.png","avatar":"/img/avatar.png","first_screen":{"enable":true,"header_transparent":true,"background_img":"/img/bg-day.jpg","description":"让我们期待明天会更好🎵","hitokoto":false,"background_img_dark":"/img/bg-sunset.jpg","font_color":"#000000","font_color_dark":"#ffffff"},"scroll":{"progress_bar":true,"percent":false},"font_size":"22px","font_family":"STSong","hover":{"shadow":false,"scale":true}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":true,"min2read":true,"enable":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"img_align":"center"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.7.7"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -323,6 +323,80 @@ mjx-container[display="true"] + br {
                 <div class="home-article-item-bottom border-box">
                     
                     <h3 class="home-article-title border-box">
+                        <a href="/posts/46200.html">
+                            C++实现一个尽可能优雅的双向链表
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        
+                            在c++实现一个(尽可能)像python一样优雅的列表. 并总结一些在进行类封装时遇到的坑和知识点.
+                        
+                    </div>
+
+                    
+
+<div class="article-meta-info-container border-box home">
+    <div class="article-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Tue Apr 25 2023 14:48:30 GMT+0800">2023-04-25 14:48:30</span>
+            </span>
+        
+
+
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                            <li class="category-item">
+                                
+                                <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+                            </li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%95%B0%E7%AE%97/">数算</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/posts/46200.html">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <div class="home-article-item-bottom border-box">
+                    
+                    <h3 class="home-article-title border-box">
                         <a href="/posts/33559.html">
                             计算摄像学 第九讲 超分辨率
                         </a>
@@ -350,7 +424,7 @@ https://jpgHD.com
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Tue Apr 25 2023 14:50:32 GMT+0800">2023-04-25 14:50:32</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:01:20 GMT+0800">2023-11-09 19:01:20</span>
             </span>
         
 
@@ -363,7 +437,7 @@ https://jpgHD.com
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -431,7 +505,7 @@ HDR期望能覆盖真实世界的常见场景。
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Apr 20 2023 15:21:46 GMT+0800">2023-04-20 15:21:46</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:01:17 GMT+0800">2023-11-09 19:01:17</span>
             </span>
         
 
@@ -444,7 +518,7 @@ HDR期望能覆盖真实世界的常见场景。
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -508,7 +582,7 @@ i ...
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Tue Apr 11 2023 14:12:03 GMT+0800">2023-04-11 14:12:03</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:01:08 GMT+0800">2023-11-09 19:01:08</span>
             </span>
         
 
@@ -521,7 +595,7 @@ i ...
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -579,7 +653,7 @@ i ...
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Sun Jun 11 2023 11:46:02 GMT+0800">2023-06-11 11:46:02</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 18:57:46 GMT+0800">2023-11-09 18:57:46</span>
             </span>
         
 
@@ -592,7 +666,7 @@ i ...
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -670,7 +744,7 @@ i ...
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Tue Apr 18 2023 13:00:46 GMT+0800">2023-04-18 13:00:46</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:01:22 GMT+0800">2023-11-09 19:01:22</span>
             </span>
         
 
@@ -683,7 +757,7 @@ i ...
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -741,7 +815,7 @@ i ...
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Tue Apr 18 2023 13:00:41 GMT+0800">2023-04-18 13:00:41</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:01:06 GMT+0800">2023-11-09 19:01:06</span>
             </span>
         
 
@@ -754,7 +828,7 @@ i ...
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -812,7 +886,7 @@ i ...
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Mon Apr 10 2023 21:45:54 GMT+0800">2023-04-10 21:45:54</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:01:16 GMT+0800">2023-11-09 19:01:16</span>
             </span>
         
 
@@ -825,7 +899,7 @@ i ...
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -883,7 +957,7 @@ i ...
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Mon Apr 10 2023 21:47:22 GMT+0800">2023-04-10 21:47:22</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:02:04 GMT+0800">2023-11-09 19:02:04</span>
             </span>
         
 
@@ -960,7 +1034,7 @@ i ...
     <div class="article-meta-info border-box">
         
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Mon Apr 10 2023 21:46:19 GMT+0800">2023-04-10 21:46:19</span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Thu Nov 09 2023 19:01:10 GMT+0800">2023-11-09 19:01:10</span>
             </span>
         
 
@@ -973,7 +1047,7 @@ i ...
                     
                             <li class="category-item">
                                 
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
                             </li>
                         
                     
@@ -1001,77 +1075,6 @@ i ...
 
     
         <a class="home-read-more" href="/posts/29774.html">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/posts/62008.html">
-                            计算摄像学 第三讲 相机几何模型
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            难过，听不懂
-                        
-                    </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Sun Jun 11 2023 11:46:06 GMT+0800">2023-06-11 11:46:06</span>
-            </span>
-        
-
-
-        
-
-        
-            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                            <li class="category-item">
-                                
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
-                            </li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="article-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/posts/62008.html">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
     
 </div>
 

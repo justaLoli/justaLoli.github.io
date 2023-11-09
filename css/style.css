@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap");
 :root {
-  --base-font-size: 15.2px;
+  --base-font-size: 16px;
   --base-line-height: 22px;
   --base-font-weight: 400;
   --base-font-family: STSong, Noto Serif SC;
@@ -3314,8 +3314,8 @@ pre .javascript .function {
   }
 }
 .post-page-container .article-content-container .article-content-bottom .article-content {
-  margin-top: 30.400000000000002px;
-  padding-bottom: 30.400000000000002px;
+  margin-top: 38px;
+  padding-bottom: 38px;
   color: var(--text-color-3);
   text-align: justify;
   word-wrap: break-word;
@@ -3323,8 +3323,8 @@ pre .javascript .function {
 }
 @media (max-width: 800px) {
   .post-page-container .article-content-container .article-content-bottom .article-content {
-    margin-top: 22.8px;
-    padding-bottom: 22.8px;
+    margin-top: 38px;
+    padding-bottom: 38px;
   }
 }
 .post-page-container .article-content-container .article-content-bottom .article-content .article-aging-tips {
@@ -3379,11 +3379,11 @@ pre .javascript .function {
 }
 .post-page-container .article-content-container .article-content-bottom .post-copyright-info {
   width: 100%;
-  margin-top: 22.8px;
+  margin-top: 38px;
 }
 @media (max-width: 800px) {
   .post-page-container .article-content-container .article-content-bottom .post-copyright-info {
-    margin-top: 11.4px;
+    margin-top: 38px;
   }
 }
 .post-page-container .article-content-container .article-content-bottom .article-nav {

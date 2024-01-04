@@ -6,7 +6,7 @@
   <link href="https://justaloli.cn/atom.xml" rel="self"/>
   
   <link href="https://justaloli.cn/"/>
-  <updated>2024-01-03T13:41:16.974Z</updated>
+  <updated>2024-01-04T10:02:40.853Z</updated>
   <id>https://justaloli.cn/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>马原知识（不全）</title>
+    <link href="https://justaloli.cn/posts/41308.html"/>
+    <id>https://justaloli.cn/posts/41308.html</id>
+    <published>2024-01-04T09:33:21.000Z</published>
+    <updated>2024-01-04T10:02:40.853Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="辩证唯物主义">辩证唯物主义</h1><p>世界观：哲学是系统化、理论化的世界观。</p><p>基本问题：思维和存在的关系问题</p><ul><li>第一性的问题：唯物 or 唯心？</li><li>同一性的问题：可知 or 不可知？</li></ul><p><strong>物质是标志客观实在的哲学范畴</strong></p><p><strong>物质的根本属性是运动</strong> 物质和运动是不可分割的</p><p>物质世界的分化：自然界、人类社会；主观世界、客观世界。</p><ul><li>客观世界：自然界+人类社会；主观世界：意识、观念世界。</li><li>主观世界从属于客观世界，是客观世界的反应，并反作用于客观世界</li></ul><p><strong>物质和意识</strong></p><p><strong>意识：客观世界的主观映像</strong>：</p><ul><li>物质决定意识：<ul><li>意识是自然界长期发展的产物（低等生物 -&gt; 高等生物 -&gt;人类的意识）</li><li>内容客观、形式主观。</li></ul></li><li>意识的反作用：<ul><li>目的性和计划性：选择性的反映</li><li>创造性：构造没有的观念世界</li><li>指导实践改造世界</li><li>调控人的行为、生理活动。</li></ul></li></ul><p><strong>辩证法</strong></p><p>联系：事物各要素之间and事物之间相互影响、相互制约、相互作用</p><ul><li>客观性：不以人的意志转移</li><li>多样性：</li><li>普遍性：事物内部and事物之间and世界</li><li>条件性：支持or制约的作用；联系可以改变。</li></ul><p>变化发展：新事物、旧事物。</p><p><strong>事物发展的规律</strong></p><p><strong>对立统一（矛盾）</strong>：同一性、斗争性；普遍性、特殊性（主要、次要、主要方面、次要方面）</p><p>量变和质变：<strong>准备和结果；相互渗透。</strong></p><p>否定之否定：扬弃，前进性和曲折性。</p><p>唯物辩证法<strong>是批判的，革命的</strong>；是<strong>客观辩证法和主观辩证法的统一</strong>。</p><h1 id="认识论">认识论</h1><p>实践： <strong>人类能动地改造世界的社会性的物质活动。</strong></p><ul><li>客观实在性<ul><li>主体、客体、中介</li><li>受客观制约</li><li>使客观变化</li></ul></li><li>自觉能动性：有意识的</li><li>社会历史性</li></ul><p>实践的结构：主体（人）客体（对象）中介（手段、工具、方法）</p><p>认识：<strong>主体在实践基础上对客体的能动反映</strong></p><p><strong>实践对认识的决定作用：</strong></p><ul><li>实践是认识的来源</li><li>实践是认识发展的动力：<ul><li>实践有需要，认识会进步</li><li>实践给认识提供了条件和手段</li></ul></li><li>实践是认识的目的</li><li>检验真理的唯一标准</li></ul><p>认识和实践的辩证运动：<strong>实践 -&gt; 感性认识 -飞跃-&gt; 理性认识-飞跃-&gt; 实践</strong></p><ul><li>完成了又没有完成</li><li>波浪式前进、螺旋上升。</li></ul><p>感性认识和理性认识：</p><ul><li>理性认识依赖于感性认识</li><li>感性认识有待深化、发展为理性认识</li><li>相互渗透、相互包含</li></ul><p>理性认识和实践（的必要性和重要性）：</p><ul><li>认识的目的是改造世界</li><li>在实践中进行真理性的检验。</li></ul><hr><p>懒得打了。烂尾文+1</p><svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>]]></content>
+    
+    
+    <summary type="html">不全（确信）</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Portal 2 Announcer Main Voice Lines in Chapter 1</title>
@@ -169,9 +186,9 @@
     <category term="思考" scheme="https://justaloli.cn/categories/%E6%80%9D%E8%80%83/"/>
     
     
-    <category term="体验" scheme="https://justaloli.cn/tags/%E4%BD%93%E9%AA%8C/"/>
-    
     <category term="Arc浏览器" scheme="https://justaloli.cn/tags/Arc%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="体验" scheme="https://justaloli.cn/tags/%E4%BD%93%E9%AA%8C/"/>
     
   </entry>
   
@@ -463,31 +480,6 @@
     <category term="编程" scheme="https://justaloli.cn/tags/%E7%BC%96%E7%A8%8B/"/>
     
     <category term="数算" scheme="https://justaloli.cn/tags/%E6%95%B0%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算摄像学 第十二讲 图像反射消除</title>
-    <link href="https://justaloli.cn/posts/63671.html"/>
-    <id>https://justaloli.cn/posts/63671.html</id>
-    <published>2023-04-04T05:01:22.000Z</published>
-    <updated>2023-11-09T11:01:22.373Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。</p><p>讲者1 常亚坤</p><p>主要内容：</p><ol type="1"><li>背景介绍<ul><li>成像模型、反射特性</li></ul></li><li>经典优化求解</li><li>基准评价数据集</li><li>基于深度学习的方法。</li></ol><h3 id="背景介绍">1.背景介绍</h3><ol type="1"><li>反射的成因（经典物理图像</li><li>反射的特性<ol type="1"><li>若反射和背景都在景深内，结果相当于线性叠加</li><li>若反射在景深外，背景在景深内，结果相当于给反射加了模糊的卷积</li><li>若反射镜有厚度，将出现重影</li></ol></li><li>反射的（不利）影响<ol type="1"><li>例子：对着玻璃拍容易不美观</li><li>对后期计算造成干扰</li></ol></li><li>反射的消除</li></ol><h3 id="传统方法">2. 传统方法</h3><ol type="1"><li>“人力驱动”，手工标记数据</li></ol><p>它基于了“背景图层和反射图层一定程度上是独立的”的假设。</p><p>主要过程：第一阶段：边缘标记和边缘分类-&gt;第二阶段：反射消除</p><ol start="2" type="1"><li>景深引导的反射消除</li></ol><p>主要依据：背景清晰时，反射多半会模糊。在梯度分布中也能看出。如果清晰的图像被模糊，梯度值更聚集于0（图像变化更平滑）；如果原本模糊的图像被模糊，则梯度直方图没有太大变化。</p><ol start="3" type="1"><li><p>基于相对平滑性</p></li><li><p>基于多张图像：基于两层图像的位移不一致。</p></li></ol><p>变换相机角度，拍摄多张图像。移动时，背景的边缘移动和反射的边缘移动有不同。</p><h3 id="基准评价数据集">基准评价数据集</h3><p>讲者：万人杰</p><p>量化地评价消除反射的效果。</p><p>SIR2数据集；SIR2+数据集</p><p>（后面还有一下东西，没仔细听了呜呜</p><h3 id="深度学习去反射">深度学习去反射</h3><p>第一篇（CN ACCV 16</p><p>借鉴了传统方法的思路，对深度进行分类，然后进行剔除</p><p>Fan ICCV 17</p><p>通过神经网络学背景层的边缘，辅助去除反射</p><p>借鉴了传统的两步走方法：先提取边缘，分类，再剔除</p><p>Wan CVPR 18 CRRN</p><p>并联的反射消除网络</p><p>Wan TPAMI 19 CoRRN</p><p>“协作式”的神经网络，</p><p>Zhang CVPR 18</p><p>“感知损失函数”辅助去反射</p><p>。。。。</p><p>基于偏振的反射消除</p><svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;（为什么是第十二讲）有一些论文原作者可以来讲，因此调整了一下顺序。&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="https://justaloli.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="计算摄像学" scheme="https://justaloli.cn/tags/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/"/>
     
   </entry>
   

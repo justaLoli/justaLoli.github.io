@@ -17,23 +17,24 @@ KEEP.initUtils = () => {
     isHasScrollProgressBar: false,
     isHasScrollPercent: false,
     isHeaderTransparent: false,
+    isHideHeader: true,
     hasToc: false,
 
+    // initialization data
     initData() {
-      const { scroll, first_screen } = KEEP.theme_config?.style || {}
+      const scroll = KEEP.theme_config?.scroll || {}
+      const first_screen = KEEP.theme_config?.first_screen || {}
       this.isHasScrollProgressBar = scroll?.progress_bar === true
       this.isHasScrollPercent = scroll?.percent === true
-      const { enable, header_transparent } = first_screen || {}
       this.isHeaderTransparent =
-        enable === true &&
-        header_transparent === true &&
-        !window.location.pathname.includes('/page/')
+        first_screen?.enable === true && !window.location.pathname.includes('/page/')
       if (!this.isHeaderTransparent) {
         this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
       }
+      this.isHideHeader = scroll?.hide_header !== false
     },
 
-    // Scroll Style Handle
+    // scroll Style Handle
     styleHandleWhenScroll() {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
@@ -41,13 +42,23 @@ KEEP.initUtils = () => {
 
       const percent = Math.round((scrollTop / (scrollHeight - clientHeight)) * 100) || 0
 
+      // back to top
+      if (scrollTop > 10) {
+        this.back2TopBtn.classList.add('show')
+      } else {
+        this.back2TopBtn.classList.remove('show')
+      }
+
+      // scroll progress bar
       if (this.isHasScrollProgressBar && this.scrollProgressBarDom) {
         const progressPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(3)
         this.scrollProgressBarDom.style.visibility = percent === 0 ? 'hidden' : 'visible'
         this.scrollProgressBarDom.style.width = `${progressPercent}%`
       }
 
+      // scroll percent
       if (this.isHasScrollPercent && this.back2TopBtn) {
+        this.back2TopBtn.classList.add('show-percent')
         const percentDom = this.back2TopBtn.querySelector('.percent')
         if (percent === 0 || percent === undefined) {
           this.back2TopBtn.classList.remove('show')
@@ -55,21 +66,25 @@ KEEP.initUtils = () => {
           this.back2TopBtn.classList.add('show')
           percentDom.innerHTML = percent.toFixed(0)
           if (percent > 99) {
-            this.back2TopBtn.classList.add('show-arrow-up')
+            this.back2TopBtn.classList.add('show-arrow')
           } else {
-            this.back2TopBtn.classList.remove('show-arrow-up')
+            this.back2TopBtn.classList.remove('show-arrow')
           }
         }
       }
 
       // hide header handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
-        this.pageTopDom.classList.add('hide')
+        if (this.isHideHeader) {
+          this.pageTopDom.classList.add('hide')
+        }
         if (this.isHeaderTransparent) {
           this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
         }
       } else {
-        this.pageTopDom.classList.remove('hide')
+        if (this.isHideHeader) {
+          this.pageTopDom.classList.remove('hide')
+        }
         if (this.isHeaderTransparent) {
           if (scrollTop <= this.headerWrapperDom.getBoundingClientRect().height) {
             this.headerWrapperDom.classList.remove('transparent-2')
@@ -79,6 +94,16 @@ KEEP.initUtils = () => {
           }
         }
       }
+
+      // header font color handle
+      if (KEEP.theme_config?.first_screen?.enable === true) {
+        if (scrollTop > this.innerHeight - this.pageTopDom.getBoundingClientRect().height) {
+          this.pageTopDom.classList.add('reset-color')
+        } else {
+          this.pageTopDom.classList.remove('reset-color')
+        }
+      }
+
       this.prevScrollValue = scrollTop
     },
 
@@ -89,8 +114,8 @@ KEEP.initUtils = () => {
         this.styleHandleWhenScroll()
 
         // TOC scroll handle
-        if (KEEP.theme_config?.toc?.enable === true && KEEP.utils.hasOwnProperty('activeNav')) {
-          KEEP.utils.activeNav()
+        if (KEEP.theme_config?.toc?.enable === true && KEEP.utils?.tocHelper) {
+          KEEP.utils.tocHelper.activeNav()
         }
 
         // header shrink
@@ -133,8 +158,12 @@ KEEP.initUtils = () => {
       }
 
       const setFontSize = (fontSizeLevel) => {
-        this.rootHtmlDom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`
-        KEEP.styleStatus.fontSizeLevel = fontSizeLevel
+        this.rootHtmlDom.style.setProperty(
+          'font-size',
+          `${fs * (1 + fontSizeLevel * 0.05)}px`,
+          'important'
+        )
+        KEEP.themeInfo.styleStatus.fontSizeLevel = fontSizeLevel
         KEEP.setStyleStatus()
       }
 
@@ -165,15 +194,24 @@ KEEP.initUtils = () => {
       }
     },
 
+    // get dom zoom value
+    getZoomValueOfDom(dom) {
+      const tmp = Number((dom.style?.zoom || '1').replace('%', ''))
+      return tmp > 1 ? tmp / 100 : tmp
+    },
+
     // zoom in image
     zoomInImage() {
       let SIDE_GAP = 40
       let isZoomIn = false
       let curWinScrollY = 0
       let selectedImgDom = null
-      const imgDomList = document.querySelectorAll('.keep-markdown-body img')
       const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
       const zoomInImg = zoomInImgMask?.querySelector('.zoom-in-image')
+      const imgDomList = [
+        ...document.querySelectorAll('.keep-markdown-body img'),
+        ...document.querySelectorAll('.photo-album-box img')
+      ]
 
       const zoomOut = () => {
         if (isZoomIn) {
@@ -212,16 +250,27 @@ KEEP.initUtils = () => {
       }
 
       if (imgDomList.length) {
+        // Register zoom out events
         zoomOutHandle()
+
         imgDomList.forEach((img) => {
+          // Zoom in handle
           img.addEventListener('click', () => {
             curWinScrollY = window.scrollY
             isZoomIn = !isZoomIn
             setSideGap()
             zoomInImg.setAttribute('src', img.getAttribute('src'))
             selectedImgDom = img
+
             if (isZoomIn) {
               const imgRect = selectedImgDom.getBoundingClientRect()
+
+              const zoom = this.getZoomValueOfDom(selectedImgDom)
+
+              for (let key in imgRect) {
+                imgRect[key] = imgRect[key] * zoom
+              }
+
               const imgW = imgRect.width
               const imgH = imgRect.height
               const imgL = imgRect.left
@@ -236,6 +285,7 @@ KEEP.initUtils = () => {
 
               selectedImgDom.classList.add('hide')
               zoomInImgMask.classList.add('show')
+
               zoomInImg.style.top = imgT + 'px'
               zoomInImg.style.left = imgL + 'px'
               zoomInImg.style.width = imgW + 'px'
@@ -252,6 +302,7 @@ KEEP.initUtils = () => {
       return p2.replace(/%s/g, p1)
     },
 
+    // get how long ago
     getHowLongAgo(timestamp) {
       const lang = KEEP.language_ago
       const __Y = Math.floor(timestamp / (60 * 60 * 24 * 30) / 12)
@@ -279,8 +330,9 @@ KEEP.initUtils = () => {
       }
     },
 
+    // set how long age in home post block
     setHowLongAgoInHome() {
-      const post = document.querySelectorAll('.article-meta-info .home-article-history')
+      const post = document.querySelectorAll('.post-meta-info .home-post-history')
       post &&
         post.forEach((v) => {
           const nowTimestamp = Date.now()
@@ -334,28 +386,32 @@ KEEP.initUtils = () => {
 
     // insert tooltip content dom
     insertTooltipContent() {
+      const { root } = KEEP.theme_config
+      const isLazyLoadImg = KEEP.theme_config?.lazyload?.enable === true
+
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
-          const { content, offsetX, offsetY } = element.dataset
+          const { tooltipContent, tooltipOffsetX, tooltipOffsetY } = element.dataset
 
-          let style = ''
-          let sTop = ''
-          let sLeft = ''
-          if (offsetX) {
-            sTop = `left: ${offsetX};`
-          }
-          if (offsetY) {
-            sLeft = `top: ${offsetY};`
-          }
-          if (offsetX || offsetY) {
-            style = ` style="${sLeft}${sTop}"`
+          let styleCss = ''
+
+          if (tooltipOffsetX) {
+            styleCss += `left: ${tooltipOffsetX};`
           }
 
-          if (content) {
+          if (tooltipOffsetY) {
+            styleCss += `top: ${tooltipOffsetY};`
+          }
+
+          if (styleCss) {
+            styleCss = `style="${styleCss}"`
+          }
+
+          if (tooltipContent) {
             element.insertAdjacentHTML(
               'afterbegin',
-              `<span class="tooltip-content"${style}>${content}</span>`
+              `<span class="tooltip-content" ${styleCss}>${tooltipContent}</span>`
             )
           }
         })
@@ -363,8 +419,12 @@ KEEP.initUtils = () => {
         // tooltip-img
         const imgsSet = {}
 
-        const toggleShowImg = (dom, nameIdx) => {
-          document.addEventListener('click', () => {
+        const hideTooltipImg = (dom, nameIdx, trigger = 'click') => {
+          if (trigger === 'hover') {
+            trigger = 'mouseout'
+          }
+
+          document.addEventListener(trigger, () => {
             if (imgsSet[nameIdx].isShowImg) {
               dom.classList.remove('show-img')
               imgsSet[nameIdx].isShowImg = false
@@ -383,13 +443,41 @@ KEEP.initUtils = () => {
           }
         }
 
+        // tooltip-img
         document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
-          const { imgUrl, name } = dom.dataset
-          if (imgUrl) {
-            const imgDomClass = `tooltip-img-${name}`
-            const nameIdx = `${name}_${idx}`
-            const imgDom = `<img class="${imgDomClass}" lazyload data-src="${imgUrl}" alt="${name}">`
-            const imgTooltipBox = `<div class="tooltip-img-box">${imgDom}</div>`
+          const {
+            tooltipImgName,
+            tooltipImgUrl,
+            tooltipImgTip,
+            tooltipImgTrigger = 'click',
+            tooltipImgStyle
+          } = dom.dataset
+
+          let styleCss = ''
+
+          if (tooltipImgStyle) {
+            styleCss = `style="${tooltipImgStyle}"`
+          }
+
+          let tipDom = ''
+          if (tooltipImgTip) {
+            tipDom = `<div class="tip">${tooltipImgTip}</div>`
+          }
+
+          if (tooltipImgUrl) {
+            const imgDomClass = `tooltip-img-${idx}-${tooltipImgName ? tooltipImgName : Date.now()}`
+            const nameIdx = `${tooltipImgName}-${idx}`
+            const tmpSrc = (/^(https?:\/\/)/.test(tooltipImgUrl) ? '' : root) + tooltipImgUrl
+
+            const imgDom = `<img class="${imgDomClass}"
+                              ${isLazyLoadImg ? 'lazyload' : ''}
+                              ${isLazyLoadImg ? 'data-' : ''}src="${tmpSrc}"
+                              alt="${imgDomClass}"
+                            >`
+
+            const imgTooltipBox = `<div ${styleCss} class="tooltip-img-box ${
+              tipDom ? 'has-tip' : ''
+            }">${imgDom}${tipDom}</div>`
 
             imgsSet[nameIdx] = {
               imgLoaded: false,
@@ -397,8 +485,15 @@ KEEP.initUtils = () => {
             }
 
             dom.insertAdjacentHTML('afterbegin', imgTooltipBox)
-            dom.addEventListener('click', (e) => {
-              if (!imgsSet[nameIdx].imgLoaded) {
+
+            let eventTrigger = 'click'
+
+            if (tooltipImgTrigger === 'hover') {
+              eventTrigger = 'mouseover'
+            }
+
+            dom.addEventListener(eventTrigger, (e) => {
+              if (isLazyLoadImg && !imgsSet[nameIdx].imgLoaded) {
                 loadImg(
                   document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
                   imgsSet[nameIdx].imgLoaded
@@ -409,7 +504,7 @@ KEEP.initUtils = () => {
               e.stopPropagation()
             })
 
-            toggleShowImg(dom, nameIdx)
+            hideTooltipImg(dom, nameIdx, tooltipImgTrigger)
           }
         })
       }
@@ -421,10 +516,17 @@ KEEP.initUtils = () => {
     // busuanzi initialize handle
     siteCountInitialize() {
       if (KEEP.theme_config?.website_count?.busuanzi_count?.enable === true) {
-        const script = document.createElement('script')
-        script.async = true
-        script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
-        document.body.appendChild(script)
+        const tmpId = 'busuanzi-js'
+        let script = document.body.querySelector(`#${tmpId}`)
+
+        if (!script) {
+          script = document.createElement('script')
+          script.setAttribute('data-pjax', '')
+          script.setAttribute('id', tmpId)
+          script.async = true
+          script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+          document.body.appendChild(script)
+        }
 
         const getText = (selector) => {
           return document.querySelector(selector)?.innerText
@@ -439,7 +541,7 @@ KEEP.initUtils = () => {
             ) {
               const tmpDom1 = document.querySelector('.footer .count-item .uv')
               const tmpDom2 = document.querySelector('.footer .count-item .pv')
-              const tmpDom3 = document.querySelector('.article-meta-info .article-pv')
+              const tmpDom3 = document.querySelector('.post-meta-info .post-pv')
               tmpDom1 && (tmpDom1.style.display = 'flex')
               tmpDom2 && (tmpDom2.style.display = 'flex')
               tmpDom3 && (tmpDom3.style.display = 'inline-block')
@@ -476,36 +578,190 @@ KEEP.initUtils = () => {
             window.location.href = tempHref + '/page/' + current
           }
         })
+    },
+
+    // custom tabs tag active handle
+    tabsActiveHandle() {
+      const activeHandle = (navList, paneList, tab) => {
+        navList.forEach((nav) => {
+          if (tab.dataset.href === nav.dataset.href) {
+            nav.classList.add('active')
+          } else {
+            nav.classList.remove('active')
+          }
+        })
+
+        paneList.forEach((pane) => {
+          if (tab.dataset.href === pane.id) {
+            pane.classList.add('active')
+          } else {
+            pane.classList.remove('active')
+          }
+        })
+      }
+
+      const tabsList = document.querySelectorAll('.keep-tabs')
+      tabsList.length &&
+        tabsList.forEach((tabs) => {
+          const tabNavList = tabs.querySelectorAll('.tabs-nav .tab')
+          const tabPaneList = tabs.querySelectorAll('.tabs-content .tab-pane')
+          tabNavList.forEach((tabNav) => {
+            tabNav.addEventListener('click', () => {
+              activeHandle(tabNavList, tabPaneList, tabNav)
+            })
+          })
+        })
+    },
+
+    // first screen typewriter
+    initTypewriter() {
+      const fsc = KEEP.theme_config?.first_screen || {}
+      const isHitokoto = fsc?.hitokoto === true
+
+      if (fsc?.enable !== true) {
+        return
+      }
+
+      if (fsc?.enable === true && !isHitokoto && !fsc?.description) {
+        return
+      }
+
+      const descBox = document.querySelector('.first-screen-content .description')
+      if (descBox) {
+        descBox.style.opacity = '0'
+
+        setTimeout(
+          () => {
+            descBox.style.opacity = '1'
+            const descItemList = descBox.querySelectorAll('.desc-item')
+            descItemList.forEach((descItem) => {
+              const desc = descItem.querySelector('.desc')
+              const cursor = descItem.querySelector('.cursor')
+              const text = desc.innerHTML
+              desc.innerHTML = ''
+              let charIndex = 0
+
+              if (text) {
+                const typewriter = () => {
+                  if (charIndex < text.length) {
+                    desc.textContent += text.charAt(charIndex)
+                    charIndex++
+                    setTimeout(typewriter, 100)
+                  } else {
+                    cursor.style.display = 'none'
+                  }
+                }
+
+                typewriter()
+              }
+            })
+          },
+          isHitokoto ? 400 : 300
+        )
+      }
+    },
+
+    // remove white space between children
+    removeWhitespace(container) {
+      if (!container) {
+        return
+      }
+
+      const childNodes = container.childNodes
+      const whitespaceNodes = []
+
+      for (let i = 0; i < childNodes.length; i++) {
+        const node = childNodes[i]
+
+        if (node.nodeType === 3 && /^\s*$/.test(node.nodeValue)) {
+          whitespaceNodes.push(node)
+        }
+      }
+
+      for (const whitespaceNode of whitespaceNodes) {
+        container.removeChild(whitespaceNode)
+      }
+    },
+    trimPostMetaInfoBar() {
+      this.removeWhitespace(document.querySelector('.post-meta-info-container .post-category-ul'))
+      this.removeWhitespace(document.querySelector('.post-meta-info-container .post-tag-ul'))
+    },
+
+    // close website announcement
+    closeWebsiteAnnouncement() {
+      if (KEEP.theme_config?.home?.announcement) {
+        const waDom = document.querySelector('.home-content-container .website-announcement')
+        if (waDom) {
+          const closeDom = waDom.querySelector('.close')
+          closeDom.addEventListener('click', () => {
+            waDom.style.display = 'none'
+          })
+        }
+      }
+    },
+
+    // wrap table dom with div
+    wrapTableWithBox() {
+      document.querySelectorAll('table').forEach((element) => {
+        const box = document.createElement('div')
+        box.className = 'table-container'
+        element.wrap(box)
+      })
+    },
+
+    // H tag title to top
+    title2Top4HTag(a, h, isHideHeader, duration = 200) {
+      if (a && h) {
+        a.addEventListener('click', (e) => {
+          e.preventDefault()
+          let winScrollY = window.scrollY
+          winScrollY = winScrollY <= 1 ? -19 : winScrollY
+          let offset = h.getBoundingClientRect().top + winScrollY
+
+          if (!isHideHeader) {
+            offset = offset - 60
+          }
+
+          window.anime({
+            targets: document.scrollingElement,
+            duration,
+            easing: 'linear',
+            scrollTop: offset,
+            complete: () => {
+              history.pushState(null, document.title, a.href)
+              if (isHideHeader) {
+                setTimeout(() => {
+                  KEEP.utils.pageTopDom.classList.add('hide')
+                }, 160)
+              }
+            }
+          })
+        })
+      }
+    },
+
+    // A tag anchor jump handle
+    aAnchorJump() {
+      document.querySelectorAll('a.headerlink').forEach((a) => {
+        this.title2Top4HTag(a, a.parentNode, this.isHideHeader, 10)
+      })
     }
   }
 
-  // init data
   KEEP.utils.initData()
-
-  // init scroll
   KEEP.utils.registerWindowScroll()
-
-  // toggle show tools list
   KEEP.utils.toggleShowToolsList()
-
-  // global font adjust
   KEEP.utils.globalFontAdjust()
-
-  // check whether TOC exists
   KEEP.utils.initHasToc()
-
-  // big image viewer handle
   KEEP.utils.zoomInImage()
-
-  // set how long age in home article block
   KEEP.utils.setHowLongAgoInHome()
-
-  // insert tooltip content dom
   KEEP.utils.insertTooltipContent()
-
-  // busuanzi initialize
   KEEP.utils.siteCountInitialize()
-
-  // page number jump handle
   KEEP.utils.pageNumberJump()
+  KEEP.utils.tabsActiveHandle()
+  KEEP.utils.initTypewriter()
+  KEEP.utils.trimPostMetaInfoBar()
+  KEEP.utils.closeWebsiteAnnouncement()
+  KEEP.utils.wrapTableWithBox()
+  KEEP.utils.aAnchorJump()
 }

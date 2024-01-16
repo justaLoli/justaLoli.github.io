@@ -1,8 +1,9 @@
 :root {
   --toolbar-foreground: #50505c;
   --toolbar-background: #f0f0f0;
-  --code-foreground: #535360;
-  --code-background: #f2f2f2;
+  --code-foreground: #585865;
+  --code-background: rgba(214,171,74,0.15);
+  --code-border-color: #e2c480;
   --highlight-background: #fafafa;
   --highlight-foreground: #535360;
   --highlight-comment: #8e908c;
@@ -15,13 +16,18 @@
   --highlight-purple: #8959a8;
   --highlight-gutter-color: #585865;
   --highlight-gutter-bg-color: #f2f2f2;
+  --mac-toolbar-background-color: #21252b;
+  --shrink-line-foreground: #808091;
+  --shrink-line-background-1: rgba(210,210,210,0.9);
+  --shrink-line-background-2: rgba(225,225,225,0.6);
 }
 @media (prefers-color-scheme: light) {
   :root {
     --toolbar-foreground: #50505c;
     --toolbar-background: #f0f0f0;
-    --code-foreground: #535360;
-    --code-background: #f2f2f2;
+    --code-foreground: #585865;
+    --code-background: rgba(214,171,74,0.15);
+    --code-border-color: #e2c480;
     --highlight-background: #fafafa;
     --highlight-foreground: #535360;
     --highlight-comment: #8e908c;
@@ -34,14 +40,19 @@
     --highlight-purple: #8959a8;
     --highlight-gutter-color: #585865;
     --highlight-gutter-bg-color: #f2f2f2;
+    --mac-toolbar-background-color: #21252b;
+    --shrink-line-foreground: #808091;
+    --shrink-line-background-1: rgba(210,210,210,0.9);
+    --shrink-line-background-2: rgba(225,225,225,0.6);
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --toolbar-foreground: #bebec6;
     --toolbar-background: #474851;
-    --code-foreground: #bfbfc7;
-    --code-background: #32333a;
+    --code-foreground: #c5c5cc;
+    --code-background: rgba(214,171,74,0.15);
+    --code-border-color: #8d6b20;
     --highlight-background: #34343b;
     --highlight-foreground: #bfbfc7;
     --highlight-comment: #969896;
@@ -54,13 +65,18 @@
     --highlight-purple: #b294bb;
     --highlight-gutter-color: #c1c1c9;
     --highlight-gutter-bg-color: #32333a;
+    --mac-toolbar-background-color: #1f2021;
+    --shrink-line-foreground: #808090;
+    --shrink-line-background-1: rgba(38,38,38,0.9);
+    --shrink-line-background-2: rgba(52,52,52,0.6);
   }
 }
 .light-mode {
   --toolbar-foreground: #50505c;
   --toolbar-background: #f0f0f0;
-  --code-foreground: #535360;
-  --code-background: #f2f2f2;
+  --code-foreground: #585865;
+  --code-background: rgba(214,171,74,0.15);
+  --code-border-color: #e2c480;
   --highlight-background: #fafafa;
   --highlight-foreground: #535360;
   --highlight-comment: #8e908c;
@@ -73,12 +89,17 @@
   --highlight-purple: #8959a8;
   --highlight-gutter-color: #585865;
   --highlight-gutter-bg-color: #f2f2f2;
+  --mac-toolbar-background-color: #21252b;
+  --shrink-line-foreground: #808091;
+  --shrink-line-background-1: rgba(210,210,210,0.9);
+  --shrink-line-background-2: rgba(225,225,225,0.6);
 }
 .dark-mode {
   --toolbar-foreground: #bebec6;
   --toolbar-background: #474851;
-  --code-foreground: #bfbfc7;
-  --code-background: #32333a;
+  --code-foreground: #c5c5cc;
+  --code-background: rgba(214,171,74,0.15);
+  --code-border-color: #8d6b20;
   --highlight-background: #34343b;
   --highlight-foreground: #bfbfc7;
   --highlight-comment: #969896;
@@ -91,4 +112,8 @@
   --highlight-purple: #b294bb;
   --highlight-gutter-color: #c1c1c9;
   --highlight-gutter-bg-color: #32333a;
+  --mac-toolbar-background-color: #1f2021;
+  --shrink-line-foreground: #808090;
+  --shrink-line-background-1: rgba(38,38,38,0.9);
+  --shrink-line-background-2: rgba(52,52,52,0.6);
 }

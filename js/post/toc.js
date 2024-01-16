@@ -7,9 +7,7 @@ function initTOC() {
   const tabletTocContainer = document.querySelector('.tablet-post-toc')
 
   if (KEEP.utils.hasToc) {
-    KEEP.utils = {
-      ...KEEP.utils,
-
+    KEEP.utils.tocHelper = {
       pcTocNavSections: [],
 
       tabletTocNavSections: [],
@@ -39,29 +37,13 @@ function initTOC() {
 
       // register TOC Nav
       registerTocNav() {
+        const isHideHeader = KEEP.theme_config?.scroll?.hide_header
         const register = (tocContainer) => {
           return [...tocContainer.querySelectorAll('.post-toc li a.nav-link')].map((element) => {
             const target = document.getElementById(
               decodeURI(element.getAttribute('href')).replace('#', '')
             )
-            element.addEventListener('click', (event) => {
-              event.preventDefault()
-              let winScrollY = window.scrollY
-              winScrollY = winScrollY === 0 ? -20 : winScrollY
-              const offset = target.getBoundingClientRect().top + winScrollY
-              window.anime({
-                targets: document.scrollingElement,
-                duration: 500,
-                easing: 'linear',
-                scrollTop: offset - 10,
-                complete: () => {
-                  history.pushState(null, document.title, element.href)
-                  setTimeout(() => {
-                    KEEP.utils.pageTopDom.classList.add('hide')
-                  }, 150)
-                }
-              })
-            })
+            KEEP.utils.title2Top4HTag(element, target, isHideHeader, 500)
             return target
           })
         }
@@ -119,9 +101,8 @@ function initTOC() {
         }
       }
     }
-
-    KEEP.utils.handleShowWhenHasToc()
-    KEEP.utils.registerTocNav()
+    KEEP.utils.tocHelper.handleShowWhenHasToc()
+    KEEP.utils.tocHelper.registerTocNav()
   } else {
     pcTocContainer && postPageContainer.removeChild(pcTocContainer)
     if (tabletTocContainer) {

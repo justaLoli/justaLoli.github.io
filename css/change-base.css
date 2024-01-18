@@ -1,7 +1,6 @@
 /* 播放器 */
 @import url('https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css');
 /* 字体 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
 :root {
   --base-font-family: Noto Serif SC!important;
 }

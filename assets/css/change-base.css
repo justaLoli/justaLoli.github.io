@@ -1,0 +1,21 @@
+/* 播放器 */
+/*@import url('https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css');*/
+/* 字体 */
+:root {
+  --base-font-family: Noto Serif SC!important;
+}
+.paginator .page-number-box .page-number-input{
+   -moz-appearance: textfield;
+}
+code{
+   border: none;
+}
+figcaption{
+   text-align: center;
+}
+.keep-markdown-body h1, .keep-markdown-body h2, .keep-markdown-body h3, .keep-markdown-body h4, .keep-markdown-body h5, .keep-markdown-body h6{
+   white-space: normal!important;
+}
+.first-screen-container .first-screen-content .description .desc-item .desc {
+  background-color: var(--first-screen-desc-bg-color);
+}

@@ -9,7 +9,7 @@
     
     <title>
         
-            计算摄像学 第二讲 数字摄像流程 |
+            用 Sublime Text 在 MacOS 上进行 Verilog 书写 &amp; 仿真 的配置经验 |
         
         Loli的杂货铺
     </title>
@@ -329,12 +329,19 @@ mjx-container[display="true"] + br {
     <div class="post-page-container border-box">
         <div class="post-content-container border-box">
             
-
-            <div class="post-content-bottom border-box">
-                
-                    <div class="post-title">
-                        计算摄像学 第二讲 数字摄像流程
+                <div class="post-content-top border-box"
+                     style="height: 13.8rem"
+                >
+                    <div class="cover-post-title">
+                        用 Sublime Text 在 MacOS 上进行 Verilog 书写 &amp; 仿真 的配置经验
                     </div>
+                    <img class="post-cover" src="/posts/7309/header.png"
+                         onerror="this.style.display='none'"
+                    >
+                </div>
+            
+
+            <div class="post-content-bottom border-box has-cover">
                 
 
                 
@@ -359,36 +366,17 @@ mjx-container[display="true"] + br {
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2023-02-28 12:52:50</span>
+                <span class="datetime">2024-03-28 19:20:45</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Nov 09 2023 19:01:14 GMT+0800">2023-11-09 19:01:14</span>
+                <span class="datetime" data-updated="Thu Mar 28 2024 22:16:48 GMT+0800">2024-03-28 22:16:48</span>
             </span>
         
 
         
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
 
-        
-            <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a></li>
-                        
-                    
-                </ul>
-            </span>
         
 
         
@@ -399,7 +387,7 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
             </span>
         
         
@@ -416,134 +404,91 @@ mjx-container[display="true"] + br {
                 <div class="post-content keep-markdown-body">
                     
 
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="第二讲-数字摄像流程digital-photography-pipeline">第二讲
-数字摄像流程（Digital Photography Pipeline</h2>
-<!-- ISP -->
-<p>参考书：</p>
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>太长不看版：</p>
+<ul>
+<li>语法高亮：sublime插件Verilog和SystemVerilog</li>
+<li>代码补全：sublime插件lsp；命令行工具vls</li>
+<li>代码编译工具：Icarus Verilog（iverilog）</li>
+<li>波形查看工具：surfer（也可以选择其它）</li>
+</ul>
+<h2 id="代码高亮">代码高亮</h2>
+<p>Sublime
+Text默认没有针对Verilog的代码高亮，我们可以通过安装插件来实现。</p>
+<p>安装插件Verilog和SystemVerilog。安装方法可以从别处找到，简而言之是通过Package
+Control: Install Package来安装。</p>
+<p>Verilog和SystemVerilog是两个独立的插件，原则上选择其一即可。两个都要安装的原因之后会说明。</p>
+<p>对于语法高亮，SystemVerilog插件的效果更好。打开一个<code>.v</code>的verilog文件，从菜单栏选择<code>View -&gt; Syntax -&gt; Open all with current extension as... -&gt; SystemVerilog</code>，之后所有<code>.v</code>文件都会被以SystemVerilog扩展提供的高亮显示。</p>
+<p><em>note：即便叫做systemverilog，由于我们只要代码高亮功能，它是可以完美兼容我们的verilog代码的</em></p>
+<h2 id="代码补全">代码补全</h2>
+<p>systemverilog插件自己有一个简单的弹框，但是做的很差。我们要将其禁用。在SystemVerilog插件的设置中，增加这一段：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"sv.status"</span> <span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span> <span class="comment">// True to display Current context in the status bar (Module/class/function/task name)</span></span><br><span class="line">    <span class="attr">"sv.tooltip"</span> <span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span> <span class="comment">// True to display information in a tooltip (sublime 3072+), false to use the status bar instead</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
+<p>取而代之，选择大名鼎鼎的LSP服务。LSP是Language Server
+Protocol的缩写，是一种通用的语言服务器协议。</p>
+<ul>
+<li>Sublime Text下载LSP</li>
+</ul>
+<p>通过Package Control: Install
+Package安装LSP即可。之后可能要重启Sublime Text。</p>
+<ul>
+<li>下载vls</li>
+</ul>
+<p>vls是针对verilog的一个LSP服务。配置好后，Sublime会自动调用vls来进行代码补全等操作。</p>
+<p>从<a class="link" target="_blank" rel="noopener" href="https://github.com/sthenic/vls/releases">项目的Github页面<i class="fas fa-external-link-alt"></i></a>下载当前版本。解压，得到一个名为<code>vls</code>的可执行文件。将其<code>/usr/local/bin</code>（你可能要通过终端进行移动）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 替换其中的~/Downloads/vls为你下载的vls文件的路径</span></span><br><span class="line">sudo <span class="built_in">mv</span> ~/Downloads/vls /usr/local/bin</span><br></pre></td></tr></table></figure>
+<p>还可能需要配置权限以保证vls可以被执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> +x /usr/local/bin/vls</span><br></pre></td></tr></table></figure>
+<p>完成后，在终端键入<code>vls --help</code>观察是否有输出。如果有，说明vls已经配置成功。</p>
+<ul>
+<li>配置Sublime-LSP</li>
+</ul>
+<p>打开Sublime中的LSP设置，增加这一段：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ~/Library/Application Support/Sublime Text/Packages/User/LSP.sublime-settings</span></span><br><span class="line"><span class="comment">// Settings in here override those in "LSP/LSP.sublime-settings"</span></span><br><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"clients"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"verilog"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"vls"</span><span class="punctuation">,</span> </span><br><span class="line">      <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"selector"</span><span class="punctuation">:</span><span class="string">"source.verilog | source.systemverilog"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
+<p>重启Sublime
+Text，打开一个verilog文件，鼠标停留在一个变量上，能看到一个弹框，并且有一些“转到定义”、“查找引用”等选项，说明代码补全已经生效。</p>
+<p><em>这里解释一下要装Verilog和Systemverilog两个插件的原因：代码补全里面的代码高亮需要用到Verilog，如果只用Systemverilog，LSP的弹框里面的内容没法被正确高亮。这确实很不优雅但是，well</em></p>
+<h2 id="编译">编译</h2>
+<p>我们使用Icarus Verilog（简称iverilog）来进行代码编译。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install icarus-verilog</span><br></pre></td></tr></table></figure>
+<p>等待安装完成。</p>
+<p>完成后，输入<code>iverilog</code>，如果有输出，说明安装成功。</p>
+<p>原则上，如果安装了<code>iverilog</code>，先前安装的LSP可以在代码中实时高亮语法错误的部分。</p>
+<ul>
+<li>编译一个文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iverilog -y . -o hello hello.v</span><br></pre></td></tr></table></figure>
+<p>解释： <code>-y .</code>
+表示搜索当前目录下的文件，如果你的top模块调用了其它文件中的模块，编译器会帮你搜索到它们；<code>-o hello</code>
+表示输出文件名为hello。<code>hello.v</code>是你的顶层模块文件。</p>
+<ul>
+<li>编译完成后运行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vvp hello</span><br></pre></td></tr></table></figure>
+<p>解释：<code>vvp</code>是iverilog的运行命令，后面跟着的是你的刚刚输出文件名。现在你从控制台可以看见你的一些<code>$display()</code>调试输出。</p>
+<ul>
+<li><strong><em>重要：生成波形</em></strong></li>
+</ul>
+<p>一般的testbench代码运行不会生成波形。一定要在你的testbench代码中加入这两行：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">    <span class="built_in">$dumpfile</span>(<span class="string">"dump.vcd"</span>); <span class="comment">//表示将波形输出到dump.vcd文件中</span></span><br><span class="line">    <span class="built_in">$dumpvars</span>(); <span class="comment">//表示将所有变量都保存在输出中</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>将编译过程整合进Sublime Text</li>
+</ul>
+<p><code>Tool -&gt; Build System -&gt; New Build System</code>，输入以下内容，并保存为<code>iVerilog.sublime-build</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ~/Library/Application Support/Sublime Text/Packages/User/iVerilog.sublime-build</span></span><br><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"shell_cmd"</span><span class="punctuation">:</span> <span class="string">"iverilog -y . -o ${file_base_name} ${file} "</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"working_dir"</span><span class="punctuation">:</span> <span class="string">"${file_path}"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"file_patterns"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"*.v"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">"variants"</span><span class="punctuation">:</span></span><br><span class="line">    <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Run"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"shell_cmd"</span><span class="punctuation">:</span> <span class="string">"iverilog -y . -o ${file_base_name} ${file} &amp;&amp; vvp ${file_base_name} "</span></span><br><span class="line">        <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Open Surfer"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"shell_cmd"</span><span class="punctuation">:</span> <span class="string">"iverilog -y . -o ${file_base_name} ${file} &amp;&amp; vvp ${file_base_name} &amp;&amp; surfer"</span></span><br><span class="line">        <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
+<p>这样，在Sublime中按下<code>Cmd+B</code>即可编译你的代码。按下<code>Cmd+Shift+B</code>可以选择编译模式。这里定义了几个模式：</p>
 <ol type="1">
-<li>http://szeliski.org/book 《Computer Vision: Algorithms and
-Applications, 2nd ed.》</li>
-<li>https://imagingtext.github.io 《Computational Imaging》</li>
-<li>https://link.springer.com/referencework/10.1007/978-3-030-63416-2
-第二版</li>
+<li>仅编译（默认）</li>
+<li>编译后执行（带Run）</li>
+<li>执行完毕后打开波形查看器（参见下一部分）</li>
 </ol>
-<p>计算摄像的三个处理位置：成像之前，成像，成像之后</p>
-<p>本课内容：</p>
-<ul>
-<li>图像传感器</li>
-<li>模拟前端</li>
-<li>颜色滤波</li>
-<li>-&gt;</li>
-<li>相机内部的图像处理（ISP</li>
-</ul>
-<!-- 视频：手机和相机的拍照对比，好机友姜唯。 -->
-<h3 id="图像传感器-imaging-sensor">图像传感器 Imaging Sensor</h3>
-<p>拍照：快门打开-&gt;传感器接收光子、储存光子-&gt;快门关闭，曝光结束-&gt;将光子转化成数字信号处理。</p>
-<p>核心的感光组件：光电二极管（产生电子）、势井（存储电子）。</p>
-<p>衡量光电二极管的一个指标：QE = 光子量/电子量</p>
-<p>过曝：光子过多，势井饱和；欠曝：光子过少，随机性太高。除此以外的情况，电子数基本上<strong>线性的反映光子数</strong>。</p>
-<p>两种图像传感器的芯片：CCD &amp; CMOS</p>
-<table>
-<thead>
-<tr class="header">
-<th>CCD</th>
-<th>CMOS</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>更高感光度</td>
-<td>更快读出</td>
-</tr>
-<tr class="even">
-<td>更低噪声</td>
-<td>更低成本</td>
-</tr>
-</tbody>
-</table>
-<p>目前CMOS已经能达到接近CCD的性能。</p>
-<h3 id="模拟前端">模拟前端</h3>
-<p>将传感器得到的光子（电压，模拟信号）转化为数字信号</p>
-<p>电压-&gt;「模拟放大器」-&gt;模拟电压-&gt;「模数转换器」-&gt;数字信号-&gt;「编码」-&gt;数字信号</p>
-<blockquote>
-<p>fun fact: ISO调整的是「模拟放大器」的强度。</p>
-</blockquote>
-<h3 id="颜色滤波器">颜色滤波器</h3>
-<p>可见光：400-700nm波长</p>
-<p>大多数光源含有不止一种波长的光。</p>
-<p>不同的光谱频率分布可以产生类似或者相同的颜色感知。</p>
-<p>色温。</p>
-<p>感光器的响应值受到光源的频谱和传感器对不同频率的接收能力影响。</p>
-<p>人眼细胞分别对RGB三个颜色的接收能力最强。颜色滤波器在设计时参考了人眼。</p>
-<p>滤波器在传感器上的分布？拜耳阵列（RGGB</p>
-<p>为什么要更多绿色？简而言之，研究认为人眼对绿色更敏感。</p>
-<p>颜色滤波没有标准答案。滤波会带来颜色风格的细微差异。</p>
-<h3 id="相机内部对图像的处理isp">相机内部对图像的处理（ISP</h3>
-<p>ISP: Image Singal Processor:
-广义的指将原始图像转换为“正常”图像的一系列图像处理操作。</p>
-<p>白平衡；去马赛克；降噪；色调再现；压缩；etc。</p>
-<h4 id="白平衡-white-balance-wb">白平衡 White Balance WB</h4>
-<ul>
-<li>人眼可以在不同光照环境下正确感知“白色是白色”。</li>
-</ul>
-<p>白平衡：不管在任何光源下，都能将白色物体还原成白色，用于校准色温的偏差。</p>
-<p>方法：</p>
-<ol type="1">
-<li>手动白平衡：手动确定某个点，某个物体是白色。</li>
-<li>预设白平衡：预设一些光源条件下的色温</li>
-</ol>
-<p>经典的自动白平衡算法：</p>
-<p>利用白平衡的特性：全局偏差，让全局RGB分别的统计值变成相同的，就白了。</p>
-<ul>
-<li>灰色世界假设
-<ul>
-<li>逐通道计算RGB<strong>平均值</strong></li>
-<li>逐通道利用<strong>平均值</strong>归一化</li>
-<li>乘以“绿色通道的<strong>平均值</strong>”作为增益</li>
-</ul></li>
-<li>白色世界假设
-<ul>
-<li>逐通道计算RGB<strong>最大值</strong></li>
-<li>逐通道利用<strong>最大值</strong>归一化</li>
-<li>乘以“绿色通道的<strong>最大值</strong>”作为增益</li>
-</ul></li>
-</ul>
-<h4 id="去马赛克">去马赛克</h4>
-<p>拜耳阵列中，每个像素感受到不同颜色光，产生“马赛克效果”，需要去除。</p>
-<p>用相邻的其它颜色像素取平均，得到当前像素的其它颜色值。</p>
-<h4 id="降噪-denoising">降噪 Denoising</h4>
-<p>噪声在低光照时尤为明显。</p>
-<p>噪声的来源比较复杂：</p>
-<ul>
-<li>散粒噪声：光子到达服从泊松分布</li>
-<li>暗电流：电路热效应产生一些电子</li>
-<li>读出噪声：传感器和模拟前端电路的噪声</li>
-</ul>
-<p>简单降噪算法：平均滤波（卷积，利用周围像素），中值滤波</p>
-<p>更复杂的降噪算法</p>
-<h4 id="色彩空间转化">（色彩空间转化）</h4>
-<p>相机内部可能会把RGB色彩空间转化成HSV色彩空间。</p>
-<p>这件事的意义：将RGB分离成更加独立的变量，方便研究。</p>
-<h4 id="色调再现伽马矫正">色调再现（伽马矫正</h4>
-<p>最初是因为CRT显示器对颜色的现实是非线性的。</p>
-<p>目前伽马矫正与CRT无关。</p>
-<p>人眼对低亮度更敏感，因此将相机的线性感光修正为适合人眼的非线性感光。</p>
-<h4 id="图像压缩">（图像压缩）</h4>
-<p>略</p>
-<h4 id="补充raw图像格式的意义线性">补充：RAW图像格式的意义：线性！</h4>
-<p>ISP处理后的图像和原始光强是非线性的。这不利于研究。</p>
-<p>RAW图像仍然保持了和环境光强的良好的线性性。对计算机视觉而言非常有用:D</p>
-<p>对一般人：保存更多信息，后期空间。</p>
-<p>RAW的坏处：噪声，无压缩，降低连拍速度</p>
-<p>注：RAW可能也经过了一些与处理，比如去马赛克。</p>
-<p>将jpeg还原为RAW是一件非常困难的事情。</p>
-<h3 id="扩展内容">扩展内容</h3>
-<p>ISP深入理解：
-https://www.eecs.yorku.ca/~mbrown/ICCV2019_Brown.html</p>
-<p>更好的看paper的方法：two minute papers youtube</p>
-<p>用卷积神经网络进行超暗照片的增强 Learning to see in the dark.
-ChenChen UIUC等 2018；</p>
-<p>Day-to-Night image Synthesis for Training Nighttime Neural ISPs</p>
+<h2 id="波形查看">波形查看</h2>
+<p>传统方案是使用gtkwave查看。不过gtkwave不支持m1以上的mac芯片。我们要另辟蹊径。</p>
+<p>经过一些查找，我们可以使用surfer（官网<a class="link" target="_blank" rel="noopener" href="https://surfer-project.org/">https://surfer-project.org/<i class="fas fa-external-link-alt"></i></a>）这个软件。</p>
+<p>它有一个<a class="link" target="_blank" rel="noopener" href="https://app.surfer-project.org/">网页版<i class="fas fa-external-link-alt"></i></a>可以上传文件查看波形。如果要本地启动，需要在本地编译：</p>
+<p>首先安装rust和rust的包管理器cargo（自行解决）</p>
+<p>然后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo install --git https://gitlab.com/surfer-project/surfer surfer</span><br></pre></td></tr></table></figure>
+<p>（你可能需要先安装openssl。总之参照官方<a class="link" target="_blank" rel="noopener" href="https://gitlab.com/surfer-project/surfer">README<i class="fas fa-external-link-alt"></i></a>）</p>
+<p>完成后，在终端输入surfer可以打开程序查看波形。</p>
 <svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>
                 </div>
 
@@ -553,11 +498,11 @@ ChenChen UIUC等 2018；</p>
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                计算摄像学 第二讲 数字摄像流程
+                用 Sublime Text 在 MacOS 上进行 Verilog 书写 &amp; 仿真 的配置经验
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                posts/23312.html
+                posts/7309.html
             </div>
         </div>
 
@@ -573,7 +518,7 @@ ChenChen UIUC等 2018；</p>
                 <div class="type">
                     发布于
                 </div>
-                <div class="content">2023-02-28 12:52</div>
+                <div class="content">2024-03-28 19:20</div>
             </div>
 
 
@@ -604,14 +549,6 @@ ChenChen UIUC等 2018；</p>
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
                         
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%AE%A1%E7%AE%97%E6%91%84%E5%83%8F%E5%AD%A6/">计算摄像学</a>
-                                    </li>
-                                
-                            </ul>
-                        
                     </div>
                     <div>
                         
@@ -623,31 +560,15 @@ ChenChen UIUC等 2018；</p>
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/posts/32813.html"
-                                   title="地图着色问题"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">地图着色问题</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/posts/52048.html"
-                                   title="胡椒厨房——现在的人，没有精力再DIY"
+                                   href="/posts/14474.html"
+                                   title="MOSFET 公式速查手册"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">胡椒厨房——现在的人，没有精力再DIY</span>
+                                        <span class="post-nav-title-item text-ellipsis">MOSFET 公式速查手册</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -675,8 +596,7 @@ ChenChen UIUC等 2018；</p>
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E6%95%B0%E5%AD%97%E6%91%84%E5%83%8F%E6%B5%81%E7%A8%8Bdigital-photography-pipeline"><span class="nav-text">第二讲
-数字摄像流程（Digital Photography Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E4%BC%A0%E6%84%9F%E5%99%A8-imaging-sensor"><span class="nav-text">图像传感器 Imaging Sensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E5%89%8D%E7%AB%AF"><span class="nav-text">模拟前端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="nav-text">颜色滤波器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E6%9C%BA%E5%86%85%E9%83%A8%E5%AF%B9%E5%9B%BE%E5%83%8F%E7%9A%84%E5%A4%84%E7%90%86isp"><span class="nav-text">相机内部对图像的处理（ISP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%99%BD%E5%B9%B3%E8%A1%A1-white-balance-wb"><span class="nav-text">白平衡 White Balance WB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%BB%E9%A9%AC%E8%B5%9B%E5%85%8B"><span class="nav-text">去马赛克</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E5%99%AA-denoising"><span class="nav-text">降噪 Denoising</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%8C%96"><span class="nav-text">（色彩空间转化）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%89%B2%E8%B0%83%E5%86%8D%E7%8E%B0%E4%BC%BD%E9%A9%AC%E7%9F%AB%E6%AD%A3"><span class="nav-text">色调再现（伽马矫正</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9"><span class="nav-text">（图像压缩）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85raw%E5%9B%BE%E5%83%8F%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%84%8F%E4%B9%89%E7%BA%BF%E6%80%A7"><span class="nav-text">补充：RAW图像格式的意义：线性！</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E5%86%85%E5%AE%B9"><span class="nav-text">扩展内容</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE"><span class="nav-text">代码高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8"><span class="nav-text">代码补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A2%E5%BD%A2%E6%9F%A5%E7%9C%8B"><span class="nav-text">波形查看</span></a></li></ol>
     </div>
 </div>
 
@@ -835,8 +755,7 @@ ChenChen UIUC等 2018；</p>
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E6%95%B0%E5%AD%97%E6%91%84%E5%83%8F%E6%B5%81%E7%A8%8Bdigital-photography-pipeline"><span class="nav-text">第二讲
-数字摄像流程（Digital Photography Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E4%BC%A0%E6%84%9F%E5%99%A8-imaging-sensor"><span class="nav-text">图像传感器 Imaging Sensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E5%89%8D%E7%AB%AF"><span class="nav-text">模拟前端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="nav-text">颜色滤波器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E6%9C%BA%E5%86%85%E9%83%A8%E5%AF%B9%E5%9B%BE%E5%83%8F%E7%9A%84%E5%A4%84%E7%90%86isp"><span class="nav-text">相机内部对图像的处理（ISP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%99%BD%E5%B9%B3%E8%A1%A1-white-balance-wb"><span class="nav-text">白平衡 White Balance WB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%BB%E9%A9%AC%E8%B5%9B%E5%85%8B"><span class="nav-text">去马赛克</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E5%99%AA-denoising"><span class="nav-text">降噪 Denoising</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%8C%96"><span class="nav-text">（色彩空间转化）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%89%B2%E8%B0%83%E5%86%8D%E7%8E%B0%E4%BC%BD%E9%A9%AC%E7%9F%AB%E6%AD%A3"><span class="nav-text">色调再现（伽马矫正</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9"><span class="nav-text">（图像压缩）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85raw%E5%9B%BE%E5%83%8F%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%84%8F%E4%B9%89%E7%BA%BF%E6%80%A7"><span class="nav-text">补充：RAW图像格式的意义：线性！</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E5%86%85%E5%AE%B9"><span class="nav-text">扩展内容</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE"><span class="nav-text">代码高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8"><span class="nav-text">代码补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A2%E5%BD%A2%E6%9F%A5%E7%9C%8B"><span class="nav-text">波形查看</span></a></li></ol>
     </div>
 </div>
 

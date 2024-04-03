@@ -9,7 +9,7 @@
     
     <title>
         
-            今日无用英语——杂货铺的正确翻译 |
+            塔罗斯的法则-拼图游戏 |
         
         Loli的杂货铺
     </title>
@@ -326,285 +326,341 @@ mjx-container[display="true"] + br {
 
                     
 <div class="fade-in-down-animation">
-    <div class="post-page-container border-box">
-        <div class="post-content-container border-box">
+    <div class="page-template-container border-box">
+        
+
+        <div class="page-template-bottom border-box">
+            
+            <div class="page-content border-box keep-markdown-body">
+                
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><script>
+    const Sigil = {
+            LINE: 0,
+            T: 1,
+            Z: 2,
+            S: 3,
+            L: 4,
+            J: 5,
+            SQUARE: 6
+        };
+    const sigils = [Sigil.LINE,Sigil.T,Sigil.Z,Sigil.S,Sigil.L,Sigil.J,Sigil.SQUARE];
+    const possibleRotations = [2,3,2,2,4,4,1];
+    const SigilDefine = [
+        [
+            [
+                [0,0,1,1,1,1],
+                [0,0,0,0,0,0],
+                [0,0,0,0,0,0],
+                [0,0,0,0,0,0]
+            ],
+            [
+                [0,0,1,0,0,0],
+                [0,0,1,0,0,0],
+                [0,0,1,0,0,0],
+                [0,0,1,0,0,0]
+            ]
+        ],
+        [
+            [[0,0,1,1,1,0],
+             [0,0,0,1,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,1,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,0,1,1,0,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,1,0,0],
+             [0,0,0,1,1,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,1,1,0,0,0],
+             [0,1,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,0,0,0],
+             [0,0,1,1,0,0],
+             [0,0,0,1,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,0,0],
+             [0,1,1,0,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,0,1,1,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,1,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,0,0],
+             [0,0,0,1,0,0],
+             [0,0,0,1,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [1,1,1,0,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,1,1,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,0,1,1,1,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,0,0],
+             [0,0,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,1,0],
+             [0,0,0,0,1,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,1,0,0],
+             [0,0,1,1,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]] 
+        ]
+    ]
+    const MARKS = "#$%^&*.~?/;<>qwertyuiopasdfghjklzxcvbnm";
+    const maxMarkIndex = MARKS.length; // 注意：JS中获取长度是.length而不是.length()
+    let markIndex = 0;
+    let sigilCount = [0,0,0,0,0,0,0];
+    let line = 0;let column = 0;
+    let board = [];
+    function defineboard(){
+        board = new Array(line); // 创建line行
+        for (let i = 0; i < line; i++) {
+            board[i] = new Array(column).fill(0); // 创建column列，并填充0
+        }
+    }
+
+    // 使用createSigilPatternGridIterator来生成迭代器
+    const SIGIL_PATTERN_LINE = 4;
+    const SIGIL_PATTERN_COLUMN = 6;
+    const SIGIL_PATTERN_ANCHOR_LINE = 0;
+    const SIGIL_PATTERN_ANCHOR_COLUMN = 2;
+    function createSigilPatternGridIterator() {
+        let iterator = [];
+        for (let i = 0; i < 4; i++) {
+            for (let j = -2; j < 4; j++) {
+                iterator.push([i, j]);
+            }
+        }
+        return iterator;
+    }
+    const sigilPatternGridIterator = createSigilPatternGridIterator();
+    function GridIterateHelper(l,c){
+        let iterator = [];
+        for(let i=0;i < l;i++){
+            for(let j=0;j < c;j++){
+                iterator.push([i,j]);
+            }
+        }
+        return iterator;
+    }
+    function issigilplaceable(sigilToBePlaced, x, y, rotation) {
+        const isSingleCoordinateFailed = (i, j) => {
+            // 如果这个位置的符文不在符文形状里面，那就没必要判断了。
+            const sigil = SigilDefine[sigilToBePlaced][rotation];
+            if (!sigil[i][j + SIGIL_PATTERN_ANCHOR_COLUMN]) return 0;
+            let targetX = x + i, targetY = y + j;
+            if (targetX >= line || targetX < 0 || targetY < 0 || targetY >= column) return 1;
+            if (board[targetX][targetY]) return 1;
+            return 0;
+        };
+
+        for (let [i, j] of sigilPatternGridIterator) {
+            if (isSingleCoordinateFailed(i, j)) return 0;
+        }
+        return 1;
+    }
+    function placesigil(sigilToBePlaced,x,y,rotation){
+        const sigil = SigilDefine[sigilToBePlaced][rotation];
+        for (let [i, j] of sigilPatternGridIterator) {
+            if(!sigil[i][j + SIGIL_PATTERN_ANCHOR_COLUMN])continue;
+            let targetx = x + i, targety = y + j;
+            if (targetx < 0 || targetx >= line || targety < 0 || targety >= column) {
+                // 输出错误消息到控制台
+                console.error(`越界错误：尝试将符文放置到(${targetx}, ${targety})，超出了板的范围。`);
+                continue; // 继续执行循环，而不是退出函数
+            }
+            board[targetx][targety] = MARKS[markIndex % maxMarkIndex];
+        }
+        return 0;
+    }
+    function unplacesigil(sigilToBePlaced,x,y,rotation){
+        const sigil = SigilDefine[sigilToBePlaced][rotation];
+        for (let [i, j] of sigilPatternGridIterator){
+            if(!sigil[i][j + SIGIL_PATTERN_ANCHOR_COLUMN])continue;
+            let targetx = x + i, targety = y + j;
+            if (targetx < 0 || targetx >= line || targety < 0 || targety >= column) {
+                // 输出错误消息到控制台
+                console.error(`越界错误：尝试撤回(${targetx}, ${targety})的符文，超出了板的范围。`);
+                continue; // 继续执行循环，而不是退出函数
+            }
+            board[targetx][targety] = 0;
+        }
+
+    }
+    let dfsstep = 0;
+    function dfs() {
+        dfsstep++;
+        let emptySpotX = 0, emptySpotY = 0;
+        let hasEmptySpot = false;
+
+        for (let [i, j] of GridIterateHelper(line, column)) {
+            if (board[i][j]) continue;
+            hasEmptySpot = true;
+            emptySpotX = i;
+            emptySpotY = j;
+            break;
+        }
+
+        if (!hasEmptySpot) {
+            // 成功！
+            return 1;
+        }
+
+        for (let sigil of sigils) {
+            if (!sigilCount[sigil]) continue;
+            for (let rotation = 0; rotation < possibleRotations[sigil]; rotation++) {
+                // console.log(sigil, rotation);
+                if (issigilplaceable(sigil, emptySpotX, emptySpotY, rotation)) {
+                    placesigil(sigil, emptySpotX, emptySpotY, rotation);
+                    sigilCount[sigil] -= 1;
+                    markIndex += 1;
+                    if (dfs()) return 1;
+                    unplacesigil(sigil, emptySpotX, emptySpotY, rotation);
+                    sigilCount[sigil] += 1;
+                    markIndex -= 1;
+                }
+            }
+        }
+
+        return 0;
+    }
+    function testcase(){
+        //case 1
+        line = 6;
+        column = 8;
+        sigilCount[Sigil.LINE] = 1;
+        sigilCount[Sigil.T] = 2;
+        sigilCount[Sigil.SQUARE] = 2;
+        sigilCount[Sigil.S] = 1;
+        sigilCount[Sigil.Z] = 3;
+        sigilCount[Sigil.J] = 3;
+        sigilCount[Sigil.L] = 0;
+    }
+    function reset(){
+        markIndex = 0;
+        dfsstep = 0;
+        sigilCount = [0,0,0,0,0,0,0];
+    }
+    function getinput(){
+        line = parseInt(document.getElementById("lineInput").value);
+        column = parseInt(document.getElementById("columnInput").value);
+        sigilCount[Sigil.LINE] = parseInt(document.getElementById("lineSigilCount").value);
+        sigilCount[Sigil.T] = parseInt(document.getElementById("tSigilCount").value);
+        sigilCount[Sigil.SQUARE] = parseInt(document.getElementById("squareSigilCount").value);
+        sigilCount[Sigil.S] = parseInt(document.getElementById("sSigilCount").value);
+        sigilCount[Sigil.Z] = parseInt(document.getElementById("zSigilCount").value);
+        sigilCount[Sigil.J] = parseInt(document.getElementById("jSigilCount").value);
+        sigilCount[Sigil.L] = parseInt(document.getElementById("lSigilCount").value);
+
+    }
+    function calleverything(){
+        reset();
+        // testcase();
+        getinput();
+        defineboard();
+        let res = dfs();
+        console.log(res);
+        let displayText = ""
+        if(res){
+            displayText += "success in " + dfsstep + " steps<br>";
+        }
+        else{
+            displayText += "failed after " + dfsstep + " steps<br>";
+        }
+        for (let i = 0; i < line; i++) {
+            for (var j = 0; j < column; j++) {
+                displayText += board[i][j];
+                if(j!=column-1)displayText+=' ';
+            }
+            displayText += "<br>";
+        }
+        document.getElementById("displayArray").innerHTML = displayText;
+    }
+
+
+
+</script>
+<h1 id="talos-principle-sigil-puzzle-solver">Talos Principle Sigil
+Puzzle Solver</h1>
+<style>
+    .numberinput{
+        color: var(--text-color-3);
+        background: none;
+        border: 0.1rem solid var(--border-color);
+        border-radius: 0.3rem;
+        -moz-appearance: textfield;
+    }
+</style>
+<center>
+<h3>
+Please input the size of the board:
+</h3>
+<label for="lineInput">board line</label><br>
+<input class="numberinput" type="number" id="lineInput"> <br>
+<label for="columnInput">board column</label><br>
+<input class="numberinput" type="number" id="columnInput"> <br>
+<h3>
+Please input the sigil count of each sigil
+</h3>
+<p><label for="lineSigilCount">LINE sigil</label><br>
+<input class="numberinput" type="number" id="lineSigilCount"> <br>
+<label for="tSigilCount">T sigil</label><br>
+<input class="numberinput" type="number" id="tSigilCount"> <br>
+<label for="squareSigilCount">SQUARE sigil</label><br>
+<input class="numberinput" type="number" id="squareSigilCount"> <br>
+<label for="sSigilCount">S sigil</label><br>
+<input class="numberinput" type="number" id="sSigilCount"> <br>
+<label for="zSigilCount">Z sigil</label><br>
+<input class="numberinput" type="number" id="zSigilCount"> <br>
+<label for="jSigilCount">J sigil</label><br>
+<input class="numberinput" type="number" id="jSigilCount"> <br>
+<label for="lSigilCount">L sigil</label><br>
+<input class="numberinput" type="number" id="lSigilCount"> <br>
+<button onclick="calleverything()">Submit</button></p>
+<h3>
+Output will be shown below
+</h3>
+<!-- 显示二维数组的地方 -->
+<pre><code id="displayArray">please input the required information first.</code></pre>
+</center>
+<svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>
+                
+            </div>
             
 
-            <div class="post-content-bottom border-box">
-                
-                    <div class="post-title">
-                        今日无用英语——杂货铺的正确翻译
-                    </div>
-                
-
-                
-                    <div class="post-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/img/avatar.png">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name">justaLoli</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
-
-<div class="post-meta-info-container border-box post">
-    <div class="post-meta-info border-box">
-        
-
-        
-            <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2023-03-05 13:13:01</span>
-            </span>
-
-            <span class="meta-info-item post-update-date">
-                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Nov 09 2023 19:02:35 GMT+0800">2023-11-09 19:02:35</span>
-            </span>
-        
-
-        
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E6%80%9D%E8%80%83/">思考</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%8B%B1%E8%AF%AD/">英语</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-            <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>509 字</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
-            </span>
-        
-        
-    </div>
-
-    
-</div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-
-                <div class="post-content keep-markdown-body">
-                    
-
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>背单词软件常常将<em>grocery</em>翻译为杂货铺，以至于我很长时间认为杂货铺的翻译是<em>grocery</em>。</p>
-<p>但深究杂货铺和<em>grocery</em>的含义，这种翻译大概是错误的。且看二者的词典释义：</p>
-<blockquote>
-<p>杂货（zá huò）（杂货铺词条在我的大辞海上找不到）
-<strong>各种日用</strong>的<strong>零星货物</strong>。如:杂货铺;
-日用杂货。《醒世恒言·卖油郎独占花魁》: “一应麦豆茶酒油盐杂货,
-无所不备。”<br>出处：语词卷</p>
-</blockquote>
-<blockquote>
-<p>grocery /ˈɡrəʊsəri; NAmE ˈɡroʊsəri’/ NOUN ( plural groceries )
-1.(especially BrE)(NAmE usually ˈgrocery store’) [countable] a
-shop/store that sells <strong>food and other things</strong> used in the
-home. In American English ’grocery store’is often used to mean
-<strong>‘supermarket’</strong>.
-<strong>食品</strong>杂货店（在美式英语中 grocery store 常用以指
-supermarket） 2.groceries [plural] <strong>food and other goods</strong>
-sold by a groceror at a supermarket 食品杂货</p>
-</blockquote>
-<p>可以注意到grocery明确有“食品“的含义，而中文语境中的杂货铺，大概很少和食物联系上。此外，中文语境中的杂货铺大概是贩卖“小零碎”的低调存在，而反观grocery
-store，在美国甚至指supermarket，是一种高调的存在。</p>
-<p>更直观的说，这是“杂货铺”的百度图片搜索结果：</p>
-<figure>
-<img src="/posts/14140/杂货铺百度图片.jpeg" alt="能看到几乎与食品无关，且店面偏小">
-<figcaption aria-hidden="true">能看到几乎与食品无关，且店面偏小</figcaption>
-</figure>
-<p>而这是grocery的Google图片搜索结果：</p>
-<figure>
-<img src="/posts/14140/grocerygooglephoto.jpeg" alt="能看到几乎与完全是食品，且店面类似超市">
-<figcaption aria-hidden="true">能看到几乎与完全是食品，且店面类似超市</figcaption>
-</figure>
-<p>故二者词义差距很大，将杂货铺译成grocery是很不当的。</p>
-<h2 id="杂货铺的良好翻译">杂货铺的良好翻译？</h2>
-<p><strong>junk store</strong> 可能是杂货铺的一个较为良好的翻译。junk
-store直译是旧货店，而旧货店和杂货铺可能有一些重合的区域。</p>
-<p>至少，junk
-store和杂货铺的重合范围一定比grocery和杂货铺的重合范围大。</p>
-<p>这一点也可以从图片搜索结果中体现：</p>
-<figure>
-<img src="/posts/14140/junkstoregooglephoto.jpeg" alt="junk store的google搜索结果。至少有了中文“杂货铺”的意境">
-<figcaption aria-hidden="true">junk
-store的google搜索结果。至少有了中文“杂货铺”的意境</figcaption>
-</figure>
-<p><strong><em>因此在翻译“杂货铺”时，可以尝试翻译为junk
-store。</em></strong></p>
-<p>这篇文章就到这里～</p>
-<svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>
-                </div>
-
-                
-                        
-<div class="post-copyright-info-container border-box">
-    <div class="copyright-info-content border-box">
-        <div class="copyright-info-top border-box">
-            <div class="copyright-post-title border-box text-ellipsis">
-                今日无用英语——杂货铺的正确翻译
-            </div>
-
-            <div class="copyright-post-link border-box text-ellipsis">
-                posts/14140.html
-            </div>
+            
         </div>
-
-        <div class="copyright-info-bottom border-box">
-            <div class="copyright-post-author bottom-item">
-                <div class="type">
-                    作者
-                </div>
-                <div class="content">justaLoli</div>
-            </div>
-
-            <div class="post-time bottom-item">
-                <div class="type">
-                    发布于
-                </div>
-                <div class="content">2023-03-05 13:13</div>
-            </div>
-
-
-            <div class="post-license bottom-item">
-                <div class="type">
-                    许可
-                </div>
-                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
-                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
-                        <i class="fa-brands fa-creative-commons"></i>
-                        <i class="fa-brands fa-creative-commons-by"></i>
-                        <i class="fa-brands fa-creative-commons-nc"></i>
-                        <i class="fa-brands fa-creative-commons-sa"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <i class="copyright-bg fa-solid fa-copyright"></i>
-    </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
-        <i class="fa-solid fa-copy"></i>
-    </div>
-</div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%8B%B1%E8%AF%AD/">英语</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
-                                    </li>
-                                
-                            </ul>
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
-                </div>
-
-                
-
-                
-                    <div class="post-nav border-box">
-                        
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/posts/62008.html"
-                                   title="计算摄像学 第三讲 相机几何模型"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">计算摄像学 第三讲 相机几何模型</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/posts/32813.html"
-                                   title="地图着色问题"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">地图着色问题</span>
-                                        <span class="post-nav-item">下一篇</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
-                
-
-                
-                    
-
-
-
-
-
-
-                
-            </div>
-        </div>
-
-        
-            <div class="pc-post-toc right-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%82%E8%B4%A7%E9%93%BA%E7%9A%84%E8%89%AF%E5%A5%BD%E7%BF%BB%E8%AF%91"><span class="nav-text">杂货铺的良好翻译？</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        
     </div>
 </div>
 
@@ -650,23 +706,6 @@ store。</em></strong></p>
 
     <!-- post tools -->
     
-        <div class="post-tools right-toc">
-            <div class="post-tools-container border-box">
-    <ul class="tools-list border-box">
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- PC go comment -->
-        
-    </ul>
-</div>
-
-        </div>
-    
 
     <!-- side tools -->
     <div class="side-tools">
@@ -693,10 +732,6 @@ store。</em></strong></p>
     </ul>
 
     <ul class="exposed-tools-list border-box">
-        
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
         
 
         
@@ -754,17 +789,6 @@ store。</em></strong></p>
 
     <!-- tablet toc -->
     
-        <div class="tablet-post-toc-mask">
-            <div class="tablet-post-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%82%E8%B4%A7%E9%93%BA%E7%9A%84%E8%89%AF%E5%A5%BD%E7%BF%BB%E8%AF%91"><span class="nav-text">杂货铺的良好翻译？</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        </div>
-    
 </main>
 
 
@@ -806,28 +830,6 @@ store。</em></strong></p>
 
 
 <div class="pjax">
-    
-        <!-- post-helper -->
-        
-<script src="/js/post/post-helper.js"></script>
-
-
-        <!-- toc -->
-        
-            
-<script src="/js/post/toc.js"></script>
-
-        
-
-        <!-- copyright-info -->
-        
-            
-<script src="/js/post/copyright-info.js"></script>
-
-        
-
-        <!-- share -->
-        
     
 
     <!-- category-page -->

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="me" />
+  <meta name="dcterms.date" content="2024-05-31" />
+  <title>文献阅读报告 模拟集成电路器件尺寸的自动化</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">文献阅读报告<br />
+模拟集成电路器件尺寸的自动化</h1>
+<p class="author">me</p>
+<p class="date">2024-05-31</p>
+</header>
+<h1 id="前言">前言</h1>
+<p>模拟集成电路在传感器、通信、电源管理等领域发挥着无可取代的作用。然而，模拟集成电路复杂度高，性能指标严苛，模块可迁移性差，导致模拟集成电路设计难以自动化，设计成本高。</p>
+<p>尺寸设计是模拟电路设计的中间步骤。在确定电路拓扑结构后，设计者需要确定每个器件的尺寸以满足性能要求。器件尺寸极大影响电路性能，但尺寸选取缺乏系统理论，往往依赖设计者的经验和直觉，需要反复试错，是模拟电路设计中最耗时的步骤之一<span
+class="citation"
+data-cites="rocha2013electronic">[1]</span>。实现尺寸设计的自动化是模拟电路设计的长期目标。</p>
+<p>基于电路仿真和优化算法的自动设计得益于其结果的准确性，近年来逐渐成为主流。不过电路仿真的时间成本大，算法用时长。如何减少算法所需的搜索次数，实现高效的自动设计是目前的关键挑战<span
+class="citation" data-cites="girardi2022comprehensive">[2]</span>。</p>
+<h1
+id="利用机器学习实现尺寸设计自动化">利用机器学习实现尺寸设计自动化</h1>
+<p>尺寸设计可以抽象为黑盒优化问题： 给定设计空间中的向量<span
+class="math inline">x \in X</span>, 找到合适的<span
+class="math inline">x</span>使得 <span class="math display">f_i(x) \leq
+0 \quad \mathrm{for} \ \ i=1, ..., m</span> 其中，<span
+class="math inline">x</span>是<span
+class="math inline">d</span>维向量，<span
+class="math inline">d</span>表示尺寸设计的自由度；<span
+class="math inline">X</span>表示设计空间，由尺寸的上下界规定；<span
+class="math inline">f_i</span>是从尺寸得出性能指标的黑盒函数，有<span
+class="math inline">m</span>个，表示有<span
+class="math inline">m</span>个性能指标。<span
+class="math inline">f</span>由电路仿真器实现。我们总可以对输出进行平移或翻转，将任意的性能约束化归到<span
+class="math inline">f(x)\leq0</span>的情况<span class="citation"
+data-cites="budak2021dnn">[3]</span>。</p>
+<p>由于具备较强的处理复杂环境的能力，强化学习（RL）在黑盒优化领域有广泛应用，也有应用在模拟电路尺寸设计中的先例<span
+class="citation" data-cites="wang2020gcn settaluri2020autockt">[4,
+5]</span>。不过这些工具的采样成本仍然较高，且依赖前期训练。基于这些问题，文章<span
+class="citation"
+data-cites="budak2021dnn">[3]</span>提出了DNN-Opt优化框架。</p>
+<p>DNN-Opt借鉴了强化学习中Actor-Critic的结构，是一套专门针对模拟电路尺寸设计的场景设计的优化框架。其运行过程为：（1）每一轮迭代时，利用已有采样点训练Critic网络，使其能拟合仿真器结果；（2）用训练好的Critic训练Actor网络，使Actor网络输出有潜力的下一步采样点；（3）训练好的Actor网络生成下一步采样点，送入仿真器进行仿真，并将数据加入已有采样点中。</p>
+<p>该框架的主要创新点和优势如下：</p>
+<ol>
+<li><p>一轮迭代仅访问一次仿真器，尽可能降低采样成本；</p></li>
+<li><p>训练Critic网络时，使用了“伪样本”训练手段，进一步优化在较少样本下的训练效果；</p></li>
+<li><p>边迭代边训练，不依赖前期训练；</p></li>
+<li><p>运用了置信域和敏感度分析等剪枝手段，使框架在面对大的设计空间时也能发挥作用。</p></li>
+</ol>
+<p>在上述创新的帮助下，DNN-Opt在底层模块的尺寸自动设计上相比原有算法可实现5-30x的采样效率提升，同时，DNN-Opt可以完成大规模工业级模拟电路的尺寸设计任务<span
+class="citation" data-cites="budak2021dnn">[3]</span>。</p>
+<h1 id="实现鲁棒的自动设计">实现鲁棒的自动设计</h1>
+<p>DNN-Opt并未解决设计鲁棒性的问题。具体地说，模拟电路性能对工艺、电压、温度，即PVT变化非常敏感。原有优化算法只在典型PVT条件（正常工艺，电压无偏移，温度保持室温）下求解了电路尺寸，并不保证电路在实际工作的其它PVT条件下仍满足性能要求，鲁棒性不好。</p>
+<p>为了保证设计鲁棒，需要确保尺寸<span
+class="math inline">x</span>的性能在多种极端的PVT条件下都符合要求，即找到合适的<span
+class="math inline">x</span>使得 <span class="math display">f_i(x|T_j)
+\leq 0 \quad \mathrm{for} \ \ i=1, ..., m; \ j=1,...,k</span> 其中<span
+class="math inline">T_j</span>表示第<span
+class="math inline">j</span>个要考虑的PVT条件，总共有<span
+class="math inline">k</span>组不同条件需要满足；<span
+class="math inline">f_i(x|T_j)</span>表示在<span
+class="math inline">T_j</span>的PVT条件下，尺寸<span
+class="math inline">x</span>的第<span
+class="math inline">i</span>个性能的值，由电路仿真器给出。注意到相比上一节，此时的问题增加了<span
+class="math inline">T</span>项。</p>
+<p>针对这个更复杂的优化问题，文章<span class="citation"
+data-cites="shi2022robustanalog">[6]</span>提出了RobustAnalog，将多任务强化学习的框架应用于尺寸自动设计中。文章作出了如下创新以适应尺寸自动设计问题的具体特征：</p>
+<ol>
+<li><p>算法只针对所有PVT条件的一个子集进行优化。如果尺寸通过了这个子集，再判断尺寸能否通过所有PVT条件。这样做有助于缩小搜索空间，简化问题；</p></li>
+<li><p>PVT子集通过K-均值的方式选取，将趋势相近的PVT条件归为一组，并从每组中选取最极端的条件组成子集。这有助于使选取的子集尽量覆盖所有条件，提高搜索成功率；</p></li>
+<li><p>Actor在决策时，对当前所优化的PVT条件并不知情。这样更有利于Actor作出满足所有PVT条件的决策。</p></li>
+</ol>
+<p>基于这些创新，RobustAnalog在进行多PVT优化问题时，相比原有算法可有14-30x的采样效率提升。</p>
+<h1 id="结论">结论</h1>
+<p>目前，DNN-Opt等尺寸自动化工具，已经能一定程度上解决尺寸自动设计问题；RobustAnalog等考虑PVT变化的工具也解决了设计鲁棒性问题。不过这些算法的效率还有进一步优化的空间。此外，目前的优化问题尚未考虑布局布线和寄生效应的影响，实现尺寸和布局联合优化的工具也是研究方向之一<span
+class="citation" data-cites="budak2023joint">[7]</span>。</p>
+<p>另外，目前模拟电路尺寸自动设计算法众多，不同文章的测试样例和评价指标不同，导致不同算法平行对比困难。建立一套统一、全面的跑分体系，对当前的主流算法进行全面的综述和测评也许是有必要的。</p>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-rocha2013electronic" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div
+class="csl-right-inline">Rocha FA, Martins RM, Lourenço NC, Horta NC
+(2013) Electronic design automation of analog ICs combining gradient
+models with multi-objective evolutionary algorithms. Springer Science
+&amp; Business Media</div>
+</div>
+<div id="ref-girardi2022comprehensive" class="csl-entry"
+role="listitem">
+<div class="csl-left-margin">2. </div><div
+class="csl-right-inline">Girardi A, De-Oliveira T, Ghissoni S, et al
+(2022) A comprehensive review on automation-based sizing techniques for
+analog IC design. Journal of Integrated Circuits and Systems
+17:1–14</div>
+</div>
+<div id="ref-budak2021dnn" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div
+class="csl-right-inline">Budak AF, Bhansali P, Liu B, et al (2021)
+Dnn-opt: An rl inspired optimization for analog circuit sizing using
+deep neural networks. In: 2021 58th ACM/IEEE design automation
+conference (DAC). IEEE, pp 1219–1224</div>
+</div>
+<div id="ref-wang2020gcn" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Wang
+H, Wang K, Yang J, et al (2020) GCN-RL circuit designer: Transferable
+transistor sizing with graph neural networks and reinforcement learning.
+In: 2020 57th ACM/IEEE design automation conference (DAC). IEEE, pp
+1–6</div>
+</div>
+<div id="ref-settaluri2020autockt" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div
+class="csl-right-inline">Settaluri K, Haj-Ali A, Huang Q, et al (2020)
+Autockt: Deep reinforcement learning of analog circuit designs. In: 2020
+design, automation &amp; test in europe conference &amp; exhibition
+(DATE). IEEE, pp 490–495</div>
+</div>
+<div id="ref-shi2022robustanalog" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Shi
+W, Wang H, Gu J, et al (2022) Robustanalog: Fast variation-aware analog
+circuit design via multi-task rl. In: Proceedings of the 2022 ACM/IEEE
+workshop on machine learning for CAD. pp 35–41</div>
+</div>
+<div id="ref-budak2023joint" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div
+class="csl-right-inline">Budak AF, Zhu K, Chen H, et al (2023) Joint
+optimization of sizing and layout for AMS designs: Challenges and
+opportunities. In: Proceedings of the 2023 international symposium on
+physical design. pp 84–92</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="me" />
+  <meta name="dcterms.date" content="2024-04-21" />
+  <title>文献阅读报告</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">文献阅读报告</h1>
+<p class="author">me</p>
+<p class="date">2024-04-21</p>
+</header>
+<h1 id="前言">前言</h1>
+<p>目前, NAND Flash是非易失存储器的主流选择.
+然而，Flash的读写速度极低、读写功耗大、耐久性差,
+限制了处理速度的提升和功耗的降低. <span class="citation"
+data-cites="yu2024semiconductor">[1]</span></p>
+<p>新型存储器件FeRAM有望解决上述问题。FeRAM利用铁电电容中铁电材料的自发极化翻转存储数据,
+在具备非易失特性的同时, 有着接近DRAM的速度和随机读写能力, 并且功耗极低.
+<span class="citation" data-cites="yu2022semiconductor">[2]</span></p>
+<p>FeRAM可以充当DRAM和Flash中间的缓冲, 也有望替代DRAM和Flash,
+实现超低功耗的数据存储.</p>
+<p>然而, 若要替代DRAM, FeRAM的耐久性是仍需解决的问题.
+良好的铁电电容通常可以经历<span
+class="math inline">1\mathrm{e}7-1\mathrm{e}10</span>个循环.
+这远大于Flash的循环数(小于<span
+class="math inline">1\mathrm{e}6</span>), 但仍不及DRAM的超长耐久
+(循环<span class="math inline">\geq 1\mathrm{e}15</span>)<span
+class="citation"
+data-cites="yu2022semiconductor ramaswamy2023nvdram">[2, 3]</span>.
+如何提升铁电电容的耐久是目前的关键挑战.</p>
+<h1 id="文献研究成果">文献研究成果</h1>
+<h2 id="铁电电容器件的耐久特性研究">铁电电容器件的耐久特性研究</h2>
+<h3 id="传统的对铁电电容耐久性的认识">传统的对铁电电容耐久性的认识</h3>
+<p>铁电电容的耐久性主要由两个参数反映:(1) 衡量铁电性的剩余极化强度2Pr.
+对于数据存储, 2Pr反映了器件的存储窗口. 若2Pr过低,
+则器件无法准确存储数据. (2) 衡量介电性的漏电流SILC. SILC越小,
+介电性越好. 若SILC过大, 则表示器件已漏电甚至被击穿, 器件损坏.</p>
+<p>实验发现, 随着读写循环增加, 2Pr先增后降.
+并据此将器件分为"唤醒"和"疲劳"两种状态<span class="citation"
+data-cites="yu2022semiconductor pevsic2016physical pesic2016root">[2, 4,
+5]</span>.</p>
+<figure id="模型">
+<img src="传统.png" style="width:100%" />
+<figcaption>图1：铁电电容的剩余极化场和漏电流随循环次数的关系<span
+class="citation" data-cites="pevsic2016physical">[4]</span></figcaption>
+</figure>
+<h3 id="本文的研究目标">本文的研究目标</h3>
+<p>传统文献虽然探究了铁电性随循环次数的影响,
+但没有深入探究不同循环电场下铁电性能的不同. 文章<span class="citation"
+data-cites="liao2021characterization">[6]</span>在传统认识的基础上,
+探究不同循环电场对铁电性能的影响.</p>
+<h3 id="核心方法">核心方法</h3>
+<p>文章团队对Ru-HZO-Ru结构、厚度10nm的铁电电容进行耐久性测试.
+对器件施加5MHz的双极方波作为工作循环,
+期间穿插PUND信号用于测量器件的剩余极化强度2Pr,
+以及1V的I-V扫描用于提取场致漏电流SILC<span class="citation"
+data-cites="liao2021characterization">[6]</span>.</p>
+<h3 id="主要工作成果">主要工作成果</h3>
+<p>文章得到了不同工作电场下,
+铁电电容的2Pr和SILC随循环次数的变化数据<span class="citation"
+data-cites="liao2021characterization">[6]</span>.</p>
+<figure id="电场">
+<img src="电场.png" style="width:100%" />
+<figcaption>图2：不同工作电场下, 铁电电容的2Pr和SILC随循环次数的变化<span
+class="citation"
+data-cites="liao2021characterization">[6]</span></figcaption>
+</figure>
+<p>分析数据, 可以观察到器件在大电场和小电场下呈现不同特性: (1)
+大电场的唤醒效果好, 可以有效提升2Pr, 但是大电场也增加了器件击穿的风险,
+导致较早出现击穿. (2) 小电场的唤醒效果差, 2Pr始终较低,
+但器件的击穿时间得以延后, 甚至在2MV/cm时始终观察不到SILC的上升,
+可以认为器件不会被击穿.</p>
+<p>2Pr和SILC都会影响器件耐久, 其中的"短板"起决定作用. 在大电场下,
+器件击穿是导致器件损坏的主要原因; 而在小电场下, 器件进入疲劳,
+2Pr的下降是导致器件损坏的主要原因.</p>
+<p>本文对延长铁电电容耐久提供了新思路. 鉴于大小电场对器件的不同作用,
+可以考虑取两种现象之长, 交替施加大、小电场, 起到延长器件耐久的作用.</p>
+<h2 id="基于器件特性的操作优化设计">基于器件特性的操作优化设计</h2>
+<p>小电场下, 器件击穿风险低, 但2Pr低; 大电场下, 器件2Pr可以大幅升高,
+但击穿风险大. 基于这些信息, 可以设计如下信号: (1) 在大部分时间里,
+让器件在小电场下工作; (2) 当工作较长时间后,
+让器件在大电场下进行短暂循环, 对2Pr进行"恢复". 随后再继续小电场循环.</p>
+<p>基于这种思路设计的信号成功的恢复了2Pr, 延长了器件耐久. 不过图 <a
+href="#信号" data-reference-type="ref" data-reference="信号">3</a> (a)
+表明当"恢复"次数较多后, 固定周期的大电场循环无法将2Pr恢复到高位.</p>
+<p>合理的改进想法是引入反馈, 根据2Pr的值动态调整电场,
+而非施加固定周期的电场. 文中设置了2Pr下限和上限.
+当2Pr低于下限则切换到大电场, 进行2Pr恢复; 当2Pr达到上限则换回小电场,
+让2Pr在疲劳状态缓慢下降, 如图 <a href="#信号" data-reference-type="ref"
+data-reference="信号">3</a> (c) 所示.
+鉴于施加太长时间的大电场会增大器件的击穿风险, 2Pr上限不宜设的过高.
+对比实验证实了这一点<span class="citation"
+data-cites="chang2022field">[7]</span>.</p>
+<figure id="信号">
+<img src="图3.png" style="width:100%" />
+<figcaption>图3：通过设计大、小电场交替的信号以延长器件耐久<span
+class="citation" data-cites="chang2022field">[7]</span></figcaption>
+</figure>
+<p>对于实际FeRAM, 监测每个铁电电容的2Pr并不现实. 对于实际器件,
+可以在存储数据中引入纠错机制(ECC). 当检测到错误后,
+对错误比特对应的电容施加大电场, 进行恢复操作<span class="citation"
+data-cites="yang20239mb">[8]</span>.</p>
+<h1 id="结论">结论</h1>
+<p>本文介绍的文献通过实验得到了不同电场下铁电电容的耐久特性,
+填补了人们对于铁电耐久认识的空白. 在此基础上,
+设计了一种动态调节的信号方案, 通过交替施加大、小电场实现耐久的延长.</p>
+<p>文献设计的信号只采用了一种大电场的值(5MV/cm),
+没有探究不同的恢复电场大小对耐久延长效果的影响.
+鉴于大电场会加速器件击穿, 使用幅度较小的"中等电场"
+也许有进一步延长耐久的潜力.</p>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-yu2024semiconductor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Yu
+S, Kim T-H (2024) Semiconductor memory technologies: State-of-the-art
+and future trends. Computer 57:150–154</div>
+</div>
+<div id="ref-yu2022semiconductor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Yu S
+(2022) Semiconductor memory devices and circuits. CRC Press</div>
+</div>
+<div id="ref-ramaswamy2023nvdram" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div
+class="csl-right-inline">Ramaswamy N, Calderoni A, Zahurak J, et al
+(2023) NVDRAM: A 32Gb dual layer 3D stacked non-volatile ferroelectric
+memory with near-DRAM performance for demanding AI workloads. In: 2023
+international electron devices meeting (IEDM). IEEE, pp 1–4</div>
+</div>
+<div id="ref-pevsic2016physical" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div
+class="csl-right-inline">Pešić M, Fengler FPG, Larcher L, et al (2016)
+Physical mechanisms behind the field-cycling behavior of HfO2-based
+ferroelectric capacitors. Advanced Functional Materials
+26:4601–4612</div>
+</div>
+<div id="ref-pesic2016root" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div
+class="csl-right-inline">Pesic M, Fengler FP, Slesazeck S, et al (2016)
+Root cause of degradation in novel HfO 2-based ferroelectric memories.
+In: 2016 IEEE international reliability physics symposium (IRPS). IEEE,
+pp MY–3</div>
+</div>
+<div id="ref-liao2021characterization" class="csl-entry"
+role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Liao
+P, Chang Y, Lee Y-H, et al (2021) Characterization of fatigue and its
+recovery behavior in ferroelectric HfZrO. In: 2021 symposium on VLSI
+technology. IEEE, pp 1–2</div>
+</div>
+<div id="ref-chang2022field" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div
+class="csl-right-inline">Chang Y, Liao P, Yeong S, et al (2022) The
+field-dependence endurance model and its mutual effect in hf-based
+ferroelectrics. In: 2022 IEEE international reliability physics
+symposium (IRPS). IEEE, pp 3A–1</div>
+</div>
+<div id="ref-yang20239mb" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Yang
+J, Luo Q, Xue X, et al (2023) A 9Mb HZO-based embedded FeRAM with 10
+12-cycle endurance and 5/7ns read/write using ECC-assisted data refresh
+and offset-canceled sense amplifier. In: 2023 IEEE international
+solid-state circuits conference (ISSCC). IEEE, pp 1–3</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="me" />
+  <meta name="dcterms.date" content="2024-07-27" />
+  <title>文献阅读报告 毫米波通信的波束赋形</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">文献阅读报告<br />
+毫米波通信的波束赋形</h1>
+<p class="author">me</p>
+<p class="date">2024-07-27</p>
+</header>
+<h1 id="前言">前言</h1>
+<p>人们对高速无线通信的追求促使人们选择更高的无线通信频率。毫米波相比目前常用的2.4G/5GHz频段，频率高一个数量级，将成为承载高速通信的主要频段。
+然而，高频意味着其传输损耗大。
+为了在有限的天线功率下实现高质量的通信，需要采用大规模天线阵列<a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>，利用波束赋形技术实现信号的指向性发送。
+但传统的全数字波束赋形成本较大，在大规模阵列上可行性低。为了实现毫米波通信，需要新型的波束赋形设计。</p>
+<h1 id="数字模拟混合的波束赋形设计">数字模拟混合的波束赋形设计</h1>
+<p>波束赋形依赖多天线阵列，通过对每根天线发送电磁波的幅度和相位进行调整，让天线发射的电磁波在某些方向相干相长，某些方向相干相消，从而实现指向性的波束发送。</p>
+<p>全数字波束赋形通过数字电路对信号进行预编码，计算得出每根天线需要发送的信号。
+其优点是客制化程度高、性能好；缺点是为了将预编码后的数据调制到射频波段，需要给每根天线配备独立的射频链路，成本较高。为了解决这个问题，
+文章<span class="citation"
+data-cites="7389996">[1]</span>系统地研究了混合波束赋形。其核心思想是：
+先通过一个小规模的数字波束赋形进行初次编码，待调制到射频波段后，再通过模拟移相器和加法器进行二次编码，最终得出每根天线应发送的内容。</p>
+<p>可用复数的幅度和幅角描述对信号的幅度调整和相位移动，因此线性编码过程可用复数矩阵描述。系统的整体流程如图：</p>
+<figure id="fig:1">
+<img src="框图.png" style="width:100.0%" />
+<figcaption>图1：数字模拟混合波束赋形系统</figcaption>
+</figure>
+<p>在这种结构中，射频链路的数量<span
+class="math inline">N_\mathrm{RF}</span>小于天线数量<span
+class="math inline">N</span>，节约了成本。 在<span class="citation"
+data-cites="7389996">[1]</span>之前，已有多个文章使用了类似的混合结构<span
+class="citation"
+data-cites="zhang2005variable liang2014approach liang2014low">[2–4]</span>，但这些文章在混合与全数字结构性能等价性方面研究不够深入。例如，<span
+class="citation" data-cites="zhang2005variable">[2]</span>指出在<span
+class="math inline">K=1,
+N_\mathrm{s}=1</span>的单用户单数据流情况下，<span
+class="math inline">N_\mathrm{RF}=2</span>的混合系统和全数字系统等价，但对多用户情况缺乏说明。
+<span class="citation"
+data-cites="7389996">[1]</span>的主要贡献便是深入地从数学上讨论了二者的等价性，即在一定条件下：
+<span
+class="math display">\mathbf{V}_\mathrm{RF}\mathbf{V}_\mathrm{D}\simeq
+\mathbf{V}_\mathrm{FD}</span> 其中 <span
+class="math inline">\mathbf{V}_\mathrm{RF}\in \mathbb{C}^{N \times
+N_\mathrm{RF}}</span>是模拟预编码矩阵， <span
+class="math inline">\mathbf{V}_\mathrm{D}\in
+\mathbb{C}^{N_\mathrm{RF}\times
+N_\mathrm{s}}</span>是小规模数字预编码矩阵； <span
+class="math inline">\mathbf{V}_\mathrm{FD} \in \mathbb{C}^{N \times
+N_\mathrm{s}}</span> 是全数字结构中的预编码矩阵。 <span
+class="math inline">\mathbf{V}_\mathrm{D}</span>和<span
+class="math inline">\mathbf{V}_\mathrm{FD}</span>元素可为任意复数值，而由于模拟预编码只有相移，
+<span class="math inline">\mathbf{V}_\mathrm{RF}</span>满足<span
+class="math inline">|\mathbf{V}_\mathrm{RF}(i,j)| = 1</span>。</p>
+<p><span class="citation"
+data-cites="7389996">[1]</span>第三节证明了：（1）在<span
+class="math inline">N_\mathrm{RF}= 2N_\mathrm{s}</span>的情况下，<span
+class="math inline">\mathbf{V}_\mathrm{RF}\mathbf{V}_\mathrm{D}</span>可以严格等于<span
+class="math inline">\mathbf{V}_\mathrm{FD}</span>；（2）在<span
+class="math inline">2N_\mathrm{s}&gt; N_\mathrm{RF}\geq
+N_\mathrm{s}</span>的情况下，<span
+class="math inline">\mathbf{V}_\mathrm{RF}\mathbf{V}_\mathrm{D}</span>可以近似<span
+class="math inline">\mathbf{V}_\mathrm{FD}</span>。这说明了在大规模天线阵列<span
+class="math inline">N \gg N_\mathrm{s}</span>
+时，混合结构可以高性能低成本的进行波束赋形。</p>
+<p>此外，<span class="citation"
+data-cites="7389996">[1]</span>给出了设计<span
+class="math inline">\mathbf{V}_\mathrm{D}</span>和<span
+class="math inline">\mathbf{V}_\mathrm{RF}</span>取值的算法。在点对点MIMO和多用户MISO两种典型场景下，论文算法给出的混合波束赋形方案的谱效率可接近全数字波束赋形，印证了数学结论的正确性。</p>
+<h1
+id="在信道信息未知的前提下进行波束训练">在信道信息未知的前提下进行波束训练</h1>
+<p>文章<span class="citation"
+data-cites="7389996">[1]</span>虽然提出了混合波束赋形结构和参数设计算法，但其算法依赖于准确已知的信道信息，包括用户的方位、距离、电磁波的反射等等信息。对于基站，这些信息并不直接已知，必须要在和用户的通信和反馈过程中逐步确立。因此，如何在未知信道信息的情况下进行波束训练是一个重要问题。</p>
+<p>传统通信由于损耗较小，通信双方可以先通过全向广播交换信道信息，再在已知信道信息后进行波束赋形。毫米波通信的情况更加复杂，由于损耗过大，全向广播无法建立通信，因此交换信道信息本身也需要借助波束赋形。</p>
+<p>一种交换信道信息的方法是枚举法<span class="citation"
+data-cites="6979964">[5]</span>，如图<a href="#fig:枚举"
+data-reference-type="ref"
+data-reference="fig:枚举">2</a>所示：（1）首先，基站遍历所有可能的波束方向发送握手信号，用户全向接收，并评估每一个方向的信噪比；（2）随后，用户遍历所有方向发送反馈信号，告知基站信噪比最高的方向，同时基站评估接收的信噪比；（3）最后，基站对准用户发送反馈信号，告知用户信噪比最高的方向。</p>
+<figure id="fig:枚举">
+<img src="枚举.jpg" style="width:100.0%" />
+<figcaption>图2：基于枚举法的波束训练，图片来源：<span class="citation"
+data-cites="blog">[6]</span></figcaption>
+</figure>
+<p>枚举法简单直接但效率不高。为此，文章<span class="citation"
+data-cites="7390101">[7]</span>讨论了分层检索方案，如图<a
+href="#fig:分层" data-reference-type="ref"
+data-reference="fig:分层">3</a>所示：先用比较宽泛的波束确定用户的大致位置，随后用更精确的波束在已经确定的范围内检索，如此往复，最终确定用户位置和最佳的波束方向。</p>
+<figure id="fig:分层">
+<img src="分层.jpg" style="width:100.0%" />
+<figcaption>图3：基于分层检索的波束训练，图片来源：<span class="citation"
+data-cites="blog">[6]</span></figcaption>
+</figure>
+<p>分层法看似优于枚举法，但实际情况尚未可知：由于功率限制，分层法在发送宽泛的波束时，波束的功率不高，容易造成误判；而一旦误判，后续检索都变得无效<span
+class="citation" data-cites="10495850 8751142">[8,
+9]</span>。为此，诸多论文提供了改进方案：<span class="citation"
+data-cites="75">[10]</span>在分层法的基础上通过增添阈值防止误判；<span
+class="citation"
+data-cites="8751142">[9]</span>提出了新的两步搜索方法；<span
+class="citation"
+data-cites="10.1145/3143361.3143384">[11]</span>使用了基于压缩跟踪的波束训练方案。</p>
+<h1 id="结论">结论</h1>
+<p>毫米波相比传统通信，在享有更高速度的同时也面临更大的损耗，因此需要使用波束赋形实现指向性发送。研究者在波束赋形结构和波束训练算法等层面进行了创新，致力于优化波束赋形的性能和成本。不过，为了面对超多用户、快速移动的实际通信环境，以及未来更高频率的THz通信，还需要进一步的技术创新，以满足人们对高速无线通信的永恒追求。</p>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-7389996" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div
+class="csl-right-inline">Sohrabi F, Yu W (2016) Hybrid digital and
+analog beamforming design for large-scale antenna arrays. IEEE Journal
+of Selected Topics in Signal Processing 10:501–513. <a
+href="https://doi.org/10.1109/JSTSP.2016.2520912">https://doi.org/10.1109/JSTSP.2016.2520912</a></div>
+</div>
+<div id="ref-zhang2005variable" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div
+class="csl-right-inline">Zhang X, Molisch AF, Kung S-Y (2005)
+Variable-phase-shift-based RF-baseband codesign for MIMO antenna
+selection. IEEE Transactions on Signal Processing 53:4091–4103</div>
+</div>
+<div id="ref-liang2014approach" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div
+class="csl-right-inline">Liang L, Dai Y, Xu W, Dong X (2014) How to
+approach zero-forcing under RF chain limitations in large mmWave
+multiuser systems? In: 2014 IEEE/CIC international conference on
+communications in china (ICCC). IEEE, pp 518–522</div>
+</div>
+<div id="ref-liang2014low" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div
+class="csl-right-inline">Liang L, Xu W, Dong X (2014) Low-complexity
+hybrid precoding in massive multiuser MIMO systems. IEEE Wireless
+Communications Letters 3:653–656</div>
+</div>
+<div id="ref-6979964" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div
+class="csl-right-inline">Nitsche T, Cordeiro C, Flores AB, et al (2014)
+IEEE 802.11ad: Directional 60 GHz communication for
+multi-gigabit-per-second wi-fi [invited paper]. IEEE Communications
+Magazine 52:132–141. <a
+href="https://doi.org/10.1109/MCOM.2014.6979964">https://doi.org/10.1109/MCOM.2014.6979964</a></div>
+</div>
+<div id="ref-blog" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div
+class="csl-right-inline">Deram SP (2021) Where to point the beam? –
+local area networks (LAN)</div>
+</div>
+<div id="ref-7390101" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Xiao
+Z, He T, Xia P, Xia X-G (2016) Hierarchical codebook design for
+beamforming training in millimeter-wave communication. IEEE Transactions
+on Wireless Communications 15:3380–3392. <a
+href="https://doi.org/10.1109/TWC.2016.2520930">https://doi.org/10.1109/TWC.2016.2520930</a></div>
+</div>
+<div id="ref-10495850" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Yi
+W, Zhiqing W, Zhiyong F (2024) Beam training and tracking in mmWave
+communication: A survey. China Communications 21:1–22. <a
+href="https://doi.org/10.23919/JCC.ea.2021-0873.202401">https://doi.org/10.23919/JCC.ea.2021-0873.202401</a></div>
+</div>
+<div id="ref-8751142" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Li
+M, Liu C, Hanly SV, et al (2019) Explore and eliminate: Optimized
+two-stage search for millimeter-wave beam alignment. IEEE Transactions
+on Wireless Communications 18:4379–4393. <a
+href="https://doi.org/10.1109/TWC.2019.2924368">https://doi.org/10.1109/TWC.2019.2924368</a></div>
+</div>
+<div id="ref-75" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Yu
+H, Guan P, Qu W, Zhao Y (2020) An improved beam training scheme under
+hierarchical codebook. IEEE Access 8:53627–53635. <a
+href="https://doi.org/10.1109/ACCESS.2020.2981479">https://doi.org/10.1109/ACCESS.2020.2981479</a></div>
+</div>
+<div id="ref-10.1145/3143361.3143384" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div
+class="csl-right-inline">Steinmetzer D, Wegemer D, Schulz M, et al
+(2017) <a href="https://doi.org/10.1145/3143361.3143384">Compressive
+millimeter-wave sector selection in off-the-shelf IEEE 802.11ad
+devices</a>. In: Proceedings of the 13th international conference on
+emerging networking EXperiments and technologies. Association for
+Computing Machinery, New York, NY, USA, pp 414–425</div>
+</div>
+</div>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li
+id="fn1"><p>大规模指天线数量多。天线间距一般和波长同数量级，因此毫米波的天线间距在毫米量级，天线数量多并不意味着空间面积大。<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+</body>
+</html>

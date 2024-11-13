@@ -9,6 +9,8 @@
     
     <title>
         
+            SSH用法备忘录 |
+        
         Loli的杂货铺
     </title>
     
@@ -195,10 +197,10 @@ mjx-container[display="true"] + br {
     
 
     <!-- page content -->
-    <div class="page-main-content border-box is-home">
+    <div class="page-main-content border-box">
         <div class="page-main-content-top">
             
-<header class="header-wrapper transparent-1">
+<header class="header-wrapper">
 
     <div class="border-box header-content">
         <div class="left border-box">
@@ -216,7 +218,7 @@ mjx-container[display="true"] + br {
             <div class="pc">
                 <ul class="menu-list">
                     <li class="menu-item">
-                        <a class="active"
+                        <a class=""
                            href="/"
                         >首页</a>
                     </li>
@@ -272,7 +274,7 @@ mjx-container[display="true"] + br {
     <div class="header-drawer">
         <ul class="drawer-menu-list">
             <li class="drawer-menu-item flex-center">
-                <a class="active"
+                <a class=""
                    href="/"
                 >首页</a>
             </li>
@@ -322,244 +324,255 @@ mjx-container[display="true"] + br {
             <div class="main-content border-box">
                 
 
-                    <div class="home-content-container fade-in-down-animation">
-    
-    <ul class="home-post-list border-box">
-        
-            <li class="home-post-item">
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
 
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        SSH用法备忘录
+                    </div>
                 
 
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/posts/51354.html">
-                            博客更新日志
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
+                
+                    <div class="post-header border-box">
                         
-                             
+                            <div class="avatar-box border-box">
+                                <img src="/img/avatar.png">
+                            </div>
                         
-                    </div>
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">justaLoli</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
 
-                    
-
-<div class="post-meta-info-container border-box home">
+<div class="post-meta-info-container border-box post">
     <div class="post-meta-info border-box">
         
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Wed Sep 11 2024 16:03:08 GMT+0800">2024-09-11 16:03:08</span>
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-11-13 09:18:11</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Wed Nov 13 2024 09:24:16 GMT+0800">2024-11-13 09:24:16</span>
             </span>
         
 
         
 
         
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%97%A5%E5%BF%97/">日志</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
 
         
         
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>788 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+            </span>
         
         
     </div>
 
-    
-        <a class="home-read-more" href="/posts/51354.html">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
     
 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>几种远程的常见场景和使用做法。</p>
+<h2 id="连接命令">连接命令：</h2>
+<p><code>ssh -p 2222 用户名@Linux机器的IP地址</code></p>
+<h2 id="记住连接配置使用别名">记住连接配置、使用别名：</h2>
+<p>在<code>~/.ssh/config</code>里面添加地址、用户、端口等信息。可以在文件中编辑别名。如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host [别名]</span><br><span class="line">  HostName [ip / 域名]</span><br><span class="line">  User [用户名]</span><br><span class="line">  Port [端口]</span><br></pre></td></tr></table></figure>
+<p>这样以后可以快捷访问：</p>
+<p><code>ssh [别名]</code></p>
+<p>（如果使用vscode连接，它会自动添加这些信息。如果用命令行连接，之后想使用别名连接，需要手动完成config
+文件编辑）</p>
+<h2 id="免密码登陆">免密码登陆</h2>
+<p>（来自ChatGPT，我补充部分在“注”中）</p>
+<blockquote>
+<p>SSH 默认不记住密码，但可以通过 <strong>SSH 密钥认证</strong>
+来实现免密登录，效果等同于记住密码，并且更加安全。以下是设置步骤：</p>
+<h3 id="生成-ssh-密钥对">1. <strong>生成 SSH 密钥对</strong></h3>
+<p>在 Mac 上生成一对 SSH 密钥（公钥和私钥）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
+<p>按照提示直接按 Enter，使用默认路径 <code>~/.ssh/id_rsa</code>
+保存密钥对。这个命令会生成 <code>id_rsa</code>（私钥）和
+<code>id_rsa.pub</code>（公钥）文件。</p>
+</blockquote>
+<p>（注：这里的<code>"your_email@example.com"</code>可以换成任意注释。它只起到标记作用）</p>
+<blockquote>
+<h3 id="将公钥复制到-linux-机器">2. <strong>将公钥复制到 Linux
+机器</strong></h3>
+<p>使用以下命令，将公钥添加到 Linux 台式机上的
+<code>~/.ssh/authorized_keys</code> 中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@Linux机器的IP地址</span><br></pre></td></tr></table></figure>
+<p>如果你使用的是自定义端口（比如 2222），则需加上 <code>-p</code>
+参数指定端口：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub -p 2222 用户名@Linux机器的IP地址</span><br></pre></td></tr></table></figure>
+<p>这样，SSH 会将公钥传输并添加到远程机器的 <code>authorized_keys</code>
+文件中。</p>
+</blockquote>
+<p>（注：如果已经添加了config，可以用别名代替）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub [别名]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>（注2：如果想对多个远程设备进行自动登录，只需重复这一步即可，前面的密钥生成不用再进行）</p>
+<blockquote>
+<h3 id="测试免密登录">3. <strong>测试免密登录</strong></h3>
+<p>完成以上步骤后，可以尝试登录，看是否不再要求输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 2222 用户名@Linux机器的IP地址</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>（注：如果已经添加了config，可以用别名代替）</p>
+<blockquote>
+<h3 id="启用-ssh-agent-来自动加载私钥可选">4. <strong>启用 SSH Agent
+来自动加载私钥（可选）</strong></h3>
+<p>如果你不希望每次都手动加载私钥，可以使用 <code>ssh-agent</code>
+让系统自动记住密钥。将以下命令添加到 <code>~/.bash_profile</code> 或
+<code>~/.zshrc</code> 文件中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="subst">$(ssh-agent -s)</span>"</span></span><br><span class="line"></span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>（注：如果放入默认路径<code>~/.ssh/id_rsa</code>，这一步可以不执行也能自动登录。后续出现异常再更新这里）</p>
+<p>（注2：如果想让自己的多个设备都能免密码登录远程设备，可以将私钥复制到另一个设备上。注意数据转移时的安全）</p>
+<h2 id="x11转发">X11转发</h2>
+<p>执行带GUI的远程程序。linux可直接执行，Mac需要安装Xquartz软件。Win这里不涉及，自己去找</p>
+<p>注意：安装了软件不代表可以转发。需要在配置对应的主机中增加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ForwardX11 yes</span><br><span class="line">ForwardX11Trusted yes</span><br><span class="line">Compression yes</span><br></pre></td></tr></table></figure>
+<p>如果使用<code>用户@ip</code>的方式连接，应当增加<code>-YC</code>flag，代表<code>ForwardX11Trusted</code>和<code>Compression</code></p>
+<p>随后在控制台执行某些需要gui的程序进行测试。</p>
+<svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>
                 </div>
-            </li>
-        
-            <li class="home-post-item">
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                SSH用法备忘录
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                posts/1933.html
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">justaLoli</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2024-11-13 09:18</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
 
                 
 
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/posts/19711.html">
-                            本博客的搭建流程-续
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            前人栽树，后人乘凉；后人栽树，后人继续乘凉。内容包括：搭建流程；相关知识点；提供后续优化的一些方向，如CDN加速的配置。
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
                         
                     </div>
-
-                    
-
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Mon Apr 10 2023 21:43:13 GMT+0800">2023-04-10 21:43:13</span>
-            </span>
-        
-
-        
-
-        
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a></li>
+                    <div>
                         
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/posts/19711.html">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
+                    </div>
                 </div>
-            </li>
-        
-            <li class="home-post-item">
 
                 
 
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/posts/50090.html">
-                            【归档】关于我的写作
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
+                
+                    <div class="post-nav border-box">
                         
-                            笔者作文能力巅峰时的绝唱。摘要来自2024/9
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/posts/10166.html"
+                                   title="刘谦魔术"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">刘谦魔术</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
                         
                     </div>
+                
 
+                
                     
 
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="Sun Sep 01 2024 22:39:43 GMT+0800">2024-09-01 22:39:43</span>
-            </span>
-        
+
+
+
+
+
+                
+            </div>
+        </div>
 
         
-
-        
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E6%80%9D%E8%80%83/">思考</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%91%BD%E4%BB%A4"><span class="nav-text">连接命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E4%BD%8F%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%88%AB%E5%90%8D"><span class="nav-text">记住连接配置、使用别名：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86"><span class="nav-text">免密码登陆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90-ssh-%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="nav-text">1. 生成 SSH 密钥对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%85%AC%E9%92%A5%E5%A4%8D%E5%88%B6%E5%88%B0-linux-%E6%9C%BA%E5%99%A8"><span class="nav-text">2. 将公钥复制到 Linux
+机器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="nav-text">3. 测试免密登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-ssh-agent-%E6%9D%A5%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%A7%81%E9%92%A5%E5%8F%AF%E9%80%89"><span class="nav-text">4. 启用 SSH Agent
+来自动加载私钥（可选）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x11%E8%BD%AC%E5%8F%91"><span class="nav-text">X11转发</span></a></li></ol>
     </div>
-
-    
-        <a class="home-read-more" href="/posts/50090.html">阅读全文&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
 </div>
 
-                </div>
-            </li>
+            </div>
         
-    </ul>
-    
-    <div class="paginator border-box flex-center">
-        <div class="btn-wrap allowed">
-            <a class="jump-btn"
-               href="/page/4/"
-            ><i class="fa-solid fa-chevron-left"></i></a>
-        </div>
-
-
-        <div class="page-number-box border-box flex-center">
-            <input class="page-number-input border-box base-color-size"
-                   type="number"
-                   value="5"
-                   min="1"
-                   max="5"
-            ><span class="delimiter base-color-size">/</span><span class="base-color-size">5</span>
-        </div>
-
-
-        <div class="btn-wrap">
-            <a class="jump-btn"
-               href="/"
-            ><i class="fa-solid fa-chevron-right"></i></a>
-        </div>
     </div>
-
-
-
-
 </div>
 
 
@@ -604,10 +617,27 @@ mjx-container[display="true"] + br {
 
     <!-- post tools -->
     
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <!-- side tools -->
     <div class="side-tools">
-        <div class="side-tools-container border-box side-tools-show-handle">
+        <div class="side-tools-container border-box ">
     <ul class="side-tools-list side-tools-show-handle border-box">
         <li class="tools-item tool-font-adjust-plus flex-center">
             <i class="fas fa-search-plus"></i>
@@ -630,6 +660,10 @@ mjx-container[display="true"] + br {
     </ul>
 
     <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
         
 
         
@@ -687,6 +721,19 @@ mjx-container[display="true"] + br {
 
     <!-- tablet toc -->
     
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%91%BD%E4%BB%A4"><span class="nav-text">连接命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E4%BD%8F%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%88%AB%E5%90%8D"><span class="nav-text">记住连接配置、使用别名：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86"><span class="nav-text">免密码登陆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90-ssh-%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="nav-text">1. 生成 SSH 密钥对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%85%AC%E9%92%A5%E5%A4%8D%E5%88%B6%E5%88%B0-linux-%E6%9C%BA%E5%99%A8"><span class="nav-text">2. 将公钥复制到 Linux
+机器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="nav-text">3. 测试免密登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-ssh-agent-%E6%9D%A5%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%A7%81%E9%92%A5%E5%8F%AF%E9%80%89"><span class="nav-text">4. 启用 SSH Agent
+来自动加载私钥（可选）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x11%E8%BD%AC%E5%8F%91"><span class="nav-text">X11转发</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
 </main>
 
 
@@ -700,7 +747,6 @@ mjx-container[display="true"] + br {
     loop="all"
     theme="#D6AB4A">
 </meting-js>
-
 <!-- common -->
 
 <script src="/js/utils.js"></script>
@@ -729,6 +775,28 @@ mjx-container[display="true"] + br {
 
 
 <div class="pjax">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        <!-- share -->
+        
     
 
     <!-- category-page -->

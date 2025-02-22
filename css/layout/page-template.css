@@ -129,3 +129,15 @@ keep-mobile()
   color: var(--text-color-4);
   font-size: 1rem;
 }
+.page-template-container .page-template-bottom .photo-album-box {
+  column-count: 3;
+  column-gap: 0.8rem;
+}
+.page-template-container .page-template-bottom .photo-album-box img.photo {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.8rem;
+  background: var(--background-color-2);
+  border-radius: 0.6rem;
+  cursor: zoom-in;
+}

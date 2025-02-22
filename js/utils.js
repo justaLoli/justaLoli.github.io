@@ -710,16 +710,25 @@ KEEP.initUtils = () => {
     },
 
     // H tag title to top
-    title2Top4HTag(a, h, isHideHeader, duration = 200) {
+    title2Top4HTag(a, h, isHideHeader, duration = 200, cb=undefined) {
       if (a && h) {
         a.addEventListener('click', (e) => {
           e.preventDefault()
+
+          if(cb!==undefined){cb()}
+
           let winScrollY = window.scrollY
           winScrollY = winScrollY <= 1 ? -19 : winScrollY
           let offset = h.getBoundingClientRect().top + winScrollY
+          const headerHeader = this.headerWrapperDom.getBoundingClientRect().height
 
           if (!isHideHeader) {
-            offset = offset - 60
+            offset = offset - headerHeader
+          }
+
+          const fullPageHeight = this.getFullPageHeight()
+          if (fullPageHeight <= window.innerHeight) {
+            return
           }
 
           window.anime({
@@ -738,6 +747,13 @@ KEEP.initUtils = () => {
           })
         })
       }
+    },
+
+    getScrollTop() {
+      return document.body.scrollTop || document.documentElement.scrollTop
+    },
+    getFullPageHeight() {
+      return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
     },
 
     // A tag anchor jump handle

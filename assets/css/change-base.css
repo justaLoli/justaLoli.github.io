@@ -19,3 +19,8 @@ figcaption{
 .first-screen-container .first-screen-content .description .desc-item .desc {
   background-color: var(--first-screen-desc-bg-color);
 }
+
+/*修复部分MathJax渲染越界的bug*/
+.MathJax{
+   min-width: unset !important;
+}

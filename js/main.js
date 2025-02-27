@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
     localStorageKey: 'KEEP-THEME-STATUS',
     styleStatus: {
       isDark: false,
+      isAutoTheme: true,
       fontSizeLevel: 0,
       isShowToc: true
     }

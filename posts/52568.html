@@ -54,6 +54,19 @@
             
         
     
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode"
+            }
+            else{
+                classname = theme.isDark ? "dark-mode" : "light-mode"
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN","path":"search.xml"}
@@ -384,10 +397,10 @@ mjx-container[display="true"] + br {
                 <i class="icon fas fa-tags"></i>&nbsp;
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a></li>
                         
                     
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%BD%B1%E8%AF%84/">影评</a></li>
@@ -563,11 +576,11 @@ One</em>。尤其是到了片尾，我觉得更应该让观众的内心从紧张
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">

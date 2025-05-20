@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            对华为5月19日发布的新“笔记本”的初步分析 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.png">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.png","logo":"/img/avatar.png","favicon":"/img/avatar.png"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.jpg","background_img_dark":"/img/bg-sunset.jpg","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/","image":"/images/tools/chatgpt.svg"},{"name":"Gemini","link":"https://gemini.google.com/app","image":"/images/tools/gemini.svg"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0 2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0 2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0 2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot 2023-11-18 at 09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/img/avatar.png">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Loli的杂货铺
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >分类</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/"
+                            >关于</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >友链</a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class=""
+                   href="/"
+                >首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"
+                    >标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"
+                    >分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/"
+                    >关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links"
+                    >友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        对华为5月19日发布的新“笔记本”的初步分析
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/img/avatar.png">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">justaLoli</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-05-20 18:29:06</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Tue May 20 2025 19:28:21 GMT+0800">2025-05-20 19:28:21</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%80%9D%E8%80%83/">思考</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8D%8E%E4%B8%BA/">华为</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%B8%BF%E8%92%99OS/">鸿蒙OS</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.4k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>简单的【云谈论】（未接触实机的空谈）一下华为的新“笔记本”：</p>
+</blockquote>
+<p><strong>形态非常好非常有趣，不过有以下几点我比较在意：</strong></p>
+<ol type="1">
+<li><p>虚拟键盘的手感问题。利用马达模拟触控板的手感苹果已经做的很成熟了，华为也在它的高端笔记本上做过这个技术。即便如此，让它来模拟键盘触感恐怕还是有一定难度。考虑到存在“键程”的概念，真实的键程和有触感但0键程的键盘，恐怕还是有区别的。更重要的是，使用时敲击键盘的速度和频率显著快于触控板的按压速度，这对触感的模拟将是一个很大的挑战。</p></li>
+<li><p>华为提供了一个可以磁吸在主机（我尚且不愿意称之为电脑）背部的无线键盘。这允许用户在有需要时，将主机完全展开作为大屏，并配合键盘使用。我很喜欢这个使用模式，但键盘带来的整机重量还有待观察。</p></li>
+<li><p>风扇。部分自媒体将主机内置风扇作为亮点，在我看来这是败笔。作为一个ARM架构的，无游戏等中重负载场景的设备，风扇显得毫无必要，反而平添设计成本、损坏几率、维护和维修成本以及可能的运行时噪音。我完全看不懂这一设计。</p></li>
+</ol>
+<p><strong>关于系统，我目前的看法是这些：</strong></p>
+<ol type="1">
+<li></li>
+</ol>
+<p>华为不选择基于debain是一个很有勇气的行为。当然，让自家的桌面系统和移动端系统尽可能统一，让开发者可以用最小成本移植移动端应用，并利用自己的品牌号召力扩大新生态，并非不可行的做法。但从整个行业的视角来看，不选择即将趋于成熟的国内linux应用环境而选择自立门户，是在分裂尚未成熟的国内应用市场，给开发者额外增添维护成本（从win
++ macos + linux + android + ios + harmony移动 到 win + macos + linux +
+android + ios + harmony移动 +
+harmony桌面）。除非华为将harmony移动和桌面的开发环境统一到极致，乃至可以共享ui甚至共享安装包（这很难，因为很多应用的桌面端UI和移动端差距很大，如果真的直接0成本迁移，把移动端app在桌面运行，用户使用体验将极差），否则对开发者而言开发和维护成本只增不减。这是有利于自身（还不一定呢）但有损全行业的行为。</p>
+<p>Windows是落后的操作系统。如果中国消费市场的Windows占有率能跌到60%以下，我将提前宣布中国是世界上最先进的国家。在我的预想里，这种淘汰的方式是换用Linux发行版。国产操作系统在这方面已经颇有建树了。在近期微信Linux版出来以后，国人使用Linux系统的最大障碍已经基本解除。这个技术先进、功能丰富、生态完整的操作系统已经有望走入大众视线了。原本期待华为在这方面进行进一步的助推，结果是华为决定自立门户。观察了华为的说法，它似乎强调【华为系多设备间流转】以及【AI集成】。尤其是为了做到低一点，决定自立门户也是合理的。不过，从淘汰Windows的宏观层面来讲，这一决定依然令我比较失望。</p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p>你的下一部电脑还得是电脑。电脑作为电脑，是有它独特的使用模式的。我总结下来，两个使用场景最为核心：【文件管理】和【网页浏览】。对于一个系统是不是“电脑”，我们可以主要衡量这两个标准：【文件管理（包括内部的文件系统以及外部文件浏览器的交互设计）是否通用好用】以及【网络浏览器是否强大】。别的电脑的特征，什么应用侧载，什么带终端，什么键盘快捷键都是次要的，文件管理和网页浏览是退无可退，是电脑使用的根基，是必须要做好的两大功能。很多人在意的生态事实上也是次要的。现在很多应用含有功能完整的网页版，只要有浏览器，很多任务可以借助浏览器完成。而运行它们的前提是具备一个足够好的浏览器。</p>
+<p>为了让这个初步分析不要过于“云”，我补了补课，看了华为对自家系统的<a class="link" target="_blank" rel="noopener" href="https://consumer.huawei.com/cn/harmonyos-computer/harmonyos-5/">宣传<i class="fas fa-external-link-alt"></i></a>。华为强调【华为系多设备间流转】以及【AI集成】，似乎有“重塑个人电脑使用范式”的野心。我们先抛开是“你教用户怎么用电脑还是用户教你怎么做电脑”的问题，就算这个新范式真的搞成了，你真的能革掉【文件管理】和【网页浏览】这两大基础功能的命吗？难。</p>
+<p>因此，后续如果接触实机，最需要审视的，就是它的系统文件管理器和网页浏览器。</p>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<p>从【我个人】的使用情况出发聊聊生态。在我看来，生态不是说把那几个常用app都具备就行了的。一个系统的生态在于【其“工具类”应用】的丰富程度，在于我是否能利用工具代替重复性活动并优化自己的工作流。</p>
+<svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                对华为5月19日发布的新“笔记本”的初步分析
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                posts/2301.html
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">justaLoli</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2025-05-20 18:29</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8D%8E%E4%B8%BA/">华为</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%B8%BF%E8%92%99OS/">鸿蒙OS</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/posts/3992.html"
+                                   title="今天课上讨论了人生的含义的问题"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">今天课上讨论了人生的含义的问题</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2025
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<meting-js
+    server="netease"
+    type="playlist"
+    id="8068706874"
+    fixed="true"
+    order="random"
+    loop="all"
+    theme="#D6AB4A">
+</meting-js>
+<!-- common -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local-search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+
+    <!-- ADDED: tools-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@10.5.0/dist/mermaid.min.js"></script>
+
+    <script data-pjax>
+      if (window.mermaid) {
+        mermaid.init()
+      }
+    </script>
+
+
+
+
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

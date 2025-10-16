@@ -377,7 +377,7 @@ mjx-container[display="true"] + br {
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Sep 11 2025 20:49:43 GMT+0800">2025-09-11 20:49:43</span>
+                <span class="datetime" data-updated="Thu Oct 16 2025 13:52:54 GMT+0800">2025-10-16 13:52:54</span>
             </span>
         
 
@@ -388,7 +388,7 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>49 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>206 字</span>
             </span>
         
         
@@ -410,7 +410,11 @@ mjx-container[display="true"] + br {
                 <div class="post-content keep-markdown-body">
                     
 
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="归档-压缩">归档 / 压缩</h1>
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="打开文件管理器">打开文件管理器</h1>
+<p>可以替代下面的归档 / 压缩命令，打开文件管理器后用GUI操作。</p>
+<p>常用chome桌面环境，使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nautilus</span><br></pre></td></tr></table></figure>
+<h1 id="归档-压缩">归档 / 压缩</h1>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cf out.tar folder/</span><br><span class="line"><span class="comment"># 也可以写</span></span><br><span class="line">tar -c folder/ &gt; out.tar</span><br></pre></td></tr></table></figure>
 <h1 id="校验">校验</h1>
 <p>md5</p>
@@ -418,6 +422,15 @@ mjx-container[display="true"] + br {
 <p>sha256</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># linux</span></span><br><span class="line"><span class="built_in">sha256sum</span> file</span><br><span class="line"><span class="comment"># mac</span></span><br><span class="line">shasum -a 256 file</span><br></pre></td></tr></table></figure>
 <p>对文件夹校验：建议先打包再校验。</p>
+<h1 id="git">git</h1>
+<p>一个偶尔遇到的情况是修改上一个commit</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;你忘记的文件或修改&gt;</span><br><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+<p>如果你只想修正文案（比如 commit message 打错了），也可以直接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m <span class="string">"新的提交说明"</span></span><br></pre></td></tr></table></figure>
+<p>如果要推送远程仓库，需要增加<code>-f</code>标记以强行进行。</p>
+<h1 id="ffmpeg">ffmpeg</h1>
+<p>最需要的是裁剪功能。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -ss 3:50 -i TBG-Puzzle-51.mkv -c:v libx264 -c:a aac TBG-Puzzle-51-trim.mp4</span><br></pre></td></tr></table></figure>
 <svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>
                 </div>
 
@@ -541,7 +554,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E6%A1%A3-%E5%8E%8B%E7%BC%A9"><span class="nav-text">归档 &#x2F; 压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C"><span class="nav-text">校验</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">打开文件管理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E6%A1%A3-%E5%8E%8B%E7%BC%A9"><span class="nav-text">归档 &#x2F; 压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C"><span class="nav-text">校验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ffmpeg"><span class="nav-text">ffmpeg</span></a></li></ol>
     </div>
 </div>
 
@@ -700,7 +713,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E6%A1%A3-%E5%8E%8B%E7%BC%A9"><span class="nav-text">归档 &#x2F; 压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C"><span class="nav-text">校验</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">打开文件管理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E6%A1%A3-%E5%8E%8B%E7%BC%A9"><span class="nav-text">归档 &#x2F; 压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C"><span class="nav-text">校验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ffmpeg"><span class="nav-text">ffmpeg</span></a></li></ol>
     </div>
 </div>
 

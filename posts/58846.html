@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            Linux 环境运行鹰角网络游戏（明日方舟 / 终末地）方案（含终末地MOD运行方式） |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.png">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justaloli.cn","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.png","logo":"/img/avatar.png","favicon":"/img/avatar.png"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.jpg","background_img_dark":"/img/bg-sunset.jpg","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/","image":"/images/tools/chatgpt.svg"},{"name":"Gemini","link":"https://gemini.google.com/app","image":"/images/tools/gemini.svg"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0 2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0 2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0 2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot 2023-11-18 at 09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    
+    
+
+    
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/img/avatar.png">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Loli的杂货铺
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="" href="/">首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/archives">归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/tags">标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/categories">分类</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/about/">关于</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/links">友链</a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class="" href="/">首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/about/">关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/links">友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Linux 环境运行鹰角网络游戏（明日方舟 / 终末地）方案（含终末地MOD运行方式）
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/img/avatar.png">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">justaLoli</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026-08-14 14:11:29</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Fri Aug 14 2026 14:44:07 GMT+0800">2026-08-14 14:44:07</span>
+            </span>
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/">明日方舟</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%BB%88%E6%9C%AB%E5%9C%B0/">终末地</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Linux/">Linux</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.1k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <link rel="stylesheet" type="text/css" href="/css/hint.css"><h1 id="linux-环境运行鹰角网络游戏明日方舟-终末地方案含终末地mod运行方式">Linux
+环境运行鹰角网络游戏（明日方舟 /
+终末地）方案（含终末地MOD运行方式）</h1>
+<p>网上有诸多博客写了类似内容，我结合我个人设备的实际情况进行总结。</p>
+<h2 id="基本信息">基本信息</h2>
+<ul>
+<li>个人平台：Fedora 44 KDE，AMD CPU+独显。</li>
+<li>测试时间：2026/8</li>
+<li>软件需求：
+<ul>
+<li>所使用的兼容层：DW-Proton（相当于“后端”，无需手动配置，使用接下来的图形化软件配置）</li>
+<li>需要的图形化软件：ProtonPlus（用于下载DW-Proton兼容层）+
+Steam（用于安装、启动游戏）</li>
+</ul></li>
+<li>本流程的优势：
+<ul>
+<li>（至少在本设备测试时）稳定可靠，</li>
+<li>配置方便，对终端和细节配置要求低。笔者也尝试了Bottles等其它方案，不过未能正确运行鹰角启动器（Steam是最好的Windows容器有没有懂的）</li>
+<li>天然支持 Steam Overlay等Steam游戏工具。</li>
+</ul></li>
+<li>本流程的劣势：
+<ul>
+<li>启动游戏要求登录Steam；</li>
+<li>Steam给每个外部游戏单独分配一个容器，导致容器管理以及游戏文件的管理有一定局限性。</li>
+</ul></li>
+</ul>
+<h2 id="原版游戏操作流程">原版游戏操作流程</h2>
+<h3 id="下载protonplus和steam">1. 下载ProtonPlus和Steam</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用 RPM Fusion 非自由仓库，并安装 Steam</span></span><br><span class="line">sudo dnf install \</span><br><span class="line">  https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \</span><br><span class="line">  https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</span><br><span class="line">sudo dnf install steam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Flatpak 和 ProtonPlus（官方推荐安装方式）</span></span><br><span class="line">sudo dnf install flatpak</span><br><span class="line">flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</span><br><span class="line">flatpak install flathub com.vysp3r.ProtonPlus</span><br></pre></td></tr></table></figure>
+<p>如果更希望使用原生 RPM 版本，也可以用 COPR 安装 ProtonPlus：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf copr <span class="built_in">enable</span> wehagy/protonplus</span><br><span class="line">sudo dnf install protonplus</span><br></pre></td></tr></table></figure>
+<h3 id="通过protonplus安装dw-proton">2. 通过ProtonPlus安装DW-Proton</h3>
+<p>运行ProtonPlus。确认左上角显示Steam，代表现在管理Steam环境。</p>
+<p>在“工具”标签页找到DW-Proton，安装任意一个版本。我选用latest(11.0-11)</p>
+<p>（可选）如无必要，可以关闭ProtonPlus的自动更新。</p>
+<h3 id="下载并运行鹰角网络启动器安装器">3.
+下载并运行“鹰角网络启动器”安装器</h3>
+<p>从<a class="link" target="_blank" rel="noopener" href="https://ak.hypergryph.com/">明日方舟官网<i class="fas fa-external-link-alt"></i></a>，或<a class="link" target="_blank" rel="noopener" href="https://endfield.hypergryph.com/">明日方舟终末地官网<i class="fas fa-external-link-alt"></i></a>，点击PC下载，应该得到</p>
+<p><code>HypergryphLauncher_xxx_[arknights/endfield].exe</code></p>
+<p>打开Steam，顶部菜单栏选择“游戏 - 添加非Steam游戏”（Games - Add a
+Non-Steam Game to My
+Library），选择下载的安装器可执行程序。届时，安装器将以“游戏”形式添加到库中。</p>
+<p>对该“游戏”右键-属性-兼容，勾选“Force the use of a specific Steam Play
+compatibility tool”，选择DW-Proton。</p>
+<p>在Steam中运行该“游戏”。此时这个exe文件应该能被打开。按照安装指引一路继续，使其安装“鹰角网络启动器”</p>
+<p>安装完后，建议先退出，进行下一步</p>
+<h3 id="可选推荐游戏文件管理配置软连接">4.
+（可选，推荐）游戏文件管理，配置软连接</h3>
+<p>现在，鹰角网络启动器被安装在Steam创建的一个Windows容器内。这个文件夹比较深，不好管理。由于之后可能存在多个容器运行这些exe的情况，建议将游戏文件放在容易获取到的地方。</p>
+<p>将</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.local/share/Steam/steamapps/compatdata/[容器<span class="built_in">id</span>]/pfx/drive_c/Program Files/Hypergryph Launcher</span><br></pre></td></tr></table></figure>
+<p>移动到一个容易记住的地方，例如
+<code>~/Games/Hypergryph Launcher</code></p>
+<p>随后，将原先位置的 <code>Hypergryph Launcher</code>
+文件夹替换为更新位置的软连接。在KDE中，这可以通过将移动后的<code>Hypergryph Launcher</code>
+文件夹拖移到容器的 <code>Program Files</code>
+文件夹内，选择“创建链接”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p <span class="string">"<span class="variable">$HOME</span>/Games"</span></span><br><span class="line"><span class="built_in">mv</span> <span class="string">"<span class="variable">$HOME</span>/.local/share/Steam/steamapps/compatdata/[容器id]/pfx/drive_c/Program Files/Hypergryph Launcher"</span> \</span><br><span class="line">   <span class="string">"<span class="variable">$HOME</span>/Games/Hypergryph Launcher"</span></span><br><span class="line"><span class="built_in">ln</span> -s <span class="string">"<span class="variable">$HOME</span>/Games/Hypergryph Launcher"</span> \</span><br><span class="line">   <span class="string">"<span class="variable">$HOME</span>/.local/share/Steam/steamapps/compatdata/[容器id]/pfx/drive_c/Program Files/Hypergryph Launcher"</span></span><br></pre></td></tr></table></figure>
+<p>如果不知道 <code>[容器id]</code> 是多少，可以查看
+<code>~/.local/share/Steam/steamapps/compatdata/</code>
+下的目录，按时间或内容确认。</p>
+<h3 id="执行鹰角网络启动器">5. 执行鹰角网络启动器</h3>
+<p>由于Steam一个游戏就对应一个Windows容器，为了避免冗余容器的添加，建议直接修改刚刚的安装器游戏条目，将它的Target替换为安装后的启动器可执行程序。</p>
+<p>注意：经过测试，鹰角网络启动器（
+<code>~/.local/share/Steam/steamapps/compatdata/[容器id]/pfx/drive_c/Program Files/Hypergryph Launcher/Launcher.exe</code>）无法直接经由Steam正常启动。然而，如果使Steam启动容器内cmd，再让cmd启动Launcher，则可以正常启动。</p>
+<blockquote>
+<p>注：写此文时发现，如果添加一个新容器，运行
+<code>~/Games/Hypergryph Launcher/Launcher.exe</code>，似乎可以正确执行。如果这种方法可以在您的电脑上工作，则推荐直接运行Launcher.exe，然后删除刚刚执行安装器时创建的容器（将其从Steam
+Library移除即可）</p>
+</blockquote>
+<p>因此，进行如下配置。修改刚刚导入安装器时创建的“游戏”，右键-属性：</p>
+<p>修改Target为：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/.local/</span>share<span class="regexp">/Steam/</span>steamapps<span class="regexp">/compatdata/</span>[容器id]<span class="regexp">/pfx/</span>drive_c<span class="regexp">/windows/</span>system32/cmd.exe</span><br></pre></td></tr></table></figure>
+<p>（Start in推荐改到<code>drive_c</code>，不过似乎影响不大）</p>
+<p>修改Launch Options为（该命令使得cmd直接启动Launcher）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/c start <span class="string">""</span> <span class="string">"C:\Program Files\Hypergryph Launcher\Launcher.exe"</span></span><br></pre></td></tr></table></figure>
+<p>保存后，启动该游戏，应该就能正常打开鹰角网络启动器了。</p>
+<h3 id="在鹰角网络启动器中正常下载启动游戏">6.
+在鹰角网络启动器中，正常下载，启动游戏</h3>
+<p>确保鹰角网络启动器可以启动后，可以借助它下载明日方舟和终末地。下载完成后，通过启动器即可启动游戏，体验和Windows端几乎一致。</p>
+<h3 id="可选添加鹰角网络启动器快捷方式到桌面">7.
+（可选）添加鹰角网络启动器快捷方式到桌面</h3>
+<p>可以直接在Steam中右键添加。如果添加失败，则可以手动创建.desktop文件（或者您的桌面环境所对应的快捷方式格式）</p>
+<p>其中的难点在于正确找到游戏所对应的id。经测试，一个寻找方式是查看：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/.local/</span>share<span class="regexp">/Steam/u</span>serdata<span class="regexp">/[userId]/</span><span class="number">760</span>/screenshots.vdf</span><br></pre></td></tr></table></figure>
+<p>该vdf是文本文件，末尾“shortcutnames”记录了id和游戏名称的对应。可从中寻找的正确id。</p>
+<p>之后运行游戏，就可以通过运行快捷方式打开。快捷方式将运行Steam，由Steam自动运行容器内cmd，cmd自动执行鹰角网络启动器。在启动器界面，手动选择明日方舟或者终末地，点击启动。</p>
+<h2 id="终末地mod加载流程">终末地MOD加载流程</h2>
+<p>这里的MOD主要是干员换皮MOD。这些MOD依赖“EFMI”，而“EFMI”是“XXMI”针对终末地的组件。因此我们先下载“XXMI”。</p>
+<p>从<a class="link" target="_blank" rel="noopener" href="https://github.com/SpectrumQT/XXMI-Launcher">XXMI的Github仓库<i class="fas fa-external-link-alt"></i></a>release中下载Portable版本。解压放入容易找到的地方，例如
+<code>~/Games/XXMI</code></p>
+<p>这里有两种运行XXMI的方式：</p>
+<ul>
+<li>第一种，和刚刚“鹰角启动器”使用同一个容器。这种做法的难度在于，由于Steam一个游戏对应一个容器，若要在鹰角启动器和XXMI（MOD版本终末地）切换，则需要修改Steam游戏的启动参数（或者给它运行的cmd写一个切换脚本），比较麻烦；</li>
+<li>第二种，创建一个新的容器执行XXMI。这种做法的问题在于，第一，它额外新增了一个容器，有存储空间开销；第二，尽管不同容器可以共享游戏本体，但是游戏数据并不互通，两个容器里面的终末地需要分别登录账号，分别编译着色器。</li>
+</ul>
+<p>这里我选择第二种方案。两个容器相比一个容器来回改启动参数，还是要方便得多。</p>
+<p>如法炮制的将XXMI可执行程序导入Steam。XXMI的可执行程序在
+<code>Resources/Bin/XXMI Launcher.exe</code>。记得修改兼容后端为<code>DW-Proton</code>。随后运行。</p>
+<p>执行后，按照类似Windows端的安装方式，指定游戏安装目录，并安装EFMI。</p>
+<p>注1: Steam会将本机文件系统挂载到容器Z盘，可以直接从中找到存放在
+<code>~/Games</code>内的游戏本体，无需额外软连接</p>
+<p>注2:
+注意，下载EFMI需要连接Github，如果需要网络代理，可在XXMI设置中指定网络代理。容器内可以正常使用主机的局域网代理，例如<code>127.0.0.1:7890</code>。</p>
+<p>安装完后，从XXMI启动终末地，即可加载EFMI。关于具体的MOD的加载，可以参阅Windows平台的相关教程。</p>
+<p>配置完成后，为了方便启动，可以在Steam中，给XXMI增加启动参数
+<code>--nogui --xxmi EFMI</code>，这样Steam点击运行，即可直接进入游戏。</p>
+<hr>
+<p>到这里，Linux端鹰角网络游戏的运行环境基本已经配置完成了。接下来，可以自定义Steam中的游戏项目，修改名称，封面等等，并且添加桌面快捷方式、Steam截图文件夹快捷方式。祝游玩愉快。</p>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs/></svg>
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                Linux 环境运行鹰角网络游戏（明日方舟 / 终末地）方案（含终末地MOD运行方式）
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                posts/58846.html
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">justaLoli</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2026-08-14 14:11</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/">明日方舟</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%BB%88%E6%9C%AB%E5%9C%B0/">终末地</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Linux/">Linux</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next" rel="next" href="/posts/52117.html" title="KV Cache 是什么（未完）">
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">KV Cache 是什么（未完）</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-%E7%8E%AF%E5%A2%83%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F-%E7%BB%88%E6%9C%AB%E5%9C%B0%E6%96%B9%E6%A1%88%E5%90%AB%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-text">Linux
+环境运行鹰角网络游戏（明日方舟 &#x2F;
+终末地）方案（含终末地MOD运行方式）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">原版游戏操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDprotonplus%E5%92%8Csteam"><span class="nav-text">1. 下载ProtonPlus和Steam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87protonplus%E5%AE%89%E8%A3%85dw-proton"><span class="nav-text">2. 通过ProtonPlus安装DW-Proton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%AE%89%E8%A3%85%E5%99%A8"><span class="nav-text">3.
+下载并运行“鹰角网络启动器”安装器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%8E%A8%E8%8D%90%E6%B8%B8%E6%88%8F%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-text">4.
+（可选，推荐）游戏文件管理，配置软连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8"><span class="nav-text">5. 执行鹰角网络启动器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E6%AD%A3%E5%B8%B8%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F"><span class="nav-text">6.
+在鹰角网络启动器中，正常下载，启动游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%B7%BB%E5%8A%A0%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%88%B0%E6%A1%8C%E9%9D%A2"><span class="nav-text">7.
+（可选）添加鹰角网络启动器快捷方式到桌面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B"><span class="nav-text">终末地MOD加载流程</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-%E7%8E%AF%E5%A2%83%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F-%E7%BB%88%E6%9C%AB%E5%9C%B0%E6%96%B9%E6%A1%88%E5%90%AB%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-text">Linux
+环境运行鹰角网络游戏（明日方舟 &#x2F;
+终末地）方案（含终末地MOD运行方式）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">原版游戏操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDprotonplus%E5%92%8Csteam"><span class="nav-text">1. 下载ProtonPlus和Steam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87protonplus%E5%AE%89%E8%A3%85dw-proton"><span class="nav-text">2. 通过ProtonPlus安装DW-Proton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%AE%89%E8%A3%85%E5%99%A8"><span class="nav-text">3.
+下载并运行“鹰角网络启动器”安装器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%8E%A8%E8%8D%90%E6%B8%B8%E6%88%8F%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-text">4.
+（可选，推荐）游戏文件管理，配置软连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8"><span class="nav-text">5. 执行鹰角网络启动器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E6%AD%A3%E5%B8%B8%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F"><span class="nav-text">6.
+在鹰角网络启动器中，正常下载，启动游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%B7%BB%E5%8A%A0%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%88%B0%E6%A1%8C%E9%9D%A2"><span class="nav-text">7.
+（可选）添加鹰角网络启动器快捷方式到桌面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B"><span class="nav-text">终末地MOD加载流程</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<meting-js server="netease" type="playlist" id="8068706874" fixed="true" order="random" loop="all" theme="#D6AB4A">
+</meting-js>
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+        
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+
+    
+<script src="/assets/js/mermaid.min.js"></script>
+
+    <script data-pjax>window.mermaid&&mermaid.init()</script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

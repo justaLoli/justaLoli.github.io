@@ -241,7 +241,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Fri Aug 14 2026 14:44:07 GMT+0800">2026-08-14 14:44:07</span>
+                <span class="datetime" data-updated="Wed Nov 18 2026 18:52:11 GMT+0800">2026-11-18 18:52:11</span>
             </span>
         
 
@@ -268,7 +268,7 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.1k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.2k 字</span>
             </span>
         
         
@@ -290,11 +290,14 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <link rel="stylesheet" type="text/css" href="/css/hint.css"><script src="/js/hint-clamp.js" defer="defer"></script><h1 id="linux-环境运行鹰角网络游戏明日方舟-终末地方案含终末地mod运行方式">Linux
-环境运行鹰角网络游戏（明日方舟 /
-终末地）方案（含终末地MOD运行方式）</h1>
+                    <link rel="stylesheet" type="text/css" href="/css/hint.css"><script src="/js/hint-clamp.js" defer="defer"></script>
+<div class="keep-note success"><p>2026/11月，终末地1.6、Fedora45情况更新：</p>
+<p>使用DW-Proton latest，下述方法仍然可以正常运行游戏。</p>
+<p>终末地1.6阻止了通过第三方启动器启动，不过，XXMI(EFMI)已进行更新，按照EFMI的操作方法选择启动器目录，即可正常启动游戏。</p>
+<p>值得注意的是，EFMI启动的游戏似乎运行在DirectX上，而不是Vulkan。</p>
+</div>
 <p>网上有诸多博客写了类似内容，我结合我个人设备的实际情况进行总结。</p>
-<h2 id="基本信息">基本信息</h2>
+<h1 id="基本信息">基本信息</h1>
 <ul>
 <li>个人平台：Fedora 44 KDE，AMD CPU+独显。</li>
 <li>测试时间：2026/8</li>
@@ -316,17 +319,17 @@ Steam（用于安装、启动游戏）</li>
 <li>Steam给每个外部游戏单独分配一个容器，导致容器管理以及游戏文件的管理有一定局限性。</li>
 </ul></li>
 </ul>
-<h2 id="原版游戏操作流程">原版游戏操作流程</h2>
-<h3 id="下载protonplus和steam">1. 下载ProtonPlus和Steam</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用 RPM Fusion 非自由仓库，并安装 Steam</span></span><br><span class="line">sudo dnf install \</span><br><span class="line">  https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \</span><br><span class="line">  https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</span><br><span class="line">sudo dnf install steam</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Flatpak 和 ProtonPlus（官方推荐安装方式）</span></span><br><span class="line">sudo dnf install flatpak</span><br><span class="line">flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</span><br><span class="line">flatpak install flathub com.vysp3r.ProtonPlus</span><br></pre></td></tr></table></figure>
+<h1 id="原版游戏操作流程">原版游戏操作流程</h1>
+<h2 id="下载protonplus和steam">1. 下载ProtonPlus和Steam</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> 启用 RPM Fusion 非自由仓库，并安装 Steam</span><br><span class="line">sudo dnf install \</span><br><span class="line">  https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \</span><br><span class="line">  https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</span><br><span class="line">sudo dnf install steam</span><br><span class="line"></span><br><span class="line"> 安装 Flatpak 和 ProtonPlus（官方推荐安装方式）</span><br><span class="line">sudo dnf install flatpak</span><br><span class="line">flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</span><br><span class="line">flatpak install flathub com.vysp3r.ProtonPlus</span><br></pre></td></tr></table></figure>
 <p>如果更希望使用原生 RPM 版本，也可以用 COPR 安装 ProtonPlus：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf copr <span class="built_in">enable</span> wehagy/protonplus</span><br><span class="line">sudo dnf install protonplus</span><br></pre></td></tr></table></figure>
-<h3 id="通过protonplus安装dw-proton">2. 通过ProtonPlus安装DW-Proton</h3>
+<h2 id="通过protonplus安装dw-proton">2. 通过ProtonPlus安装DW-Proton</h2>
 <p>运行ProtonPlus。确认左上角显示Steam，代表现在管理Steam环境。</p>
 <p>在“工具”标签页找到DW-Proton，安装任意一个版本。我选用latest(11.0-11)</p>
 <p>（可选）如无必要，可以关闭ProtonPlus的自动更新。</p>
-<h3 id="下载并运行鹰角网络启动器安装器">3.
-下载并运行“鹰角网络启动器”安装器</h3>
+<h2 id="下载并运行鹰角网络启动器安装器">3.
+下载并运行“鹰角网络启动器”安装器</h2>
 <p>从<a class="link" target="_blank" rel="noopener" href="https://ak.hypergryph.com/">明日方舟官网<i class="fas fa-external-link-alt"></i></a>，或<a class="link" target="_blank" rel="noopener" href="https://endfield.hypergryph.com/">明日方舟终末地官网<i class="fas fa-external-link-alt"></i></a>，点击PC下载，应该得到</p>
 <p><code>HypergryphLauncher_xxx_[arknights/endfield].exe</code></p>
 <p>打开Steam，顶部菜单栏选择“游戏 - 添加非Steam游戏”（Games - Add a
@@ -336,8 +339,8 @@ Library），选择下载的安装器可执行程序。届时，安装器将以�
 compatibility tool”，选择DW-Proton。</p>
 <p>在Steam中运行该“游戏”。此时这个exe文件应该能被打开。按照安装指引一路继续，使其安装“鹰角网络启动器”</p>
 <p>安装完后，建议先退出，进行下一步</p>
-<h3 id="可选推荐游戏文件管理配置软连接">4.
-（可选，推荐）游戏文件管理，配置软连接</h3>
+<h2 id="可选推荐游戏文件管理配置软连接">4.
+（可选，推荐）游戏文件管理，配置软连接</h2>
 <p>现在，鹰角网络启动器被安装在Steam创建的一个Windows容器内。这个文件夹比较深，不好管理。由于之后可能存在多个容器运行这些exe的情况，建议将游戏文件放在容易获取到的地方。</p>
 <p>将</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.local/share/Steam/steamapps/compatdata/[容器<span class="built_in">id</span>]/pfx/drive_c/Program Files/Hypergryph Launcher</span><br></pre></td></tr></table></figure>
@@ -351,7 +354,7 @@ compatibility tool”，选择DW-Proton。</p>
 <p>如果不知道 <code>[容器id]</code> 是多少，可以查看
 <code>~/.local/share/Steam/steamapps/compatdata/</code>
 下的目录，按时间或内容确认。</p>
-<h3 id="执行鹰角网络启动器">5. 执行鹰角网络启动器</h3>
+<h2 id="执行鹰角网络启动器">5. 执行鹰角网络启动器</h2>
 <p>由于Steam一个游戏就对应一个Windows容器，为了避免冗余容器的添加，建议直接修改刚刚的安装器游戏条目，将它的Target替换为安装后的启动器可执行程序。</p>
 <p>注意：经过测试，鹰角网络启动器（
 <code>~/.local/share/Steam/steamapps/compatdata/[容器id]/pfx/drive_c/Program Files/Hypergryph Launcher/Launcher.exe</code>）无法直接经由Steam正常启动。然而，如果使Steam启动容器内cmd，再让cmd启动Launcher，则可以正常启动。</p>
@@ -367,17 +370,17 @@ Library移除即可）</p>
 <p>修改Launch Options为（该命令使得cmd直接启动Launcher）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/c start "" "C:\Program Files\Hypergryph Launcher\Launcher.exe"</span><br></pre></td></tr></table></figure>
 <p>保存后，启动该游戏，应该就能正常打开鹰角网络启动器了。</p>
-<h3 id="在鹰角网络启动器中正常下载启动游戏">6.
-在鹰角网络启动器中，正常下载，启动游戏</h3>
+<h2 id="在鹰角网络启动器中正常下载启动游戏">6.
+在鹰角网络启动器中，正常下载，启动游戏</h2>
 <p>确保鹰角网络启动器可以启动后，可以借助它下载明日方舟和终末地。下载完成后，通过启动器即可启动游戏，体验和Windows端几乎一致。</p>
-<h3 id="可选添加鹰角网络启动器快捷方式到桌面">7.
-（可选）添加鹰角网络启动器快捷方式到桌面</h3>
+<h2 id="可选添加鹰角网络启动器快捷方式到桌面">7.
+（可选）添加鹰角网络启动器快捷方式到桌面</h2>
 <p>可以直接在Steam中右键添加。如果添加失败，则可以手动创建.desktop文件（或者您的桌面环境所对应的快捷方式格式）</p>
 <p>其中的难点在于正确找到游戏所对应的id。经测试，一个寻找方式是查看：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.local/share/Steam/userdata/[userId]/760/screenshots.vdf</span><br></pre></td></tr></table></figure>
 <p>该vdf是文本文件，末尾“shortcutnames”记录了id和游戏名称的对应。可从中寻找的正确id。</p>
 <p>之后运行游戏，就可以通过运行快捷方式打开。快捷方式将运行Steam，由Steam自动运行容器内cmd，cmd自动执行鹰角网络启动器。在启动器界面，手动选择明日方舟或者终末地，点击启动。</p>
-<h2 id="终末地mod加载流程">终末地MOD加载流程</h2>
+<h1 id="终末地mod加载流程">终末地MOD加载流程</h1>
 <p>这里的MOD主要是干员换皮MOD。这些MOD依赖“EFMI”，而“EFMI”是“XXMI”针对终末地的组件。因此我们先下载“XXMI”。</p>
 <p>从<a class="link" target="_blank" rel="noopener" href="https://github.com/SpectrumQT/XXMI-Launcher">XXMI的Github仓库<i class="fas fa-external-link-alt"></i></a>release中下载Portable版本。解压放入容易找到的地方，例如
 <code>~/Games/XXMI</code></p>
@@ -530,13 +533,11 @@ Library移除即可）</p>
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-%E7%8E%AF%E5%A2%83%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F-%E7%BB%88%E6%9C%AB%E5%9C%B0%E6%96%B9%E6%A1%88%E5%90%AB%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-text">Linux
-环境运行鹰角网络游戏（明日方舟 &#x2F;
-终末地）方案（含终末地MOD运行方式）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">原版游戏操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDprotonplus%E5%92%8Csteam"><span class="nav-text">1. 下载ProtonPlus和Steam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87protonplus%E5%AE%89%E8%A3%85dw-proton"><span class="nav-text">2. 通过ProtonPlus安装DW-Proton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%AE%89%E8%A3%85%E5%99%A8"><span class="nav-text">3.
-下载并运行“鹰角网络启动器”安装器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%8E%A8%E8%8D%90%E6%B8%B8%E6%88%8F%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-text">4.
-（可选，推荐）游戏文件管理，配置软连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8"><span class="nav-text">5. 执行鹰角网络启动器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E6%AD%A3%E5%B8%B8%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F"><span class="nav-text">6.
-在鹰角网络启动器中，正常下载，启动游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%B7%BB%E5%8A%A0%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%88%B0%E6%A1%8C%E9%9D%A2"><span class="nav-text">7.
-（可选）添加鹰角网络启动器快捷方式到桌面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B"><span class="nav-text">终末地MOD加载流程</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">原版游戏操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDprotonplus%E5%92%8Csteam"><span class="nav-text">1. 下载ProtonPlus和Steam</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87protonplus%E5%AE%89%E8%A3%85dw-proton"><span class="nav-text">2. 通过ProtonPlus安装DW-Proton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%AE%89%E8%A3%85%E5%99%A8"><span class="nav-text">3.
+下载并运行“鹰角网络启动器”安装器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%8E%A8%E8%8D%90%E6%B8%B8%E6%88%8F%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-text">4.
+（可选，推荐）游戏文件管理，配置软连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8"><span class="nav-text">5. 执行鹰角网络启动器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E6%AD%A3%E5%B8%B8%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F"><span class="nav-text">6.
+在鹰角网络启动器中，正常下载，启动游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%B7%BB%E5%8A%A0%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%88%B0%E6%A1%8C%E9%9D%A2"><span class="nav-text">7.
+（可选）添加鹰角网络启动器快捷方式到桌面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B"><span class="nav-text">终末地MOD加载流程</span></a></li></ol>
     </div>
 </div>
 
@@ -688,13 +689,11 @@ Library移除即可）</p>
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-%E7%8E%AF%E5%A2%83%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F-%E7%BB%88%E6%9C%AB%E5%9C%B0%E6%96%B9%E6%A1%88%E5%90%AB%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-text">Linux
-环境运行鹰角网络游戏（明日方舟 &#x2F;
-终末地）方案（含终末地MOD运行方式）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">原版游戏操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDprotonplus%E5%92%8Csteam"><span class="nav-text">1. 下载ProtonPlus和Steam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87protonplus%E5%AE%89%E8%A3%85dw-proton"><span class="nav-text">2. 通过ProtonPlus安装DW-Proton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%AE%89%E8%A3%85%E5%99%A8"><span class="nav-text">3.
-下载并运行“鹰角网络启动器”安装器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%8E%A8%E8%8D%90%E6%B8%B8%E6%88%8F%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-text">4.
-（可选，推荐）游戏文件管理，配置软连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8"><span class="nav-text">5. 执行鹰角网络启动器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E6%AD%A3%E5%B8%B8%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F"><span class="nav-text">6.
-在鹰角网络启动器中，正常下载，启动游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%B7%BB%E5%8A%A0%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%88%B0%E6%A1%8C%E9%9D%A2"><span class="nav-text">7.
-（可选）添加鹰角网络启动器快捷方式到桌面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B"><span class="nav-text">终末地MOD加载流程</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">原版游戏操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDprotonplus%E5%92%8Csteam"><span class="nav-text">1. 下载ProtonPlus和Steam</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87protonplus%E5%AE%89%E8%A3%85dw-proton"><span class="nav-text">2. 通过ProtonPlus安装DW-Proton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%BF%90%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%AE%89%E8%A3%85%E5%99%A8"><span class="nav-text">3.
+下载并运行“鹰角网络启动器”安装器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%8E%A8%E8%8D%90%E6%B8%B8%E6%88%8F%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-text">4.
+（可选，推荐）游戏文件管理，配置软连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8"><span class="nav-text">5. 执行鹰角网络启动器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E6%AD%A3%E5%B8%B8%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F"><span class="nav-text">6.
+在鹰角网络启动器中，正常下载，启动游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%B7%BB%E5%8A%A0%E9%B9%B0%E8%A7%92%E7%BD%91%E7%BB%9C%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%88%B0%E6%A1%8C%E9%9D%A2"><span class="nav-text">7.
+（可选）添加鹰角网络启动器快捷方式到桌面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E6%9C%AB%E5%9C%B0mod%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B"><span class="nav-text">终末地MOD加载流程</span></a></li></ol>
     </div>
 </div>
 

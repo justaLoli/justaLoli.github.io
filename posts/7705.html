@@ -8,7 +8,7 @@
     <meta name="description" content="Termux cli + Termux-x11 + proot &#x2F; chroot Debian container 优势：  全容器，图形和软件超级快 只需要两个软件捯饬  问题：  兼容性：部分软件在容器环境无法正常使用 安全性：容器和主机不完全隔离，若用chroot有umount内置存储甚至丢失数据风险   安卓 Terminal cli + debian VM + VNC viewer 优势">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Termux，内置Terminal，用哪个？安卓手机&#x2F;平板Linux环境使用经验">
-<meta property="og:url" content="https://justalo.li/posts/7705">
+<meta property="og:url" content="https://justalo.li/posts/7705.html">
 <meta property="og:site_name" content="Loli的杂货铺">
 <meta property="og:description" content="Termux cli + Termux-x11 + proot &#x2F; chroot Debian container 优势：  全容器，图形和软件超级快 只需要两个软件捯饬  问题：  兼容性：部分软件在容器环境无法正常使用 安全性：容器和主机不完全隔离，若用chroot有umount内置存储甚至丢失数据风险   安卓 Terminal cli + debian VM + VNC viewer 优势">
 <meta property="og:locale" content="zh_CN">
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary">
     
     <meta name="author" content="justaLoli">
-    <link rel="canonical" href="https://justalo.li/posts/7705">
+    <link rel="canonical" href="https://justalo.li/posts/7705.html">
     <title>Termux，内置Terminal，用哪个？安卓手机/平板Linux环境使用经验 | Loli的杂货铺</title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -82,8 +82,8 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+<style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style></head>
 
 
 <body>
@@ -396,7 +396,7 @@ termux-x11服务器，共享端口，debian虚拟机向端口发送x11绘制指�
                     <div class="post-nav border-box">
                         
                             <div class="prev-post">
-                                <a class="prev" rel="prev" href="/posts/52117" title="KV Cache 是什么（未完）">
+                                <a class="prev" rel="prev" href="/posts/52117.html" title="KV Cache 是什么（未完）">
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
@@ -409,7 +409,7 @@ termux-x11服务器，共享端口，debian虚拟机向端口发送x11绘制指�
                         
                         
                             <div class="next-post">
-                                <a class="next" rel="next" href="/posts/27811" title="2025总结">
+                                <a class="next" rel="next" href="/posts/27811.html" title="2025总结">
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">2025总结</span>
                                         <span class="post-nav-item">下一篇</span>

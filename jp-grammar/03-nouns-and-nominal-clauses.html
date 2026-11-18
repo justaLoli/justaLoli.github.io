@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            体言与名词句 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#体言名词谓语句与名词性从句">体言、名词谓语句与名词性从句</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一什么是体言">一、什么是体言</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二基本判断句n1はn2です">二、基本判断句：N1はN2です</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#は不是是">「は」不是“是”</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三名词谓语句的四种形式敬体">三、名词谓语句的四种形式：敬体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去肯定nです">1. 非过去肯定：Nです</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去否定nではありませんnじゃありません">2. 非过去否定：Nではありません／Nじゃありません</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去肯定nでした">3. 过去肯定：Nでした</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去否定nではありませんでしたnじゃありませんでした">4. 过去否定：Nではありませんでした／Nじゃありませんでした</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四名词谓语句的四种形式简体">四、名词谓语句的四种形式：简体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去肯定nだ">1. 非过去肯定：Nだ</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去否定nではないnじゃない">2. 非过去否定：Nではない／Nじゃない</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去肯定nだった">3. 过去肯定：Nだった</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去否定nではなかったnじゃなかった">4. 过去否定：Nではなかった／Nじゃなかった</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五名词判断句的疑问形式">五、名词判断句的疑问形式</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#敬体nですか">1. 敬体：Nですか</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#简体疑问">2. 简体疑问</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六名词之间的连接n1のn2">六、名词之间的连接：N1のN2</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七什么是名词性从句">七、什么是名词性从句</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八の和こと的区别">八、「の」和「こと」的区别</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九易错点">九、易错点</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="体言名词谓语句与名词性从句">体言、名词谓语句与名词性从句</h1>
+<h2 id="一什么是体言">一、什么是体言</h2>
+<p>体言是不会发生词形变化、可以带上助词充当主语或宾语等成分的词。初级阶段常见的体言有：</p>
+<ul>
+<li><strong>名词</strong>：学生、先生、本、日本。</li>
+<li><strong>人称代词</strong>：私、あなた、彼、彼女。</li>
+<li><strong>指示代词</strong>：これ、それ、あれ、ここ、そこ。</li>
+<li><strong>数词</strong>：一つ、二人、三冊。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li><strong>学生</strong>が教室にいます。<br>
+学生在教室里。「学生」带が，作主语。</li>
+<li>私は<strong>本</strong>を読みます。<br>
+我读书。「本」带を，作宾语。</li>
+<li><strong>三つ</strong>ください。<br>
+请给我三个。数词可以直接带助词或作句子的成分。</li>
+</ul>
+<p>体言不能单独表示时态。名词句的时态和肯否定，体现在后面的「です・だ」上。</p>
+<h2 id="二基本判断句n1はn2です">二、基本判断句：N1はN2です</h2>
+<p>「N1はN2です」表示“N1是N2”。</p>
+<ul>
+<li><strong>N1</strong>：句子的主题。</li>
+<li><strong>は</strong>：主题助词，作助词时读「わ（wa）」。</li>
+<li><strong>N2</strong>：对主题的身份、性质或所属作出判断。</li>
+<li><strong>です</strong>：敬体判断助动词，语气礼貌。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>私は学生です。<br>
+我是学生。</li>
+<li>田中さんは会社員です。<br>
+田中是公司职员。</li>
+<li>これは私の本です。<br>
+这是我的书。</li>
+<li>あの人は日本の先生です。<br>
+那个人是日本的老师。</li>
+</ul>
+<h3 id="は不是是">「は」不是“是”</h3>
+<p>「は」只提示主题，真正的判断由「です・だ」完成。</p>
+<ul>
+<li>私は王です。<br>
+我姓王。</li>
+<li>王さんは学生です。<br>
+小王是学生。</li>
+</ul>
+<h2 id="三名词谓语句的四种形式敬体">三、名词谓语句的四种形式：敬体</h2>
+<p>所谓“四种时态”，更准确地说是“非过去／过去”与“肯定／否定”的四种组合。非过去可以表示现在的状态，也可以表示不变的事实或今后的安排。</p>
+<h3 id="非过去肯定nです">1. 非过去肯定：Nです</h3>
+<ul>
+<li>李さんは学生です。<br>
+小李是学生。</li>
+<li>明日は日曜日です。<br>
+明天是星期日。</li>
+</ul>
+<h3 id="非过去否定nではありませんnじゃありません">2.
+非过去否定：Nではありません／Nじゃありません</h3>
+<ul>
+<li>李さんは先生ではありません。<br>
+小李不是老师。</li>
+<li>今日は土曜日じゃありません。<br>
+今天不是星期六。</li>
+</ul>
+<p>「じゃありません」比「ではありません」更口语化。</p>
+<h3 id="过去肯定nでした">3. 过去肯定：Nでした</h3>
+<ul>
+<li>昨日は日曜日でした。<br>
+昨天是星期日。</li>
+<li>父は以前、会社員でした。<br>
+父亲以前是公司职员。</li>
+</ul>
+<h3 id="过去否定nではありませんでしたnじゃありませんでした">4.
+过去否定：Nではありませんでした／Nじゃありませんでした</h3>
+<ul>
+<li>昨日は休みではありませんでした。<br>
+昨天不是休息日。</li>
+<li>あの店は去年、喫茶店じゃありませんでした。<br>
+那家店去年不是咖啡馆。</li>
+</ul>
+<p>以「学生」为例，把四种形式连起来记：</p>
+<ul>
+<li>学生です。</li>
+<li>学生ではありません。</li>
+<li>学生でした。</li>
+<li>学生ではありませんでした。</li>
+</ul>
+<h2 id="四名词谓语句的四种形式简体">四、名词谓语句的四种形式：简体</h2>
+<p>简体用于关系亲近的人之间，也常见于日记、文章和从句中。对不熟悉的人或长辈，一般使用敬体。</p>
+<h3 id="非过去肯定nだ">1. 非过去肯定：Nだ</h3>
+<ul>
+<li>李さんは学生だ。<br>
+小李是学生。</li>
+<li>明日は日曜日だ。<br>
+明天是星期日。</li>
+</ul>
+<h3 id="非过去否定nではないnじゃない">2.
+非过去否定：Nではない／Nじゃない</h3>
+<ul>
+<li>李さんは先生ではない。<br>
+小李不是老师。</li>
+<li>今日は土曜日じゃない。<br>
+今天不是星期六。</li>
+</ul>
+<h3 id="过去肯定nだった">3. 过去肯定：Nだった</h3>
+<ul>
+<li>昨日は日曜日だった。<br>
+昨天是星期日。</li>
+<li>あの人は以前、先生だった。<br>
+那个人以前是老师。</li>
+</ul>
+<h3 id="过去否定nではなかったnじゃなかった">4.
+过去否定：Nではなかった／Nじゃなかった</h3>
+<ul>
+<li>昨日は休みではなかった。<br>
+昨天不是休息日。</li>
+<li>あの店は昔、喫茶店じゃなかった。<br>
+那家店以前不是咖啡馆。</li>
+</ul>
+<p>以「学生」为例：</p>
+<ul>
+<li>学生だ。</li>
+<li>学生ではない。</li>
+<li>学生だった。</li>
+<li>学生ではなかった。</li>
+</ul>
+<blockquote>
+<p>注意：「学生です」的简体是「学生だ」，不是「学生だです」；「学生でした」的简体是「学生だった」。</p>
+</blockquote>
+<h2 id="五名词判断句的疑问形式">五、名词判断句的疑问形式</h2>
+<h3 id="敬体nですか">1. 敬体：Nですか</h3>
+<p>句末加か，不用把です变成别的形式。句尾通常读升调。</p>
+<ul>
+<li>あなたは学生ですか。<br>
+你是学生吗？</li>
+<li>これは田中さんの傘ですか。<br>
+这是田中的伞吗？</li>
+</ul>
+<p>回答时可以先说「はい」或「いいえ」：</p>
+<ul>
+<li>はい、学生です。<br>
+是的，我是学生。</li>
+<li>いいえ、学生ではありません。会社員です。<br>
+不，我不是学生，是公司职员。</li>
+</ul>
+<h3 id="简体疑问">2. 简体疑问</h3>
+<p>口语中常用名词加「？」，或「Nなの？」；一般不说「Nだか？」。</p>
+<ul>
+<li>これ、あなたの本？<br>
+这是你的书吗？</li>
+<li>田中さんは学生なの？<br>
+田中是学生吗？</li>
+</ul>
+<h2 id="六名词之间的连接n1のn2">六、名词之间的连接：N1のN2</h2>
+<p>「の」可以连接两个名词，常译为“的”，具体关系要根据上下文判断。</p>
+<ul>
+<li>私の本：我的书，表示所属。</li>
+<li>日本の学生：日本的学生，表示国籍或来源。</li>
+<li>日本語の先生：日语老师，表示所教的内容。</li>
+<li>友達の李さん：我的朋友小李，表示同位关系。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>これは日本語の教科書です。<br>
+这是日语教科书。</li>
+<li>田中さんは私の友達です。<br>
+田中是我的朋友。</li>
+<li>李さんは友達の王さんと来ました。<br>
+小李和我的朋友小王一起来了。</li>
+</ul>
+<h2 id="七什么是名词性从句">七、什么是名词性从句</h2>
+<p>一个完整的小句如果像名词一样，在更大的句子中作主语或宾语，就叫名词性从句。日语常在小句后加「の」或「こと」，把小句名词化。</p>
+<p>基本结构：</p>
+<ul>
+<li><strong>动词普通形＋の／こと</strong></li>
+<li><strong>い形容词普通形＋の／こと</strong></li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>私は<strong>本を読むの</strong>が好きです。<br>
+我喜欢读书。「本を読む」这个小句整体作“喜欢”的对象。</li>
+<li><strong>毎日運動すること</strong>は大切です。<br>
+每天运动很重要。「毎日運動する」这个小句整体作主语。</li>
+<li>私は<strong>田中さんが来ること</strong>を知っています。<br>
+我知道田中会来。整个小句作「知っています」的宾语。</li>
+<li>私は<strong>この店のパンがおいしいの</strong>を知っています。<br>
+我知道这家店的面包好吃。</li>
+</ul>
+<p>名词性从句内部使用普通形，不受句尾敬体影响：</p>
+<ul>
+<li>私は<strong>弟が毎日勉強するの</strong>を知っています。<br>
+我知道弟弟每天学习。从句用「勉強する」，句尾用「知っています」。</li>
+</ul>
+<h2 id="八の和こと的区别">八、「の」和「こと」的区别</h2>
+<p>两者都能把小句名词化，但倾向不同：</p>
+<ul>
+<li><strong>の</strong>：较具体、直接经历的事情，常与看、听、喜欢等感受或经验搭配。</li>
+<li><strong>こと</strong>：较抽象的事情、内容、道理，也常用于表达信息。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>私は李さんが歌を歌う<strong>の</strong>を聞きました。<br>
+我听了小李唱歌。这里强调直接听到的内容，通常用「の」。</li>
+<li>日本へ行く<strong>こと</strong>を楽しみにしています。<br>
+我期待着去日本这件事。</li>
+<li>毎日早く寝る<strong>こと</strong>は体にいいです。<br>
+每天早睡对身体好。</li>
+<li>音楽を聞く<strong>の</strong>が好きです。<br>
+我喜欢听音乐。</li>
+</ul>
+<h2 id="九易错点">九、易错点</h2>
+<ul>
+<li>「は」读「わ」，不是「は（ha）」：私<strong>は</strong>学生です。</li>
+<li>非过去否定是「ではありません／ではない」，不是「ではないです」的基础形式。</li>
+<li>过去肯定是「でした／だった」，不能说「だでした」。</li>
+<li>敬体疑问句是「学生ですか」，简体口语通常说「学生？」或「学生なの？」。</li>
+<li>「N1のN2」中的の不能省：日本語<strong>の</strong>先生。</li>
+</ul>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#体言名词谓语句与名词性从句">体言、名词谓语句与名词性从句</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一什么是体言">一、什么是体言</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二基本判断句n1はn2です">二、基本判断句：N1はN2です</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#は不是是">「は」不是“是”</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三名词谓语句的四种形式敬体">三、名词谓语句的四种形式：敬体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去肯定nです">1. 非过去肯定：Nです</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去否定nではありませんnじゃありません">2. 非过去否定：Nではありません／Nじゃありません</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去肯定nでした">3. 过去肯定：Nでした</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去否定nではありませんでしたnじゃありませんでした">4. 过去否定：Nではありませんでした／Nじゃありませんでした</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四名词谓语句的四种形式简体">四、名词谓语句的四种形式：简体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去肯定nだ">1. 非过去肯定：Nだ</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#非过去否定nではないnじゃない">2. 非过去否定：Nではない／Nじゃない</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去肯定nだった">3. 过去肯定：Nだった</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#过去否定nではなかったnじゃなかった">4. 过去否定：Nではなかった／Nじゃなかった</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五名词判断句的疑问形式">五、名词判断句的疑问形式</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#敬体nですか">1. 敬体：Nですか</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#简体疑问">2. 简体疑问</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六名词之间的连接n1のn2">六、名词之间的连接：N1のN2</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七什么是名词性从句">七、什么是名词性从句</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八の和こと的区别">八、「の」和「こと」的区别</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九易错点">九、易错点</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

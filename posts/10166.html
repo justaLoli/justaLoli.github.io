@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            刘谦魔术 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    
+    
+
+    
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/img/avatar.webp">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Loli的杂货铺
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="" href="/">首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/archives">归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/tags">标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/categories">分类</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/about/">关于</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/links">友链</a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class="" href="/">首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/about/">关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/links">友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+                <div class="post-content-top border-box" style="height:13.8rem">
+                    <div class="cover-post-title">
+                        刘谦魔术
+                    </div>
+                    <img class="post-cover" src="/posts/10166/cover.jpg" onerror='this.style.display="none"'>
+                </div>
+            
+
+            <div class="post-content-bottom border-box has-cover">
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/img/avatar.webp">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">justaLoli</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-08-20 15:51:56</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Wed Nov 13 2024 09:18:56 GMT+0800">2024-11-13 09:18:56</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%80%9D%E8%80%83/">思考</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%AD%94%E6%9C%AF/">魔术</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>4.4k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>14 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <link rel="stylesheet" type="text/css" href="/css/hint.css"><script src="/js/hint-clamp.js" defer="defer"></script><p>几天前在北展看了刘谦的live。</p>
+<p>演出一转眼就结束了。散场的时候，广播里提到，如果有想要发表感想，可以留在采访区接受一个小采访。
+在两个小时的魔术效果接连不断的狂轰滥炸后，大脑还忙着处理刚刚发生的事情，没有额外的精力组织自己的语言。因此，即便头脑中形成了一种情绪、一种感受，我也自知没有能力在镜头前描述出来。因此，只是远远的看了看采访的地方，就回过头，跟着人群离开了。</p>
+<p>一路上，都有人——结伴而来的亲友，三两个的——叽叽喳喳的讨论刚刚发生的演出。一人前往的我自然只是听着周围讨论的碎片。
+走到场外，看着四周的建筑、夜空、二环的车流、脚下的沥青，感觉自己又回到了现实世界。打开手机，看着上面的数字才意识到已经到了这个时间。</p>
+<p>演出让人应接不暇——感觉大脑还没有完全处理好上一幕发生了什么，下一个魔术效果就紧接着展示出来了。最初，可能还对那种不可思议的场面尝试找到一些解释，后来便逐渐放弃思考了。时间暂停？好吧，这恐怕是真的。</p>
+<p>最后，大脑连“记住”发生了什么都很困难了，只留下来了一种模糊的情绪。结束后的一路上感觉都是茫然的。很难回忆起刚刚都经历了什么。
+留下印象的、感到震撼的不是某种具体的魔术效果，而变成了一种整体的感受。说不清里面具体是由那些部分组成，而是结合在一起，很大包的东西撞向心灵。</p>
+<p>记不住会感到可惜吗？全程禁止拍照，没有留下照片会觉得可惜吗？事实上，我还挺感激这个规则的。掏出手机是个很破坏沉浸感的动作：在这一瞬间，你从“体验者”的身份切换成了一个“记录者”的身份，让人重归理性。为了留下纪念，破坏观看时的专注和情绪流动得不偿失。而且，即便拍下了优质的照片，之后回味时，也很难找回现场的那份感觉。此情此景无法被记录，也不必被记录。恐怕这就是live的魅力吧。</p>
+<hr>
+<p>这种很充盈，又很茫然的状态持续了好一会，最终逐渐的冷静下来了。逐渐回归理性，才有了一些精力，把刚刚经历的那一大包东西抽丝剥茧开。</p>
+
+<p>事实上，在最初决定观看这个live的时候，我是抱有一定怀疑的。毕竟海报是那个经典的白色“魔壶”，which，在社交平台上已经看过很多遍了。它在海报上，恐怕是主要的卖点吧。如果演出内容被观众所熟知，真的能有好的体验么？演出开始后才意识到擅自揣测魔术师实力的我宛如一个小丑。“魔壶”不是演出的重头，而是开场的第一个魔术，是一个热身。放在海报上，只是因为它是最方便透露的一个内容吧。</p>
+<p>在“魔壶”之后正式的内容，如我之前所说，已经记得不太清了。的确有一些场景历历在目，不过都是一些碎片的片段，它们的前因后果，以及它们之间如何衔接，已经记不大清了。故事的完整发展过程才是最调动人情绪的，因此，即便把这些碎片讲出来，恐怕听众
+/ 读者也不会有什么很强烈的反应。</p>
+
+<p>仅仅回顾这个演出由哪些“魔术效果”组成——“魔壶”、大变活人、漂浮、“第六感”、“时间暂停”……——是远远不能总结这场演出的。这场演出并不只是魔术师的表演或炫技——那样就变成马戏团表演了——而是有一个完整的故事，有开头、结局、情绪的起伏、伏笔的设置、同观众的互动。
+而这故事又很难转述。故事和魔术师的表演是融为一体的，况且在观看的过程中，人的注意力被魔术师所控制，并不能完整的回顾全貌，因此用语言描述总显得匮乏。</p>
+<p>不过，权当纪念，还是让我试着流水账似的留下这么一段吧：</p>
+<blockquote>
+<p>猜牌魔术的前后事</p>
+<p>⚠️流水账警告！</p>
+<p>前面忘了。刘谦走下台，选定一位观众，拿出一副扑克牌让她抽一张。抽完后，刘谦象征性的抓着她的头（做出抽取灵魂的样子），立刻说出刚刚她选到的是♦️2。随后刘谦将那副扑克牌翻过来展示给镜头——原来一副牌全是方片2。众人哄笑</p>
+<p>刘谦开始讲故事。说自己上小学时，有同学名字XXX，在校车上给自己变过这样的魔术。变完后校车急刹车，牌撒了一地，让小刘谦看到了魔术的秘密。不过那同学恼羞成怒动了武力，威胁他什么都没看见。众人哄笑</p>
+<p>随后进入正题——刘谦在此之后始终研究如何实现最完美的猜牌。屏幕上播放一段视频——明显是剪辑的——刘谦使用时间暂停让观众定住，随后翻开观众手里的牌，以得知牌型。观众想必是不相信的。</p>
+<p>演出现在开始。刘谦找到一位观众，使用了“观众切牌——记牌——观众把牌放回牌堆”的流程，在魔术师不接触牌的情况下让观众记一张牌。随后又如法炮制找了10个人。他说他的最高纪录是一次猜10个人的牌（恐怕根“时间暂停”的持续时间有关吧），这次他要挑战11个人。对于最后一人，刘谦不但要求他选一张牌，而且把牌拿橡皮筋捆成一捆，将牌交给这第11个观众保管。</p>
+<p>现在，观众席里有11个观众记了自己的牌，其中最后一位观众保管了这副牌。刘谦让他们站起来，用提前准备的纸条和铅笔（开场前发给了每位观众）写下牌型并攥紧在手中，随后将攥紧的拳头举起。若想知道他们记的牌，恐怕要暂停时间，在所有人被定住的时候，打开这11个人的拳头，看到他们手里纸条上的字，再把纸条放回他们手中才行吧。</p>
+<p>“时间暂停”的表演开始。从舞台上走下来许多工作人员，每人拿一个诡异的装置
+/
+道具。这些人下台之后逐渐散开，分布到观众席各处。与此同时，刘谦在一个玻璃板上开始画圆圈，并且嘴上数数，边数边画，一秒一个。</p>
+<p>突然全场的灯光熄灭了一刻，伴随类似老式相机闪光灯的音效。不到一秒钟后灯光重新亮起。神奇的是，在这灯光熄灭又亮起的途中，玻璃板上的圆圈突然多了好多，刘谦数的数也发生了一次跳变，这都侧面“印证”刚刚发生了“时间暂停”；随后又来一次，灯光再次闪烁，玻璃板上的圆圈又多了好几排，那整个大大的玻璃板已经快画满了。观众的氛围逐渐被炒热，发出惊讶声。</p>
+<p>最后一次闪烁，灯光恢复后，刘谦竟然不在台上了；同时音响里传来刘谦和stuff的对话声。惊讶声在人群中此起彼伏，大家四顾寻找刘谦去哪了。“颈项都伸得很长，仿佛许多鸭，被无形的手捏住了的，向上提着。”刘谦和stuff的对话大意，是说最后一位的牌型没能来得及抄下来。观众逐渐找到刘谦在哪了——他出现在了第11位观众座位旁边的走廊，离舞台少说也有20m的距离。他是怎么过来的呢？似乎只能是在时间暂停的途中走过来的吧。观众的声音逐渐从不知道刘谦在哪的疑惑变为了发现刘谦瞬移的惊讶。</p>
+<p>最后一位的牌型没能来得及抄下来，那怎么办呢？刘谦表示作罢，先揭示了前10个人的牌型。当然都说对了。最后一位怎么办呢？刘谦请他上台，自己拿了一个刚刚stuff拿的，象征”时间暂停“的奇妙装置，在台上，对着这第11个人，说我要再对你来这么一下。一闪，似乎什么都没发生。刘谦说出了这最后一人的牌型。众人欢呼。</p>
+<p>猜牌似乎结束了。不过，刘谦让这最后一个人从他保管的牌堆中找到他刚刚记的牌。牌堆上的皮筋被解开之后，这位观众在台上开始找他的那张牌。找了一会，意识到那张牌从牌堆中消失了。在刘谦的提示下，观众掏了掏自己的裤兜，发现那张牌竟然跑到了他的裤兜里。</p>
+<p>待观众的掌声停止后，屏幕上开始播放一段视频，是对观众席上某位观众的采访：“这个猜牌魔术满意吗？”“满意。”“您贵姓？”“X”“叫什么？”“XXX”。视频里的人，说出了刘谦口中那个童年故事里的角色名。到此，整个猜牌魔术部分宣告结束。</p>
+</blockquote>
+<p>想必这段能佐证上面的观点了吧，在整场演出中，魔术和故事是融为一体，相辅相成的。</p>
+<hr>
+<p>故事用于给魔术效果做穿插，引导观众的情绪流动，提升沉浸感；魔术用于引爆观众积攒的情绪，转化为掌声和欢呼。
+前者让观众发出轻松的笑，后者让观众发出激动的叫——“店内外充满了快活的空气”。</p>
+<p>这里格外讨论一下魔术效果。我觉得这场live里，魔术惊喜/震撼的来源，主要可以分为以下三类：</p>
+<ul>
+<li>完全意外的事件。比如从金属笼子里出现的直升机，它完全无预兆的出现了，蛮吓人的。在此之前我甚至没预料到它会变出什么东西。那个金属笼子好像是上一个魔术用完的，准备撤下去，谁想它突然蹦了个直升机出来（似乎金属笼子就是上文提到的猜牌魔术里，支撑那个用来画圆圈的玻璃板的架子，但我记不清了）。我还记得我怎样仔细的观察那个笼子，观察那个驾驶舱是如何紧紧地卡在笼子里面，尾翼和螺旋桨是如何从笼子里长长地伸出来。这要放进去恐怕要不少功夫吧。</li>
+<li>意料之中但违背常识的事件。魔术师可能提前告诉观众接下来要呈现的效果，或者观众事先对要发生的事多少有所了解，不过心中的理性认为这不可能发生。在观众抱着这种不相信、紧张、怀疑的态度时，魔术师将结果展示给大家，打消观众的疑虑，赢得观众的欢呼。最典型的比如“魔壶”，大家知道里面会变出各种饮料，但这难以置信，直到真的发生。还有大变活人，猜牌魔术等等，都是这种“事先喊出招数，然后再实现”的例子。</li>
+<li>第三种是比较独特的。观众知道会发生什么，观众也知道这是怎么发生的（即知道魔术的原理或手法），但依然在魔术师的引导以及观众的氛围中，产生一种特殊的情绪反应。</li>
+</ul>
+<p>我想更多的讨论一下最后一种。它在live中的实例只有一个，但怎么也没法放到前两类中。这就是那个著名的“好运留下来烦恼丢出去”魔术，那个在今年春晚上演过的。这个魔术最特殊的地方在于，它是一个纯数学的魔术。其中的每一步都是按照剧本设定好的，只要观众跟着每一步正确执行，结果是板上钉钉的。那两张枫叶一定会对到一起。即便我知道它的效果、知道它的原理，跟着在台下做一趟，还是感到很不错。</p>
+<p>我还记得当时的心境：流程做完了，我看着留在手里的最后两张，面朝下的半张卡片，心里清楚，现在这两张卡片应该是对上的。但魔术师还没要求翻开，我也就遵循他的导引，努力克制自己想要知道结果的心情。不翻开，也刻意不观察撕痕，配合着把这份“未知”留到最后一刻。魔术师允许之后，我慢慢把卡片翻开，但将目光移向别处。听着四周逐渐传出的惊讶声，终于下定某种决心，低下头将目光聚焦到手中的卡片上。嘴角浮现出笑容。再把它们认真地对到一起——一片绿色的枫叶。</p>
+<p>我本来觉得这会是整场演出最无趣的一个部分，到头来却成为我最有感触，印象最深的一个部分。我觉得互动性是很重要的。
+对于那些被抽中上台 / 选牌 /
+检查道具的人而言，他们可能有更印象深刻的内容，不过对于在场的其他人，这个手中发生的魔术就是离他们最近的魔术。</p>
+<p>细想的话，这魔术里面的动作也是有设计的。开头的第一件事便是将卡片全都撕成两半。这是一个具备破坏性的，不可逆的动作。做这样的动作，其实是要下一点决心的。做了这个动作，人其实就已经沉浸进去了。后面的“和旁边的人交换卡片”“将卡片丢出去”其实都是同样的道理。它们都是不可逆的动作，能给观众一种“自己真的做了什么”的实感，有助于增强互动性。</p>
+<p>至于这背后的数学原理，在春晚过后网上有很多人争相揭秘。有用举例法解释的，也有用某些群论知识证明的。而且即便不知道背后的具体原理，常识也告诉我们，这背后是设计过的，不会出错的。但到了现场其实又是一种感觉。人们的记忆是有限的。跟着一步一步做，当人把精力投入到跟随魔术师的指引捣鼓手中的卡片时，很难去记忆每一步具体都做了什么。因此现场理解其原理是几乎不可能的。而对于网上的推导，大多数人恐怕也不会完全记住推导的细节。人们总是倾向于记住一个结论然后接受它。但是呢，在接受这个结论的同时，人们或多或少会保有一些怀疑。这种将信将疑的心情可以化归到第二种情况，因此人们会感到惊喜也就不奇怪了。</p>
+<p>归根到底，人不是机器。对于机器，如果它知道某事在逻辑上是成立的，它恐怕不会在这事上留有兴趣。人即便非常清楚的知道这事能工作，但内心的角落仍然会存在“万一”的焦虑和动摇。人会倾向于接纳亲眼见到的东西。这种呈现在眼前的真实，似乎比任何华丽的推导都更有说服力，非常适合我们这种懒惰的生物。</p>
+<p>回家路上反复琢磨翻开卡片时的心情，觉得和初学编程的时候很像：面对一小段代码，知道点一下这个按钮，电脑会弹出一个黑色窗口，上面会显示一行文字，但还是抱有不确定，直到真的看见它在面前实现。这种不确定源于对内部机理的不理解，即便书上说这样能运行，但自己依然不能接受。随着认识的逐渐深入，再看到程序正确运行就少了一丝兴奋，多了一丝释然。</p>
+<p>另一方面，即便不能完全理解某个现象内部的机理，但是看得多了，也就逐渐接受了。
+其实环顾四周，我们真的了解周围的世界吗？我敲键盘，屏幕上出现字。这内部何尝没有我尚未知道的原理呢？那么，我敲键盘，屏幕上出现字，这不应该是难以解释的神奇效果吗？我怎么不觉得惊奇呢？恐怕是看得多了也就逐渐接受了吧。</p>
+<p>魔术让人在这个一成不变的世界里找回应有的惊奇。</p>
+
+<svg style="display:none" id="MJX-SVG-global-cache"><defs/></svg>
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                刘谦魔术
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                posts/10166.html
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">justaLoli</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2024-08-20 15:51</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BD%93%E9%AA%8C/">体验</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%AD%94%E6%9C%AF/">魔术</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev" rel="prev" href="/posts/1933.html" title="SSH用法备忘录">
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">SSH用法备忘录</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next" rel="next" href="/posts/32814.html" title="利用pandoc将tex转成html">
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">利用pandoc将tex转成html</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<meting-js server="netease" type="playlist" id="8068706874" fixed="true" order="random" loop="all" theme="#D6AB4A">
+</meting-js>
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+        
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

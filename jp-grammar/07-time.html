@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            时间 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#年月日星期与时刻">年、月、日、星期与时刻</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一相对年份">一、相对年份</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二具体年份年ねん">二、具体年份：～年（ねん）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三月份月がつ">三、月份：～月（がつ）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四每月日期一日至十日">四、每月日期：一日至十日</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五每月日期十一日至三十一日">五、每月日期：十一日至三十一日</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六完整日期的读法">六、完整日期的读法</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七相对日期">七、相对日期</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八星期">八、星期</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九钟点時じ">九、钟点：～時（じ）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十分钟分ふんぷん">十、分钟：～分（ふん／ぷん）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十一上午下午与时段">十一、上午、下午与时段</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十二时间词与助词に">十二、时间词与助词「に」</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#通常加に的时间">1. 通常加「に」的时间</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#通常不加に的时间">2. 通常不加「に」的时间</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十三起点与终点からまで">十三、起点与终点：～から～まで</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十四持续时间">十四、持续时间</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="年月日星期与时刻">年、月、日、星期与时刻</h1>
+<h2 id="一相对年份">一、相对年份</h2>
+<ul>
+<li>一昨年（おととし）：前年。</li>
+<li>去年（きょねん）：去年。</li>
+<li>今年（ことし）：今年。</li>
+<li>来年（らいねん）：明年。</li>
+<li>再来年（さらいねん）：后年。</li>
+<li>毎年（まいとし／まいねん）：每年。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>おととし日本へ行きました。<br>
+前年去了日本。</li>
+<li>去年、大学を卒業しました。<br>
+去年大学毕业了。</li>
+<li>今年は日本語を勉強しています。<br>
+今年在学日语。</li>
+<li>来年、日本へ留学します。<br>
+明年去日本留学。</li>
+<li>再来年、三十歳になります。<br>
+后年就三十岁了。</li>
+<li>毎年、家族と旅行します。<br>
+每年和家人旅行。</li>
+</ul>
+<p>这些相对年份前通常不加「に」：</p>
+<ul>
+<li>今年、北京へ行きます。<br>
+今年去北京。</li>
+<li>不说「今年に、北京へ行きます」。</li>
+</ul>
+<h2 id="二具体年份年ねん">二、具体年份：～年（ねん）</h2>
+<ul>
+<li>2000年：にせんねん</li>
+<li>2010年：にせんじゅうねん</li>
+<li>2020年：にせんにじゅうねん</li>
+<li>2026年：にせんにじゅうろくねん</li>
+<li>何年：なんねん</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>2026年は私の卒業の年です。<br>
+2026年是我毕业的年份。</li>
+<li>何年に生まれましたか。<br>
+出生在哪一年？</li>
+<li>2020年に東京へ行きました。<br>
+2020年去了东京。</li>
+</ul>
+<p>具体年份可以带「に」；相对年份「去年・今年・来年」通常不带。</p>
+<h2 id="三月份月がつ">三、月份：～月（がつ）</h2>
+<ul>
+<li>一月：いちがつ</li>
+<li>二月：にがつ</li>
+<li>三月：さんがつ</li>
+<li>四月：しがつ</li>
+<li>五月：ごがつ</li>
+<li>六月：ろくがつ</li>
+<li>七月：しちがつ</li>
+<li>八月：はちがつ</li>
+<li>九月：くがつ</li>
+<li>十月：じゅうがつ</li>
+<li>十一月：じゅういちがつ</li>
+<li>十二月：じゅうにがつ</li>
+<li>何月：なんがつ</li>
+</ul>
+<p>特别注意：四月读「しがつ」，七月读「しちがつ」，九月读「くがつ」。</p>
+<p>例句：</p>
+<ul>
+<li>私の誕生日は四月です。<br>
+我的生日在四月。</li>
+<li>九月に学校が始まります。<br>
+学校九月开学。</li>
+<li>何月に日本へ行きますか。<br>
+几月份去日本？</li>
+</ul>
+<p>比较月份和时长：</p>
+<ul>
+<li>一月（いちがつ）：一月份。</li>
+<li>一か月（いっかげつ）：一个月的时间。</li>
+</ul>
+<h2 id="四每月日期一日至十日">四、每月日期：一日至十日</h2>
+<p>以下读法既常见于日期，也可用于部分天数表达。</p>
+<ul>
+<li>一日：ついたち（日期为一号）</li>
+<li>二日：ふつか</li>
+<li>三日：みっか</li>
+<li>四日：よっか</li>
+<li>五日：いつか</li>
+<li>六日：むいか</li>
+<li>七日：なのか</li>
+<li>八日：ようか</li>
+<li>九日：ここのか</li>
+<li>十日：とおか</li>
+<li>何日：なんにち</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今日は六月一日です。<br>
+今天是六月一日。「一日」读「ついたち」。</li>
+<li>母の誕生日は三月八日です。<br>
+母亲的生日是三月八日。</li>
+<li>今月の十日に試験があります。<br>
+这个月十号有考试。</li>
+</ul>
+<p>「一日」表示“一天”时读「いちにち」：</p>
+<ul>
+<li>一日に三回、薬を飲みます。<br>
+一天吃三次药。</li>
+</ul>
+<h2 id="五每月日期十一日至三十一日">五、每月日期：十一日至三十一日</h2>
+<p>多数日期用“数字＋にち”，注意十四日、二十日、二十四日的特殊读法。</p>
+<ul>
+<li>十一日：じゅういちにち</li>
+<li>十二日：じゅうににち</li>
+<li>十三日：じゅうさんにち</li>
+<li>十四日：じゅうよっか</li>
+<li>十五日：じゅうごにち</li>
+<li>十六日：じゅうろくにち</li>
+<li>十七日：じゅうしちにち</li>
+<li>十八日：じゅうはちにち</li>
+<li>十九日：じゅうくにち</li>
+<li>二十日：はつか</li>
+<li>二十一日：にじゅういちにち</li>
+<li>二十二日：にじゅうににち</li>
+<li>二十三日：にじゅうさんにち</li>
+<li>二十四日：にじゅうよっか</li>
+<li>二十五日：にじゅうごにち</li>
+<li>二十六日：にじゅうろくにち</li>
+<li>二十七日：にじゅうしちにち</li>
+<li>二十八日：にじゅうはちにち</li>
+<li>二十九日：にじゅうくにち</li>
+<li>三十日：さんじゅうにち</li>
+<li>三十一日：さんじゅういちにち</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今日は十一月十二日です。<br>
+今天是十一月十二日。</li>
+<li>来月二十日に友達に会います。<br>
+下个月二十号见朋友。</li>
+<li>十二月三十一日は大晦日です。<br>
+十二月三十一日是除夕。</li>
+</ul>
+<h2 id="六完整日期的读法">六、完整日期的读法</h2>
+<p>顺序是“年→月→日”，也可以只说“月→日”。</p>
+<ul>
+<li>2026年11月12日：にせんにじゅうろくねん じゅういちがつ
+じゅうににち。</li>
+<li>5月3日：ごがつ みっか。</li>
+<li>10月20日：じゅうがつ はつか。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>私は2004年8月9日に生まれました。<br>
+我出生于2004年8月9日。</li>
+<li>試験は7月14日です。<br>
+考试是七月十四日。</li>
+<li>誕生日は何月何日ですか。<br>
+生日是几月几日？</li>
+</ul>
+<h2 id="七相对日期">七、相对日期</h2>
+<ul>
+<li>一昨日（おととい）：前天。</li>
+<li>昨日（きのう）：昨天。</li>
+<li>今日（きょう）：今天。</li>
+<li>明日（あした／あす）：明天。「あす」较正式，也常用于天气预报。</li>
+<li>明後日（あさって）：后天。</li>
+<li>毎日（まいにち）：每天。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>おととい友達に会いました。<br>
+前天见了朋友。</li>
+<li>昨日は雨でした。<br>
+昨天下雨了。</li>
+<li>今日は忙しいです。<br>
+今天忙。</li>
+<li>明日、図書館へ行きます。<br>
+明天去图书馆。</li>
+<li>あさって試験があります。<br>
+后天有考试。</li>
+<li>毎日日本語を勉強します。<br>
+每天学日语。</li>
+</ul>
+<p>这些相对日期前通常不加「に」。</p>
+<h2 id="八星期">八、星期</h2>
+<ul>
+<li>月曜日（げつようび）：星期一。</li>
+<li>火曜日（かようび）：星期二。</li>
+<li>水曜日（すいようび）：星期三。</li>
+<li>木曜日（もくようび）：星期四。</li>
+<li>金曜日（きんようび）：星期五。</li>
+<li>土曜日（どようび）：星期六。</li>
+<li>日曜日（にちようび）：星期日。</li>
+<li>何曜日（なんようび）：星期几。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今日は水曜日です。<br>
+今天是星期三。</li>
+<li>日曜日に友達とテニスをします。<br>
+星期日和朋友打网球。</li>
+<li>来週の月曜日に会いましょう。<br>
+下星期一见面吧。</li>
+</ul>
+<p>相关表达：</p>
+<ul>
+<li>先週（せんしゅう）：上周。</li>
+<li>今週（こんしゅう）：本周。</li>
+<li>来週（らいしゅう）：下周。</li>
+<li>毎週（まいしゅう）：每周。</li>
+</ul>
+<h2 id="九钟点時じ">九、钟点：～時（じ）</h2>
+<ul>
+<li>一時：いちじ</li>
+<li>二時：にじ</li>
+<li>三時：さんじ</li>
+<li>四時：よじ</li>
+<li>五時：ごじ</li>
+<li>六時：ろくじ</li>
+<li>七時：しちじ</li>
+<li>八時：はちじ</li>
+<li>九時：くじ</li>
+<li>十時：じゅうじ</li>
+<li>十一時：じゅういちじ</li>
+<li>十二時：じゅうにじ</li>
+<li>何時：なんじ</li>
+</ul>
+<p>四時读「よじ」，七時通常读「しちじ」，九時读「くじ」。</p>
+<p>例句：</p>
+<ul>
+<li>今、三時です。<br>
+现在三点。</li>
+<li>毎朝七時に起きます。<br>
+每天早上七点起床。</li>
+<li>学校は何時に始まりますか。<br>
+学校几点开始上课？</li>
+</ul>
+<h2 id="十分钟分ふんぷん">十、分钟：～分（ふん／ぷん）</h2>
+<ul>
+<li>一分：いっぷん</li>
+<li>二分：にふん</li>
+<li>三分：さんぷん</li>
+<li>四分：よんぷん</li>
+<li>五分：ごふん</li>
+<li>六分：ろっぷん</li>
+<li>七分：ななふん</li>
+<li>八分：はっぷん</li>
+<li>九分：きゅうふん</li>
+<li>十分：じっぷん</li>
+<li>十五分：じゅうごふん</li>
+<li>二十分：にじっぷん</li>
+<li>三十分：さんじっぷん／半（はん）</li>
+<li>何分：なんぷん</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今、八時十五分です。<br>
+现在八点十五分。</li>
+<li>九時半に会いましょう。<br>
+九点半见面吧。</li>
+<li>駅まで十分歩きます。<br>
+步行十分钟到车站。</li>
+</ul>
+<p>「十分」表示十分钟时读「じっぷん」；表示“充分”时读「じゅうぶん」，两者不要混淆。</p>
+<h2 id="十一上午下午与时段">十一、上午、下午与时段</h2>
+<ul>
+<li>午前（ごぜん）：上午。</li>
+<li>午後（ごご）：下午。</li>
+<li>朝（あさ）：早上。</li>
+<li>昼（ひる）：中午、白天。</li>
+<li>夕方（ゆうがた）：傍晚。</li>
+<li>夜（よる）：夜晚。</li>
+<li>晩（ばん）：晚上。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>午前九時に授業があります。<br>
+上午九点有课。</li>
+<li>午後三時に図書館で会います。<br>
+下午三点在图书馆见面。</li>
+<li>朝ご飯を七時に食べました。<br>
+早上七点吃了早饭。</li>
+<li>夜十一時に寝ます。<br>
+晚上十一点睡觉。</li>
+</ul>
+<h2 id="十二时间词与助词に">十二、时间词与助词「に」</h2>
+<h3 id="通常加に的时间">1. 通常加「に」的时间</h3>
+<p>具体时刻、日期、年份、星期等可以表示动作发生的明确时间。</p>
+<ul>
+<li>七時に起きます。<br>
+七点起床。</li>
+<li>三月一日に日本へ行きます。<br>
+三月一日去日本。</li>
+<li>2026年に卒業します。<br>
+2026年毕业。</li>
+<li>日曜日に休みます。<br>
+星期日休息。</li>
+</ul>
+<h3 id="通常不加に的时间">2. 通常不加「に」的时间</h3>
+<p>相对时间词和频率词一般直接作状语。</p>
+<ul>
+<li>昨日、映画を見ました。<br>
+昨天看了电影。</li>
+<li>明日、試験があります。<br>
+明天有考试。</li>
+<li>毎日勉強します。<br>
+每天学习。</li>
+<li>来年、日本へ行きます。<br>
+明年去日本。</li>
+</ul>
+<p>「今・今週・今月・今年」通常也不加「に」：</p>
+<ul>
+<li>今、勉強しています。<br>
+现在正在学习。</li>
+<li>今週は忙しいです。<br>
+本周很忙。</li>
+</ul>
+<h2 id="十三起点与终点からまで">十三、起点与终点：～から～まで</h2>
+<ul>
+<li>九時から五時まで働きます。<br>
+从九点工作到五点。</li>
+<li>月曜日から金曜日まで学校があります。<br>
+星期一到星期五有课。</li>
+<li>授業は九時からです。<br>
+课程从九点开始。</li>
+<li>図書館は五時までです。<br>
+图书馆开放到五点。</li>
+</ul>
+<p>「から」和「まで」可以一起使用，也可以只使用其中一个。</p>
+<h2 id="十四持续时间">十四、持续时间</h2>
+<p>表示动作持续多久时，时间长度直接作状语，通常不加「に」。</p>
+<ul>
+<li>毎日一時間勉強します。<br>
+每天学习一小时。</li>
+<li>昨日、八時間寝ました。<br>
+昨天睡了八小时。</li>
+<li>日本に三年いました。<br>
+在日本待了三年。</li>
+<li>駅まで三十分かかります。<br>
+到车站要花三十分钟。</li>
+</ul>
+<p>常见时长：</p>
+<ul>
+<li>一時間（いちじかん）：一小时。</li>
+<li>一時間半（いちじかんはん）：一个半小时。</li>
+<li>一週間（いっしゅうかん）：一周。</li>
+<li>一か月（いっかげつ）：一个月。</li>
+<li>一年間（いちねんかん）：一整年。</li>
+</ul>
+<p>比较：</p>
+<ul>
+<li>三時に始めます。<br>
+三点开始，「に」表示时间点。</li>
+<li>三時間勉強します。<br>
+学习三小时，持续时间不加「に」。</li>
+</ul>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#年月日星期与时刻">年、月、日、星期与时刻</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一相对年份">一、相对年份</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二具体年份年ねん">二、具体年份：～年（ねん）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三月份月がつ">三、月份：～月（がつ）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四每月日期一日至十日">四、每月日期：一日至十日</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五每月日期十一日至三十一日">五、每月日期：十一日至三十一日</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六完整日期的读法">六、完整日期的读法</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七相对日期">七、相对日期</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八星期">八、星期</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九钟点時じ">九、钟点：～時（じ）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十分钟分ふんぷん">十、分钟：～分（ふん／ぷん）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十一上午下午与时段">十一、上午、下午与时段</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十二时间词与助词に">十二、时间词与助词「に」</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#通常加に的时间">1. 通常加「に」的时间</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#通常不加に的时间">2. 通常不加「に」的时间</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十三起点与终点からまで">十三、起点与终点：～から～まで</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十四持续时间">十四、持续时间</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

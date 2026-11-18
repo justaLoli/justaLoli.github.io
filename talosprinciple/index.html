@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            塔罗斯的法则-拼图游戏 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    
+    
+
+    
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/img/avatar.webp">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Loli的杂货铺
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="" href="/">首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/archives">归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/tags">标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/categories">分类</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/about/">关于</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/links">友链</a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class="" href="/">首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/about/">关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/links">友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="page-template-container border-box">
+        
+
+        <div class="page-template-bottom border-box">
+            
+            <div class="page-content border-box keep-markdown-body">
+                
+                    <link rel="stylesheet" type="text/css" href="/css/hint.css"><script src="/js/hint-clamp.js" defer="defer"></script><script>
+    const Sigil = {
+            LINE: 0,
+            T: 1,
+            Z: 2,
+            S: 3,
+            L: 4,
+            J: 5,
+            SQUARE: 6
+        };
+    const sigils = [Sigil.LINE,Sigil.T,Sigil.Z,Sigil.S,Sigil.L,Sigil.J,Sigil.SQUARE];
+    const possibleRotations = [2,3,2,2,4,4,1];
+    const SigilDefine = [
+        [
+            [
+                [0,0,1,1,1,1],
+                [0,0,0,0,0,0],
+                [0,0,0,0,0,0],
+                [0,0,0,0,0,0]
+            ],
+            [
+                [0,0,1,0,0,0],
+                [0,0,1,0,0,0],
+                [0,0,1,0,0,0],
+                [0,0,1,0,0,0]
+            ]
+        ],
+        [
+            [[0,0,1,1,1,0],
+             [0,0,0,1,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,1,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,0,1,1,0,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,1,0,0],
+             [0,0,0,1,1,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,1,1,0,0,0],
+             [0,1,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,0,0,0],
+             [0,0,1,1,0,0],
+             [0,0,0,1,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,0,0],
+             [0,1,1,0,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,0,1,1,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,1,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,0,0],
+             [0,0,0,1,0,0],
+             [0,0,0,1,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [1,1,1,0,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,1,1,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,0,0,0],
+             [0,0,1,1,1,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,0,0],
+             [0,0,1,0,0,0],
+             [0,0,1,0,0,0],
+             [0,0,0,0,0,0]],
+            [[0,0,1,1,1,0],
+             [0,0,0,0,1,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]]
+        ],
+        [
+            [[0,0,1,1,0,0],
+             [0,0,1,1,0,0],
+             [0,0,0,0,0,0],
+             [0,0,0,0,0,0]] 
+        ]
+    ]
+    const MARKS = "#$%^&*.~?/;<>qwertyuiopasdfghjklzxcvbnm";
+    const maxMarkIndex = MARKS.length; // 注意：JS中获取长度是.length而不是.length()
+    let markIndex = 0;
+    let sigilCount = [0,0,0,0,0,0,0];
+    let line = 0;let column = 0;
+    let board = [];
+    function defineboard(){
+        board = new Array(line); // 创建line行
+        for (let i = 0; i < line; i++) {
+            board[i] = new Array(column).fill(0); // 创建column列，并填充0
+        }
+    }
+
+    // 使用createSigilPatternGridIterator来生成迭代器
+    const SIGIL_PATTERN_LINE = 4;
+    const SIGIL_PATTERN_COLUMN = 6;
+    const SIGIL_PATTERN_ANCHOR_LINE = 0;
+    const SIGIL_PATTERN_ANCHOR_COLUMN = 2;
+    function createSigilPatternGridIterator() {
+        let iterator = [];
+        for (let i = 0; i < 4; i++) {
+            for (let j = -2; j < 4; j++) {
+                iterator.push([i, j]);
+            }
+        }
+        return iterator;
+    }
+    const sigilPatternGridIterator = createSigilPatternGridIterator();
+    function GridIterateHelper(l,c){
+        let iterator = [];
+        for(let i=0;i < l;i++){
+            for(let j=0;j < c;j++){
+                iterator.push([i,j]);
+            }
+        }
+        return iterator;
+    }
+    function issigilplaceable(sigilToBePlaced, x, y, rotation) {
+        const isSingleCoordinateFailed = (i, j) => {
+            // 如果这个位置的符文不在符文形状里面，那就没必要判断了。
+            const sigil = SigilDefine[sigilToBePlaced][rotation];
+            if (!sigil[i][j + SIGIL_PATTERN_ANCHOR_COLUMN]) return 0;
+            let targetX = x + i, targetY = y + j;
+            if (targetX >= line || targetX < 0 || targetY < 0 || targetY >= column) return 1;
+            if (board[targetX][targetY]) return 1;
+            return 0;
+        };
+
+        for (let [i, j] of sigilPatternGridIterator) {
+            if (isSingleCoordinateFailed(i, j)) return 0;
+        }
+        return 1;
+    }
+    function placesigil(sigilToBePlaced,x,y,rotation){
+        const sigil = SigilDefine[sigilToBePlaced][rotation];
+        for (let [i, j] of sigilPatternGridIterator) {
+            if(!sigil[i][j + SIGIL_PATTERN_ANCHOR_COLUMN])continue;
+            let targetx = x + i, targety = y + j;
+            if (targetx < 0 || targetx >= line || targety < 0 || targety >= column) {
+                // 输出错误消息到控制台
+                console.error(`越界错误：尝试将符文放置到(${targetx}, ${targety})，超出了板的范围。`);
+                continue; // 继续执行循环，而不是退出函数
+            }
+            board[targetx][targety] = MARKS[markIndex % maxMarkIndex];
+        }
+        return 0;
+    }
+    function unplacesigil(sigilToBePlaced,x,y,rotation){
+        const sigil = SigilDefine[sigilToBePlaced][rotation];
+        for (let [i, j] of sigilPatternGridIterator){
+            if(!sigil[i][j + SIGIL_PATTERN_ANCHOR_COLUMN])continue;
+            let targetx = x + i, targety = y + j;
+            if (targetx < 0 || targetx >= line || targety < 0 || targety >= column) {
+                // 输出错误消息到控制台
+                console.error(`越界错误：尝试撤回(${targetx}, ${targety})的符文，超出了板的范围。`);
+                continue; // 继续执行循环，而不是退出函数
+            }
+            board[targetx][targety] = 0;
+        }
+
+    }
+    let dfsstep = 0;
+    function dfs() {
+        dfsstep++;
+        let emptySpotX = 0, emptySpotY = 0;
+        let hasEmptySpot = false;
+
+        for (let [i, j] of GridIterateHelper(line, column)) {
+            if (board[i][j]) continue;
+            hasEmptySpot = true;
+            emptySpotX = i;
+            emptySpotY = j;
+            break;
+        }
+
+        if (!hasEmptySpot) {
+            // 成功！
+            return 1;
+        }
+
+        for (let sigil of sigils) {
+            if (!sigilCount[sigil]) continue;
+            for (let rotation = 0; rotation < possibleRotations[sigil]; rotation++) {
+                // console.log(sigil, rotation);
+                if (issigilplaceable(sigil, emptySpotX, emptySpotY, rotation)) {
+                    placesigil(sigil, emptySpotX, emptySpotY, rotation);
+                    sigilCount[sigil] -= 1;
+                    markIndex += 1;
+                    if (dfs()) return 1;
+                    unplacesigil(sigil, emptySpotX, emptySpotY, rotation);
+                    sigilCount[sigil] += 1;
+                    markIndex -= 1;
+                }
+            }
+        }
+
+        return 0;
+    }
+    function testcase(){
+        //case 1
+        line = 6;
+        column = 8;
+        sigilCount[Sigil.LINE] = 1;
+        sigilCount[Sigil.T] = 2;
+        sigilCount[Sigil.SQUARE] = 2;
+        sigilCount[Sigil.S] = 1;
+        sigilCount[Sigil.Z] = 3;
+        sigilCount[Sigil.J] = 3;
+        sigilCount[Sigil.L] = 0;
+    }
+    function reset(){
+        markIndex = 0;
+        dfsstep = 0;
+        sigilCount = [0,0,0,0,0,0,0];
+    }
+    function getinput(){
+        line = parseInt(document.getElementById("lineInput").value);
+        column = parseInt(document.getElementById("columnInput").value);
+        sigilCount[Sigil.LINE] = parseInt(document.getElementById("lineSigilCount").value);
+        sigilCount[Sigil.T] = parseInt(document.getElementById("tSigilCount").value);
+        sigilCount[Sigil.SQUARE] = parseInt(document.getElementById("squareSigilCount").value);
+        sigilCount[Sigil.S] = parseInt(document.getElementById("sSigilCount").value);
+        sigilCount[Sigil.Z] = parseInt(document.getElementById("zSigilCount").value);
+        sigilCount[Sigil.J] = parseInt(document.getElementById("jSigilCount").value);
+        sigilCount[Sigil.L] = parseInt(document.getElementById("lSigilCount").value);
+
+    }
+    function calleverything(){
+        reset();
+        // testcase();
+        getinput();
+        defineboard();
+        let res = dfs();
+        console.log(res);
+        let displayText = ""
+        if(res){
+            displayText += "success in " + dfsstep + " steps<br>";
+        }
+        else{
+            displayText += "failed after " + dfsstep + " steps<br>";
+        }
+        for (let i = 0; i < line; i++) {
+            for (var j = 0; j < column; j++) {
+                displayText += board[i][j];
+                if(j!=column-1)displayText+=' ';
+            }
+            displayText += "<br>";
+        }
+        document.getElementById("displayArray").innerHTML = displayText;
+    }
+
+
+
+</script>
+<h1 id="talos-principle-sigil-puzzle-solver">Talos Principle Sigil
+Puzzle Solver</h1>
+<style>.numberinput{color:var(--text-color-3);background:0 0;border:.1rem solid var(--border-color);border-radius:.3rem;-moz-appearance:textfield}</style>
+<center>
+<h3>
+Please input the size of the board
+</h3>
+<label for="lineInput">board line</label><br>
+<input class="numberinput" type="number" id="lineInput"> <br>
+<label for="columnInput">board column</label><br>
+<input class="numberinput" type="number" id="columnInput"> <br>
+<h3>
+Please input the sigil count of each sigil
+</h3>
+<p><label for="lineSigilCount">LINE sigil</label><br>
+<input class="numberinput" type="number" id="lineSigilCount"> <br>
+<label for="tSigilCount">T sigil</label><br>
+<input class="numberinput" type="number" id="tSigilCount"> <br>
+<label for="squareSigilCount">SQUARE sigil</label><br>
+<input class="numberinput" type="number" id="squareSigilCount"> <br>
+<label for="sSigilCount">S sigil</label><br>
+<input class="numberinput" type="number" id="sSigilCount"> <br>
+<label for="zSigilCount">Z sigil</label><br>
+<input class="numberinput" type="number" id="zSigilCount"> <br>
+<label for="jSigilCount">J sigil</label><br>
+<input class="numberinput" type="number" id="jSigilCount"> <br>
+<label for="lSigilCount">L sigil</label><br>
+<input class="numberinput" type="number" id="lSigilCount"> <br>
+<button onclick="calleverything()">Submit</button></p>
+<h3>
+Output will be shown below
+</h3>
+
+<pre><code id="displayArray">please input the required information first.</code></pre>
+</center>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs/></svg>
+                
+            </div>
+            
+            
+
+            
+        </div>
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+    
+
+    
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+</main>
+
+
+
+<meting-js server="netease" type="playlist" id="8068706874" fixed="true" order="random" loop="all" theme="#D6AB4A">
+</meting-js>
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

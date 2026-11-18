@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            助词 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#格助词与常见相关助词">格助词与常见相关助词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一助词的作用">一、助词的作用</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二は主题与对比">二、は：主题与对比</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#提示主题">1. 提示主题</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示对比">2. 表示对比</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三が主语焦点与描述对象">三、が：主语、焦点与描述对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示动作或状态的主体">1. 表示动作或状态的主体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#疑问词作主语时用が">2. 疑问词作主语时用が</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#存在句中的存在主体">3. 存在句中的存在主体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#喜好能力需要等的对象">4. 喜好、能力、需要等的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#がします感觉到">5. ～がします：感觉到……</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#は和が的基本区别">6. は和が的基本区别</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四を动作对象离开点和经过处">四、を：动作对象、离开点和经过处</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#他动词的宾语">1. 他动词的宾语</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示离开的地点">2. 表示离开的地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示经过移动的场所">3. 表示经过、移动的场所</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五に时间点存在地到达点与对象">五、に：时间点、存在地、到达点与对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#动作发生的具体时间">1. 动作发生的具体时间</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#人事物的存在地点">2. 人、事物的存在地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#移动动作的到达点归着点">3. 移动动作的到达点、归着点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#动作涉及的对象">4. 动作涉及的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#进入放置等动作的归着点">5. 进入、放置等动作的归着点</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六へ移动方向">六、へ：移动方向</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七で地点方式材料数量和原因">七、で：地点、方式、材料、数量和原因</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#动作发生的地点">1. 动作发生的地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#工具方式手段交通工具语言">2. 工具、方式、手段、交通工具、语言</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#材料">3. 材料</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#数量状态或范围">4. 数量、状态或范围</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示原因理由">5. 表示原因、理由</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八と并列共同动作与引用">八、と：并列、共同动作与引用</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#完全并列和">1. 完全并列：“和”</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#共同动作的对象">2. 共同动作的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#比较的对象">3. 比较的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#引用说的想的内容">4. 引用说的、想的内容</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九の名词之间的关系与名词替代">九、の：名词之间的关系与名词替代</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#连接名词">1. 连接名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#用の代替后面省略的名词">2. 用「の」代替后面省略的名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十から起点来源">十、から：起点、来源</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#时间或空间的起点">1. 时间或空间的起点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#物品或信息的来源">2. 物品或信息的来源</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十一まで终点">十一、まで：终点</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十二より比较基准与起点">十二、より：比较基准与起点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#比较比">1. 比较：“比……”</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#较正式的起点从">2. 较正式的起点：“从……”</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十三も也都">十三、も：也、都</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#へも方向也连都">へも：方向＋“也／连……都”</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十四やなど不完全列举">十四、や・など：不完全列举</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十五とかとか口语列举">十五、とか・とか：口语列举</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十六原因理由から与ので">十六、原因、理由：から与ので</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#接续">1. 接续</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#から的例句">2. から的例句</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#ので的例句">3. ので的例句</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十七句末的かねよ">十七、句末的か・ね・よ</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#か疑问">1. か：疑问</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#ね确认寻求同感">2. ね：确认、寻求同感</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#よ告知提醒">3. よ：告知、提醒</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="格助词与常见相关助词">格助词与常见相关助词</h1>
+<h2 id="一助词的作用">一、助词的作用</h2>
+<p>助词接在体言或句子成分之后，用来表示词与词之间的关系，或增添语气。</p>
+<ul>
+<li><strong>格助词</strong>：が、を、に、へ、で、と、から、まで、より、の等，主要表示主语、宾语、地点、方向等关系。</li>
+<li><strong>接续助词</strong>：から、ので、が、て等，可以连接前后分句。</li>
+<li><strong>副助词／提示助词</strong>：は、も、だけ、など等，表示主题、同类、限定、列举等。</li>
+<li><strong>终助词</strong>：か、ね、よ等，放在句末表示疑问、确认、提醒等语气。</li>
+</ul>
+<p>学习助词时，不要只背中文意思，要把它和前面的名词、后面的动词一起记。</p>
+<h2 id="二は主题与对比">二、は：主题与对比</h2>
+<p>作助词时读「わ（wa）」。</p>
+<h3 id="提示主题">1. 提示主题</h3>
+<p>「Nは」提出句子要谈论的对象，后面对它进行说明。</p>
+<ul>
+<li>私は学生です。<br>
+我是学生。</li>
+<li>これは日本語の本です。<br>
+这是日语书。</li>
+<li>今日は忙しいです。<br>
+今天很忙。</li>
+</ul>
+<h3 id="表示对比">2. 表示对比</h3>
+<ul>
+<li>肉は食べますが、魚は食べません。<br>
+肉吃，但鱼不吃。</li>
+<li>平日は忙しいです。週末は暇です。<br>
+工作日忙，周末有空。</li>
+<li>この本は読みました。あの本はまだです。<br>
+这本书读了，那本还没读。</li>
+</ul>
+<h2 id="三が主语焦点与描述对象">三、が：主语、焦点与描述对象</h2>
+<h3 id="表示动作或状态的主体">1. 表示动作或状态的主体</h3>
+<ul>
+<li>雨が降ります。<br>
+下雨。</li>
+<li>友達が来ました。<br>
+朋友来了。</li>
+<li>電車が遅れました。<br>
+电车晚点了。</li>
+</ul>
+<h3 id="疑问词作主语时用が">2. 疑问词作主语时用が</h3>
+<ul>
+<li>誰が来ますか。<br>
+谁来？</li>
+<li>どれがあなたの本ですか。<br>
+哪本是你的书？</li>
+</ul>
+<p>回答时也用が突出焦点：</p>
+<ul>
+<li>李さんが来ます。<br>
+小李来。</li>
+<li>これが私の本です。<br>
+这本是我的书。</li>
+</ul>
+<h3 id="存在句中的存在主体">3. 存在句中的存在主体</h3>
+<ul>
+<li>机の上に本があります。<br>
+桌上有书。</li>
+<li>公園に子どもがいます。<br>
+公园里有孩子。</li>
+</ul>
+<h3 id="喜好能力需要等的对象">4. 喜好、能力、需要等的对象</h3>
+<p>常见搭配有「好きです・嫌いです・欲しいです・できます・分かります・必要です」。</p>
+<ul>
+<li>私は猫が好きです。<br>
+我喜欢猫。</li>
+<li>新しい辞書が欲しいです。<br>
+我想要新词典。</li>
+<li>李さんは日本語ができます。<br>
+小李会日语。</li>
+<li>この漢字が分かりません。<br>
+我不懂这个汉字。</li>
+<li>時間が必要です。<br>
+需要时间。</li>
+</ul>
+<h3 id="がします感觉到">5. ～がします：感觉到……</h3>
+<ul>
+<li>いいにおいがします。<br>
+闻到一股香味。</li>
+<li>変な音がします。<br>
+听到奇怪的声音。</li>
+</ul>
+<h3 id="は和が的基本区别">6. は和が的基本区别</h3>
+<ul>
+<li>私は学生です。<br>
+我是学生。把“我”作为话题来介绍。</li>
+<li>私が学生です。<br>
+我是学生／学生是我。强调“不是别人，而是我”，常用于回答“谁是学生”。</li>
+</ul>
+<h2 id="四を动作对象离开点和经过处">四、を：动作对象、离开点和经过处</h2>
+<p>作助词时通常读「お（o）」。</p>
+<h3 id="他动词的宾语">1. 他动词的宾语</h3>
+<ul>
+<li>本を読みます。<br>
+读书。</li>
+<li>ご飯を食べます。<br>
+吃饭。</li>
+<li>日本語を勉強します。<br>
+学日语。</li>
+<li>音楽を聞きます。<br>
+听音乐。</li>
+</ul>
+<h3 id="表示离开的地点">2. 表示离开的地点</h3>
+<ul>
+<li>七時に家を出ます。<br>
+七点离家。</li>
+<li>大学を卒業しました。<br>
+大学毕业了。</li>
+<li>バスを降ります。<br>
+下公交车。</li>
+</ul>
+<h3 id="表示经过移动的场所">3. 表示经过、移动的场所</h3>
+<ul>
+<li>公園を散歩します。<br>
+在公园散步。</li>
+<li>橋を渡ります。<br>
+过桥。</li>
+<li>空を飛びます。<br>
+在天空飞。</li>
+</ul>
+<p>比较「で」和「を」：</p>
+<ul>
+<li>公園で遊びます。<br>
+在公园玩。「で」表示动作发生地点。</li>
+<li>公園を散歩します。<br>
+在公园散步。「を」突出沿公园这一范围移动。</li>
+</ul>
+<h2 id="五に时间点存在地到达点与对象">五、に：时间点、存在地、到达点与对象</h2>
+<h3 id="动作发生的具体时间">1. 动作发生的具体时间</h3>
+<ul>
+<li>七時に起きます。<br>
+七点起床。</li>
+<li>三月一日に日本へ行きます。<br>
+三月一日去日本。</li>
+</ul>
+<p>相对时间词「今日・明日・毎日」前通常不加に。</p>
+<h3 id="人事物的存在地点">2. 人、事物的存在地点</h3>
+<ul>
+<li>本は机の上にあります。<br>
+书在桌上。</li>
+<li>猫は部屋にいます。<br>
+猫在房间里。</li>
+</ul>
+<h3 id="移动动作的到达点归着点">3. 移动动作的到达点、归着点</h3>
+<ul>
+<li>日本に着きます。<br>
+到达日本。</li>
+<li>家に帰ります。<br>
+回家。</li>
+<li>学校に来ます。<br>
+来学校。</li>
+</ul>
+<h3 id="动作涉及的对象">4. 动作涉及的对象</h3>
+<ul>
+<li>友達に会います。<br>
+见朋友。</li>
+<li>先生に聞きます。<br>
+问老师。</li>
+<li>母に電話します。<br>
+给母亲打电话。</li>
+<li>友達に本をあげます。<br>
+给朋友书。</li>
+</ul>
+<h3 id="进入放置等动作的归着点">5. 进入、放置等动作的归着点</h3>
+<ul>
+<li>教室に入ります。<br>
+进教室。</li>
+<li>椅子に座ります。<br>
+坐椅子。</li>
+<li>本を机の上に置きます。<br>
+把书放在桌上。</li>
+</ul>
+<h2 id="六へ移动方向">六、へ：移动方向</h2>
+<p>作助词时读「え（e）」。</p>
+<ul>
+<li>日本へ行きます。<br>
+去日本。</li>
+<li>家へ帰ります。<br>
+回家。</li>
+<li>どこへ行きますか。<br>
+去哪里？</li>
+</ul>
+<p>「に」强调到达点，「へ」强调方向，很多移动句中两者都可以：</p>
+<ul>
+<li>学校に行きます。<br>
+去学校，强调到达学校。</li>
+<li>学校へ行きます。<br>
+往学校去，强调方向。</li>
+</ul>
+<p>但存在地点只能用に：</p>
+<ul>
+<li>学校に学生がいます。<br>
+学校里有学生。</li>
+<li>不能说「学校へ学生がいます」。</li>
+</ul>
+<h2 id="七で地点方式材料数量和原因">七、で：地点、方式、材料、数量和原因</h2>
+<h3 id="动作发生的地点">1. 动作发生的地点</h3>
+<ul>
+<li>図書館で勉強します。<br>
+在图书馆学习。</li>
+<li>食堂で昼ご飯を食べます。<br>
+在食堂吃午饭。</li>
+<li>公園で写真を撮ります。<br>
+在公园拍照。</li>
+</ul>
+<h3 id="工具方式手段交通工具语言">2.
+工具、方式、手段、交通工具、语言</h3>
+<ul>
+<li>箸でご飯を食べます。<br>
+用筷子吃饭。</li>
+<li>バスで学校へ行きます。<br>
+坐公交车去学校。</li>
+<li>日本語で話します。<br>
+用日语说。</li>
+<li>メールで連絡します。<br>
+通过邮件联系。</li>
+<li>現金で払います。<br>
+用现金支付。</li>
+</ul>
+<h3 id="材料">3. 材料</h3>
+<ul>
+<li>木で机を作ります。<br>
+用木头做桌子。</li>
+<li>この服は綿でできています。<br>
+这件衣服是棉制的。</li>
+</ul>
+<h3 id="数量状态或范围">4. 数量、状态或范围</h3>
+<p>「数量或状态＋で」表示以该数量、人数或状态进行动作；也可以表示合计数量或所处范围。</p>
+<ul>
+<li>一人で日本へ行きます。<br>
+一个人去日本。</li>
+<li>二人でこの仕事をします。<br>
+两个人做这项工作。</li>
+<li>みんなで写真を撮ります。<br>
+大家一起拍照。</li>
+<li>家族で旅行します。<br>
+全家人一起旅行。</li>
+<li>全部で五百円です。<br>
+总共五百日元。</li>
+<li>クラスで李さんが一番背が高いです。<br>
+班里小李个子最高。</li>
+</ul>
+<p>「一人で」表示独自进行动作，「みんなで」表示大家一起进行动作，二者都描述动作的方式或状态。</p>
+<h3 id="表示原因理由">5. 表示原因、理由</h3>
+<p>「名词＋で」可以表示引起某种结果的原因，常用于疾病、事故、天气、事务等客观原因。</p>
+<ul>
+<li>風邪で学校を休みました。<br>
+因为感冒，向学校请了假。</li>
+<li>事故で電車が遅れました。<br>
+因为事故，电车晚点了。</li>
+<li>用事で行けません。<br>
+因为有事，去不了。</li>
+<li>病気で入院しました。<br>
+因病住院了。</li>
+<li>大雨で試合が中止になりました。<br>
+因为大雨，比赛取消了。</li>
+</ul>
+<p>表示原因时，「で」前面通常是名词；如果要连接一个完整的原因分句，则常用「から」或「ので」。</p>
+<ul>
+<li>風邪をひいたから、学校を休みました。<br>
+因为感冒了，所以向学校请了假。</li>
+</ul>
+<p>比较「に」和「で」：</p>
+<ul>
+<li>部屋に本があります。<br>
+房间里有书。に表示存在地点。</li>
+<li>部屋で本を読みます。<br>
+在房间里读书。で表示动作地点。</li>
+</ul>
+<h2 id="八と并列共同动作与引用">八、と：并列、共同动作与引用</h2>
+<h3 id="完全并列和">1. 完全并列：“和”</h3>
+<p>列举明确、全部的项目。</p>
+<ul>
+<li>机の上に本とノートがあります。<br>
+桌上有书和笔记本。</li>
+<li>土曜日と日曜日は休みです。<br>
+星期六和星期日休息。</li>
+</ul>
+<h3 id="共同动作的对象">2. 共同动作的对象</h3>
+<ul>
+<li>友達と映画を見ます。<br>
+和朋友看电影。</li>
+<li>家族と旅行します。<br>
+和家人旅行。</li>
+<li>李さんと会いました。<br>
+和小李见了面。</li>
+</ul>
+<h3 id="比较的对象">3. 比较的对象</h3>
+<ul>
+<li>私の答えは田中さんのと同じです。<br>
+我的答案和田中的一样。</li>
+<li>この本はあの本と違います。<br>
+这本书和那本不同。</li>
+</ul>
+<h3 id="引用说的想的内容">4. 引用说的、想的内容</h3>
+<ul>
+<li>田中さんは「来ます」と言いました。<br>
+田中说“来”。</li>
+<li>明日は雨だと思います。<br>
+我想明天会下雨。</li>
+<li>「こんにちは」と言います。<br>
+说“你好”。</li>
+</ul>
+<h2 id="九の名词之间的关系与名词替代">九、の：名词之间的关系与名词替代</h2>
+<h3 id="连接名词">1. 连接名词</h3>
+<ul>
+<li>私の本：我的书。</li>
+<li>日本の新聞：日本的报纸。</li>
+<li>日本語の先生：日语老师。</li>
+<li>友達の李さん：我的朋友小李。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>これは父の時計です。<br>
+这是父亲的钟／表。</li>
+<li>田中さんは日本語の先生です。<br>
+田中是日语老师。</li>
+</ul>
+<h3 id="用の代替后面省略的名词">2. 用「の」代替后面省略的名词</h3>
+<ul>
+<li>この鞄は私のです。<br>
+这个包是我的。</li>
+<li>赤いのをください。<br>
+请给我红色的那个。</li>
+</ul>
+<h2 id="十から起点来源">十、から：起点、来源</h2>
+<h3 id="时间或空间的起点">1. 时间或空间的起点</h3>
+<ul>
+<li>授業は九時からです。<br>
+课从九点开始。</li>
+<li>駅から家まで歩きます。<br>
+从车站走到家。</li>
+<li>北京から来ました。<br>
+从北京来。</li>
+</ul>
+<h3 id="物品或信息的来源">2. 物品或信息的来源</h3>
+<ul>
+<li>友達から本をもらいました。<br>
+从朋友那里得到了书。</li>
+<li>先生から聞きました。<br>
+从老师那里听说的。</li>
+<li>母からメールが来ました。<br>
+母亲发来了邮件。</li>
+</ul>
+<p>表示原因、理由的から见后文。</p>
+<h2 id="十一まで终点">十一、まで：终点</h2>
+<ul>
+<li>九時から五時まで働きます。<br>
+从九点工作到五点。</li>
+<li>駅まで歩きます。<br>
+走到车站。</li>
+<li>図書館は十時までです。<br>
+图书馆开放到十点。</li>
+<li>明日までにレポートを出します。<br>
+在明天之前提交报告。</li>
+</ul>
+<p>「まで」和「までに」不同：</p>
+<ul>
+<li>五時まで働きます。<br>
+工作到五点，动作持续至终点。</li>
+<li>五時までに帰ります。<br>
+五点之前回去，五点是完成动作的期限。</li>
+</ul>
+<h2 id="十二より比较基准与起点">十二、より：比较基准与起点</h2>
+<h3 id="比较比">1. 比较：“比……”</h3>
+<ul>
+<li>東京は大阪より人口が多いです。<br>
+东京比大阪人口多。</li>
+<li>電車はバスより速いです。<br>
+电车比公交车快。</li>
+</ul>
+<p>常用结构「N1よりN2のほうが～」：</p>
+<ul>
+<li>バスより電車のほうが速いです。<br>
+比起公交车，电车更快。</li>
+</ul>
+<h3 id="较正式的起点从">2. 较正式的起点：“从……”</h3>
+<ul>
+<li>学校より帰りました。<br>
+从学校回来，语气较书面。</li>
+<li>午後一時より会議を始めます。<br>
+下午一点开始开会。</li>
+</ul>
+<p>日常口语表示起点通常用「から」。</p>
+<h2 id="十三も也都">十三、も：也、都</h2>
+<p>「も」常代替が・を，或与に・へ・で等叠加使用。</p>
+<ul>
+<li>私は学生です。李さんも学生です。<br>
+我是学生，小李也是学生。</li>
+<li>本も読みます。新聞も読みます。<br>
+书也读，报纸也读。</li>
+<li>日本へも行きたいです。<br>
+也想去日本。</li>
+<li>図書館にも本があります。<br>
+图书馆里也有书。</li>
+</ul>
+<h3 id="へも方向也连都">へも：方向＋“也／连……都”</h3>
+<p>「へも」是格助词「へ」后接副助词「も」。も跟在へ后，不替代へ；へ表示方向，も表示“也、连……都”。「へも」既可用于肯定，也可用于否定。</p>
+<ul>
+<li>京都へも行きます。<br>
+也去京都。</li>
+<li>父は大阪へも行きました。<br>
+父亲也去了大阪。</li>
+<li>彼は忙しくて、故郷へも帰りませんでした。<br>
+他忙得连故乡也没回。</li>
+<li>その日、忙しかったので、鎌倉へも行きませんでした。<br>
+那天因为忙，连镰仓也没去。</li>
+</ul>
+<p>与疑问词和否定呼应：</p>
+<ul>
+<li>何も食べませんでした。<br>
+什么都没吃。</li>
+<li>誰もいません。<br>
+谁都不在／一个人也没有。</li>
+<li>どこへも行きませんでした。<br>
+哪里都没去。</li>
+</ul>
+<p>「Nへも＋否定」一般只表示“连N也没去”；只有疑问词「どこへも／どちらへも＋否定」等形式，才表示“哪里都不去”的全面否定。</p>
+<h2 id="十四やなど不完全列举">十四、や・など：不完全列举</h2>
+<p>「N1やN2など」表示“……和……等等”，暗示还有未列出的项目。</p>
+<ul>
+<li>机の上に本やノートなどがあります。<br>
+桌上有书、笔记本等。</li>
+<li>果物屋でりんごやバナナを買いました。<br>
+在水果店买了苹果、香蕉等。</li>
+<li>休みの日は音楽を聞くなどして過ごします。<br>
+休息日通过听音乐等方式度过。</li>
+</ul>
+<p>「と」常把列举对象说全，「や」则只是举例：</p>
+<ul>
+<li>本とノートがあります。<br>
+有书和笔记本。</li>
+<li>本やノートがあります。<br>
+有书、笔记本等，可能还有其他物品。</li>
+</ul>
+<h2 id="十五とかとか口语列举">十五、とか・とか：口语列举</h2>
+<p>「N1とかN2とか」语气随意，常与「など」一起使用。</p>
+<ul>
+<li>本とか新聞とかを読みます。<br>
+读读书、报纸什么的。</li>
+<li>休みの日は掃除とか洗濯とかをします。<br>
+休息日做做扫除、洗洗衣服之类的事。</li>
+<li>りんごとかバナナなどを買いました。<br>
+买了苹果、香蕉等。</li>
+</ul>
+<p>正式文章中更常用「や・など」。</p>
+<h2 id="十六原因理由から与ので">十六、原因、理由：から与ので</h2>
+<p>这两个词连接前后分句，表示“因为……所以……”。から较直接、主观，ので较柔和、客观。</p>
+<h3 id="接续">1. 接续</h3>
+<p>动词和一类形容词用普通形直接接：</p>
+<ul>
+<li>行く＋から／ので</li>
+<li>行った＋から／ので</li>
+<li>忙しい＋から／ので</li>
+<li>忙しくない＋から／ので</li>
+</ul>
+<p>名词和二类形容词的非过去肯定，要分别接「だから」和「なので」：</p>
+<ul>
+<li>学生＋だから／なので</li>
+<li>静か＋だから／なので</li>
+</ul>
+<p>过去或否定仍按普通形变化：</p>
+<ul>
+<li>学生だった＋から／ので</li>
+<li>学生ではない＋から／ので</li>
+<li>静かだった＋から／ので</li>
+<li>静かではない＋から／ので</li>
+</ul>
+<h3 id="から的例句">2. から的例句</h3>
+<ul>
+<li>忙しいから、行きません。<br>
+因为忙，所以不去。</li>
+<li>昨日は雨だったから、出かけませんでした。<br>
+因为昨天下雨，所以没出门。</li>
+<li>学生だから、お金がありません。<br>
+因为是学生，所以没钱。</li>
+<li>静かだから、よく眠れます。<br>
+因为安静，所以睡得好。</li>
+</ul>
+<h3 id="ので的例句">3. ので的例句</h3>
+<ul>
+<li>忙しいので、行きません。<br>
+因为忙，所以不去。</li>
+<li>雨が降っているので、傘を持っていきます。<br>
+因为在下雨，所以带伞去。</li>
+<li>学生なので、お金がありません。<br>
+因为是学生，所以没钱。</li>
+<li>静かなので、よく眠れます。<br>
+因为安静，所以睡得好。</li>
+</ul>
+<blockquote>
+<p>「なので」中的な是名词和二类形容词接ので时需要的形式，不要写成「学生ので」「静かので」。</p>
+</blockquote>
+<h2 id="十七句末的かねよ">十七、句末的か・ね・よ</h2>
+<h3 id="か疑问">1. か：疑问</h3>
+<ul>
+<li>これはあなたの本ですか。<br>
+这是你的书吗？</li>
+<li>何時に起きますか。<br>
+几点起床？</li>
+</ul>
+<h3 id="ね确认寻求同感">2. ね：确认、寻求同感</h3>
+<ul>
+<li>いい天気ですね。<br>
+天气真好啊。</li>
+<li>これはあなたの本ですね。<br>
+这是你的书吧。</li>
+</ul>
+<h3 id="よ告知提醒">3. よ：告知、提醒</h3>
+<ul>
+<li>この本は面白いですよ。<br>
+这本书很有趣哦。</li>
+<li>もう九時ですよ。<br>
+已经九点了哦。</li>
+</ul>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#格助词与常见相关助词">格助词与常见相关助词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一助词的作用">一、助词的作用</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二は主题与对比">二、は：主题与对比</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#提示主题">1. 提示主题</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示对比">2. 表示对比</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三が主语焦点与描述对象">三、が：主语、焦点与描述对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示动作或状态的主体">1. 表示动作或状态的主体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#疑问词作主语时用が">2. 疑问词作主语时用が</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#存在句中的存在主体">3. 存在句中的存在主体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#喜好能力需要等的对象">4. 喜好、能力、需要等的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#がします感觉到">5. ～がします：感觉到……</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#は和が的基本区别">6. は和が的基本区别</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四を动作对象离开点和经过处">四、を：动作对象、离开点和经过处</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#他动词的宾语">1. 他动词的宾语</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示离开的地点">2. 表示离开的地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示经过移动的场所">3. 表示经过、移动的场所</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五に时间点存在地到达点与对象">五、に：时间点、存在地、到达点与对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#动作发生的具体时间">1. 动作发生的具体时间</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#人事物的存在地点">2. 人、事物的存在地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#移动动作的到达点归着点">3. 移动动作的到达点、归着点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#动作涉及的对象">4. 动作涉及的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#进入放置等动作的归着点">5. 进入、放置等动作的归着点</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六へ移动方向">六、へ：移动方向</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七で地点方式材料数量和原因">七、で：地点、方式、材料、数量和原因</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#动作发生的地点">1. 动作发生的地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#工具方式手段交通工具语言">2. 工具、方式、手段、交通工具、语言</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#材料">3. 材料</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#数量状态或范围">4. 数量、状态或范围</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#表示原因理由">5. 表示原因、理由</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八と并列共同动作与引用">八、と：并列、共同动作与引用</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#完全并列和">1. 完全并列：“和”</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#共同动作的对象">2. 共同动作的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#比较的对象">3. 比较的对象</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#引用说的想的内容">4. 引用说的、想的内容</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九の名词之间的关系与名词替代">九、の：名词之间的关系与名词替代</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#连接名词">1. 连接名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#用の代替后面省略的名词">2. 用「の」代替后面省略的名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十から起点来源">十、から：起点、来源</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#时间或空间的起点">1. 时间或空间的起点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#物品或信息的来源">2. 物品或信息的来源</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十一まで终点">十一、まで：终点</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十二より比较基准与起点">十二、より：比较基准与起点</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#比较比">1. 比较：“比……”</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#较正式的起点从">2. 较正式的起点：“从……”</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十三も也都">十三、も：也、都</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#へも方向也连都">へも：方向＋“也／连……都”</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十四やなど不完全列举">十四、や・など：不完全列举</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十五とかとか口语列举">十五、とか・とか：口语列举</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十六原因理由から与ので">十六、原因、理由：から与ので</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#接续">1. 接续</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#から的例句">2. から的例句</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#ので的例句">3. ので的例句</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十七句末的かねよ">十七、句末的か・ね・よ</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#か疑问">1. か：疑问</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#ね确认寻求同感">2. ね：确认、寻求同感</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#よ告知提醒">3. よ：告知、提醒</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

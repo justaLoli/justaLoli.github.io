@@ -1,0 +1,4406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            词汇表 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#初级日语第一册词汇表">《初级日语（第一册）》词汇表</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第5課">第5課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第6課">第6課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-1">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-1">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第7課">第7課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-2">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-2">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第8課">第8課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-3">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-3">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第9課">第9課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-4">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-4">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第10課">第10課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-5">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-5">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第11課">第11課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-6">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-6">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第12課">第12課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-7">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-7">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第13課">第13課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-8">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-8">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第14課">第14課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-9">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-9">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第15課">第15課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-10">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-10">新しい言葉 II</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="初级日语第一册词汇表">《初级日语（第一册）》词汇表</h1>
+<p>本节整理《初级日语（第一册）》第 5—15
+课「新しい言葉」词汇，每课按原书 I、II 分组排列。</p>
+<p>表中依次列出读音或词形、原书括注、声调、词性和中文释义。</p>
+<h2 id="第5課">第5課</h2>
+<h3 id="新しい言葉-i">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ほんぶん</strong></td>
+<td>本文</td>
+<td>1</td>
+<td>名</td>
+<td>正文，课文</td>
+</tr>
+<tr>
+<td><strong>かいわ</strong></td>
+<td>会話</td>
+<td>0</td>
+<td>名</td>
+<td>会话</td>
+</tr>
+<tr>
+<td><strong>ま</strong></td>
+<td>馬</td>
+<td>1</td>
+<td>名</td>
+<td>（姓）马</td>
+</tr>
+<tr>
+<td><strong>せんせい</strong></td>
+<td>先生</td>
+<td>3</td>
+<td>名</td>
+<td>老师，先生</td>
+</tr>
+<tr>
+<td><strong>みなさん</strong></td>
+<td>皆さん</td>
+<td>2</td>
+<td>代</td>
+<td>大家，各位</td>
+</tr>
+<tr>
+<td><strong>がくせい</strong></td>
+<td>学生</td>
+<td>0</td>
+<td>名</td>
+<td>学生</td>
+</tr>
+<tr>
+<td><strong>こちら</strong></td>
+<td>—</td>
+<td>0</td>
+<td>代</td>
+<td>这位；这边</td>
+</tr>
+<tr>
+<td><strong>～さん</strong></td>
+<td>—</td>
+<td>—</td>
+<td>后缀</td>
+<td>（略表尊敬）小～，老～，～先生，～女士</td>
+</tr>
+<tr>
+<td><strong>ちゅうごく</strong></td>
+<td>中国</td>
+<td>1</td>
+<td>名</td>
+<td>中国</td>
+</tr>
+<tr>
+<td><strong>かた</strong></td>
+<td>方</td>
+<td>2</td>
+<td>名</td>
+<td>（敬语）位，人</td>
+</tr>
+<tr>
+<td><strong>トム</strong></td>
+<td>Tom</td>
+<td>1</td>
+<td>名</td>
+<td>（人名）汤姆</td>
+</tr>
+<tr>
+<td><strong>アメリカじん</strong></td>
+<td>America人</td>
+<td>4</td>
+<td>名</td>
+<td>美国人</td>
+</tr>
+<tr>
+<td><strong>しゅっしん</strong></td>
+<td>出身</td>
+<td>0</td>
+<td>名</td>
+<td>出生地；籍贯</td>
+</tr>
+<tr>
+<td><strong>どこ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>代</td>
+<td>哪里，何处</td>
+</tr>
+<tr>
+<td><strong>ペキン</strong></td>
+<td>北京</td>
+<td>1</td>
+<td>名</td>
+<td>北京</td>
+</tr>
+<tr>
+<td><strong>マリー</strong></td>
+<td>Mary</td>
+<td>1</td>
+<td>名</td>
+<td>（人名）玛丽</td>
+</tr>
+<tr>
+<td><strong>インドじん</strong></td>
+<td>India人</td>
+<td>3</td>
+<td>名</td>
+<td>印度人</td>
+</tr>
+<tr>
+<td><strong>わたし</strong></td>
+<td>私</td>
+<td>0</td>
+<td>代</td>
+<td>我</td>
+</tr>
+<tr>
+<td><strong>しゅみ</strong></td>
+<td>趣味</td>
+<td>1</td>
+<td>名</td>
+<td>兴趣，爱好</td>
+</tr>
+<tr>
+<td><strong>カラオケ</strong></td>
+<td>—</td>
+<td>0</td>
+<td>名</td>
+<td>卡拉OK</td>
+</tr>
+<tr>
+<td><strong>なん</strong></td>
+<td>何</td>
+<td>1</td>
+<td>代</td>
+<td>什么</td>
+</tr>
+<tr>
+<td><strong>あ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>（吃惊或突然想起什么）呀，哎呀</td>
+</tr>
+<tr>
+<td><strong>せき</strong></td>
+<td>席</td>
+<td>1</td>
+<td>名</td>
+<td>座位，座席</td>
+</tr>
+<tr>
+<td><strong>そこ</strong></td>
+<td>—</td>
+<td>0</td>
+<td>代</td>
+<td>那里，那边</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii">新しい言葉 II</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>これ</strong></td>
+<td>—</td>
+<td>0</td>
+<td>代</td>
+<td>这，这个</td>
+</tr>
+<tr>
+<td><strong>きむら</strong></td>
+<td>木村</td>
+<td>0</td>
+<td>名</td>
+<td>（姓）木村</td>
+</tr>
+<tr>
+<td><strong>かぞく</strong></td>
+<td>家族</td>
+<td>1</td>
+<td>名</td>
+<td>家属，家人</td>
+</tr>
+<tr>
+<td><strong>しゃしん</strong></td>
+<td>写真</td>
+<td>0</td>
+<td>名</td>
+<td>照片，相片</td>
+</tr>
+<tr>
+<td><strong>はい</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>（用于肯定回答）是，是的</td>
+</tr>
+<tr>
+<td><strong>そう</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>那样，那么</td>
+</tr>
+<tr>
+<td><strong>よにんかぞく</strong></td>
+<td>4人家族</td>
+<td>4</td>
+<td>名</td>
+<td>四口之家</td>
+</tr>
+<tr>
+<td><strong>さんにんかぞく</strong></td>
+<td>3人家族</td>
+<td>5</td>
+<td>名</td>
+<td>三口之家</td>
+</tr>
+<tr>
+<td><strong>ちち</strong></td>
+<td>父</td>
+<td>2・1</td>
+<td>名</td>
+<td>（我）爸爸，家父</td>
+</tr>
+<tr>
+<td><strong>はは</strong></td>
+<td>母</td>
+<td>1</td>
+<td>名</td>
+<td>（我）妈妈，家母</td>
+</tr>
+<tr>
+<td><strong>いしゃ</strong></td>
+<td>医者</td>
+<td>0</td>
+<td>名</td>
+<td>大夫，医生</td>
+</tr>
+<tr>
+<td><strong>こうこう</strong></td>
+<td>高校</td>
+<td>0</td>
+<td>名</td>
+<td>高中</td>
+</tr>
+<tr>
+<td><strong>きょうし</strong></td>
+<td>教師</td>
+<td>1</td>
+<td>名</td>
+<td>教师</td>
+</tr>
+<tr>
+<td><strong>ぼく</strong></td>
+<td>僕</td>
+<td>1・0</td>
+<td>代</td>
+<td>（男子在同辈或晚辈前的自称）我</td>
+</tr>
+<tr>
+<td><strong>かいしゃいん</strong></td>
+<td>会社員</td>
+<td>3</td>
+<td>名</td>
+<td>公司职员</td>
+</tr>
+<tr>
+<td><strong>しゅふ</strong></td>
+<td>主婦</td>
+<td>1</td>
+<td>名</td>
+<td>主妇，家庭妇女</td>
+</tr>
+<tr>
+<td><strong>いもうと</strong></td>
+<td>妹</td>
+<td>4</td>
+<td>名</td>
+<td>妹妹，自己的妹妹</td>
+</tr>
+<tr>
+<td><strong>だいがくせい</strong></td>
+<td>大学生</td>
+<td>3・4</td>
+<td>名</td>
+<td>大学生</td>
+</tr>
+<tr>
+<td><strong>いいえ</strong></td>
+<td>—</td>
+<td>3</td>
+<td>感</td>
+<td>（用于否定回答）不，不是</td>
+</tr>
+<tr>
+<td><strong>にねんせい</strong></td>
+<td>2年生</td>
+<td>2</td>
+<td>名</td>
+<td>二年级的学生</td>
+</tr>
+<tr>
+<td><strong>じゃあ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>接</td>
+<td>那么</td>
+</tr>
+<tr>
+<td><strong>この</strong></td>
+<td>—</td>
+<td>0</td>
+<td>连体</td>
+<td>这，这个</td>
+</tr>
+<tr>
+<td><strong>いぬ</strong></td>
+<td>犬</td>
+<td>2</td>
+<td>名</td>
+<td>狗</td>
+</tr>
+<tr>
+<td><strong>ああ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>啊，呀</td>
+</tr>
+<tr>
+<td><strong>じだい</strong></td>
+<td>時代</td>
+<td>0</td>
+<td>名</td>
+<td>时代，时期</td>
+</tr>
+<tr>
+<td><strong>こいびと</strong></td>
+<td>恋人</td>
+<td>0</td>
+<td>名</td>
+<td>恋人，（恋爱）对象</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第6課">第6課</h2>
+<h3 id="新しい言葉-i-1">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>あき</strong></td>
+<td>秋</td>
+<td>1</td>
+<td>名</td>
+<td>秋天，秋季</td>
+</tr>
+<tr>
+<td><strong>いい</strong></td>
+<td>—</td>
+<td>1</td>
+<td>形1</td>
+<td>好，良好</td>
+</tr>
+<tr>
+<td><strong>きせつ</strong></td>
+<td>季節</td>
+<td>2・1</td>
+<td>名</td>
+<td>季节</td>
+</tr>
+<tr>
+<td><strong>お</strong></td>
+<td>御</td>
+<td>—</td>
+<td>前缀</td>
+<td>表示郑重、尊敬、亲切等</td>
+</tr>
+<tr>
+<td><strong>てんき</strong></td>
+<td>天気</td>
+<td>1</td>
+<td>名</td>
+<td>天气，气候</td>
+</tr>
+<tr>
+<td><strong>そら</strong></td>
+<td>空</td>
+<td>1</td>
+<td>名</td>
+<td>天，天空</td>
+</tr>
+<tr>
+<td><strong>あおい</strong></td>
+<td>青い</td>
+<td>2</td>
+<td>形1</td>
+<td>蓝，青，绿</td>
+</tr>
+<tr>
+<td><strong>たかい</strong></td>
+<td>高い</td>
+<td>2</td>
+<td>形1</td>
+<td>高；贵</td>
+</tr>
+<tr>
+<td><strong>どう</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>怎么，怎样，如何</td>
+</tr>
+<tr>
+<td><strong>すずしい</strong></td>
+<td>涼しい</td>
+<td>3</td>
+<td>形1</td>
+<td>凉快，凉爽</td>
+</tr>
+<tr>
+<td><strong>きもち</strong></td>
+<td>気持ち</td>
+<td>0</td>
+<td>名</td>
+<td>心情，情绪</td>
+</tr>
+<tr>
+<td><strong>気持ちがいい</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>心情好</td>
+</tr>
+<tr>
+<td><strong>それ</strong></td>
+<td>—</td>
+<td>0</td>
+<td>代</td>
+<td>那，那个</td>
+</tr>
+<tr>
+<td><strong>なつ</strong></td>
+<td>夏</td>
+<td>2</td>
+<td>名</td>
+<td>夏天，夏季</td>
+</tr>
+<tr>
+<td><strong>あつい</strong></td>
+<td>暑い</td>
+<td>2</td>
+<td>形1</td>
+<td>（天气）热</td>
+</tr>
+<tr>
+<td><strong>とうきょう</strong></td>
+<td>東京</td>
+<td>0</td>
+<td>名</td>
+<td>（地名）东京</td>
+</tr>
+<tr>
+<td><strong>むしあつい</strong></td>
+<td>蒸し暑い</td>
+<td>4</td>
+<td>形1</td>
+<td>闷热</td>
+</tr>
+<tr>
+<td><strong>ふゆ</strong></td>
+<td>冬</td>
+<td>2</td>
+<td>名</td>
+<td>冬天，冬季</td>
+</tr>
+<tr>
+<td><strong>さむい</strong></td>
+<td>寒い</td>
+<td>2</td>
+<td>形1</td>
+<td>冷，寒冷</td>
+</tr>
+<tr>
+<td><strong>かぜ</strong></td>
+<td>風</td>
+<td>0</td>
+<td>名</td>
+<td>风</td>
+</tr>
+<tr>
+<td><strong>つめたい</strong></td>
+<td>冷たい</td>
+<td>0</td>
+<td>形1</td>
+<td>冷，凉</td>
+</tr>
+<tr>
+<td><strong>つよい</strong></td>
+<td>強い</td>
+<td>2・0</td>
+<td>形1</td>
+<td>强，强烈</td>
+</tr>
+<tr>
+<td><strong>でも</strong></td>
+<td>—</td>
+<td>1</td>
+<td>接</td>
+<td>不过，可是</td>
+</tr>
+<tr>
+<td><strong>きょねん</strong></td>
+<td>去年</td>
+<td>1</td>
+<td>名</td>
+<td>去年</td>
+</tr>
+<tr>
+<td><strong>だんとう</strong></td>
+<td>暖冬</td>
+<td>0</td>
+<td>名</td>
+<td>暖冬，暖和的冬天</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-1">新しい言葉 II</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>きのう</strong></td>
+<td>昨日</td>
+<td>2</td>
+<td>名</td>
+<td>昨天</td>
+</tr>
+<tr>
+<td><strong>きょう</strong></td>
+<td>今日</td>
+<td>1</td>
+<td>名</td>
+<td>今日，今天</td>
+</tr>
+<tr>
+<td><strong>きぶん</strong></td>
+<td>気分</td>
+<td>1</td>
+<td>名</td>
+<td>情绪，心情</td>
+</tr>
+<tr>
+<td><strong>さとう</strong></td>
+<td>佐藤</td>
+<td>1</td>
+<td>名</td>
+<td>（姓）佐藤</td>
+</tr>
+<tr>
+<td><strong>スポーツ</strong></td>
+<td>sports</td>
+<td>2</td>
+<td>名</td>
+<td>体育，运动</td>
+</tr>
+<tr>
+<td><strong>これから</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副</td>
+<td>今后，从现在起</td>
+</tr>
+<tr>
+<td><strong>します</strong></td>
+<td>—</td>
+<td>0</td>
+<td>他动</td>
+<td>（“する”的敬体）做，干</td>
+</tr>
+<tr>
+<td><strong>べんきょう</strong></td>
+<td>勉強</td>
+<td>0</td>
+<td>名・他动3</td>
+<td>学习，用功</td>
+</tr>
+<tr>
+<td><strong>あした</strong></td>
+<td>明日</td>
+<td>3</td>
+<td>名</td>
+<td>明天</td>
+</tr>
+<tr>
+<td><strong>いちげんめ</strong></td>
+<td>1限目</td>
+<td>0・2</td>
+<td>名</td>
+<td>第一节课</td>
+</tr>
+<tr>
+<td><strong>にほんご</strong></td>
+<td>日本語</td>
+<td>0</td>
+<td>名</td>
+<td>日语，日文</td>
+</tr>
+<tr>
+<td><strong>テスト</strong></td>
+<td>test</td>
+<td>1</td>
+<td>名</td>
+<td>考试，测验</td>
+</tr>
+<tr>
+<td><strong>むずかしい</strong></td>
+<td>難しい</td>
+<td>4・0</td>
+<td>形1</td>
+<td>难，费解</td>
+</tr>
+<tr>
+<td><strong>はつおん</strong></td>
+<td>発音</td>
+<td>0</td>
+<td>名</td>
+<td>发音</td>
+</tr>
+<tr>
+<td><strong>あまり</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副</td>
+<td>（后接否定）不太，不很</td>
+</tr>
+<tr>
+<td><strong>じょし</strong></td>
+<td>助詞</td>
+<td>0</td>
+<td>名</td>
+<td>助词</td>
+</tr>
+<tr>
+<td><strong>つかいかた</strong></td>
+<td>使い方</td>
+<td>0</td>
+<td>名</td>
+<td>用法，使用方法</td>
+</tr>
+<tr>
+<td><strong>おもしろい</strong></td>
+<td>—</td>
+<td>4</td>
+<td>形1</td>
+<td>有趣，有意思</td>
+</tr>
+<tr>
+<td><strong>がんばります</strong></td>
+<td>頑張ります</td>
+<td>5</td>
+<td>自动</td>
+<td>（“がんばる”的敬体）努力</td>
+</tr>
+<tr>
+<td><strong>えらい</strong></td>
+<td>偉い</td>
+<td>2</td>
+<td>形1</td>
+<td>了不起</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第7課">第7課</h2>
+<h3 id="新しい言葉-i-2">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ここ</strong></td>
+<td>—</td>
+<td>0</td>
+<td>代</td>
+<td>这，这里</td>
+</tr>
+<tr>
+<td><strong>もみじ</strong></td>
+<td>紅葉</td>
+<td>1</td>
+<td>名</td>
+<td>红叶，枫叶</td>
+</tr>
+<tr>
+<td><strong>ゆうめい</strong></td>
+<td>有名</td>
+<td>0</td>
+<td>名・形2</td>
+<td>有名，著名</td>
+</tr>
+<tr>
+<td><strong>こきょう</strong></td>
+<td>故郷</td>
+<td>1</td>
+<td>名</td>
+<td>故乡，老家</td>
+</tr>
+<tr>
+<td><strong>こうがい</strong></td>
+<td>郊外</td>
+<td>1</td>
+<td>名</td>
+<td>郊外，郊区</td>
+</tr>
+<tr>
+<td><strong>しずか</strong></td>
+<td>静か</td>
+<td>1</td>
+<td>形2</td>
+<td>安静，寂静</td>
+</tr>
+<tr>
+<td><strong>ところ</strong></td>
+<td>所</td>
+<td>3・0</td>
+<td>名</td>
+<td>地方，地点，场所</td>
+</tr>
+<tr>
+<td><strong>わあ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>哇，哎呀</td>
+</tr>
+<tr>
+<td><strong>きれい</strong></td>
+<td>奇麗</td>
+<td>1</td>
+<td>形2</td>
+<td>漂亮；干净</td>
+</tr>
+<tr>
+<td><strong>ええ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>（用于肯定，答应）嗯，唉</td>
+</tr>
+<tr>
+<td><strong>ひと</strong></td>
+<td>人</td>
+<td>0・2</td>
+<td>名</td>
+<td>人</td>
+</tr>
+<tr>
+<td><strong>おおい</strong></td>
+<td>多い</td>
+<td>1・2</td>
+<td>形1</td>
+<td>多，许多</td>
+</tr>
+<tr>
+<td><strong>いつも</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>总是，经常；平日，往常</td>
+</tr>
+<tr>
+<td><strong>こんなに</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副</td>
+<td>这样，这么</td>
+</tr>
+<tr>
+<td><strong>にぎやか</strong></td>
+<td>賑やか</td>
+<td>2</td>
+<td>形2</td>
+<td>热闹，繁华</td>
+</tr>
+<tr>
+<td><strong>いぜん</strong></td>
+<td>以前</td>
+<td>1</td>
+<td>名</td>
+<td>以前，以往</td>
+</tr>
+<tr>
+<td><strong>こうつう</strong></td>
+<td>交通</td>
+<td>0</td>
+<td>名</td>
+<td>交通</td>
+</tr>
+<tr>
+<td><strong>べんり</strong></td>
+<td>便利</td>
+<td>1</td>
+<td>名・形2</td>
+<td>便利，方便</td>
+</tr>
+<tr>
+<td><strong>こども</strong></td>
+<td>子ども</td>
+<td>0</td>
+<td>名</td>
+<td>儿童，小孩儿</td>
+</tr>
+<tr>
+<td><strong>とき</strong></td>
+<td>時</td>
+<td>2</td>
+<td>名</td>
+<td>时期</td>
+</tr>
+<tr>
+<td><strong>とかい</strong></td>
+<td>都会</td>
+<td>0</td>
+<td>名</td>
+<td>都市，城市</td>
+</tr>
+<tr>
+<td><strong>すき</strong></td>
+<td>好き</td>
+<td>2</td>
+<td>形2</td>
+<td>喜欢</td>
+</tr>
+<tr>
+<td><strong>いま</strong></td>
+<td>今</td>
+<td>1</td>
+<td>副・名</td>
+<td>现在</td>
+</tr>
+<tr>
+<td><strong>いちご</strong></td>
+<td>苺</td>
+<td>0</td>
+<td>名</td>
+<td>草莓</td>
+</tr>
+<tr>
+<td><strong>さんち</strong></td>
+<td>産地</td>
+<td>1</td>
+<td>名</td>
+<td>产地</td>
+</tr>
+<tr>
+<td><strong>だいすき</strong></td>
+<td>大好き</td>
+<td>1</td>
+<td>形2</td>
+<td>非常喜爱，特别喜欢</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-2">新しい言葉 II</h3>
+<table>
+<colgroup>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+</colgroup>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>さわやか</strong></td>
+<td>爽やか</td>
+<td>2</td>
+<td>形2</td>
+<td>清爽，爽快</td>
+</tr>
+<tr>
+<td><strong>きらい</strong></td>
+<td>嫌い</td>
+<td>0</td>
+<td>形2</td>
+<td>讨厌，不喜欢</td>
+</tr>
+<tr>
+<td><strong>にほん</strong></td>
+<td>日本</td>
+<td>2</td>
+<td>名</td>
+<td>日本</td>
+</tr>
+<tr>
+<td><strong>いなか</strong></td>
+<td>田舎</td>
+<td>0</td>
+<td>名</td>
+<td>乡下，农村</td>
+</tr>
+<tr>
+<td><strong>はじめて</strong></td>
+<td>初めて</td>
+<td>2</td>
+<td>名・副</td>
+<td>初次，第一次</td>
+</tr>
+<tr>
+<td><strong>とても</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副</td>
+<td>非常，很</td>
+</tr>
+<tr>
+<td><strong>たのしい</strong></td>
+<td>楽しい</td>
+<td>3</td>
+<td>形1</td>
+<td>愉快，快乐</td>
+</tr>
+<tr>
+<td><strong>ほら</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>喂，瞧</td>
+</tr>
+<tr>
+<td><strong>やま</strong></td>
+<td>山</td>
+<td>2</td>
+<td>名</td>
+<td>山</td>
+</tr>
+<tr>
+<td><strong>うえ</strong></td>
+<td>上</td>
+<td>2</td>
+<td>名</td>
+<td>上，上面</td>
+</tr>
+<tr>
+<td><strong>みごと</strong></td>
+<td>見事</td>
+<td>1</td>
+<td>形2</td>
+<td>漂亮；精彩，出色</td>
+</tr>
+<tr>
+<td><strong>いろ</strong></td>
+<td>色</td>
+<td>2</td>
+<td>名</td>
+<td>颜色，色彩</td>
+</tr>
+<tr>
+<td><strong>あざやか</strong></td>
+<td>鮮やか</td>
+<td>2</td>
+<td>形2</td>
+<td>鲜明，鲜艳</td>
+</tr>
+<tr>
+<td><strong>あのう</strong></td>
+<td>—</td>
+<td>0</td>
+<td>感</td>
+<td>请问，喂，哎，嗯</td>
+</tr>
+<tr>
+<td><strong>あの</strong></td>
+<td>—</td>
+<td>0</td>
+<td>连体</td>
+<td>那个</td>
+</tr>
+<tr>
+<td><strong>かわ</strong></td>
+<td>川</td>
+<td>2</td>
+<td>名</td>
+<td>河，河流</td>
+</tr>
+<tr>
+<td><strong>あれ</strong></td>
+<td>—</td>
+<td>0</td>
+<td>代</td>
+<td>那个</td>
+</tr>
+<tr>
+<td><strong>ちくまがわ</strong></td>
+<td>千曲川</td>
+<td>3</td>
+<td>名</td>
+<td>（流经日本长野县东北部的一条河流）千曲川</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第8課">第8課</h2>
+<h3 id="新しい言葉-i-3">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ほんぶ</strong></td>
+<td>本部</td>
+<td>1</td>
+<td>名</td>
+<td>主校区，本部</td>
+</tr>
+<tr>
+<td><strong>キャンパス</strong></td>
+<td>campus</td>
+<td>1</td>
+<td>名</td>
+<td>（大学）校园</td>
+</tr>
+<tr>
+<td><strong>がくぶ</strong></td>
+<td>学部</td>
+<td>0・1</td>
+<td>名</td>
+<td>院，系，学院</td>
+</tr>
+<tr>
+<td><strong>いくつ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>代</td>
+<td>几个；几岁</td>
+</tr>
+<tr>
+<td><strong>よっつ</strong></td>
+<td>4つ</td>
+<td>0</td>
+<td>数</td>
+<td>四个</td>
+</tr>
+<tr>
+<td><strong>ある</strong></td>
+<td>在る・有る</td>
+<td>1</td>
+<td>自动1</td>
+<td>（物品）有，在</td>
+</tr>
+<tr>
+<td><strong>こくさいこうりゅう</strong></td>
+<td>国際交流</td>
+<td>5</td>
+<td>名</td>
+<td>国际交流</td>
+</tr>
+<tr>
+<td><strong>センター</strong></td>
+<td>center</td>
+<td>1</td>
+<td>名</td>
+<td>中心（机构）</td>
+</tr>
+<tr>
+<td><strong>だいがく</strong></td>
+<td>大学</td>
+<td>0</td>
+<td>名</td>
+<td>大学</td>
+</tr>
+<tr>
+<td><strong>えき</strong></td>
+<td>駅</td>
+<td>1</td>
+<td>名</td>
+<td>火车站，车站</td>
+</tr>
+<tr>
+<td><strong>ちかい</strong></td>
+<td>近い</td>
+<td>2</td>
+<td>形1</td>
+<td>近的</td>
+</tr>
+<tr>
+<td><strong>～ふん</strong></td>
+<td>分</td>
+<td>—</td>
+<td>量</td>
+<td>（时间单位）～分钟；～分</td>
+</tr>
+<tr>
+<td><strong>きょういくがくぶ</strong></td>
+<td>教育学部</td>
+<td>5</td>
+<td>名</td>
+<td>教育系</td>
+</tr>
+<tr>
+<td><strong>ほか</strong></td>
+<td>外</td>
+<td>0</td>
+<td>名</td>
+<td>别的，另外，其他</td>
+</tr>
+<tr>
+<td><strong>じんぶんがくぶ</strong></td>
+<td>人文学部</td>
+<td>5</td>
+<td>名</td>
+<td>人文系</td>
+</tr>
+<tr>
+<td><strong>こくさいがくぶ</strong></td>
+<td>国際学部</td>
+<td>5</td>
+<td>名</td>
+<td>国际系</td>
+</tr>
+<tr>
+<td><strong>こうがくぶ</strong></td>
+<td>工学部</td>
+<td>3・4</td>
+<td>名</td>
+<td>工学系</td>
+</tr>
+<tr>
+<td><strong>どのぐらい</strong></td>
+<td>—</td>
+<td>0・1</td>
+<td>词组</td>
+<td>多少</td>
+</tr>
+<tr>
+<td><strong>～めい</strong></td>
+<td>名</td>
+<td>—</td>
+<td>量</td>
+<td>～名，～人</td>
+</tr>
+<tr>
+<td><strong>ところで</strong></td>
+<td>—</td>
+<td>3</td>
+<td>接</td>
+<td>（用于转换话题）可是</td>
+</tr>
+<tr>
+<td><strong>あそこ</strong></td>
+<td>—</td>
+<td>0</td>
+<td>代</td>
+<td>那里，那边</td>
+</tr>
+<tr>
+<td><strong>あたらしい</strong></td>
+<td>新しい</td>
+<td>4</td>
+<td>形1</td>
+<td>新的</td>
+</tr>
+<tr>
+<td><strong>たてもの</strong></td>
+<td>建物</td>
+<td>2・3</td>
+<td>名</td>
+<td>房屋，建筑物</td>
+</tr>
+<tr>
+<td><strong>わかる</strong></td>
+<td>分かる</td>
+<td>2</td>
+<td>自动1</td>
+<td>知道，理解</td>
+</tr>
+<tr>
+<td><strong>分かりました</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>（我）明白了，知道了</td>
+</tr>
+<tr>
+<td><strong>あら</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>唉呀，哎哟</td>
+</tr>
+<tr>
+<td><strong>いけ</strong></td>
+<td>池</td>
+<td>2</td>
+<td>名</td>
+<td>（水）池，池塘</td>
+</tr>
+<tr>
+<td><strong>こい</strong></td>
+<td>鯉</td>
+<td>1</td>
+<td>名</td>
+<td>鲤鱼</td>
+</tr>
+<tr>
+<td><strong>いる</strong></td>
+<td>居る</td>
+<td>0</td>
+<td>自动2</td>
+<td>（人或动物）有，在</td>
+</tr>
+<tr>
+<td><strong>たくさん</strong></td>
+<td>—</td>
+<td>0・3</td>
+<td>副</td>
+<td>许多，很多</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-3">新しい言葉 II</h3>
+<table>
+<colgroup>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+</colgroup>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>てんいん</strong></td>
+<td>店員</td>
+<td>0</td>
+<td>名</td>
+<td>店员</td>
+</tr>
+<tr>
+<td><strong>ふたり</strong></td>
+<td>2人</td>
+<td>0</td>
+<td>名</td>
+<td>两人</td>
+</tr>
+<tr>
+<td><strong>せいきょう</strong></td>
+<td>生協</td>
+<td>0</td>
+<td>名</td>
+<td>（“生活協同組合”的简称）消费合作社（这里特指大学里面向加入这个组织的学生和老师的商店）</td>
+</tr>
+<tr>
+<td><strong>なに</strong></td>
+<td>何</td>
+<td>1</td>
+<td>代</td>
+<td>什么</td>
+</tr>
+<tr>
+<td><strong>ほん</strong></td>
+<td>本</td>
+<td>1</td>
+<td>名</td>
+<td>书</td>
+</tr>
+<tr>
+<td><strong>ぶんぼうぐ</strong></td>
+<td>文房具</td>
+<td>3</td>
+<td>名</td>
+<td>文具</td>
+</tr>
+<tr>
+<td><strong>いろいろ</strong></td>
+<td>色々</td>
+<td>0</td>
+<td>名・形2・副</td>
+<td>各种各样，各式各样，种种</td>
+</tr>
+<tr>
+<td><strong>おかし</strong></td>
+<td>お菓子</td>
+<td>2</td>
+<td>名</td>
+<td>点心</td>
+</tr>
+<tr>
+<td><strong>ジュース</strong></td>
+<td>juice</td>
+<td>1</td>
+<td>名</td>
+<td>果汁饮料</td>
+</tr>
+<tr>
+<td><strong>ばいてん</strong></td>
+<td>売店</td>
+<td>0</td>
+<td>名</td>
+<td>小卖部，小卖店</td>
+</tr>
+<tr>
+<td><strong>すくない</strong></td>
+<td>少ない</td>
+<td>3</td>
+<td>形1</td>
+<td>少，不多</td>
+</tr>
+<tr>
+<td><strong>ボールペン</strong></td>
+<td>ball-point pen</td>
+<td>0</td>
+<td>名</td>
+<td>圆珠笔</td>
+</tr>
+<tr>
+<td><strong>～ほん</strong></td>
+<td>本</td>
+<td>—</td>
+<td>量</td>
+<td>（表示细长物的数量单位）～支，～根</td>
+</tr>
+<tr>
+<td><strong>～えん</strong></td>
+<td>円</td>
+<td>—</td>
+<td>量</td>
+<td>～日元</td>
+</tr>
+<tr>
+<td><strong>やすい</strong></td>
+<td>安い</td>
+<td>2</td>
+<td>形1</td>
+<td>便宜，低廉</td>
+</tr>
+<tr>
+<td><strong>しなもの</strong></td>
+<td>品物</td>
+<td>0</td>
+<td>名</td>
+<td>商品，货物，东西</td>
+</tr>
+<tr>
+<td><strong>たいてい</strong></td>
+<td>大抵</td>
+<td>0</td>
+<td>名・副</td>
+<td>大体上，差不多</td>
+</tr>
+<tr>
+<td><strong>みせ</strong></td>
+<td>店</td>
+<td>2</td>
+<td>名</td>
+<td>商店</td>
+</tr>
+<tr>
+<td><strong>よろしい</strong></td>
+<td>宜しい</td>
+<td>0・3</td>
+<td>形1</td>
+<td>行，好，可以</td>
+</tr>
+<tr>
+<td><strong>けっこう</strong></td>
+<td>結構</td>
+<td>1</td>
+<td>形2・副</td>
+<td>足够，可以</td>
+</tr>
+<tr>
+<td><strong>なにか</strong></td>
+<td>何か</td>
+<td>1</td>
+<td>代</td>
+<td>（表示不确定的事物）什么，某种</td>
+</tr>
+<tr>
+<td><strong>ひつよう</strong></td>
+<td>必要</td>
+<td>0</td>
+<td>名・形2</td>
+<td>必要，必需</td>
+</tr>
+<tr>
+<td><strong>もの</strong></td>
+<td>—</td>
+<td>2</td>
+<td>名</td>
+<td>物，东西</td>
+</tr>
+<tr>
+<td><strong>もう</strong></td>
+<td>—</td>
+<td>1・0</td>
+<td>副</td>
+<td>已经</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第9課">第9課</h2>
+<h3 id="新しい言葉-i-4">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>いく</strong></td>
+<td>行く</td>
+<td>0</td>
+<td>自动1</td>
+<td>去，走</td>
+</tr>
+<tr>
+<td><strong>でんしゃ</strong></td>
+<td>電車</td>
+<td>0・1</td>
+<td>名</td>
+<td>电车</td>
+</tr>
+<tr>
+<td><strong>くる</strong></td>
+<td>来る</td>
+<td>1</td>
+<td>自动3</td>
+<td>来，到来</td>
+</tr>
+<tr>
+<td><strong>じゅぎょう</strong></td>
+<td>授業</td>
+<td>1</td>
+<td>名・自动3</td>
+<td>课；授课，上课</td>
+</tr>
+<tr>
+<td><strong>～かい</strong></td>
+<td>階</td>
+<td>—</td>
+<td>量</td>
+<td>～层（楼）</td>
+</tr>
+<tr>
+<td><strong>おおきい</strong></td>
+<td>大きい</td>
+<td>3</td>
+<td>形1</td>
+<td>大，巨大</td>
+</tr>
+<tr>
+<td><strong>きょうしつ</strong></td>
+<td>教室</td>
+<td>0</td>
+<td>名</td>
+<td>教室</td>
+</tr>
+<tr>
+<td><strong>おたく</strong></td>
+<td>お宅</td>
+<td>0</td>
+<td>名</td>
+<td>（敬语）您家，府上</td>
+</tr>
+<tr>
+<td><strong>とおい</strong></td>
+<td>遠い</td>
+<td>0</td>
+<td>形1</td>
+<td>（距离）远</td>
+</tr>
+<tr>
+<td><strong>いえ</strong></td>
+<td>家</td>
+<td>2</td>
+<td>名</td>
+<td>家，家庭</td>
+</tr>
+<tr>
+<td><strong>じてんしゃ</strong></td>
+<td>自転車</td>
+<td>2・0</td>
+<td>名</td>
+<td>自行车</td>
+</tr>
+<tr>
+<td><strong>よく</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>常常，好好地</td>
+</tr>
+<tr>
+<td><strong>りよう</strong></td>
+<td>利用</td>
+<td>0</td>
+<td>名・他动3</td>
+<td>利用，使用</td>
+</tr>
+<tr>
+<td><strong>きんようび</strong></td>
+<td>金曜日</td>
+<td>3</td>
+<td>名</td>
+<td>星期五</td>
+</tr>
+<tr>
+<td><strong>ごご</strong></td>
+<td>午後</td>
+<td>1</td>
+<td>名</td>
+<td>午后，下午</td>
+</tr>
+<tr>
+<td><strong>こうえんかい</strong></td>
+<td>講演会</td>
+<td>3</td>
+<td>名</td>
+<td>讲演会，报告会</td>
+</tr>
+<tr>
+<td><strong>なんじ</strong></td>
+<td>何時</td>
+<td>1</td>
+<td>名</td>
+<td>几点</td>
+</tr>
+<tr>
+<td><strong>はじまる</strong></td>
+<td>始まる</td>
+<td>0</td>
+<td>自动1</td>
+<td>开始</td>
+</tr>
+<tr>
+<td><strong>～じ</strong></td>
+<td>時</td>
+<td>—</td>
+<td>量</td>
+<td>～点，点钟</td>
+</tr>
+<tr>
+<td><strong>～じはん</strong></td>
+<td>時半</td>
+<td>—</td>
+<td>量</td>
+<td>～点半</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-4">新しい言葉 II</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>とる</strong></td>
+<td>撮る</td>
+<td>1</td>
+<td>他动1</td>
+<td>摄影，照相</td>
+</tr>
+<tr>
+<td><strong>写真を撮る</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>拍照片</td>
+</tr>
+<tr>
+<td><strong>しばらく</strong></td>
+<td>暫く</td>
+<td>2</td>
+<td>副</td>
+<td>许久，好久</td>
+</tr>
+<tr>
+<td><strong>にちようび</strong></td>
+<td>日曜日</td>
+<td>3</td>
+<td>名</td>
+<td>星期天，礼拜天</td>
+</tr>
+<tr>
+<td><strong>どうきゅうせい</strong></td>
+<td>同級生</td>
+<td>3</td>
+<td>名</td>
+<td>同班同学；同年级同学</td>
+</tr>
+<tr>
+<td><strong>～たち</strong></td>
+<td>達</td>
+<td>—</td>
+<td>后缀</td>
+<td>们，等</td>
+</tr>
+<tr>
+<td><strong>あらしやま</strong></td>
+<td>嵐山</td>
+<td>0</td>
+<td>名</td>
+<td>（位于日本京都市西部的一座山）岚山</td>
+</tr>
+<tr>
+<td><strong>けしき</strong></td>
+<td>景色</td>
+<td>1</td>
+<td>名</td>
+<td>景色</td>
+</tr>
+<tr>
+<td><strong>おおぜい</strong></td>
+<td>大勢</td>
+<td>0</td>
+<td>副・名</td>
+<td>大批，众多（的人）</td>
+</tr>
+<tr>
+<td><strong>しゅうおんらい</strong></td>
+<td>周恩来</td>
+<td>3</td>
+<td>名</td>
+<td>（人名）周恩来</td>
+</tr>
+<tr>
+<td><strong>し</strong></td>
+<td>詩</td>
+<td>0</td>
+<td>名</td>
+<td>诗，诗歌</td>
+</tr>
+<tr>
+<td><strong>きねんひ</strong></td>
+<td>記念碑</td>
+<td>2</td>
+<td>名</td>
+<td>纪念碑</td>
+</tr>
+<tr>
+<td><strong>みる</strong></td>
+<td>見る</td>
+<td>1</td>
+<td>他动2</td>
+<td>看，瞧</td>
+</tr>
+<tr>
+<td><strong>きねん</strong></td>
+<td>記念</td>
+<td>0</td>
+<td>名・他动3</td>
+<td>纪念</td>
+</tr>
+<tr>
+<td><strong>さつえい</strong></td>
+<td>撮影</td>
+<td>0</td>
+<td>名・他动3</td>
+<td>摄影</td>
+</tr>
+<tr>
+<td><strong>きねんさつえい</strong></td>
+<td>記念撮影</td>
+<td>4</td>
+<td>词组</td>
+<td>合影留念</td>
+</tr>
+<tr>
+<td><strong>ちゅうしょく</strong></td>
+<td>昼食</td>
+<td>0</td>
+<td>名</td>
+<td>午饭，午餐</td>
+</tr>
+<tr>
+<td><strong>とる</strong></td>
+<td>取る</td>
+<td>1</td>
+<td>他动1</td>
+<td>吃（饭）</td>
+</tr>
+<tr>
+<td><strong>昼食を取る</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>吃午饭</td>
+</tr>
+<tr>
+<td><strong>ちかく</strong></td>
+<td>近く</td>
+<td>2・1</td>
+<td>名</td>
+<td>附近，近处</td>
+</tr>
+<tr>
+<td><strong>ちいさな</strong></td>
+<td>小さな</td>
+<td>1</td>
+<td>连体</td>
+<td>小的</td>
+</tr>
+<tr>
+<td><strong>たべる</strong></td>
+<td>食べる</td>
+<td>2</td>
+<td>他动2</td>
+<td>吃，喝</td>
+</tr>
+<tr>
+<td><strong>すこし</strong></td>
+<td>少し</td>
+<td>2</td>
+<td>副</td>
+<td>稍许，一点</td>
+</tr>
+<tr>
+<td><strong>おいしい</strong></td>
+<td>—</td>
+<td>0・3</td>
+<td>形1</td>
+<td>好吃，味美</td>
+</tr>
+<tr>
+<td><strong>よい</strong></td>
+<td>良い</td>
+<td>1</td>
+<td>形1</td>
+<td>好，良好</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第10課">第10課</h2>
+<h3 id="新しい言葉-i-5">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>たんじょうび</strong></td>
+<td>誕生日</td>
+<td>3</td>
+<td>名</td>
+<td>生日</td>
+</tr>
+<tr>
+<td><strong>セーター</strong></td>
+<td>sweater</td>
+<td>1</td>
+<td>名</td>
+<td>毛衣</td>
+</tr>
+<tr>
+<td><strong>もらう</strong></td>
+<td>—</td>
+<td>0</td>
+<td>他动1</td>
+<td>得到；领取，领受</td>
+</tr>
+<tr>
+<td><strong>あと</strong></td>
+<td>後</td>
+<td>1</td>
+<td>名・副</td>
+<td>以后</td>
+</tr>
+<tr>
+<td><strong>～しゅうかん</strong></td>
+<td>週間</td>
+<td>—</td>
+<td>量</td>
+<td>～周</td>
+</tr>
+<tr>
+<td><strong>いよいよ</strong></td>
+<td>—</td>
+<td>2</td>
+<td>副</td>
+<td>终于，到底</td>
+</tr>
+<tr>
+<td><strong>はたち</strong></td>
+<td>20歳</td>
+<td>1</td>
+<td>名</td>
+<td>二十岁</td>
+</tr>
+<tr>
+<td><strong>なる</strong></td>
+<td>成る</td>
+<td>1</td>
+<td>自动1</td>
+<td>变成，成为</td>
+</tr>
+<tr>
+<td><strong>それに</strong></td>
+<td>—</td>
+<td>0</td>
+<td>接</td>
+<td>而且</td>
+</tr>
+<tr>
+<td><strong>かのじょ</strong></td>
+<td>彼女</td>
+<td>1</td>
+<td>代</td>
+<td>女朋友；她</td>
+</tr>
+<tr>
+<td><strong>てづくり</strong></td>
+<td>手作り</td>
+<td>2</td>
+<td>名</td>
+<td>自己做，自制</td>
+</tr>
+<tr>
+<td><strong>ケーキ</strong></td>
+<td>cake</td>
+<td>1</td>
+<td>名</td>
+<td>西式糕点，蛋糕</td>
+</tr>
+<tr>
+<td><strong>くれる</strong></td>
+<td>—</td>
+<td>0</td>
+<td>他动2</td>
+<td>给（我）</td>
+</tr>
+<tr>
+<td><strong>えっ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>（表示吃惊）嗯</td>
+</tr>
+<tr>
+<td><strong>うらやましい</strong></td>
+<td>羨ましい</td>
+<td>5</td>
+<td>形1</td>
+<td>（令人）羡慕的</td>
+</tr>
+<tr>
+<td><strong>プレゼント</strong></td>
+<td>present</td>
+<td>2</td>
+<td>名・他动3</td>
+<td>礼品，礼物</td>
+</tr>
+<tr>
+<td><strong>あげる</strong></td>
+<td>—</td>
+<td>0</td>
+<td>他动2</td>
+<td>给（他人），给予</td>
+</tr>
+<tr>
+<td><strong>うれしい</strong></td>
+<td>嬉しい</td>
+<td>3</td>
+<td>形1</td>
+<td>高兴，愉快</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-5">新しい言葉 II</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>あかい</strong></td>
+<td>赤い</td>
+<td>0</td>
+<td>形1</td>
+<td>红色</td>
+</tr>
+<tr>
+<td><strong>えらぶ</strong></td>
+<td>選ぶ</td>
+<td>2</td>
+<td>他动1</td>
+<td>挑选，选择</td>
+</tr>
+<tr>
+<td><strong>でかける</strong></td>
+<td>出かける</td>
+<td>0</td>
+<td>自动2</td>
+<td>出门，外出</td>
+</tr>
+<tr>
+<td><strong>ともだち</strong></td>
+<td>友達</td>
+<td>0</td>
+<td>名</td>
+<td>朋友，友人</td>
+</tr>
+<tr>
+<td><strong>あさはやく</strong></td>
+<td>朝早く</td>
+<td>1</td>
+<td>副</td>
+<td>一早就</td>
+</tr>
+<tr>
+<td><strong>かいもの</strong></td>
+<td>買い物</td>
+<td>0</td>
+<td>名・自动3</td>
+<td>买东西，购物</td>
+</tr>
+<tr>
+<td><strong>マフラー</strong></td>
+<td>muffler</td>
+<td>1</td>
+<td>名</td>
+<td>围巾</td>
+</tr>
+<tr>
+<td><strong>かう</strong></td>
+<td>買う</td>
+<td>0</td>
+<td>他动1</td>
+<td>买，购买</td>
+</tr>
+<tr>
+<td><strong>どんな</strong></td>
+<td>—</td>
+<td>1</td>
+<td>连体</td>
+<td>什么样的，怎样的</td>
+</tr>
+<tr>
+<td><strong>ごよう</strong></td>
+<td>御用</td>
+<td>2</td>
+<td>名</td>
+<td>（敬语）事情</td>
+</tr>
+<tr>
+<td><strong>たんじょうびいわい</strong></td>
+<td>誕生日祝い</td>
+<td>6</td>
+<td>名</td>
+<td>生日礼物，生日祝贺</td>
+</tr>
+<tr>
+<td><strong>とどける</strong></td>
+<td>届ける</td>
+<td>3</td>
+<td>他动2</td>
+<td>送到，送给</td>
+</tr>
+<tr>
+<td><strong>わざわざ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>特意，特地</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第11課">第11課</h2>
+<h3 id="新しい言葉-i-6">新しい言葉 I</h3>
+<table>
+<colgroup>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+</colgroup>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>かくち</strong></td>
+<td>各地</td>
+<td>1</td>
+<td>名</td>
+<td>各地，各处</td>
+</tr>
+<tr>
+<td><strong>かんこうきゃく</strong></td>
+<td>観光客</td>
+<td>3</td>
+<td>名</td>
+<td>观光客，游客</td>
+</tr>
+<tr>
+<td><strong>あつまる</strong></td>
+<td>集まる</td>
+<td>3</td>
+<td>自动1</td>
+<td>聚集，集中</td>
+</tr>
+<tr>
+<td><strong>クラブ</strong></td>
+<td>club</td>
+<td>1</td>
+<td>名</td>
+<td>俱乐部</td>
+</tr>
+<tr>
+<td><strong>かつどう</strong></td>
+<td>活動</td>
+<td>0</td>
+<td>名・自动3</td>
+<td>活动；工作</td>
+</tr>
+<tr>
+<td><strong>クラブかつどう</strong></td>
+<td>club活動</td>
+<td>4</td>
+<td>词组</td>
+<td>课外活动</td>
+</tr>
+<tr>
+<td><strong>かまくら</strong></td>
+<td>鎌倉</td>
+<td>0・4</td>
+<td>名</td>
+<td>（地名，位于日本神奈川县）镰仓</td>
+</tr>
+<tr>
+<td><strong>しんかんせん</strong></td>
+<td>新幹線</td>
+<td>3</td>
+<td>名</td>
+<td>新干线</td>
+</tr>
+<tr>
+<td><strong>ジェーアール</strong></td>
+<td>JR・Japan Railways</td>
+<td>3</td>
+<td>名</td>
+<td>日本旅客铁道株式会社，日本铁道公司</td>
+</tr>
+<tr>
+<td><strong>よこすかせん</strong></td>
+<td>横須賀線</td>
+<td>0</td>
+<td>名</td>
+<td>（从东京站到横须贺市久里滨站之间的铁路线）横须贺线</td>
+</tr>
+<tr>
+<td><strong>ローラ</strong></td>
+<td>Rola</td>
+<td>1</td>
+<td>名</td>
+<td>（人名）罗拉</td>
+</tr>
+<tr>
+<td><strong>さあ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>表示困惑、犹豫、迟疑时发出的声音</td>
+</tr>
+<tr>
+<td><strong>きく</strong></td>
+<td>聞く</td>
+<td>0</td>
+<td>他动1</td>
+<td>询问；听</td>
+</tr>
+<tr>
+<td><strong>どようび</strong></td>
+<td>土曜日</td>
+<td>2</td>
+<td>名</td>
+<td>星期六，礼拜六</td>
+</tr>
+<tr>
+<td><strong>いっぱい</strong></td>
+<td>一杯</td>
+<td>0</td>
+<td>副</td>
+<td>充满，满满地</td>
+</tr>
+<tr>
+<td><strong>きっと</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副</td>
+<td>一定，必定</td>
+</tr>
+<tr>
+<td><strong>ごぜんちゅう</strong></td>
+<td>午前中</td>
+<td>0</td>
+<td>名</td>
+<td>中午以前，上午</td>
+</tr>
+<tr>
+<td><strong>りょう</strong></td>
+<td>寮</td>
+<td>1</td>
+<td>名</td>
+<td>宿舍</td>
+</tr>
+<tr>
+<td><strong>レポート</strong></td>
+<td>report</td>
+<td>2</td>
+<td>名</td>
+<td>研究报告，小论文</td>
+</tr>
+<tr>
+<td><strong>かく</strong></td>
+<td>書く</td>
+<td>1</td>
+<td>他动1</td>
+<td>写，书写</td>
+</tr>
+<tr>
+<td><strong>こうえん</strong></td>
+<td>講演</td>
+<td>0</td>
+<td>名・自动3</td>
+<td>讲演，（作）报告</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-6">新しい言葉 II</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>あめ</strong></td>
+<td>雨</td>
+<td>1</td>
+<td>名</td>
+<td>雨，雨水</td>
+</tr>
+<tr>
+<td><strong>ふる</strong></td>
+<td>降る</td>
+<td>1</td>
+<td>自动1</td>
+<td>降，下（雨、雪）</td>
+</tr>
+<tr>
+<td><strong>さっき</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>方才，刚才</td>
+</tr>
+<tr>
+<td><strong>てんきよほう</strong></td>
+<td>天気予報</td>
+<td>4</td>
+<td>名</td>
+<td>天气预报</td>
+</tr>
+<tr>
+<td><strong>いえ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>（用于否定回答）不，不是</td>
+</tr>
+<tr>
+<td><strong>だから</strong></td>
+<td>—</td>
+<td>1</td>
+<td>接</td>
+<td>因此，所以</td>
+</tr>
+<tr>
+<td><strong>ニュース</strong></td>
+<td>news</td>
+<td>1</td>
+<td>名</td>
+<td>新闻，消息</td>
+</tr>
+<tr>
+<td><strong>すぐ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>立刻，马上</td>
+</tr>
+<tr>
+<td><strong>おわる</strong></td>
+<td>終わる</td>
+<td>0</td>
+<td>自动1</td>
+<td>完，结束，终了</td>
+</tr>
+<tr>
+<td><strong>その</strong></td>
+<td>—</td>
+<td>0</td>
+<td>连体</td>
+<td>那，那个</td>
+</tr>
+<tr>
+<td><strong>あと</strong></td>
+<td>後</td>
+<td>1</td>
+<td>名</td>
+<td>之后，以后</td>
+</tr>
+<tr>
+<td><strong>こうどう</strong></td>
+<td>講堂</td>
+<td>0</td>
+<td>名</td>
+<td>礼堂，报告厅</td>
+</tr>
+<tr>
+<td><strong>ちいき</strong></td>
+<td>地域</td>
+<td>1</td>
+<td>名</td>
+<td>地域，地区</td>
+</tr>
+<tr>
+<td><strong>にんげんかんけい</strong></td>
+<td>人間関係</td>
+<td>5</td>
+<td>名</td>
+<td>人际关系，人与人的关系</td>
+</tr>
+<tr>
+<td><strong>シンポジウム</strong></td>
+<td>symposium</td>
+<td>4</td>
+<td>名</td>
+<td>专题讨论会，座谈会</td>
+</tr>
+<tr>
+<td><strong>だれ</strong></td>
+<td>誰</td>
+<td>1</td>
+<td>代</td>
+<td>谁</td>
+</tr>
+<tr>
+<td><strong>なまえ</strong></td>
+<td>名前</td>
+<td>0</td>
+<td>名</td>
+<td>姓名，名字</td>
+</tr>
+<tr>
+<td><strong>まだ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>还，尚</td>
+</tr>
+<tr>
+<td><strong>がくしゃ</strong></td>
+<td>学者</td>
+<td>0</td>
+<td>名</td>
+<td>学者</td>
+</tr>
+<tr>
+<td><strong>きかい</strong></td>
+<td>機会</td>
+<td>2・0</td>
+<td>名</td>
+<td>机会，时机</td>
+</tr>
+<tr>
+<td><strong>ざんねん</strong></td>
+<td>残念</td>
+<td>3</td>
+<td>形2</td>
+<td>遗憾，可惜</td>
+</tr>
+<tr>
+<td><strong>だいじょうぶ</strong></td>
+<td>大丈夫</td>
+<td>3</td>
+<td>形2</td>
+<td>没关系，没问题</td>
+</tr>
+<tr>
+<td><strong>また</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副・接</td>
+<td>又，再，还</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第12課">第12課</h2>
+<h3 id="新しい言葉-i-7">新しい言葉 I</h3>
+<table>
+<colgroup>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+</colgroup>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>らく</strong></td>
+<td>楽</td>
+<td>2</td>
+<td>名・形2</td>
+<td>舒服，舒适</td>
+</tr>
+<tr>
+<td><strong>おりょうり</strong></td>
+<td>お料理</td>
+<td>2</td>
+<td>名</td>
+<td>菜肴，饭菜（词典中多为“料理”，但日常会话中，特别是女性一般说“お料理”）</td>
+</tr>
+<tr>
+<td><strong>ほう</strong></td>
+<td>—</td>
+<td>1</td>
+<td>名</td>
+<td>（用于比较的）一方、方面</td>
+</tr>
+<tr>
+<td><strong>ははおや</strong></td>
+<td>母親</td>
+<td>0</td>
+<td>名</td>
+<td>母亲</td>
+</tr>
+<tr>
+<td><strong>しょくじ</strong></td>
+<td>食事</td>
+<td>0</td>
+<td>名・自动3</td>
+<td>吃饭，进餐</td>
+</tr>
+<tr>
+<td><strong>せいざ</strong></td>
+<td>正座</td>
+<td>0・1</td>
+<td>名・自动3</td>
+<td>跪着坐</td>
+</tr>
+<tr>
+<td><strong>こう</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副</td>
+<td>这样，这样地</td>
+</tr>
+<tr>
+<td><strong>では</strong></td>
+<td>—</td>
+<td>1</td>
+<td>接</td>
+<td>那么，那样</td>
+</tr>
+<tr>
+<td><strong>さしみ</strong></td>
+<td>刺身</td>
+<td>3</td>
+<td>名</td>
+<td>生鱼片</td>
+</tr>
+<tr>
+<td><strong>さかな</strong></td>
+<td>魚</td>
+<td>0</td>
+<td>名</td>
+<td>鱼</td>
+</tr>
+<tr>
+<td><strong>なま</strong></td>
+<td>生</td>
+<td>1</td>
+<td>名・形2</td>
+<td>（食物未经煮、烤过）生的</td>
+</tr>
+<tr>
+<td><strong>まま</strong></td>
+<td>—</td>
+<td>2</td>
+<td>名</td>
+<td>原封不动，照旧</td>
+</tr>
+<tr>
+<td><strong>わさび</strong></td>
+<td>—</td>
+<td>1</td>
+<td>名</td>
+<td>青芥辣，绿芥末</td>
+</tr>
+<tr>
+<td><strong>しょうゆ</strong></td>
+<td>醤油</td>
+<td>0</td>
+<td>名</td>
+<td>酱油</td>
+</tr>
+<tr>
+<td><strong>なか</strong></td>
+<td>中</td>
+<td>1</td>
+<td>名</td>
+<td>里边，内部</td>
+</tr>
+<tr>
+<td><strong>いれる</strong></td>
+<td>入れる</td>
+<td>0</td>
+<td>他动2</td>
+<td>放入，装进</td>
+</tr>
+<tr>
+<td><strong>つける</strong></td>
+<td>付ける</td>
+<td>2</td>
+<td>他动2</td>
+<td>蘸上，抹上</td>
+</tr>
+<tr>
+<td><strong>からだ</strong></td>
+<td>体</td>
+<td>0</td>
+<td>名</td>
+<td>身体，身子</td>
+</tr>
+<tr>
+<td><strong>しゅう</strong></td>
+<td>週</td>
+<td>1</td>
+<td>名</td>
+<td>星期，周</td>
+</tr>
+<tr>
+<td><strong>～かい</strong></td>
+<td>回</td>
+<td>—</td>
+<td>量</td>
+<td>～次</td>
+</tr>
+<tr>
+<td><strong>にほんしゅ</strong></td>
+<td>日本酒</td>
+<td>0</td>
+<td>名</td>
+<td>日本酒</td>
+</tr>
+<tr>
+<td><strong>おさけ</strong></td>
+<td>お酒</td>
+<td>0</td>
+<td>名</td>
+<td>酒（词典中多为“酒”，但日常会话中，特别是女性一般说“お酒”）</td>
+</tr>
+<tr>
+<td><strong>だめ</strong></td>
+<td>駄目</td>
+<td>2</td>
+<td>形2</td>
+<td>不行，不合适</td>
+</tr>
+<tr>
+<td><strong>じゃ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>接</td>
+<td>那么</td>
+</tr>
+<tr>
+<td><strong>おかあさん</strong></td>
+<td>お母さん</td>
+<td>2</td>
+<td>名</td>
+<td>母亲，妈妈</td>
+</tr>
+<tr>
+<td><strong>てりょうり</strong></td>
+<td>手料理</td>
+<td>2</td>
+<td>名</td>
+<td>自家做的菜，亲手做的菜</td>
+</tr>
+<tr>
+<td><strong>つき</strong></td>
+<td>月</td>
+<td>2</td>
+<td>名</td>
+<td>月，月份</td>
+</tr>
+<tr>
+<td><strong>ねえ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>感</td>
+<td>（表示亲昵地招呼，用于确认或征得对方的同意）哎，是吧</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-7">新しい言葉 II</h3>
+<table>
+<colgroup>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+</colgroup>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>おふろ</strong></td>
+<td>お風呂</td>
+<td>2</td>
+<td>名</td>
+<td>洗澡用热水；浴盆（词典中多为“風呂”，但日常会话中，特别是女性一般说“お風呂”）</td>
+</tr>
+<tr>
+<td><strong>はいりかた</strong></td>
+<td>入り方</td>
+<td>4・5</td>
+<td>名</td>
+<td>入浴方法</td>
+</tr>
+<tr>
+<td><strong>おしえる</strong></td>
+<td>教える</td>
+<td>0</td>
+<td>他动2</td>
+<td>教，告诉</td>
+</tr>
+<tr>
+<td><strong>ようい</strong></td>
+<td>用意</td>
+<td>1</td>
+<td>名・自他动3</td>
+<td>准备，预备</td>
+</tr>
+<tr>
+<td><strong>できる</strong></td>
+<td>出来る</td>
+<td>2</td>
+<td>自动2</td>
+<td>做好，做完</td>
+</tr>
+<tr>
+<td><strong>用意ができました</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>准备好了</td>
+</tr>
+<tr>
+<td><strong>せつめい</strong></td>
+<td>説明</td>
+<td>0</td>
+<td>名・他动3</td>
+<td>说明，解释</td>
+</tr>
+<tr>
+<td><strong>まず</strong></td>
+<td>先ず</td>
+<td>1</td>
+<td>副</td>
+<td>先，首先</td>
+</tr>
+<tr>
+<td><strong>それから</strong></td>
+<td>—</td>
+<td>0</td>
+<td>接</td>
+<td>然后，其次</td>
+</tr>
+<tr>
+<td><strong>ゆぶね</strong></td>
+<td>湯船</td>
+<td>1</td>
+<td>名</td>
+<td>澡盆，浴盆</td>
+</tr>
+<tr>
+<td><strong>おゆ</strong></td>
+<td>お湯</td>
+<td>0</td>
+<td>名</td>
+<td>热水（词典中多为“湯”，但日常会话中，特别是女性一般说“お湯”）</td>
+</tr>
+<tr>
+<td><strong>ながす</strong></td>
+<td>流す</td>
+<td>2</td>
+<td>他动1</td>
+<td>洗掉（污垢）</td>
+</tr>
+<tr>
+<td><strong>つかる</strong></td>
+<td>浸かる</td>
+<td>0</td>
+<td>自动1</td>
+<td>（泡在水里）洗澡，泡澡</td>
+</tr>
+<tr>
+<td><strong>せっけん</strong></td>
+<td>石鹸</td>
+<td>0</td>
+<td>名</td>
+<td>肥皂，香皂</td>
+</tr>
+<tr>
+<td><strong>つかう</strong></td>
+<td>使う</td>
+<td>0</td>
+<td>他动1</td>
+<td>用，使用</td>
+</tr>
+<tr>
+<td><strong>ふかい</strong></td>
+<td>深い</td>
+<td>2</td>
+<td>形1</td>
+<td>深</td>
+</tr>
+<tr>
+<td><strong>もったいない</strong></td>
+<td>—</td>
+<td>5</td>
+<td>形1</td>
+<td>可惜</td>
+</tr>
+<tr>
+<td><strong>ぜんいん</strong></td>
+<td>全員</td>
+<td>0</td>
+<td>名</td>
+<td>全体人员</td>
+</tr>
+<tr>
+<td><strong>はいる</strong></td>
+<td>入る</td>
+<td>1</td>
+<td>自动1</td>
+<td>进入</td>
+</tr>
+<tr>
+<td><strong>ですから</strong></td>
+<td>—</td>
+<td>1</td>
+<td>接</td>
+<td>因此，所以（是“だから”的郑重说法）</td>
+</tr>
+<tr>
+<td><strong>なるほど</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副・感</td>
+<td>的确，原来如此</td>
+</tr>
+<tr>
+<td><strong>ふつう</strong></td>
+<td>普通</td>
+<td>0</td>
+<td>名・副</td>
+<td>一般，通常</td>
+</tr>
+<tr>
+<td><strong>シャワー</strong></td>
+<td>shower</td>
+<td>1</td>
+<td>名</td>
+<td>淋浴</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第13課">第13課</h2>
+<h3 id="新しい言葉-i-8">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>みんな</strong></td>
+<td>—</td>
+<td>0・3</td>
+<td>名・副</td>
+<td>全，全体</td>
+</tr>
+<tr>
+<td><strong>こと</strong></td>
+<td>事</td>
+<td>2</td>
+<td>名</td>
+<td>事，事情</td>
+</tr>
+<tr>
+<td><strong>やる</strong></td>
+<td>—</td>
+<td>0</td>
+<td>他动1</td>
+<td>做，干</td>
+</tr>
+<tr>
+<td><strong>すいぎょうざ</strong></td>
+<td>水ギョーザ</td>
+<td>3</td>
+<td>名</td>
+<td>水饺</td>
+</tr>
+<tr>
+<td><strong>つくる</strong></td>
+<td>作る</td>
+<td>2</td>
+<td>他动1</td>
+<td>做，制作，弄</td>
+</tr>
+<tr>
+<td><strong>だいがくさい</strong></td>
+<td>大学祭</td>
+<td>4・0</td>
+<td>名</td>
+<td>大学节</td>
+</tr>
+<tr>
+<td><strong>ちゅうごくりょうり</strong></td>
+<td>中国料理</td>
+<td>5</td>
+<td>名</td>
+<td>中国菜，中国饭菜</td>
+</tr>
+<tr>
+<td><strong>やたい</strong></td>
+<td>屋台</td>
+<td>1</td>
+<td>名</td>
+<td>摊子，货摊位</td>
+</tr>
+<tr>
+<td><strong>かわ</strong></td>
+<td>皮</td>
+<td>2</td>
+<td>名</td>
+<td>皮，外皮</td>
+</tr>
+<tr>
+<td><strong>がいこう</strong></td>
+<td>外交</td>
+<td>0</td>
+<td>名</td>
+<td>外交</td>
+</tr>
+<tr>
+<td><strong>メニュー</strong></td>
+<td>menu</td>
+<td>1</td>
+<td>名</td>
+<td>菜单，菜谱</td>
+</tr>
+<tr>
+<td><strong>がいこうメニュー</strong></td>
+<td>外交menu</td>
+<td>5</td>
+<td>词组</td>
+<td>外交菜谱</td>
+</tr>
+<tr>
+<td><strong>つまり</strong></td>
+<td>—</td>
+<td>1</td>
+<td>接</td>
+<td>总之，也就是</td>
+</tr>
+<tr>
+<td><strong>しょうたい</strong></td>
+<td>招待</td>
+<td>1</td>
+<td>名・他动3</td>
+<td>招待，邀请</td>
+</tr>
+<tr>
+<td><strong>かならず</strong></td>
+<td>必ず</td>
+<td>0</td>
+<td>副</td>
+<td>一定，必定</td>
+</tr>
+<tr>
+<td><strong>さいこう</strong></td>
+<td>最高</td>
+<td>0</td>
+<td>名</td>
+<td>最好的，最高，至高无上</td>
+</tr>
+<tr>
+<td><strong>おしゃべり</strong></td>
+<td>—</td>
+<td>2</td>
+<td>自动3</td>
+<td>闲聊</td>
+</tr>
+<tr>
+<td><strong>こんど</strong></td>
+<td>今度</td>
+<td>1</td>
+<td>名</td>
+<td>下回，下次</td>
+</tr>
+<tr>
+<td><strong>よぶ</strong></td>
+<td>呼ぶ</td>
+<td>0</td>
+<td>他动1</td>
+<td>叫，呼唤；邀请</td>
+</tr>
+<tr>
+<td><strong>さそう</strong></td>
+<td>誘う</td>
+<td>0</td>
+<td>他动1</td>
+<td>约，邀请</td>
+</tr>
+<tr>
+<td><strong>それじゃ</strong></td>
+<td>—</td>
+<td>3</td>
+<td>接</td>
+<td>那么</td>
+</tr>
+<tr>
+<td><strong>まわる</strong></td>
+<td>回る</td>
+<td>0</td>
+<td>自动1</td>
+<td>转，绕着转</td>
+</tr>
+<tr>
+<td><strong>もういちど</strong></td>
+<td>もう一度</td>
+<td>0</td>
+<td>副</td>
+<td>再一次</td>
+</tr>
+<tr>
+<td><strong>もどる</strong></td>
+<td>戻る</td>
+<td>2</td>
+<td>自动1</td>
+<td>返回</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-8">新しい言葉 II</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>はやい</strong></td>
+<td>早い</td>
+<td>2</td>
+<td>形1</td>
+<td>早</td>
+</tr>
+<tr>
+<td><strong>～じかん</strong></td>
+<td>時間</td>
+<td>—</td>
+<td>量</td>
+<td>～小时，～钟头</td>
+</tr>
+<tr>
+<td><strong>はやく</strong></td>
+<td>早く</td>
+<td>1</td>
+<td>副</td>
+<td>早，早就</td>
+</tr>
+<tr>
+<td><strong>でる</strong></td>
+<td>出る</td>
+<td>1</td>
+<td>自动2</td>
+<td>出，出去；出席</td>
+</tr>
+<tr>
+<td><strong>おきる</strong></td>
+<td>起きる</td>
+<td>2</td>
+<td>自动2</td>
+<td>起床</td>
+</tr>
+<tr>
+<td><strong>いそぐ</strong></td>
+<td>急ぐ</td>
+<td>2</td>
+<td>自动1</td>
+<td>赶快，急</td>
+</tr>
+<tr>
+<td><strong>したく</strong></td>
+<td>支度</td>
+<td>0</td>
+<td>名・自他动3</td>
+<td>预备，准备</td>
+</tr>
+<tr>
+<td><strong>～ごろ</strong></td>
+<td>頃</td>
+<td>1</td>
+<td>后缀</td>
+<td>～时分，～前后，～左右</td>
+</tr>
+<tr>
+<td><strong>のる</strong></td>
+<td>乗る</td>
+<td>0</td>
+<td>自动1</td>
+<td>乘坐，搭乘</td>
+</tr>
+<tr>
+<td><strong>すむ</strong></td>
+<td>住む</td>
+<td>1</td>
+<td>自动1</td>
+<td>居住</td>
+</tr>
+<tr>
+<td><strong>いいだばし</strong></td>
+<td>飯田橋</td>
+<td>3</td>
+<td>名</td>
+<td>（地名，位于东京都文京区）饭田桥</td>
+</tr>
+<tr>
+<td><strong>ちゅうごくご</strong></td>
+<td>中国語</td>
+<td>0</td>
+<td>名</td>
+<td>中文，汉语</td>
+</tr>
+<tr>
+<td><strong>はっぴょう</strong></td>
+<td>発表</td>
+<td>0</td>
+<td>名・自他动3</td>
+<td>发表，发布</td>
+</tr>
+<tr>
+<td><strong>きんちょう</strong></td>
+<td>緊張</td>
+<td>0</td>
+<td>名・自动3</td>
+<td>（神经、气氛等）紧张</td>
+</tr>
+<tr>
+<td><strong>じょうず</strong></td>
+<td>上手</td>
+<td>3</td>
+<td>名・形2</td>
+<td>好，高明，擅长</td>
+</tr>
+<tr>
+<td><strong>いがい</strong></td>
+<td>以外</td>
+<td>1</td>
+<td>名</td>
+<td>以外，此外</td>
+</tr>
+<tr>
+<td><strong>なつやすみ</strong></td>
+<td>夏休み</td>
+<td>3</td>
+<td>名</td>
+<td>暑假</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第14課">第14課</h2>
+<h3 id="新しい言葉-i-9">新しい言葉 I</h3>
+<table>
+<colgroup>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+</colgroup>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>こんご</strong></td>
+<td>今後</td>
+<td>0・1</td>
+<td>名</td>
+<td>今后，将来</td>
+</tr>
+<tr>
+<td><strong>おもう</strong></td>
+<td>思う</td>
+<td>2</td>
+<td>他动1</td>
+<td>认为，以为；觉得</td>
+</tr>
+<tr>
+<td><strong>しらべる</strong></td>
+<td>調べる</td>
+<td>3</td>
+<td>他动2</td>
+<td>调查，查阅</td>
+</tr>
+<tr>
+<td><strong>にほんじん</strong></td>
+<td>日本人</td>
+<td>4</td>
+<td>名</td>
+<td>日本人</td>
+</tr>
+<tr>
+<td><strong>シーディー</strong></td>
+<td>CD</td>
+<td>3</td>
+<td>名</td>
+<td>CD，激光唱片</td>
+</tr>
+<tr>
+<td><strong>まあ</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>就算是；还可以</td>
+</tr>
+<tr>
+<td><strong>にゅうりょく</strong></td>
+<td>入力</td>
+<td>0・1</td>
+<td>名・自动3</td>
+<td>输入</td>
+</tr>
+<tr>
+<td><strong>パソコン</strong></td>
+<td>personal computer</td>
+<td>0</td>
+<td>名</td>
+<td>个人用电脑，计算机</td>
+</tr>
+<tr>
+<td><strong>ぶんしょう</strong></td>
+<td>文章</td>
+<td>1</td>
+<td>名</td>
+<td>文章</td>
+</tr>
+<tr>
+<td><strong>いう</strong></td>
+<td>言う</td>
+<td>0</td>
+<td>他动1</td>
+<td>称，叫作；说，讲</td>
+</tr>
+<tr>
+<td><strong>こと</strong></td>
+<td>—</td>
+<td>2</td>
+<td>形名</td>
+<td>（以“ということ”的形式接在名词或动词、形容词连体形后）表示说明</td>
+</tr>
+<tr>
+<td><strong>いつか</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>（表示不确定的时间）什么时候</td>
+</tr>
+<tr>
+<td><strong>てがみ</strong></td>
+<td>手紙</td>
+<td>0</td>
+<td>名</td>
+<td>信，书信</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-9">新しい言葉 II</h3>
+<table>
+<colgroup>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:20%">
+</colgroup>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ぶっか</strong></td>
+<td>物価</td>
+<td>0</td>
+<td>名</td>
+<td>物价</td>
+</tr>
+<tr>
+<td><strong>あたま</strong></td>
+<td>頭</td>
+<td>3</td>
+<td>名</td>
+<td>头，脑袋</td>
+</tr>
+<tr>
+<td><strong>いたい</strong></td>
+<td>痛い</td>
+<td>2</td>
+<td>形1</td>
+<td>疼，疼痛</td>
+</tr>
+<tr>
+<td><strong>頭が痛い</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>头疼，头痛</td>
+</tr>
+<tr>
+<td><strong>くすり</strong></td>
+<td>薬</td>
+<td>0</td>
+<td>名</td>
+<td>药</td>
+</tr>
+<tr>
+<td><strong>のむ</strong></td>
+<td>飲む</td>
+<td>1</td>
+<td>他动1</td>
+<td>喝，吃</td>
+</tr>
+<tr>
+<td><strong>薬を飲む</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>吃药</td>
+</tr>
+<tr>
+<td><strong>しんぱい</strong></td>
+<td>心配</td>
+<td>0</td>
+<td>名・形2・自动3</td>
+<td>担心，挂念，不安</td>
+</tr>
+<tr>
+<td><strong>心配ない</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>不必担心，不用挂念</td>
+</tr>
+<tr>
+<td><strong>だいじ</strong></td>
+<td>大事</td>
+<td>0</td>
+<td>名・形2</td>
+<td>保重，当心</td>
+</tr>
+<tr>
+<td><strong>お大事に</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>请保重</td>
+</tr>
+<tr>
+<td><strong>つたえる</strong></td>
+<td>伝える</td>
+<td>0</td>
+<td>他动2</td>
+<td>转告，传达</td>
+</tr>
+<tr>
+<td><strong>スーパー</strong></td>
+<td>supermarket</td>
+<td>1</td>
+<td>名</td>
+<td>（“スーパー・マーケット”的简称）超市</td>
+</tr>
+<tr>
+<td><strong>けいざいがく</strong></td>
+<td>経済学</td>
+<td>3</td>
+<td>名</td>
+<td>经济学</td>
+</tr>
+<tr>
+<td><strong>しゅくだい</strong></td>
+<td>宿題</td>
+<td>0</td>
+<td>名</td>
+<td>课外作业，家庭作业</td>
+</tr>
+<tr>
+<td><strong>けっか</strong></td>
+<td>結果</td>
+<td>0</td>
+<td>名</td>
+<td>结果</td>
+</tr>
+<tr>
+<td><strong>まえ</strong></td>
+<td>前</td>
+<td>1</td>
+<td>名</td>
+<td>面前</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第15課">第15課</h2>
+<h3 id="新しい言葉-i-10">新しい言葉 I</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>コーヒー</strong></td>
+<td>coffee</td>
+<td>3</td>
+<td>名</td>
+<td>咖啡</td>
+</tr>
+<tr>
+<td><strong>のみもの</strong></td>
+<td>飲み物</td>
+<td>2</td>
+<td>名</td>
+<td>饮料</td>
+</tr>
+<tr>
+<td><strong>あせ</strong></td>
+<td>汗</td>
+<td>1</td>
+<td>名</td>
+<td>汗</td>
+</tr>
+<tr>
+<td><strong>かく</strong></td>
+<td>掻く</td>
+<td>1</td>
+<td>他动1</td>
+<td>出汗，流汗</td>
+</tr>
+<tr>
+<td><strong>汗をかく</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>出汗</td>
+</tr>
+<tr>
+<td><strong>おなか</strong></td>
+<td>—</td>
+<td>0</td>
+<td>名</td>
+<td>肚子，腹部</td>
+</tr>
+<tr>
+<td><strong>ちょっと</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>一会儿；稍微，有点儿</td>
+</tr>
+<tr>
+<td><strong>すく</strong></td>
+<td>空く</td>
+<td>0</td>
+<td>自动1</td>
+<td>空，饿</td>
+</tr>
+<tr>
+<td><strong>おなかが空く</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>肚子饿</td>
+</tr>
+<tr>
+<td><strong>むこう</strong></td>
+<td>向こう</td>
+<td>2・0</td>
+<td>名</td>
+<td>对面；另一侧；前面；对方</td>
+</tr>
+<tr>
+<td><strong>きっさてん</strong></td>
+<td>喫茶店</td>
+<td>0</td>
+<td>名</td>
+<td>茶馆，咖啡馆</td>
+</tr>
+<tr>
+<td><strong>おすすめ</strong></td>
+<td>お薦め</td>
+<td>0</td>
+<td>名</td>
+<td>（比较客气、郑重的说法）推荐</td>
+</tr>
+<tr>
+<td><strong>じかせい</strong></td>
+<td>自家製</td>
+<td>0</td>
+<td>名</td>
+<td>自己制作，本店制作</td>
+</tr>
+<tr>
+<td><strong>ヨーグルト</strong></td>
+<td>独yoghurt</td>
+<td>3</td>
+<td>名</td>
+<td>酸奶，酸乳酪</td>
+</tr>
+<tr>
+<td><strong>ございます</strong></td>
+<td>—</td>
+<td>4</td>
+<td>自动</td>
+<td>（敬语）有，在</td>
+</tr>
+<tr>
+<td><strong>コーラ</strong></td>
+<td>cola</td>
+<td>1</td>
+<td>名</td>
+<td>可乐</td>
+</tr>
+<tr>
+<td><strong>アイスティー</strong></td>
+<td>iced tea</td>
+<td>4</td>
+<td>名</td>
+<td>冰红茶</td>
+</tr>
+<tr>
+<td><strong>ゆっくり</strong></td>
+<td>—</td>
+<td>3</td>
+<td>副・自动3</td>
+<td>慢慢；舒适</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新しい言葉-ii-10">新しい言葉 II</h3>
+<table>
+<thead>
+<tr>
+<th>读音或词形</th>
+<th>原书括注</th>
+<th>声调</th>
+<th>词性</th>
+<th>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>テニス</strong></td>
+<td>tennis</td>
+<td>1</td>
+<td>名</td>
+<td>网球</td>
+</tr>
+<tr>
+<td><strong>やきゅう</strong></td>
+<td>野球</td>
+<td>0</td>
+<td>名</td>
+<td>棒球</td>
+</tr>
+<tr>
+<td><strong>とくい</strong></td>
+<td>得意</td>
+<td>2</td>
+<td>名・形2</td>
+<td>擅长，拿手</td>
+</tr>
+<tr>
+<td><strong>いやあ</strong></td>
+<td>—</td>
+<td>2</td>
+<td>感</td>
+<td>哦，不</td>
+</tr>
+<tr>
+<td><strong>すごい</strong></td>
+<td>凄い</td>
+<td>2</td>
+<td>形1</td>
+<td>非常好，了不起</td>
+</tr>
+<tr>
+<td><strong>いちばん</strong></td>
+<td>一番</td>
+<td>0・2</td>
+<td>副・名</td>
+<td>最，第一</td>
+</tr>
+<tr>
+<td><strong>にんき</strong></td>
+<td>人気</td>
+<td>0</td>
+<td>名</td>
+<td>声望，人缘</td>
+</tr>
+<tr>
+<td><strong>人気がある</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>受欢迎，有人缘</td>
+</tr>
+<tr>
+<td><strong>やはり</strong></td>
+<td>—</td>
+<td>2</td>
+<td>副</td>
+<td>仍然，还是</td>
+</tr>
+<tr>
+<td><strong>たっきゅう</strong></td>
+<td>卓球</td>
+<td>0</td>
+<td>名</td>
+<td>乒乓球</td>
+</tr>
+<tr>
+<td><strong>バレーボール</strong></td>
+<td>volleyball</td>
+<td>4</td>
+<td>名</td>
+<td>排球</td>
+</tr>
+<tr>
+<td><strong>ピアノ</strong></td>
+<td>piano</td>
+<td>0</td>
+<td>名</td>
+<td>钢琴</td>
+</tr>
+<tr>
+<td><strong>しかし</strong></td>
+<td>—</td>
+<td>2</td>
+<td>接</td>
+<td>然而，但是</td>
+</tr>
+<tr>
+<td><strong>このごろ</strong></td>
+<td>この頃</td>
+<td>0</td>
+<td>名</td>
+<td>近来，最近</td>
+</tr>
+<tr>
+<td><strong>めったに</strong></td>
+<td>—</td>
+<td>1</td>
+<td>副</td>
+<td>（后接否定）很少，几乎没有</td>
+</tr>
+<tr>
+<td><strong>ひく</strong></td>
+<td>弾く</td>
+<td>0</td>
+<td>他动1</td>
+<td>弹，拉</td>
+</tr>
+<tr>
+<td><strong>ピアノを弾く</strong></td>
+<td>—</td>
+<td>—</td>
+<td>词组</td>
+<td>弹钢琴</td>
+</tr>
+<tr>
+<td><strong>ちいさい</strong></td>
+<td>小さい</td>
+<td>3</td>
+<td>形1</td>
+<td>小，幼小</td>
+</tr>
+<tr>
+<td><strong>ならう</strong></td>
+<td>習う</td>
+<td>2</td>
+<td>他动1</td>
+<td>学习，练习</td>
+</tr>
+<tr>
+<td><strong>ずっと</strong></td>
+<td>—</td>
+<td>0</td>
+<td>副</td>
+<td>一直，始终</td>
+</tr>
+<tr>
+<td><strong>チャンス</strong></td>
+<td>chance</td>
+<td>1</td>
+<td>名</td>
+<td>机会，机遇</td>
+</tr>
+<tr>
+<td><strong>ことわざ</strong></td>
+<td>諺</td>
+<td>0・4</td>
+<td>名</td>
+<td>谚语</td>
+</tr>
+<tr>
+<td><strong>まにあう</strong></td>
+<td>間に合う</td>
+<td>3</td>
+<td>自动1</td>
+<td>（时间）赶得上，来得及</td>
+</tr>
+<tr>
+<td><strong>いっしょに</strong></td>
+<td>一緒に</td>
+<td>0</td>
+<td>副</td>
+<td>一同，一起</td>
+</tr>
+<tr>
+<td><strong>もちろん</strong></td>
+<td>勿論</td>
+<td>2</td>
+<td>副</td>
+<td>不用说，当然</td>
+</tr>
+</tbody>
+</table>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#初级日语第一册词汇表">《初级日语（第一册）》词汇表</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第5課">第5課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第6課">第6課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-1">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-1">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第7課">第7課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-2">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-2">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第8課">第8課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-3">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-3">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第9課">第9課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-4">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-4">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第10課">第10課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-5">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-5">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第11課">第11課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-6">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-6">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第12課">第12課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-7">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-7">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第13課">第13課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-8">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-8">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第14課">第14課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-9">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-9">新しい言葉 II</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第15課">第15課</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-i-10">新しい言葉 I</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#新しい言葉-ii-10">新しい言葉 II</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

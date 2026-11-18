@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            动词变形 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#动词分类辞书形ます形ない形与时态">动词分类、辞书形・ます形・ない形与时态</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一先分清普通形和敬体">一、先分清普通形和敬体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#普通形简体">1. 普通形（简体）</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#敬体ですます体">2. 敬体（です・ます体）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二动词的分类">二、动词的分类</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词">1. 五段动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词">2. 一段动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词">3. サ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#カ变动词">4. カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三辞书形">三、辞书形</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四ます形">四、ます形</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词词尾う段同行い段ます">1. 五段动词：词尾う段→同行い段＋ます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词去るます">2. 一段动词：去る＋ます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词与カ变动词">3. サ变动词与カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五ない形">五、ない形</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词词尾う段同行あ段ない">1. 五段动词：词尾う段→同行あ段＋ない</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词去るない">2. 一段动词：去る＋ない</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词与カ变动词-1">3. サ变动词与カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#特殊ある的否定">4. 特殊：ある的否定</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六过去肯定た形">六、过去肯定：た形</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词的音便">1. 五段动词的音便</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#くいたぐいだ">く→いた、ぐ→いだ</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#すした">す→した</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#うつるった促音便">う・つ・る→った（促音便）</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#ぬぶむんだ拨音便">ぬ・ぶ・む→んだ（拨音便）</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词去るた">2. 一段动词：去る＋た</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词与カ变动词-2">3. サ变动词与カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七过去否定なかった">七、过去否定：～なかった</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八四类动词的四种形式">八、四类动词的四种形式</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词書く">1. 五段动词：書く</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词食べる">2. 一段动词：食べる</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词する勉強する">3. サ变动词：する／勉強する</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#カ变动词来る">4. カ变动词：来る</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九敬体四时态的变化方法">九、敬体四时态的变化方法</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十易错点">十、易错点</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="动词分类辞书形ます形ない形与时态">动词分类、辞书形・ます形・ない形与时态</h1>
+<h2 id="一先分清普通形和敬体">一、先分清普通形和敬体</h2>
+<h3 id="普通形简体">1. 普通形（简体）</h3>
+<p>用于亲近的人际关系、日记、文章以及很多从句中。四种基本形式是：</p>
+<ul>
+<li>非过去肯定：書く（辞书形）</li>
+<li>非过去否定：書かない（ない形）</li>
+<li>过去肯定：書いた（た形）</li>
+<li>过去否定：書かなかった</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>明日、本を書く。<br>
+明天写书。</li>
+<li>今日は本を書かない。<br>
+今天不写书。</li>
+<li>昨日、本を書いた。<br>
+昨天写了书。</li>
+<li>昨日は本を書かなかった。<br>
+昨天没写书。</li>
+</ul>
+<h3 id="敬体ですます体">2. 敬体（です・ます体）</h3>
+<p>用于对不熟悉的人、长辈或正式场合。四种基本形式是：</p>
+<ul>
+<li>非过去肯定：書きます</li>
+<li>非过去否定：書きません</li>
+<li>过去肯定：書きました</li>
+<li>过去否定：書きませんでした</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>明日、手紙を書きます。<br>
+明天写信。</li>
+<li>今日は手紙を書きません。<br>
+今天不写信。</li>
+<li>昨日、手紙を書きました。<br>
+昨天写了信。</li>
+<li>昨日は手紙を書きませんでした。<br>
+昨天没写信。</li>
+</ul>
+<p>“非过去”既可表示现在、经常性的动作，也可表示将来的动作，具体由语境和时间词决定：</p>
+<ul>
+<li>毎日、日本語を勉強します。<br>
+每天学日语。</li>
+<li>明日、日本語を勉強します。<br>
+明天学日语。</li>
+</ul>
+<h2 id="二动词的分类">二、动词的分类</h2>
+<p>不同教材可能把五段动词、一段动词、サ变动词、カ变动词称为一类、二类、三类动词等。学习时以具体变形为准。</p>
+<h3 id="五段动词">1. 五段动词</h3>
+<p>辞书形通常以う段假名结尾，变化时词尾会涉及あ・い・う・え・お五段。</p>
+<p>常见例子：</p>
+<ul>
+<li>書く（かく）：写</li>
+<li>泳ぐ（およぐ）：游泳</li>
+<li>話す（はなす）：说</li>
+<li>待つ（まつ）：等</li>
+<li>死ぬ（しぬ）：死</li>
+<li>遊ぶ（あそぶ）：玩</li>
+<li>読む（よむ）：读</li>
+<li>買う（かう）：买</li>
+<li>帰る（かえる）：回去</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>本を読みます。<br>
+读书。</li>
+<li>友達と話します。<br>
+和朋友说话。</li>
+</ul>
+<h3 id="一段动词">2. 一段动词</h3>
+<p>通常以「る」结尾，「る」前面的假名在い段或え段。</p>
+<ul>
+<li>見る（みる）：看</li>
+<li>起きる（おきる）：起床</li>
+<li>食べる（たべる）：吃</li>
+<li>寝る（ねる）：睡觉</li>
+<li>教える（おしえる）：教；告诉</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>映画を見ます。<br>
+看电影。</li>
+<li>七時に起きます。<br>
+七点起床。</li>
+</ul>
+<p>有些动词虽然以「い段／え段＋る」结尾，却属于五段动词，需要单独记忆：</p>
+<ul>
+<li>帰る→帰ります／帰らない</li>
+<li>入る→入ります／入らない</li>
+<li>走る→走ります／走らない</li>
+<li>切る→切ります／切らない</li>
+<li>知る→知ります／知らない</li>
+</ul>
+<h3 id="サ变动词">3. サ变动词</h3>
+<p>包括「する」和“名词＋する”。</p>
+<ul>
+<li>する：做</li>
+<li>勉強する：学习</li>
+<li>料理する：做饭、烹饪</li>
+<li>旅行する：旅行</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>毎日勉強します。<br>
+每天学习。</li>
+<li>日曜日に料理します。<br>
+星期日做饭。</li>
+</ul>
+<h3 id="カ变动词">4. カ变动词</h3>
+<p>只有「来る（くる）」。它的汉字相同，但不同形式中读音会变化：</p>
+<ul>
+<li>来る：くる</li>
+<li>来ます：きます</li>
+<li>来ない：こない</li>
+<li>来た：きた</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>友達が来ます。<br>
+朋友会来。</li>
+<li>昨日、友達が来ました。<br>
+昨天朋友来了。</li>
+</ul>
+<h2 id="三辞书形">三、辞书形</h2>
+<p>辞书形就是词典中列出的动词原形，也是普通形的非过去肯定形式。</p>
+<ul>
+<li>書く</li>
+<li>食べる</li>
+<li>する</li>
+<li>来る</li>
+</ul>
+<p>用法：</p>
+<ul>
+<li>表示现在或将来的动作：明日、本を買う。<br>
+明天买书。</li>
+<li>表示习惯：毎日、本を読む。<br>
+每天读书。</li>
+<li>构成各种句型：本を読むことが好きだ。<br>
+喜欢读书。</li>
+</ul>
+<p>辞书形不能直接换成敬体。对长辈说话时，应根据句型使用ます形等敬体形式。</p>
+<h2 id="四ます形">四、ます形</h2>
+<p>这里的「ます形」指“动词连用形＋ます”的完整敬体形式。</p>
+<h3 id="五段动词词尾う段同行い段ます">1.
+五段动词：词尾う段→同行い段＋ます</h3>
+<ul>
+<li>書く→書きます</li>
+<li>泳ぐ→泳ぎます</li>
+<li>話す→話します</li>
+<li>待つ→待ちます</li>
+<li>死ぬ→死にます</li>
+<li>遊ぶ→遊びます</li>
+<li>読む→読みます</li>
+<li>買う→買います</li>
+<li>帰る→帰ります</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>毎朝、漢字を書きます。<br>
+每天早上写汉字。</li>
+<li>図書館で本を読みます。<br>
+在图书馆读书。</li>
+<li>駅で友達を待ちます。<br>
+在车站等朋友。</li>
+</ul>
+<h3 id="一段动词去るます">2. 一段动词：去る＋ます</h3>
+<ul>
+<li>見る→見ます</li>
+<li>起きる→起きます</li>
+<li>食べる→食べます</li>
+<li>寝る→寝ます</li>
+<li>教える→教えます</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>映画を見ます。<br>
+看电影。</li>
+<li>ご飯を食べます。<br>
+吃饭。</li>
+</ul>
+<h3 id="サ变动词与カ变动词">3. サ变动词与カ变动词</h3>
+<ul>
+<li>する→します</li>
+<li>勉強する→勉強します</li>
+<li>来る（くる）→来ます（きます）</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>部屋で勉強します。<br>
+在房间学习。</li>
+<li>明日、ここへ来ます。<br>
+明天来这里。</li>
+</ul>
+<h2 id="五ない形">五、ない形</h2>
+<p>ない形是普通形的非过去否定。</p>
+<h3 id="五段动词词尾う段同行あ段ない">1.
+五段动词：词尾う段→同行あ段＋ない</h3>
+<ul>
+<li>書く→書かない</li>
+<li>泳ぐ→泳がない</li>
+<li>話す→話さない</li>
+<li>待つ→待たない</li>
+<li>死ぬ→死なない</li>
+<li>遊ぶ→遊ばない</li>
+<li>読む→読まない</li>
+<li>帰る→帰らない</li>
+</ul>
+<p>特别注意以「う」结尾时，「う」要变成「わ」：</p>
+<ul>
+<li>買う→買わない</li>
+<li>会う→会わない</li>
+<li>使う→使わない</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今日は本を読まない。<br>
+今天不读书。</li>
+<li>高いから、買わない。<br>
+因为贵，所以不买。</li>
+<li>明日は学校へ行かない。<br>
+明天不去学校。</li>
+</ul>
+<h3 id="一段动词去るない">2. 一段动词：去る＋ない</h3>
+<ul>
+<li>見る→見ない</li>
+<li>起きる→起きない</li>
+<li>食べる→食べない</li>
+<li>寝る→寝ない</li>
+<li>教える→教えない</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今日はテレビを見ない。<br>
+今天不看电视。</li>
+<li>朝ご飯を食べない。<br>
+不吃早饭。</li>
+</ul>
+<h3 id="サ变动词与カ变动词-1">3. サ变动词与カ变动词</h3>
+<ul>
+<li>する→しない</li>
+<li>勉強する→勉強しない</li>
+<li>来る（くる）→来ない（こない）</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今日は勉強しない。<br>
+今天不学习。</li>
+<li>田中さんは来ない。<br>
+田中来不了／不来。</li>
+</ul>
+<h3 id="特殊ある的否定">4. 特殊：ある的否定</h3>
+<p>「ある」的ない形是「ない」，不是「あらない」。</p>
+<ul>
+<li>お金がない。<br>
+没有钱。</li>
+<li>時間がありません。<br>
+没有时间。</li>
+</ul>
+<h2 id="六过去肯定た形">六、过去肯定：た形</h2>
+<p>た形是普通形的过去肯定。</p>
+<h3 id="五段动词的音便">1. 五段动词的音便</h3>
+<h4 id="くいたぐいだ">く→いた、ぐ→いだ</h4>
+<ul>
+<li>書く→書いた</li>
+<li>泳ぐ→泳いだ</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>手紙を書いた。<br>
+写了信。</li>
+<li>昨日、泳いだ。<br>
+昨天游泳了。</li>
+</ul>
+<p>「行く」是例外：行く→行った，不是「行いた」。</p>
+<ul>
+<li>日本へ行った。<br>
+去了日本。</li>
+</ul>
+<h4 id="すした">す→した</h4>
+<ul>
+<li>話す→話した</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>先生と話した。<br>
+和老师谈了话。</li>
+</ul>
+<h4 id="うつるった促音便">う・つ・る→った（促音便）</h4>
+<ul>
+<li>買う→買った</li>
+<li>待つ→待った</li>
+<li>帰る→帰った</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>本を買った。<br>
+买了书。</li>
+<li>友達を待った。<br>
+等了朋友。</li>
+<li>家へ帰った。<br>
+回家了。</li>
+</ul>
+<h4 id="ぬぶむんだ拨音便">ぬ・ぶ・む→んだ（拨音便）</h4>
+<ul>
+<li>死ぬ→死んだ</li>
+<li>遊ぶ→遊んだ</li>
+<li>読む→読んだ</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>友達と遊んだ。<br>
+和朋友玩了。</li>
+<li>この本を読んだ。<br>
+读了这本书。</li>
+</ul>
+<h3 id="一段动词去るた">2. 一段动词：去る＋た</h3>
+<ul>
+<li>見る→見た</li>
+<li>食べる→食べた</li>
+<li>起きる→起きた</li>
+<li>寝る→寝た</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>映画を見た。<br>
+看了电影。</li>
+<li>朝ご飯を食べた。<br>
+吃了早饭。</li>
+</ul>
+<h3 id="サ变动词与カ变动词-2">3. サ变动词与カ变动词</h3>
+<ul>
+<li>する→した</li>
+<li>勉強する→勉強した</li>
+<li>来る（くる）→来た（きた）</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>昨日、勉強した。<br>
+昨天学习了。</li>
+<li>友達が来た。<br>
+朋友来了。</li>
+</ul>
+<h2 id="七过去否定なかった">七、过去否定：～なかった</h2>
+<p>把ない形的「ない」换成「なかった」即可。</p>
+<ul>
+<li>書かない→書かなかった</li>
+<li>読まない→読まなかった</li>
+<li>食べない→食べなかった</li>
+<li>しない→しなかった</li>
+<li>来ない→来なかった（こなかった）</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>昨日は本を読まなかった。<br>
+昨天没读书。</li>
+<li>朝ご飯を食べなかった。<br>
+没吃早饭。</li>
+<li>昨日は勉強しなかった。<br>
+昨天没学习。</li>
+<li>田中さんは来なかった。<br>
+田中没来。</li>
+</ul>
+<p>敬体过去否定统一用「ませんでした」：</p>
+<ul>
+<li>書きませんでした。</li>
+<li>食べませんでした。</li>
+<li>勉強しませんでした。</li>
+<li>来ませんでした（きませんでした）。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>昨日は本を読みませんでした。<br>
+昨天没读书。</li>
+<li>朝ご飯を食べませんでした。<br>
+没吃早饭。</li>
+</ul>
+<h2 id="八四类动词的四种形式">八、四类动词的四种形式</h2>
+<h3 id="五段动词書く">1. 五段动词：書く</h3>
+<p>普通形：</p>
+<ul>
+<li>書く／書かない／書いた／書かなかった</li>
+</ul>
+<p>敬体：</p>
+<ul>
+<li>書きます／書きません／書きました／書きませんでした</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>毎日日記を書きます。<br>
+每天写日记。</li>
+<li>昨日は日記を書きませんでした。<br>
+昨天没写日记。</li>
+</ul>
+<h3 id="一段动词食べる">2. 一段动词：食べる</h3>
+<p>普通形：</p>
+<ul>
+<li>食べる／食べない／食べた／食べなかった</li>
+</ul>
+<p>敬体：</p>
+<ul>
+<li>食べます／食べません／食べました／食べませんでした</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>七時に朝ご飯を食べます。<br>
+七点吃早饭。</li>
+<li>今朝は何も食べませんでした。<br>
+今天早上什么都没吃。</li>
+</ul>
+<h3 id="サ变动词する勉強する">3. サ变动词：する／勉強する</h3>
+<p>普通形：</p>
+<ul>
+<li>する／しない／した／しなかった</li>
+<li>勉強する／勉強しない／勉強した／勉強しなかった</li>
+</ul>
+<p>敬体：</p>
+<ul>
+<li>します／しません／しました／しませんでした</li>
+<li>勉強します／勉強しません／勉強しました／勉強しませんでした</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>毎晩、日本語を勉強します。<br>
+每天晚上学日语。</li>
+<li>昨日は勉強しませんでした。<br>
+昨天没学习。</li>
+</ul>
+<h3 id="カ变动词来る">4. カ变动词：来る</h3>
+<p>普通形：</p>
+<ul>
+<li>来る（くる）／来ない（こない）／来た（きた）／来なかった（こなかった）</li>
+</ul>
+<p>敬体：</p>
+<ul>
+<li>来ます（きます）／来ません（きません）／来ました（きました）／来ませんでした（きませんでした）</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>明日、友達が来ます。<br>
+明天朋友来。</li>
+<li>昨日、友達は来ませんでした。<br>
+昨天朋友没来。</li>
+</ul>
+<h2 id="九敬体四时态的变化方法">九、敬体四时态的变化方法</h2>
+<p>先变成ます形，再只变化句尾：</p>
+<ul>
+<li>書き＋ます：写／会写。</li>
+<li>書き＋ません：不写。</li>
+<li>書き＋ました：写了。</li>
+<li>書き＋ませんでした：没写。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>毎週、映画を見ます。<br>
+每周看电影。</li>
+<li>今日は映画を見ません。<br>
+今天不看电影。</li>
+<li>昨日、映画を見ました。<br>
+昨天看了电影。</li>
+<li>おとといは映画を見ませんでした。<br>
+前天没看电影。</li>
+</ul>
+<p>疑问句直接在句尾加「か」：</p>
+<ul>
+<li>日本へ行きますか。<br>
+去日本吗？</li>
+<li>もう昼ご飯を食べましたか。<br>
+已经吃午饭了吗？</li>
+</ul>
+<h2 id="十易错点">十、易错点</h2>
+<ul>
+<li>買う→買<strong>わ</strong>ない，不是買あない。</li>
+<li>来る的ます形读「きます」，ない形读「こない」。</li>
+<li>行く→行った，不是行いた。</li>
+<li>一类形容词和动词不同：动词过去否定是「書かなかった」，敬体是「書きませんでした」。</li>
+<li>「ませんでした」已经是敬体，不再加「です」。</li>
+<li>帰る、入る、切る等是五段动词：帰ります／帰らない。</li>
+</ul>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#动词分类辞书形ます形ない形与时态">动词分类、辞书形・ます形・ない形与时态</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一先分清普通形和敬体">一、先分清普通形和敬体</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#普通形简体">1. 普通形（简体）</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#敬体ですます体">2. 敬体（です・ます体）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二动词的分类">二、动词的分类</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词">1. 五段动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词">2. 一段动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词">3. サ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#カ变动词">4. カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三辞书形">三、辞书形</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四ます形">四、ます形</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词词尾う段同行い段ます">1. 五段动词：词尾う段→同行い段＋ます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词去るます">2. 一段动词：去る＋ます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词与カ变动词">3. サ变动词与カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五ない形">五、ない形</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词词尾う段同行あ段ない">1. 五段动词：词尾う段→同行あ段＋ない</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词去るない">2. 一段动词：去る＋ない</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词与カ变动词-1">3. サ变动词与カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#特殊ある的否定">4. 特殊：ある的否定</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六过去肯定た形">六、过去肯定：た形</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词的音便">1. 五段动词的音便</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#くいたぐいだ">く→いた、ぐ→いだ</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#すした">す→した</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#うつるった促音便">う・つ・る→った（促音便）</a>
+        </li>
+    
+        <li class="doc-toc-item level-4">
+            <a href="#ぬぶむんだ拨音便">ぬ・ぶ・む→んだ（拨音便）</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词去るた">2. 一段动词：去る＋た</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词与カ变动词-2">3. サ变动词与カ变动词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七过去否定なかった">七、过去否定：～なかった</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八四类动词的四种形式">八、四类动词的四种形式</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#五段动词書く">1. 五段动词：書く</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#一段动词食べる">2. 一段动词：食べる</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#サ变动词する勉強する">3. サ变动词：する／勉強する</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#カ变动词来る">4. カ变动词：来る</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九敬体四时态的变化方法">九、敬体四时态的变化方法</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十易错点">十、易错点</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

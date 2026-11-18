@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            こそあど |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#こそあど系指示词">こそあど系指示词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一こそあど的距离关系">一、こ・そ・あ・ど的距离关系</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二これそれあれどれ事物本身">二、これ・それ・あれ・どれ：事物本身</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三このそのあのどの名词">三、この・その・あの・どの＋名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#の代替已经出现的名词">「の」代替已经出现的名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四ここそこあそこどこ地点">四、ここ・そこ・あそこ・どこ：地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五こちらそちらあちらどちら">五、こちら・そちら・あちら・どちら</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#方向或场所">1. 方向或场所</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#礼貌地指人">2. 礼貌地指人</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#こっちそっちあっちどっち">3. こっち・そっち・あっち・どっち</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六こうそうああどう方式状态">六、こう・そう・ああ・どう：方式、状态</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七こんなそんなあんなどんな名词">七、こんな・そんな・あんな・どんな＋名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八こそあど与问句答句的配合">八、こそあど与问句、答句的配合</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九常用搭配速记">九、常用搭配速记</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="こそあど系指示词">こそあど系指示词</h1>
+<h2 id="一こそあど的距离关系">一、こ・そ・あ・ど的距离关系</h2>
+<p>日语常用「こ・そ・あ・ど」构成一组指示词，合称「こそあど系」。</p>
+<ul>
+<li><strong>こ</strong>：离说话人近，或说话人所在的一方。</li>
+<li><strong>そ</strong>：离听话人近；两人所指的事物不在一起时，也可指离说话人稍远的一方。</li>
+<li><strong>あ</strong>：离说话人和听话人都远。</li>
+<li><strong>ど</strong>：表示疑问，相当于“哪……”。</li>
+</ul>
+<p>想象两人对话：</p>
+<ul>
+<li>说话人指自己手边的书：<strong>これ</strong>です。</li>
+<li>说话人指听话人手边的书：<strong>それ</strong>です。</li>
+<li>说话人指两人远处的书：<strong>あれ</strong>です。</li>
+<li>不知道是哪一本：<strong>どれ</strong>ですか。</li>
+</ul>
+<p>「あ」系列还可指双方都知道、但不在眼前的事物：</p>
+<ul>
+<li>A：昨日、李さんに会いました。<br>
+昨天我见到小李了。</li>
+<li>B：<strong>あの人</strong>は元気でしたか。<br>
+那个人身体好吗？</li>
+</ul>
+<h2 id="二これそれあれどれ事物本身">二、これ・それ・あれ・どれ：事物本身</h2>
+<p>这四个词本身就是体言，可以直接带「は・が・を」等助词，后面不能接名词。</p>
+<ul>
+<li>これは私の本です。<br>
+这是我的书。</li>
+<li>それは何ですか。<br>
+那是什么？</li>
+<li>あれは学校の図書館です。<br>
+那是学校的图书馆。</li>
+<li>どれがあなたの傘ですか。<br>
+哪把是你的伞？</li>
+<li>これをください。<br>
+请给我这个。</li>
+</ul>
+<p>「これ・それ・あれ」主要用来指物。指人时通常使用「この人・その人・あの人」，或使用更礼貌的「こちら・そちら・あちら」。</p>
+<ul>
+<li>あの人は田中先生です。<br>
+那个人是田中老师。</li>
+<li>こちらは王さんです。<br>
+这位是小王。</li>
+</ul>
+<h2 id="三このそのあのどの名词">三、この・その・あの・どの＋名词</h2>
+<p>这四个词必须直接修饰名词，不能单独使用。</p>
+<ul>
+<li>この本は私のです。<br>
+这本书是我的。</li>
+<li>その鞄は李さんの鞄ですか。<br>
+那个包是小李的包吗？</li>
+<li>あの建物は図書館です。<br>
+那栋建筑是图书馆。</li>
+<li>どの本が面白いですか。<br>
+哪本书有趣？</li>
+</ul>
+<p>比较：</p>
+<ul>
+<li>これは本です。<br>
+这是书。</li>
+<li>この本は面白いです。<br>
+这本书有趣。</li>
+<li>不能说「このは本です」，因为「この」后必须接名词。</li>
+<li>也不能说「これ本は面白いです」，因为「これ」不能直接修饰名词。</li>
+</ul>
+<h3 id="の代替已经出现的名词">「の」代替已经出现的名词</h3>
+<p>回答中可以用「N＋の」避免重复同一个名词：</p>
+<ul>
+<li>A：この傘はあなたのですか。<br>
+这把伞是你的吗？</li>
+<li>B：いいえ、あの傘が私のです。<br>
+不，那把伞是我的。</li>
+</ul>
+<p>这里的「私の」相当于「私の傘」。</p>
+<h2 id="四ここそこあそこどこ地点">四、ここ・そこ・あそこ・どこ：地点</h2>
+<ul>
+<li>ここは教室です。<br>
+这里是教室。</li>
+<li>そこに本があります。<br>
+那里有书。</li>
+<li>あそこに駅があります。<br>
+那里有车站。</li>
+<li>トイレはどこですか。<br>
+厕所在哪里？</li>
+<li>ここで写真を撮ります。<br>
+在这里拍照。</li>
+<li>どこへ行きますか。<br>
+去哪里？</li>
+</ul>
+<p>注意地点助词由句子的意思决定：</p>
+<ul>
+<li>ここ<strong>は</strong>教室です：提示主题“这里”。</li>
+<li>ここ<strong>に</strong>本があります：表示存在地点。</li>
+<li>ここ<strong>で</strong>勉強します：表示动作发生地点。</li>
+<li>ここ<strong>から</strong>駅まで歩きます：表示起点。</li>
+</ul>
+<h2 id="五こちらそちらあちらどちら">五、こちら・そちら・あちら・どちら</h2>
+<p>这组词可以表示方向、场所，也可以礼貌地指人。</p>
+<h3 id="方向或场所">1. 方向或场所</h3>
+<ul>
+<li>こちらへ来てください。<br>
+请到这边来。</li>
+<li>駅はあちらです。<br>
+车站在那边。</li>
+<li>トイレはどちらですか。<br>
+洗手间在哪边？比「どこですか」更委婉。</li>
+</ul>
+<h3 id="礼貌地指人">2. 礼貌地指人</h3>
+<ul>
+<li>こちらは田中先生です。<br>
+这位是田中老师。</li>
+<li>あちらはどなたですか。<br>
+那位是谁？</li>
+</ul>
+<p>「どなた」是「誰（だれ）」的礼貌说法。</p>
+<h3 id="こっちそっちあっちどっち">3. こっち・そっち・あっち・どっち</h3>
+<p>这组是「こちら」系列的口语形式，语气较随意，通常不用于正式介绍他人。</p>
+<ul>
+<li>こっちに来て。<br>
+到这边来。</li>
+<li>どっちが正しい？<br>
+哪边／哪个是对的？</li>
+</ul>
+<h2 id="六こうそうああどう方式状态">六、こう・そう・ああ・どう：方式、状态</h2>
+<p>这组词表示“这样、那样、怎样”，在句中作副词性成分。</p>
+<ul>
+<li>こう書きます。<br>
+这样写。</li>
+<li>そう思います。<br>
+我是这么想的。</li>
+<li>ああ言いました。<br>
+像那样说了。</li>
+<li>どうしますか。<br>
+怎么办？</li>
+<li>どうしてこうなりましたか。<br>
+为什么变成这样了？</li>
+</ul>
+<p>常见表达：</p>
+<ul>
+<li>はい、そうです。<br>
+是的，是这样。</li>
+<li>そうですね。<br>
+是啊／说得对。</li>
+<li>どうもありがとうございます。<br>
+非常感谢。</li>
+</ul>
+<h2 id="七こんなそんなあんなどんな名词">七、こんな・そんな・あんな・どんな＋名词</h2>
+<p>这组词修饰名词，表示“这样的、那样的、什么样的”。</p>
+<ul>
+<li>こんな本が読みたいです。<br>
+我想读这样的书。</li>
+<li>そんな話は知りません。<br>
+我不知道那样的事。</li>
+<li>あんな所へ行きたくありません。<br>
+我不想去那样的地方。</li>
+<li>どんな本が好きですか。<br>
+喜欢什么样的书？</li>
+<li>どんな人ですか。<br>
+是个什么样的人？</li>
+</ul>
+<p>「どんな」问性质或种类；「どの」是在明确的选项中问“哪一个”：</p>
+<ul>
+<li>どんな音楽が好きですか。<br>
+喜欢什么样的音乐？</li>
+<li>この三つの中で、どの音楽が好きですか。<br>
+这三个当中，喜欢哪个音乐作品？</li>
+</ul>
+<h2 id="八こそあど与问句答句的配合">八、こそあど与问句、答句的配合</h2>
+<p>疑问句中的「ど」系列，回答时根据实际位置换成「こ・そ・あ」系列，不能继续用「ど」系列。</p>
+<ul>
+<li><p>A：どれがあなたの本ですか。<br>
+哪本是你的书？</p></li>
+<li><p>B：これが私の本です。<br>
+这本是我的书。</p></li>
+<li><p>A：その本は何ですか。<br>
+你那本书是什么？</p></li>
+<li><p>B：これは日本語の教科書です。<br>
+我这本是日语教科书。</p></li>
+</ul>
+<p>问句说「それ」，答句常换成「これ」，因为同一件物品分别靠近双方。</p>
+<h2 id="九常用搭配速记">九、常用搭配速记</h2>
+<ul>
+<li>これ／この＋名词：这个……</li>
+<li>それ／その＋名词：那个……（靠近对方）</li>
+<li>あれ／あの＋名词：那个……（远离双方）</li>
+<li>どれ／どの＋名词：哪个……</li>
+<li>ここ／そこ／あそこ／どこ：这里／那里／那里／哪里</li>
+<li>こちら／そちら／あちら／どちら：这边／那边／那边／哪边；也可礼貌指人</li>
+<li>こう／そう／ああ／どう：这样／那样／那样／怎样</li>
+<li>こんな／そんな／あんな／どんな＋名词：这样的／那样的／那样的／什么样的</li>
+</ul>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#こそあど系指示词">こそあど系指示词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一こそあど的距离关系">一、こ・そ・あ・ど的距离关系</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二これそれあれどれ事物本身">二、これ・それ・あれ・どれ：事物本身</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三このそのあのどの名词">三、この・その・あの・どの＋名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#の代替已经出现的名词">「の」代替已经出现的名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四ここそこあそこどこ地点">四、ここ・そこ・あそこ・どこ：地点</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五こちらそちらあちらどちら">五、こちら・そちら・あちら・どちら</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#方向或场所">1. 方向或场所</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#礼貌地指人">2. 礼貌地指人</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#こっちそっちあっちどっち">3. こっち・そっち・あっち・どっち</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六こうそうああどう方式状态">六、こう・そう・ああ・どう：方式、状态</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七こんなそんなあんなどんな名词">七、こんな・そんな・あんな・どんな＋名词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八こそあど与问句答句的配合">八、こそあど与问句、答句的配合</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九常用搭配速记">九、常用搭配速记</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

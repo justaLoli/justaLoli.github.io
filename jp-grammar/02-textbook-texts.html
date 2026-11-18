@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            教材课文 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#教材课文">教材课文</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第5課-どうぞよろしくお願いします">第5課 どうぞ，よろしくお願いします</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-初めまして馬です">会話 I 初めまして，馬です</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-これは木村さんの家族の写真ですか">会話 II これは木村さんの家族の写真ですか</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第6課-北京も秋はいい季節ですよ">第6課 北京も秋はいい季節ですよ</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-いいお天気ですね">会話 I いいお天気ですね</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-昨日は暑かったですが今日は涼しいですね">会話 II 昨日は暑かったですが，今日は涼しいですね</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第7課-ここの紅葉は有名です">第7課 ここの紅葉は有名です</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-わたしの故郷は北京の郊外で静かなところです">会話 I わたしの故郷は北京の郊外で，静かなところです</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-秋はさわやかで気持ちがいいです">会話 II 秋はさわやかで，気持ちがいいです</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第8課-本部キャンパスには学部が4つあります">第8課 本部キャンパスには学部が4つあります</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-どこが国際交流センターですか">会話 I どこが国際交流センターですか</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-店員さんが2人しかいません">会話 II 店員さんが2人しかいません</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第9課-わたしもそこへ行きます">第9課 わたしもそこへ行きます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-わたしは電車で来ます">会話 I わたしは電車で来ます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-写真を撮りましたか">会話 II 写真を撮りましたか</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第10課-お誕生日おめでとうございます">第10課 お誕生日，おめでとうございます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-母からセーターをもらいました">会話 I 母からセーターをもらいました</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-わたしは赤いのを選びました">会話 II わたしは赤いのを選びました</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第11課-各地から観光客が集まるでしょう">第11課 各地から観光客が集まるでしょう</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-クラブ活動で鎌倉へ行きます">会話 I クラブ活動で鎌倉へ行きます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-雨が降るかどうか分かりません">会話 II 雨が降るかどうか分かりません</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第12課-どうぞ楽にしてください">第12課 どうぞ，楽にしてください</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-お料理のほうをたくさん食べてください">会話 I お料理のほうをたくさん食べてください</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-お風呂の入り方を教えてください">会話 II お風呂の入り方を教えてください</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第13課-みんなはいろいろなことをやっていますね">第13課 みんなはいろいろなことをやっていますね</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-水ギョーザを作っています">会話 I 水ギョーザを作っています</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-中国の大学へ行って勉強しました">会話 II 中国の大学へ行って勉強しました</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第14課-今後の勉強に必要だと思いますから">第14課 今後の勉強に必要だと思いますから</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-本で調べたり日本人の友達に聞いたりします">会話 I 本で調べたり，日本人の友達に聞いたりします</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-日本の物価について調べました">会話 II 日本の物価について調べました</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第15課-コーヒーも飲みたいです">第15課 コーヒーも飲みたいです</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-何か冷たい飲み物がほしいですね">会話 I 何か冷たい飲み物がほしいですね</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-ぼくはテニスより野球が得意なんですよ">会話 II ぼくはテニスより野球が得意なんですよ</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="教材课文">教材课文</h1>
+<blockquote>
+<p>收录《初级日语（第一册）》第 5—15 课课文，按课次排列。</p>
+</blockquote>
+<hr>
+<h2 id="第5課-どうぞよろしくお願いします">第5課　どうぞ，よろしくお願いします</h2>
+<h3 id="会話-i-初めまして馬です">会話 I　初めまして，馬です</h3>
+<p>上午9点，小马第一次来上课，老师把她介绍给其他同学。</p>
+<p>先生：皆さん，おはようございます。<br>
+学生：おはようございます。<br>
+先生：こちらは馬さんです。中国の方です。<br>
+馬：初めまして，馬です。どうぞ，よろしくお願いします。<br>
+トム：トムです。アメリカ人です。どうぞ，よろしく。馬さんの出身はどこですか。<br>
+馬：北京です。<br>
+マリー：マリーです。インド人です。わたしの趣味はカラオケです。馬さんの趣味は何ですか。<br>
+馬：わたしもカラオケです。<br>
+トム：（想请小马入座）あ，先生，馬さんの席はどこですか。<br>
+先生：そこです。</p>
+<h3 id="会話-ii-これは木村さんの家族の写真ですか">会話
+II　これは木村さんの家族の写真ですか</h3>
+<p>小马与木村在宿舍闲聊。她看到一张照片。</p>
+<p>馬：これは木村さんの家族の写真ですか。<br>
+木村：はい，そうです。<br>
+馬：木村さんは4人家族ですか。<br>
+木村：はい，4人家族です。馬さんは。<br>
+馬：わたしは3人家族です。父，母とわたしです。父は医者です。母は高校の教師です。<br>
+木村：そうですか。僕の父は会社員です。母は主婦です。<br>
+馬：こちらは妹さんですか。<br>
+木村：はい。<br>
+馬：妹さんも大学生ですか。<br>
+木村：いいえ，大学生ではありません。高校2年生です。<br>
+馬：そうですか。じゃあ，この犬は。<br>
+木村：ああ，僕の高校時代の恋人でした。</p>
+<hr>
+<h2 id="第6課-北京も秋はいい季節ですよ">第6課　北京も秋はいい季節ですよ</h2>
+<h3 id="会話-i-いいお天気ですね">会話 I　いいお天気ですね</h3>
+<p>课间，日语班的同学们看着窗外聊天。</p>
+<p>馬：いいお天気ですね。<br>
+トム：そうですね。空が青くて高いですね。北京の秋はどうですか。<br>
+馬：北京も秋はいい季節ですよ。涼しくて，気持ちがいいです。<br>
+トム：そうですか。それはいいですね。夏はどうですか。<br>
+馬：暑いですが，東京ほど蒸し暑くないです。<br>
+トム：冬は寒いですか。<br>
+馬：東京より寒いです。風が冷たくて強いです。でも，去年は暖冬でした。</p>
+<h3 id="会話-ii-昨日は暑かったですが今日は涼しいですね">会話
+II　昨日は暑かったですが，今日は涼しいですね</h3>
+<p>小马和佐藤打完乒乓球一起回宿舍。</p>
+<p>馬：ああ，いい気分です。<br>
+佐藤：わたしも。秋はスポーツの季節ですね。<br>
+馬：そうですね。昨日は暑かったですが，今日は涼しいですね。<br>
+佐藤：馬さん，これから，どうしますか。<br>
+馬：勉強です。明日の1限目は日本語のテストですから。<br>
+佐藤：そうですか。日本語は難しいですか。<br>
+馬：発音はあまり難しくないですが，助詞の使い方は難しいです。<br>
+佐藤：そうですか。<br>
+馬：でも，おもしろいですよ。秋は勉強の季節です。がんばります。<br>
+佐藤：馬さんはえらい。わたしもがんばります。</p>
+<hr>
+<h2 id="第7課-ここの紅葉は有名です">第7課　ここの紅葉は有名です</h2>
+<h3 id="会話-i-わたしの故郷は北京の郊外で静かなところです">会話
+I　わたしの故郷は北京の郊外で，静かなところです</h3>
+<p>佐藤带小马来到自己的家乡。俩人边欣赏风景，边聊天。</p>
+<p>馬：わあ，きれいですね。<br>
+佐藤：ええ。ここの紅葉は有名です。<br>
+馬：人が多いですね。いつも，こんなににぎやかですか。<br>
+佐藤：ええ。でも以前は，交通が便利ではありませんでした。人もあまり多くなかったです。<br>
+馬：そうですか。<br>
+佐藤：子どもの時は，にぎやかな都会が好きでしたが，今は，静かな郊外が好きです。<br>
+馬：わたしも。<br>
+佐藤：馬さんの故郷は。<br>
+馬：わたしの故郷は北京の郊外で，静かなところです。いちごの産地です。<br>
+佐藤：いいですね。わたしはいちごが大好きです。</p>
+<h3 id="会話-ii-秋はさわやかで気持ちがいいです">会話
+II　秋はさわやかで，気持ちがいいです</h3>
+<p>佐藤继续带小马观赏自己家乡的风景，聊天。</p>
+<p>佐藤：わたしは秋が大好きです。<br>
+馬：ええ。わたしも嫌いではありません。さわやかで，気持ちがいいですね。<br>
+佐藤：馬さん，日本の田舎は初めてですか。<br>
+馬：はい，初めてです。とても楽しいです。<br>
+佐藤：ほら，見てごらんなさい。山の上の紅葉が見事ですよ。<br>
+馬：ほんとだ。色が鮮やかで，きれいですね。<br>
+佐藤：ええ。わたしは故郷の紅葉が大好きです。<br>
+馬：あのう，あの川は。<br>
+佐藤：あれは有名な千曲川です。<br>
+馬：ああ，あれが千曲川ですか。</p>
+<hr>
+<h2 id="第8課-本部キャンパスには学部が4つあります">第8課　本部キャンパスには学部が4つあります</h2>
+<h3 id="会話-i-どこが国際交流センターですか">会話
+I　どこが国際交流センターですか</h3>
+<p>佐藤带小马来到大学主校区办理奖学金手续。两人刚走到大学门口。</p>
+<p>佐藤：馬さん，ここが大学の本部です。<br>
+馬：ああ，そうですか。駅に近いですね。<br>
+佐藤：ええ，駅から10分ぐらいです。<br>
+馬：本部キャンパスには学部がいくつありますか。<br>
+佐藤：4つです。教育学部のほかに，人文学部と国際学部と工学部があります。<br>
+馬：学生はどのぐらいですか。<br>
+佐藤：6000名ぐらいです。<br>
+馬：ところで，どこが国際交流センターですか。<br>
+佐藤：ほら，あそこに新しい建物があるでしょう。あれが国際交流センターです。<br>
+馬：ああ，分かりました。</p>
+<p>两人走到离新大楼不远的池塘边。</p>
+<p>馬：あら，池に鯉がいますね。<br>
+佐藤：ええ。たくさんいますよ。</p>
+<h3 id="会話-ii-店員さんが2人しかいません">会話
+II　店員さんが2人しかいません</h3>
+<p>佐藤带小马办完奖学金手续后，又来到学校的商店。</p>
+<p>馬：佐藤さん，生協には何がありますか。<br>
+佐藤：本や文房具など，いろいろあります。お菓子やジュースなどもありますよ。</p>
+<p>进了生协以后，小马看到只有两名售货员，但顾客很多，感到很吃惊。</p>
+<p>馬：店員さんが2人しかいませんね。<br>
+佐藤：そうですね。大学の売店は店員が少ないです。<br>
+馬：（看到圆珠笔和标价）ボールペンは一本80円ですか。安いですね。<br>
+佐藤：生協の品物は，たいてい外の店より安いです。<br>
+馬：（面向售货员）すみません，ボールペンを10本ください。<br>
+店員：すみませんが，6本しかありません。よろしいですか。<br>
+馬：はい，結構です。<br>
+佐藤：ほかに何か必要なものがありませんか。<br>
+馬：もうありません。今日は，いろいろとありがとうございました。<br>
+佐藤：どういたしまして。</p>
+<hr>
+<h2 id="第9課-わたしもそこへ行きます">第9課　わたしもそこへ行きます</h2>
+<h3 id="会話-i-わたしは電車で来ます">会話 I　わたしは電車で来ます</h3>
+<p>清早，小马和佐藤在校园门口相遇，她们互相打招呼，边走边聊天。</p>
+<p>佐藤：馬さん，おはようございます。<br>
+馬：おはようございます。これから授業ですか。<br>
+佐藤：ええ，4階の大きい教室へ行きます。<br>
+馬：そうですか。わたしもそこへ行きます。ところで，佐藤さんのお宅は遠いですか。<br>
+佐藤：いいえ，あまり遠くないです。家から大学まで自転車で20分ぐらいです。<br>
+馬：近くていいですね。<br>
+佐藤：馬さんは何で来ますか。<br>
+馬：わたしは電車で来ます。日本の電車は便利ですね。わたしはよく利用します。<br>
+佐藤：わたしも。馬さん，金曜日の午後の講演会は何時に始まりますか。<br>
+馬：1時半に始まります。<br>
+佐藤：そうですか。分かりました。</p>
+<h3 id="会話-ii-写真を撮りましたか">会話 II　写真を撮りましたか</h3>
+<p>周末刚刚过去，小马和佐藤时隔数日又见面了，佐藤问小马周末是如何度过的。</p>
+<p>佐藤：馬さん，しばらくですね。日曜日はどこかへ行きましたか。<br>
+馬：ええ，同級生たちと嵐山へ行きました。<br>
+佐藤：嵐山ですか。いい所に行きましたね。<br>
+馬：景色がとてもきれいでした。人もおおぜいいましたよ。<br>
+佐藤：写真を撮りましたか。<br>
+馬：人が多かったので，あまり撮りませんでした。<br>
+佐藤：周恩来の詩の記念碑も見ましたか。<br>
+馬：はい，見ました。そこで記念撮影をしました。<br>
+佐藤：昼食はどこで取りましたか。<br>
+馬：川の近くの小さな店で食べました。少し高かったですが，おいしかったです。<br>
+佐藤：よかったですね。</p>
+<hr>
+<h2 id="第10課-お誕生日おめでとうございます">第10課　お誕生日，おめでとうございます</h2>
+<h3 id="会話-i-母からセーターをもらいました">会話
+I　母からセーターをもらいました</h3>
+<p>小马注视着挂历。木村看看她，又看看挂历，若有所思。</p>
+<p>木村：そうだ，あと1週間で馬さんの誕生日ですね。<br>
+馬：はい，いよいよ20歳になります。それに，日本で初めての誕生日になります。<br>
+木村：そうですか。<br>
+馬：去年の誕生日には母からセーターをもらい，父から自転車をもらいました。<br>
+木村：よかったですね。<br>
+木村：僕の誕生日の時は，彼女が手作りのケーキをくれました。<br>
+馬：えっ？手作りですか。うらやましい。<br>
+木村：そうですか。じゃあ，馬さんの誕生日には，僕が手作りのプレゼントをあげますよ。<br>
+馬：わあ，うれしい。</p>
+<h3 id="会話-ii-わたしは赤いのを選びました">会話
+II　わたしは赤いのを選びました</h3>
+<p>早上木村去找小马，小马没在宿舍。晚上木村再次来到小马这里。</p>
+<p>木村：あ，馬さん。今日はお誕生日でしたね。おめでとうございます。<br>
+馬：ありがとうございます。<br>
+木村：どこかへ出かけましたか。<br>
+馬：ええ，友だちと朝早く買い物に行きました。<br>
+木村：そうですか。何かいいものがありましたか。<br>
+馬：ええ。これから寒くなるので，マフラーを買いました。<br>
+木村：どんなのを買いましたか。<br>
+馬：いろいろありましたが，わたしは赤いのを選びました。ところで，木村さんはわたしに何かご用ですか。<br>
+木村：僕の手作りの誕生日祝いを届けに来ました。<br>
+馬：わあ，うれしい。わざわざ，ありがとうございます。</p>
+<hr>
+<h2 id="第11課-各地から観光客が集まるでしょう">第11課　各地から観光客が集まるでしょう</h2>
+<h3 id="会話-i-クラブ活動で鎌倉へ行きます">会話
+I　クラブ活動で鎌倉へ行きます</h3>
+<p>周末，小马和汤姆在宿舍谈论明天的日程安排。</p>
+<p>トム：馬さん，あした，何をしますか。<br>
+馬：クラブ活動で鎌倉へ行きます。<br>
+トム：新幹線で行くんですか。<br>
+馬：いいえ，JR横須賀線で行きます。<br>
+トム：ローラさんも行くんでしょう。<br>
+馬：さあ，行くか行かないか分かりません。後で，彼女に聞きましょう。<br>
+トム：あしたは土曜日ですから，観光客でいっぱいになるでしょう。<br>
+馬：きっとそうでしょう。各地から観光客が集まるから。トムさんはあした，どこかへ行きますか。<br>
+トム：午前中はどこへも行きません。寮でレポートを書きます。午後から講演を聞きに行きます。</p>
+<h3 id="会話-ii-雨が降るかどうか分かりません">会話
+II　雨が降るかどうか分かりません</h3>
+<p>小马准备明天去镰仓，她在向汤姆打听天气情况。</p>
+<p>馬：トムさん，さっきの天気予報を聞きましたか。あした，雨が降るでしょうか。<br>
+トム：いいえ，わたしも聞きませんでした。だから，あしたは雨が降るかどうか分かりません。<br>
+馬：そうですか。どうしようかな。<br>
+トム：10時のニュースがすぐ終わりますよ。その後で天気予報を聞きましょう。<br>
+馬：そうですね。ところで，あしたの午後は何の講演ですか。<br>
+トム：あしたは午後から，講堂で「地域の人間関係について」のシンポジウムがあります。その講演を聞きに行きます。<br>
+馬：いいですね。誰が講演するんですか。<br>
+トム：名前はまだ分かりませんが，きっと有名な学者でしょう。<br>
+馬：いい機会ですけれど，クラブ活動があるので，残念です。<br>
+トム：大丈夫ですよ。また機会がありますから。</p>
+<hr>
+<h2 id="第12課-どうぞ楽にしてください">第12課　どうぞ，楽にしてください</h2>
+<h3 id="会話-i-お料理のほうをたくさん食べてください">会話
+I　お料理のほうをたくさん食べてください</h3>
+<p>小马接受佐藤邀请，住在佐藤家体验日本人的家庭生活。这天，佐藤妈妈做好了饭。</p>
+<p>母親：さあ，お食事にしましょう。馬さんはここです。どうぞ。<br>
+馬：はい，ありがとうございます。正座はこうするんですか。<br>
+佐藤：いいですよ。どうぞ，楽にしてください。<br>
+馬：はい。では，いただきます。これは刺身ですね。中国では，魚はあまり生のままでは食べませんが。<br>
+母親：そうですか。これ，わさびです。醤油の中に入れてください。それに，つけて食べてください。<br>
+馬：おいしいです。魚は体にいいですね。佐藤さんのお宅ではよく食べるんですか。<br>
+佐藤：そうですね。週に2，3回食べますね。これ，日本酒です。どうぞ。<br>
+馬：いいえ，わたしは，お酒はだめなんです。<br>
+母親：そうですか。じゃ，お料理のほうをたくさん食べてください。<br>
+馬：ありがとうございます。ところで，佐藤さんのお宅では，いつもお母さんの手料理ですか。<br>
+佐藤：そうですね。月に1回ぐらいは外へ食べに行きます。ねえ，お母さん。</p>
+<h3 id="会話-ii-お風呂の入り方を教えてください">会話
+II　お風呂の入り方を教えてください</h3>
+<p>母親：お風呂の用意ができました。馬さんからどうぞ。<br>
+馬：ありがとうございます。でも，日本のお風呂は初めてです。入り方を教えてください。<br>
+佐藤：じゃ，説明しましょう。先ず，湯船の外でお湯で体を流してください。それから，湯船に浸かってください。<br>
+馬：せっけんは湯船の中で使ってもいいですか。<br>
+佐藤：いいえ，せっけんは湯船の中では使わないでください。<br>
+馬：はい，分かりました。日本のお風呂は深いですね。こんなにたくさんのお湯を使って，もったいなくないですか。<br>
+佐藤：いいえ，このお湯は家族全員が入ってから流しますから。<br>
+馬：えっ？家族全員で？<br>
+佐藤：そうです。ですから，体をきれいにしてから入るんです。<br>
+馬：なるほど。中国ではふつうシャワーだけですね。</p>
+<hr>
+<h2 id="第13課-みんなはいろいろなことをやっていますね">第13課　みんなはいろいろなことをやっていますね</h2>
+<h3 id="会話-i-水ギョーザを作っています">会話
+I　水ギョーザを作っています</h3>
+<p>小马和木村来到大学节期间由各国留学生办的国际美食街。</p>
+<p>木村：馬さんは日本の大学祭は初めてですか。<br>
+馬：ええ，初めてです。みんなはいろいろなことをやっていますね。<br>
+木村：そうですね。ほら，こちらは中国料理の屋台。みんなで水ギョーザを作っていますね。<br>
+馬：そうですね。木村さん，水ギョーザは好きですか。<br>
+木村：大好きです。皮から作っていますね。<br>
+馬：ええ。水ギョーザはわたしの「外交メニュー」ですよ。<br>
+木村：外交メニュー？<br>
+馬：つまり，わたしは友だちを招待するときは，必ず水ギョーザを作ります。水ギョーザに中国のお酒，最高ですよ。<br>
+木村：なるほど。みんなで食べながら，おしゃべりするのはきっと楽しいでしょう。今度，わたしも呼んでください。<br>
+馬：はい。必ず誘います。<br>
+木村：ありがとうございます。それじゃ，ほかの屋台を回ってから，もう一度ここに戻って，水ギョーザを食べましょう。<br>
+馬：はい，そうしましょう。</p>
+<h3 id="会話-ii-中国の大学へ行って勉強しました">会話
+II　中国の大学へ行って勉強しました</h3>
+<p>木村和小马都要去参加大学节期间举办的汉语演讲比赛。木村是参赛者，小马是评委。早上他们在校门口相遇，俩人边走边交谈。</p>
+<p>木村，馬：おはようございます。<br>
+馬：木村さん，早いですね。<br>
+木村：ええ，いつもより1時間も早く家を出ました。<br>
+馬：何時に起きましたか。<br>
+木村：6時です。起きてから，急いで支度をしました。6時半ごろ，電車に乗りました。<br>
+馬：どこに住んでいますか。<br>
+木村：飯田橋です。今日は中国語で発表するので，早く来ました。とても緊張しています。<br>
+馬：大丈夫ですよ。木村さんは中国語が上手ですから。<br>
+木村：とんでもない。<br>
+馬：木村さんの中国語は，大学以外のどこかで勉強したのですか。<br>
+木村：いいえ，大学以外では勉強していません。でも，去年の夏休みに中国の大学へ行って勉強しました。<br>
+馬：なるほど。じゃあ，頑張ってください。<br>
+木村：頑張ります。谢谢！</p>
+<hr>
+<h2 id="第14課-今後の勉強に必要だと思いますから">第14課　今後の勉強に必要だと思いますから</h2>
+<h3 id="会話-i-本で調べたり日本人の友達に聞いたりします">会話
+I　本で調べたり，日本人の友達に聞いたりします</h3>
+<p>星期天，小马边听CD边练习打字，汤姆来到她的身边。</p>
+<p>トム：馬さん，いつもCDを聞きながら，勉強していますね。<br>
+馬：ええ，まあ。日本語入力をしています。<br>
+トム：日本語入力？パソコンを使って，日本語の文章を書くということですか。<br>
+馬：はい，そうです。<br>
+トム：難しいですか。<br>
+馬：ええ，難しいですが，今後の勉強に必要だと思いますから。<br>
+トム：それはそうですね。でも，分からないことがあったら，どうしますか。<br>
+馬：本で調べたり，日本人の友達に聞いたりします。<br>
+トム：そうですか。いつか僕にも教えてください。<br>
+馬：ええ，いいですよ。ほら，見て。これはわたしが入力した手紙です。</p>
+<h3 id="会話-ii-日本の物価について調べました">会話
+II　日本の物価について調べました</h3>
+<p>星期一早晨，上日语课前，老师、同学们都到了，只有汤姆没来。</p>
+<p>先生：あら，トムさんはまだ来ませんね。どうかしたんですか。<br>
+馬：先生，トムさんはさっき，「頭が痛い」と言っていました。<br>
+先生：そうですか。大丈夫でしょうか。<br>
+馬：ええ，「もう薬を飲んだ」と言っていましたから，心配ないと思います。<br>
+先生：じゃあ，「お大事に」とトムさんに伝えてください。<br>
+馬：はい，分かりました。そう伝えます。<br>
+先生：ところで，皆さんは昨日，何をしましたか。<br>
+馬：わたしはスーパーへ行って，日本の物価について調べました。<br>
+先生：いいことをしましたね。<br>
+馬：「日本の物価について」という経済学の宿題があったからです。<br>
+先生：いつか調べた結果をみんなの前でも発表してください。<br>
+馬：はい，分かりました。</p>
+<hr>
+<h2 id="第15課-コーヒーも飲みたいです">第15課　コーヒーも飲みたいです</h2>
+<h3 id="会話-i-何か冷たい飲み物がほしいですね">会話
+I　何か冷たい飲み物がほしいですね</h3>
+<p>打球后，三人商量接下来做什么。</p>
+<p>馬：ああ，いい気持ち。汗をいっぱいかきましたね。何か冷たい飲み物がほしいですね。<br>
+トム：そうですね。おなかもちょっと空きました。何か食べたいですね。<br>
+佐藤：ほら，向こうに喫茶店がありますよ。入りましょう。</p>
+<p>来到咖啡店。</p>
+<p>店員：いらっしゃいませ。</p>
+<p>就坐后。</p>
+<p>佐藤：あのう，何かお薦めのケーキはありますか。<br>
+店員：自家製のヨーグルトケーキがございますが。<br>
+トム：いいですね。僕はヨーグルトが大好きです。コーヒーも飲みたいですね。じゃあ，ヨーグルトケーキ一つ，それにコーヒーをください。<br>
+馬：わたしはコーラにしましょう。<br>
+佐藤：わたしはアイスティーにします。<br>
+店員：かしこまりました。</p>
+<p>端来大家所要食品。</p>
+<p>店員：お待たせいたしました。ごゆっくりどうぞ。</p>
+<h3 id="会話-ii-ぼくはテニスより野球が得意なんですよ">会話
+II　ぼくはテニスより野球が得意なんですよ</h3>
+<p>下午下课后，小马和木村在网球场打网球，小马很欣赏木村的球技。</p>
+<p>馬：木村さんはテニスがお上手ですね。<br>
+木村：いやあ，ぼくはテニスより野球のほうが得意なんですよ。<br>
+馬：すごいですね。野球は日本では，一番人気があるんでしょう。<br>
+木村：そうです。馬さんは何が好きですか。やはり卓球ですか。<br>
+馬：嫌いではありませんが，バレーボールのほうが好きです。ところで，木村さんは，ほかにどんな趣味がありますか。<br>
+木村：ピアノです。しかし，この頃はめったに弾きません。<br>
+馬：わたしも小さい時，ピアノを習いたかったのですが，ずっとそのチャンスがありませんでした。<br>
+木村：「好きこそものの上手なれ」ということわざがありますから，いまからでも間に合いますよ。いつかいっしょにやりましょうか。<br>
+馬：トムさんもピアノを弾きたいと言っていますから，誘ってもいいですか。<br>
+木村：もちろんいいですよ。</p>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#教材课文">教材课文</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第5課-どうぞよろしくお願いします">第5課 どうぞ，よろしくお願いします</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-初めまして馬です">会話 I 初めまして，馬です</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-これは木村さんの家族の写真ですか">会話 II これは木村さんの家族の写真ですか</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第6課-北京も秋はいい季節ですよ">第6課 北京も秋はいい季節ですよ</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-いいお天気ですね">会話 I いいお天気ですね</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-昨日は暑かったですが今日は涼しいですね">会話 II 昨日は暑かったですが，今日は涼しいですね</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第7課-ここの紅葉は有名です">第7課 ここの紅葉は有名です</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-わたしの故郷は北京の郊外で静かなところです">会話 I わたしの故郷は北京の郊外で，静かなところです</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-秋はさわやかで気持ちがいいです">会話 II 秋はさわやかで，気持ちがいいです</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第8課-本部キャンパスには学部が4つあります">第8課 本部キャンパスには学部が4つあります</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-どこが国際交流センターですか">会話 I どこが国際交流センターですか</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-店員さんが2人しかいません">会話 II 店員さんが2人しかいません</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第9課-わたしもそこへ行きます">第9課 わたしもそこへ行きます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-わたしは電車で来ます">会話 I わたしは電車で来ます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-写真を撮りましたか">会話 II 写真を撮りましたか</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第10課-お誕生日おめでとうございます">第10課 お誕生日，おめでとうございます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-母からセーターをもらいました">会話 I 母からセーターをもらいました</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-わたしは赤いのを選びました">会話 II わたしは赤いのを選びました</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第11課-各地から観光客が集まるでしょう">第11課 各地から観光客が集まるでしょう</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-クラブ活動で鎌倉へ行きます">会話 I クラブ活動で鎌倉へ行きます</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-雨が降るかどうか分かりません">会話 II 雨が降るかどうか分かりません</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第12課-どうぞ楽にしてください">第12課 どうぞ，楽にしてください</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-お料理のほうをたくさん食べてください">会話 I お料理のほうをたくさん食べてください</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-お風呂の入り方を教えてください">会話 II お風呂の入り方を教えてください</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第13課-みんなはいろいろなことをやっていますね">第13課 みんなはいろいろなことをやっていますね</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-水ギョーザを作っています">会話 I 水ギョーザを作っています</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-中国の大学へ行って勉強しました">会話 II 中国の大学へ行って勉強しました</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第14課-今後の勉強に必要だと思いますから">第14課 今後の勉強に必要だと思いますから</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-本で調べたり日本人の友達に聞いたりします">会話 I 本で調べたり，日本人の友達に聞いたりします</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-日本の物価について調べました">会話 II 日本の物価について調べました</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#第15課-コーヒーも飲みたいです">第15課 コーヒーも飲みたいです</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-i-何か冷たい飲み物がほしいですね">会話 I 何か冷たい飲み物がほしいですね</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#会話-ii-ぼくはテニスより野球が得意なんですよ">会話 II ぼくはテニスより野球が得意なんですよ</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

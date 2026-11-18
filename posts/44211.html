@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            2024总结 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    
+    
+
+    
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/img/avatar.webp">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Loli的杂货铺
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="" href="/">首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/archives">归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/tags">标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/categories">分类</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/about/">关于</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class="" href="/links">友链</a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class="" href="/">首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/about/">关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" href="/links">友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+                <div class="post-content-top border-box" style="height:13.8rem">
+                    <div class="cover-post-title">
+                        2024总结
+                    </div>
+                    <img class="post-cover" src="/posts/44211/header.png" onerror='this.style.display="none"'>
+                </div>
+            
+
+            <div class="post-content-bottom border-box has-cover">
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/img/avatar.webp">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">justaLoli</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-01-27 21:28:32</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Mon Feb 09 2026 22:30:09 GMT+0800">2026-02-09 22:30:09</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%80%9D%E8%80%83/">思考</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">年终总结</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>3k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>10 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <link rel="stylesheet" type="text/css" href="/css/hint.css"><script src="/js/hint-clamp.js" defer="defer"></script><p>我觉得以后写年终总结的时候，一定要标注一下是在什么境况下总结的。作为一个“淫雨霏霏”就会“忧谗畏讥”，“春和景明”就会“把酒临风”的人，外界的环境会影响自己的心境，自己当下的心境又可能会影响自己对过去一年的评价。</p>
+<p>Well，所以现在是什么状态呢？临近春节了。外省的亲人来到这里一起过节，家里怪热闹的。这种环境不是很适合文字任务（看呐，现在我还时不时的要被爸妈叫去干各种事情），但我已经把这篇文章拖得太久了，再往后的话，对这一年的记忆恐怕会更为淡薄，而我又不想通过回看照片
+/
+朋友圈的方式回顾这一年发生的事情（即便已经做了），这样总觉得流水账一般（尽管已经是了）。</p>
+<p>那就先从家事开始说起吧。前半年，妈妈在出差，我要更有意识的维护这个家里的关系。其实也做不了什么。春节的时候和爸爸去滑了几次雪。平时周末多回回家，和爸爸一起吃饭（即便也都是点外卖或者在外面吃），回家睡一觉，第二天可能跟他去打打球。和妈妈视频的时候多听听她说的东西。</p>
+<p>五一的时候，和家人去日本玩了。要关照老人，很多地方都逛的不是很细致。更糟糕的事情是没能带一个像样的相机。但还是有挺多收获的。还想再去。</p>
+<p>下半年…因为妈妈回来了，我的任务似乎轻了一些。周末回家的频次也少了一点。</p>
+<p>猫猫在家度过了她的一年，谢谢爸爸妈妈的照顾。狗狗也老了一岁，在家里大小便的问题更严重了。半夜它憋不住拉的屎尿，每次都是起得最早的爸爸面对和收拾。折腾了大半年，试过很多办法减轻处理的压力，也考虑过送到“狗狗养老院”，最后的解决方案是超大号的栅栏配合超大号的尿垫，营造一片专属于它的区域（似乎直到12月乃至25年1月，才找到并确定了这套方案）。
+</p>
+<p>十一的时候，趁着长辈聚餐，我和表姐/弟/妹过了一会属于我们四个同辈人的时光。我们开车找到了旁边的一个采摘园。在园里租了个观光自行车，四个人一起骑。那车是那么惊人的便宜。顺着导览牌骑到了一个所谓“儿童游乐区”，发现只是一小片沙滩、一个滑梯、两把秋千和零星几个别的设施。在那么简陋的地方，我们挤在明显不合我们身材的器材里面却笑的前所未有的开心。在那片旷野，四顾只有我们四个和其它两个孩子。那一刻似乎又找到了一点童年才可能有的惬意和自由。</p>
+<p>但是果然还是长大了。上半年，二年级的时候大家专业分流还没那么厉害。大家相同的课比较多，也借此和一些同学巩固了关系。到了大三，大家似乎更疏离了。绝大部分同学开始找自己的研究生导师，感觉大家越来越忙于各自的事情。</p>
+<p>为什么大家都有明确的自己想做的事情呢。感觉我的成长伴随的是更多的茫然与无措，凭着一时的惯性做出选择带来长久的后悔，又没有勇气主动出击打开新的局面。</p>
+<p>这也让我再一次的体验了“讨厌”的感觉。感觉我的人生有时还是太顺了，以前在学业上还没有什么让我“不想做”的事情，现在算是遇到了。
+把这种情绪迁移到情感问题上，也更多的明白了某些人做的决定。当这样的情绪出现的时候，恐怕“退出”是最正确的选择。
+可惜我没有这个魄力做出这样的选择，我只是稍微的调整了一下自己的细分领域。其实我依旧不觉得这是最适合我的领域…但是，像刚才说的，没有勇气打开新的局面。</p>
+<p>为什么大家都有明确的自己想做的事情呢。我似乎并没有「喜欢」或者「擅长」的领域。即便是我做的「顺手」的领域，也只是我能做的比别人更「高效」，而不是「做得更好」。换言之，对于很多事情，我有信心用50%的时间完成80%的成果，但并不意味着你给我充分的时间，我能做出100%的效果。这种做事的态度和风格，真的适合未来的研究么。</p>
+<p>偶尔会想起一个网络meme：小时候，最讨厌有人安排我干什么；现在，最希望有一个人能立刻明确的告诉我该干什么。一些长大的小烦恼。</p>
+<p>但长大也不全是烦恼，我能感觉到我在过我自己的生活，尤其是当我顺从我一时兴起的心意做自己想做的事情的时候。当我试着徒步从家走到学校的时候；当我在秋叶原挑谷子的时候；当我生日一个人开车到很远的商场逛街买很多好吃的的时候；当我去看刘谦的Live的时候；当我开车在山路里漫游的时候（这是每年暑假的例行活动呢w）；当我碰到晴天便翘掉几堂课（也可能碰巧没课）去周边爬山的时候；当我速通Portal
+2的时候；当我做一些小工具，以及维护这个网站的时候。小时候憧憬的生活状态，似乎也部分的实现了呢。</p>
+<p>因此有的时候也会想，其实根本没有必要烦恼未来做些什么。追求所谓Work
+and Life
+Balance的话，我只需要我的工作能够在合理的耗时内积攒合理的资源就可以了。即便是一个不那么喜欢的工作，受伤的精神世界应该也可以通过上述种种生活中的小确幸来治愈。</p>
+<p>以及一切似乎没有那么悲观。在遇到“讨厌”的事情的时候，向二年级时逐渐熟络的同学寻求了帮助；DDL的最后一天陪隔壁宿舍的同学de了一下午的bug；偶尔会和几个朋友出去吃饭。嘿！也许我还真在这个学校认识了些人呢！
+高中的同学虽然的确疏远了，但也确实留下了三两个稳定的关系。总之，尽管是孤身一人，但似乎并没有那么孤立无援。
+
+</p>
+
+<p>我好像只知道如何处理这种“朋友”或“同事”的关系，再往上的…似乎就相当的“苦手”了。我总是搞砸。</p>
+
+<p>在秋叶原，只是因为“MyGO!!!!!”在网上很火评价很好，就掏了小2000块RMB买了它的动画蓝光碟。这整个过程说来也挺好笑的。
+我本来想买CLANNAD的蓝光碟但是没找着，正好在同一层有MyGO!!!!!的光碟，就打算买了。结果店员不会英语，在那拿翻译软件痛苦交涉了好久。大意是“我们原本有很多附送赠品的，但是有一些送完了。我们可以给你一个欠条，你后续可以等有货回来拿。”
+面对此等情况，我们的故事的主角的回应是：由于我马上就回国了，所以剩下的纪念品就不！要！了！
+现在想来，我完全可以让我妈后续帮我拿的。当时这样决定的原因，
+一方面是还没看过这部片子；
+一方面是不知道赠品都有什么，后续查官网，发现赠品列了一长串！错过一个亿5555；
+还有一方面是当时忙着交涉这事，忘了关注这个东西单价多少。。。
+等到发现要接近40000日元的时候，已经来不及了。和店员的长时间交涉使得我觉得现在拒绝会超级尴尬，于是就下。单。了。几天后，妈妈安排我们去听Japan
+JAM 2024，我们去的那天，竟然正好有MyGO!!!!!的live。于是就去听了。</p>
+<p>这就是我和这部作品的初见。想来也怪，在观看番剧之前竟然先买了DVD和看了live。
+<del>那时，我们的故事的主人公还不知道，自己的人生从此以后就要彻底被MyGO!!!!!毁了w</del>
+六月份，期末/暑假的时候开始看这部番，从此一发不可收拾，直到写作的现在。两天后更新Ave
+Mujica第五集，我已经等不及了。</p>
+<p>关于电影，这一年看了不少，比较印象深的是《头脑特工队2》《里斯本丸沉没》《破地狱》，感觉泪点变低了。尤其是《里斯本丸》，打开了我在电影院看纪录片的先河。以后考虑多在大荧幕上看看纪录片。除此之外还有《神偷奶爸4》，不过是反向的令人印象深刻。我本以为以我的阅片能力是区分不出烂片的。</p>
+<p>关于游戏，这年的主要内容是解密类游戏《塔罗斯的法则》（好！）和《The
+Witness》（解谜形式不太合我胃口，没打完），视觉小说类打了《ATRI》和《鼓手的余命十日谭》（都是好作品！）。</p>
+<p>从24年1月到现在，我入门Portal 2
+Speedrunning已经过去了整整一年。一年在这上面花去了500+小时，也从零开始获得了一点成绩。这个游戏的社区氛围相当之好，我也在这里收获了一些“朋友”（或者说认识的人）。一般时候，它是我的一种个人爱好，我可以在闲暇时间打开游戏把一两个小时倾倒在上面，玩的时候能感受到纯粹的专注。但有的时候，当我看到别人的成绩的时候似乎隐约又有一些不健康的压力。我从原则上应该是无意和其他人竞争的，但有些人似乎想和我竞争。这种我拿来放松的形式似乎有时候也在控制着我，所谓“异化”么。希望今后能避免，能更多的聚焦于自身。</p>
+<p>另一个重要的游戏是《Journey》。玩的次数不多，但它出现在我每一个精神崩溃的瞬间。以前就是这样，今年也是这样。这片温暖的沙滩总是能轻轻接住我下坠的灵魂。它很好的承担着它的功能。</p>
+<p>说到异化，这个博客也是这样。建了两年，我身边线下的朋友也越来越多的知道它的存在了。我并不是反感这一点，我很开心有朋友愿意读我的这些悄悄话，但是，问题是，当我意识里知道我写的东西（可能）会有谁看的时候，我在写的还真是我自己想写的东西么？</p>
+<p>博客带来的另一个压力是个人信息问题。我为此把域名换成了一个匿名的，尽管我觉得该漏的也漏完了。换的时候，看了看Cloudflare提供的流量记录。一看不得了，哇，过去30天竟然有接近3000个“独立访问者”。</p>
+<p>唔，那怎么办呢…谢谢大家，认识的人，不认识的网络爬虫（笑）。让我们2025年继续前行吧。</p>
+
+<svg style="display:none" id="MJX-SVG-global-cache"><defs/></svg>
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                2024总结
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                posts/44211.html
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    作者
+                </div>
+                <div class="content">justaLoli</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    发布于
+                </div>
+                <div class="content">2025-01-27 21:28</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    许可
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="复制版权信息" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">年终总结</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%9D%82%E8%AE%B0/">杂记</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev" rel="prev" href="/posts/3992.html" title="今天课上讨论了人生的含义的问题">
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">今天课上讨论了人生的含义的问题</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next" rel="next" href="/posts/1933.html" title="SSH用法备忘录">
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">SSH用法备忘录</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<meting-js server="netease" type="playlist" id="8068706874" fixed="true" order="random" loop="all" theme="#D6AB4A">
+</meting-js>
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+        
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        
+        
+            
+<script src="/js/post/copyright-info.js"></script>
+
+        
+
+        
+        
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

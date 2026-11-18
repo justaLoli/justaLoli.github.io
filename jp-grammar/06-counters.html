@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="让我们期待明天会更好">
+    <meta name="author" content="justaLoli">
+    
+    <title>
+        
+            数量词 |
+        
+        Loli的杂货铺
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/img/avatar.webp">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/change-base.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/Aplayer.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="/assets/css/NotoSerifSC.css">
+
+            
+        
+    
+    <script>
+        (function () {
+            let theme = localStorage.getItem('KEEP-THEME-STATUS');
+            let classname = "";
+            if (!theme || (JSON.parse(theme).isAutoTheme)){
+                classname = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark-mode" : "light-mode";
+            }
+            else{
+                classname = JSON.parse(theme).isDark ? "dark-mode" : "light-mode";
+            }
+            document.documentElement.classList.add(classname);
+        })();
+    </script>
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"justalo.li","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#D6AB4A","title":"Loli的杂货铺","author":"justaLoli","avatar":"/img/avatar.webp","logo":"/img/avatar.webp","favicon":"/img/avatar.webp"},"menu":{"Archives":"/archives","Tags":"/tags","Categories":"/categories","About":"/about/","Links":"/links"},"first_screen":{"enable":true,"background_img":"/img/bg-day.webp","background_img_dark":"/img/bg-sunset.webp","description":"让我们期待明天会更好🎵","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/justaloli","weixin":"img|./img/wxpublicicon.jpg","qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":[null,"/assets/css/change-base.css","/assets/css/Aplayer.css","/assets/css/NotoSerifSC.css"],"js":[null,"/assets/js/Aplayer.min.js","/assets/js/Meting.min.js"]},"root":"","links":[{"name":"MUG-chen's Blog","link":"https://mug-chen.site","description":"Some miscellaneous","avatar":"https://mug-chen.site/favicon.png"},{"name":"小夏鸢的波子汽水店","link":"https://me.OwO.today","description":"鸢飞戾天者，望峰息心。","avatar":"https://pic.imgdb.cn/item/641da961a682492fcc1c6e80.jpg"},{"name":"鸫の站","link":"https://tsugumi.top","description":"赛博垃圾场","avatar":"https://s2.loli.net/2023/08/03/pnNXKrBvRYicIW9.webp"},{"name":"akearer's blog","link":"https://akearer.top","description":"一起努力吧","avatar":"https://akearer.top/icons/apple-touch-icon.png"},{"name":"绒绒洛","link":"https://qwq.dog","description":"俯いたまま大人になって","avatar":"https://qwq.dog/pic/avatar.png"},{"name":"Arthals' ink","link":"https://arthals.ink","description":"一岁并一载，岁岁又年年。","avatar":"https://cdn.arthals.ink/Arthals-mcskin.png"},{"name":"洛洛の小窝窝","link":"https://blog.byluoyulin.com/","description":"喵呜~喵呜~~~","avatar":"https://blog.byluoyulin.com/favicon.ico"},{"name":"星野","link":"https://xingyemeow.com/","description":"有笨蛋，我不说是谁～","avatar":""},{"name":"IUU6's Blog","link":"https://blog.rzly.net/","description":"From the root, begin anew.","avatar":"https://blog.rzly.net/images/avatar.png"}],"tools":[{"category":"AI Tools","anchorId":"QUklMjBUb29scw0"},{"name":"ChatGPT","link":"https://chat.openai.com/"},{"name":"Gemini","link":"https://gemini.google.com/app"},{"category":"Coding","anchorId":"Q29kaW5n3"},{"name":"Sublime Text","link":""},{"name":"VS Code","link":""},{"category":"Design","anchorId":"RGVzaWdu6"},{"name":"draw.io","link":""},{"name":"React Bits","link":"https://www.reactbits.dev/"}],"photos":[{"url":"/img/wallpaper/102698566_p0.webp"},{"url":"/img/wallpaper/114543368_p0.webp"},{"url":"/img/wallpaper/103304065_p0.webp"},{"url":"/img/wallpaper/65144542_p0.webp"},{"url":"/img/wallpaper/104110262_p0.webp"},{"url":"/img/wallpaper/66041517_p0_2.webp"},{"url":"/img/wallpaper/105141275_p0.webp"},{"url":"/img/wallpaper/69759328_p0.webp"},{"url":"/img/wallpaper/105578894_p0.webp"},{"url":"/img/wallpaper/83061392_p0_2.webp"},{"url":"/img/wallpaper/106676424_p0.webp"},{"url":"/img/wallpaper/92388693_p0_2.webp"},{"url":"/img/wallpaper/106676424_p1.webp"},{"url":"/img/wallpaper/95181718_p0.webp"},{"url":"/img/wallpaper/107325500_p0.webp"},{"url":"/img/wallpaper/96080512_p0.webp"},{"url":"/img/wallpaper/109710576_p0.webp"},{"url":"/img/wallpaper/98223673_p0.webp"},{"url":"/img/wallpaper/110036744_p0.webp"},{"url":"/img/wallpaper/98671673_p0.webp"},{"url":"/img/wallpaper/110221098_p0.webp"},{"url":"/img/wallpaper/CleanShot_2023-11-18_at_09.42.09.webp"},{"url":"/img/wallpaper/111359543_p0.webp"}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style><link rel="alternate" href="/atom.xml" title="Loli的杂货铺" type="application/atom+xml">
+</head>
+
+
+<body>
+
+<main class="page-container documentations-page border-box">
+    <div class="page-main-content border-box">
+        <div class="page-main-content-middle border-box">
+            <div class="main-content border-box doc-layout" data-doc-index="0" data-doc-first="">
+
+                <details class="doc-nav-mobile">
+                    <summary>日语语法小记</summary>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </details>
+
+                <aside class="doc-nav-side">
+                    <div class="doc-nav-title">日语语法小记</div>
+                    <nav aria-label="日语语法小记"><ul class="doc-nav-list">
+    
+        <li>
+            <a class="" href="/jp-grammar/00-index.html">前言</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/01-vocabulary.html">词汇表</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/02-textbook-texts.html">教材课文</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/03-nouns-and-nominal-clauses.html">体言与名词句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/04-kosoado.html">こそあど</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/05-adjectives.html">形容词</a>
+        </li>
+    
+        <li>
+            <a class="is-active" aria-current="page" href="/jp-grammar/06-counters.html">数量词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/07-time.html">时间</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/08-verbs.html">动词变形</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/09-particles.html">助词</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/10-existence.html">存在句</a>
+        </li>
+    
+        <li>
+            <a class="" href="/jp-grammar/11-giving-receiving.html">授受表达</a>
+        </li>
+    
+</ul>
+</nav>
+                </aside>
+
+                
+                    <details class="doc-toc-mobile">
+                        <summary>本页目录</summary>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#数量词与常用量词">数量词与常用量词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一数字的基本读法">一、数字的基本读法</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二数量词在句中的位置">二、数量词在句中的位置</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三つ一般物品的个数">三、～つ：一般物品的个数</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四個こ立体小型物品">四、～個（こ）：立体、小型物品</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五人にん人数">五、～人（にん）：人数</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六歳さい年龄">六、～歳（さい）：年龄</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七円えん与元げん金额">七、円（えん）与元（げん）：金额</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#日元円">1. 日元：～円</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#人民币元げん">2. 人民币：～元（げん）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八本ほん细长物品">八、～本（ほん）：细长物品</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九冊さつ书籍笔记本">九、～冊（さつ）：书籍、笔记本</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十其他常见量词">十、其他常见量词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#枚まい扁平薄的物品">1. ～枚（まい）：扁平、薄的物品</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#台だい车辆机器">2. ～台（だい）：车辆、机器</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#匹ひき小型动物">3. ～匹（ひき）：小型动物</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十一か月かげつ几个月">十一、～か月（かげつ）：几个月</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十二日にちか天数与日期">十二、～日（にち・か）：天数与日期</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十三其他常见时间长度">十三、其他常见时间长度</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十四容易混淆的读音">十四、容易混淆的读音</a>
+        </li>
+    
+</ul>
+
+                    </details>
+                
+
+                <article class="doc-body keep-markdown-body">
+                    <h1 id="数量词与常用量词">数量词与常用量词</h1>
+<h2 id="一数字的基本读法">一、数字的基本读法</h2>
+<ul>
+<li>0：ゼロ／れい</li>
+<li>1：いち</li>
+<li>2：に</li>
+<li>3：さん</li>
+<li>4：よん／し</li>
+<li>5：ご</li>
+<li>6：ろく</li>
+<li>7：なな／しち</li>
+<li>8：はち</li>
+<li>9：きゅう／く</li>
+<li>10：じゅう</li>
+</ul>
+<p>现代日语中，数数或组成较大的数字时，4通常用「よん」，7通常用「なな」，9通常用「きゅう」。但固定量词和日期有自己的习惯读法，不能随意替换。</p>
+<p>较大的数字：</p>
+<ul>
+<li>11：じゅういち</li>
+<li>20：にじゅう</li>
+<li>100：ひゃく</li>
+<li>300：さんびゃく</li>
+<li>600：ろっぴゃく</li>
+<li>800：はっぴゃく</li>
+<li>1,000：せん</li>
+<li>3,000：さんぜん</li>
+<li>8,000：はっせん</li>
+<li>10,000：いちまん</li>
+<li>100,000：じゅうまん</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>学生が二十人います。<br>
+有二十名学生。</li>
+<li>この本は千二百円です。<br>
+这本书一千二百日元。</li>
+<li>私の誕生日は一九九九年五月です。<br>
+我的出生年月是一九九九年五月。</li>
+</ul>
+<h2 id="二数量词在句中的位置">二、数量词在句中的位置</h2>
+<p>常见结构是：</p>
+<blockquote>
+<p>名词＋助词＋数量词＋动词</p>
+</blockquote>
+<ul>
+<li>りんごを三つ買いました。<br>
+买了三个苹果。</li>
+<li>本を二冊読みました。<br>
+读了两本书。</li>
+<li>教室に学生が三十人います。<br>
+教室里有三十名学生。</li>
+<li>友達と二人で映画を見ました。<br>
+和朋友两个人一起看了电影。</li>
+</ul>
+<p>也可以说「数量词＋の＋名词」：</p>
+<ul>
+<li>三つのりんごを買いました。<br>
+买了三个苹果。</li>
+<li>二人の学生が来ました。<br>
+来了两名学生。</li>
+</ul>
+<p>询问数量时用「何＋量词」，询问价格常用「いくら」：</p>
+<ul>
+<li>本を何冊買いましたか。<br>
+买了几本书？</li>
+<li>学生が何人いますか。<br>
+有几名学生？</li>
+<li>このりんごはいくらですか。<br>
+这个苹果多少钱？</li>
+</ul>
+<h2 id="三つ一般物品的个数">三、～つ：一般物品的个数</h2>
+<p>「～つ」可以用于多种物品，特别是没有专用量词的小型物品。最常用的「～つ」系列只到十。</p>
+<ul>
+<li>一つ：ひとつ</li>
+<li>二つ：ふたつ</li>
+<li>三つ：みっつ</li>
+<li>四つ：よっつ</li>
+<li>五つ：いつつ</li>
+<li>六つ：むっつ</li>
+<li>七つ：ななつ</li>
+<li>八つ：やっつ</li>
+<li>九つ：ここのつ</li>
+<li>十：とお</li>
+<li>いくつ：几个；几岁</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>机の上にりんごが三つあります。<br>
+桌上有三个苹果。</li>
+<li>二つください。<br>
+请给我两个。</li>
+<li>一つは百円です。<br>
+一个一百日元。</li>
+</ul>
+<p>十以上通常改用「～個」等表达。</p>
+<h2 id="四個こ立体小型物品">四、～個（こ）：立体、小型物品</h2>
+<ul>
+<li>一個：いっこ</li>
+<li>二個：にこ</li>
+<li>三個：さんこ</li>
+<li>四個：よんこ</li>
+<li>五個：ごこ</li>
+<li>六個：ろっこ</li>
+<li>七個：ななこ</li>
+<li>八個：はっこ</li>
+<li>九個：きゅうこ</li>
+<li>十個：じっこ</li>
+<li>何個：なんこ</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>卵を六個買いました。<br>
+买了六个鸡蛋。</li>
+<li>この箱にりんごが十個あります。<br>
+这个箱子里有十个苹果。</li>
+</ul>
+<h2 id="五人にん人数">五、～人（にん）：人数</h2>
+<ul>
+<li>一人：ひとり</li>
+<li>二人：ふたり</li>
+<li>三人：さんにん</li>
+<li>四人：よにん</li>
+<li>五人：ごにん</li>
+<li>六人：ろくにん</li>
+<li>七人：しちにん／ななにん</li>
+<li>八人：はちにん</li>
+<li>九人：きゅうにん／くにん</li>
+<li>十人：じゅうにん</li>
+<li>何人：なんにん</li>
+</ul>
+<p>「一人、二人」使用特殊读音，「四人」通常读「よにん」。</p>
+<p>例句：</p>
+<ul>
+<li>クラスに留学生が二人います。<br>
+班里有两名留学生。</li>
+<li>家族は四人です。<br>
+家里有四口人。</li>
+<li>パーティーに何人来ましたか。<br>
+聚会上来了几个人？</li>
+<li>一人で日本へ行きました。<br>
+一个人去了日本。这里的「一人で」表示“独自”。</li>
+</ul>
+<h2 id="六歳さい年龄">六、～歳（さい）：年龄</h2>
+<ul>
+<li>一歳：いっさい</li>
+<li>二歳：にさい</li>
+<li>三歳：さんさい</li>
+<li>四歳：よんさい</li>
+<li>五歳：ごさい</li>
+<li>六歳：ろくさい</li>
+<li>七歳：ななさい</li>
+<li>八歳：はっさい</li>
+<li>九歳：きゅうさい</li>
+<li>十歳：じっさい</li>
+<li>二十歳：はたち（特殊读法）</li>
+<li>何歳：なんさい</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>妹は八歳です。<br>
+妹妹八岁。</li>
+<li>来月、二十歳になります。<br>
+下个月就二十岁了。</li>
+<li>お子さんは何歳ですか。<br>
+您的孩子几岁？</li>
+</ul>
+<p>询问年龄也可以礼貌地说「おいくつですか」，但对不熟悉的人直接问年龄要先考虑场合。</p>
+<h2 id="七円えん与元げん金额">七、円（えん）与元（げん）：金额</h2>
+<h3 id="日元円">1. 日元：～円</h3>
+<ul>
+<li>一円：いちえん</li>
+<li>二円：にえん</li>
+<li>三円：さんえん</li>
+<li>四円：よえん</li>
+<li>五円：ごえん</li>
+<li>六円：ろくえん</li>
+<li>七円：ななえん</li>
+<li>八円：はちえん</li>
+<li>九円：きゅうえん</li>
+<li>十円：じゅうえん</li>
+<li>百円：ひゃくえん</li>
+<li>千円：せんえん</li>
+<li>一万円：いちまんえん</li>
+<li>何円：なんえん</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>この本は千二百円です。<br>
+这本书一千二百日元。</li>
+<li>この切手は何円ですか。<br>
+这张邮票多少钱？</li>
+<li>百円のパンを二つ買いました。<br>
+买了两个一百日元的面包。</li>
+</ul>
+<h3 id="人民币元げん">2. 人民币：～元（げん）</h3>
+<ul>
+<li>一元：いちげん</li>
+<li>二元：にげん</li>
+<li>三元：さんげん</li>
+<li>十元：じゅうげん</li>
+<li>何元：なんげん</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>このノートは中国で五元でした。<br>
+这本笔记本在中国买是五元。</li>
+<li>昼ご飯に二十元使いました。<br>
+午饭花了二十元。</li>
+</ul>
+<h2 id="八本ほん细长物品">八、～本（ほん）：细长物品</h2>
+<p>用于笔、瓶子、伞、香蕉等细长物品。</p>
+<ul>
+<li>一本：いっぽん</li>
+<li>二本：にほん</li>
+<li>三本：さんぼん</li>
+<li>四本：よんほん</li>
+<li>五本：ごほん</li>
+<li>六本：ろっぽん</li>
+<li>七本：ななほん</li>
+<li>八本：はっぽん</li>
+<li>九本：きゅうほん</li>
+<li>十本：じっぽん</li>
+<li>何本：なんぼん</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>鉛筆を三本買いました。<br>
+买了三支铅笔。</li>
+<li>水を二本ください。<br>
+请给我两瓶水。</li>
+</ul>
+<h2 id="九冊さつ书籍笔记本">九、～冊（さつ）：书籍、笔记本</h2>
+<ul>
+<li>一冊：いっさつ</li>
+<li>二冊：にさつ</li>
+<li>三冊：さんさつ</li>
+<li>四冊：よんさつ</li>
+<li>五冊：ごさつ</li>
+<li>六冊：ろくさつ</li>
+<li>七冊：ななさつ</li>
+<li>八冊：はっさつ</li>
+<li>九冊：きゅうさつ</li>
+<li>十冊：じっさつ</li>
+<li>何冊：なんさつ</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>日本語の本を五冊持っています。<br>
+我有五本日语书。</li>
+<li>今月、三冊読みました。<br>
+这个月读了三本书。</li>
+</ul>
+<h2 id="十其他常见量词">十、其他常见量词</h2>
+<h3 id="枚まい扁平薄的物品">1. ～枚（まい）：扁平、薄的物品</h3>
+<p>用于纸、邮票、盘子、衬衫等，读音规则。</p>
+<ul>
+<li>一枚：いちまい</li>
+<li>二枚：にまい</li>
+<li>三枚：さんまい</li>
+<li>何枚：なんまい</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>紙を三枚ください。<br>
+请给我三张纸。</li>
+<li>切手を五枚買いました。<br>
+买了五张邮票。</li>
+</ul>
+<h3 id="台だい车辆机器">2. ～台（だい）：车辆、机器</h3>
+<ul>
+<li>一台：いちだい</li>
+<li>二台：にだい</li>
+<li>三台：さんだい</li>
+<li>何台：なんだい</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>駅の前にタクシーが三台あります。<br>
+车站前有三辆出租车。</li>
+<li>家にパソコンが二台あります。<br>
+家里有两台电脑。</li>
+</ul>
+<h3 id="匹ひき小型动物">3. ～匹（ひき）：小型动物</h3>
+<ul>
+<li>一匹：いっぴき</li>
+<li>二匹：にひき</li>
+<li>三匹：さんびき</li>
+<li>四匹：よんひき</li>
+<li>五匹：ごひき</li>
+<li>六匹：ろっぴき</li>
+<li>七匹：ななひき</li>
+<li>八匹：はっぴき</li>
+<li>九匹：きゅうひき</li>
+<li>十匹：じっぴき</li>
+<li>何匹：なんびき</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>家に猫が二匹います。<br>
+家里有两只猫。</li>
+<li>公園で犬を三匹見ました。<br>
+在公园里看见了三只狗。</li>
+</ul>
+<h2 id="十一か月かげつ几个月">十一、～か月（かげつ）：几个月</h2>
+<p>表示时间长度。注意与月份名「一月（いちがつ）」区分。</p>
+<ul>
+<li>一か月：いっかげつ</li>
+<li>二か月：にかげつ</li>
+<li>三か月：さんかげつ</li>
+<li>四か月：よんかげつ</li>
+<li>五か月：ごかげつ</li>
+<li>六か月：ろっかげつ</li>
+<li>七か月：ななかげつ／しちかげつ</li>
+<li>八か月：はっかげつ</li>
+<li>九か月：きゅうかげつ</li>
+<li>十か月：じっかげつ</li>
+<li>何か月：なんかげつ</li>
+</ul>
+<p>「一か月」也常写作「一ヶ月」。</p>
+<p>例句：</p>
+<ul>
+<li>日本に三か月いました。<br>
+在日本待了三个月。</li>
+<li>一か月に一度、家族に電話します。<br>
+每个月给家人打一次电话。</li>
+<li>何か月日本語を勉強していますか。<br>
+学了几个月日语？</li>
+</ul>
+<p>比较：</p>
+<ul>
+<li>一月（いちがつ）：一月，月份名。</li>
+<li>一か月（いっかげつ）：一个月，时间长度。</li>
+</ul>
+<h2 id="十二日にちか天数与日期">十二、～日（にち・か）：天数与日期</h2>
+<p>「日」既表示日期，也表示天数。部分读法相同，但「一日」必须区分：</p>
+<ul>
+<li>一日：ついたち，每月第一天。</li>
+<li>一日：いちにち，一天的时间长度。</li>
+</ul>
+<p>二日至十日表示日期或天数时，常用以下读法：</p>
+<ul>
+<li>二日：ふつか</li>
+<li>三日：みっか</li>
+<li>四日：よっか</li>
+<li>五日：いつか</li>
+<li>六日：むいか</li>
+<li>七日：なのか</li>
+<li>八日：ようか</li>
+<li>九日：ここのか</li>
+<li>十日：とおか</li>
+<li>十一日：じゅういちにち</li>
+<li>二十日：はつか</li>
+<li>何日：なんにち</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>今日は五月三日です。<br>
+今天是五月三日。「三日」表示日期。</li>
+<li>日本に五日いました。<br>
+在日本待了五天。「五日」表示时间长度。</li>
+<li>東京に一日いました。<br>
+在东京待了一天。「一日」读「いちにち」。</li>
+<li>旅行は来月一日からです。<br>
+旅行从下个月一号开始。「一日」读「ついたち」。</li>
+</ul>
+<p>完整日期读法见「07-时间」。</p>
+<h2 id="十三其他常见时间长度">十三、其他常见时间长度</h2>
+<ul>
+<li>一時間：いちじかん，一个小时。</li>
+<li>二時間：にじかん，两个小时。</li>
+<li>一週間：いっしゅうかん，一个星期。</li>
+<li>二週間：にしゅうかん，两个星期。</li>
+<li>一年：いちねん，一年。</li>
+<li>二年：にねん，两年。</li>
+<li>何時間：なんじかん，几个小时。</li>
+<li>何週間：なんしゅうかん，几个星期。</li>
+<li>何年：なんねん，几年。</li>
+</ul>
+<p>例句：</p>
+<ul>
+<li>毎日一時間日本語を勉強します。<br>
+每天学一小时日语。</li>
+<li>先週、二日休みました。<br>
+上周休息了两天。</li>
+<li>三年間、中国に住んでいました。<br>
+在中国住了三年。「間」强调持续的整段时间。</li>
+</ul>
+<h2 id="十四容易混淆的读音">十四、容易混淆的读音</h2>
+<ul>
+<li>一人：ひとり；二人：ふたり；三人：さんにん。</li>
+<li>二十歳：はたち；二十一歳：にじゅういっさい。</li>
+<li>一月：いちがつ，一月份；一か月：いっかげつ，一个月。</li>
+<li>一日：ついたち，一号；一日：いちにち，一天。</li>
+<li>一本：いっぽん；三本：さんぼん；何本：なんぼん。</li>
+<li>一個：いっこ；十個：じっこ；何個：なんこ。</li>
+</ul>
+<svg style="display:none" id="MJX-SVG-global-cache"><defs></defs></svg>
+                </article>
+
+                
+                    <aside class="doc-toc-side">
+                        <div class="doc-toc-title">本页目录</div>
+                        <ul class="doc-toc-list">
+    
+        <li class="doc-toc-item level-1">
+            <a href="#数量词与常用量词">数量词与常用量词</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#一数字的基本读法">一、数字的基本读法</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#二数量词在句中的位置">二、数量词在句中的位置</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#三つ一般物品的个数">三、～つ：一般物品的个数</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#四個こ立体小型物品">四、～個（こ）：立体、小型物品</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#五人にん人数">五、～人（にん）：人数</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#六歳さい年龄">六、～歳（さい）：年龄</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#七円えん与元げん金额">七、円（えん）与元（げん）：金额</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#日元円">1. 日元：～円</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#人民币元げん">2. 人民币：～元（げん）</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#八本ほん细长物品">八、～本（ほん）：细长物品</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#九冊さつ书籍笔记本">九、～冊（さつ）：书籍、笔记本</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十其他常见量词">十、其他常见量词</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#枚まい扁平薄的物品">1. ～枚（まい）：扁平、薄的物品</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#台だい车辆机器">2. ～台（だい）：车辆、机器</a>
+        </li>
+    
+        <li class="doc-toc-item level-3">
+            <a href="#匹ひき小型动物">3. ～匹（ひき）：小型动物</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十一か月かげつ几个月">十一、～か月（かげつ）：几个月</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十二日にちか天数与日期">十二、～日（にち・か）：天数与日期</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十三其他常见时间长度">十三、其他常见时间长度</a>
+        </li>
+    
+        <li class="doc-toc-item level-2">
+            <a href="#十四容易混淆的读音">十四、容易混淆的读音</a>
+        </li>
+    
+</ul>
+
+                    </aside>
+                
+
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2026
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">justaLoli</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a target="_blank" href="https://github.com/justaLoli/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="side-tools-container border-box">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+</main>
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="pjax">
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+        
+<script src="/js/page/documentations-page.js"></script>
+
+    
+</div>
+
+
+
+
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Aplayer.min.js" data-pjax></script>
+
+        
+    
+        
+            
+<script class="custom-inject-js" src="/assets/js/Meting.min.js" data-pjax></script>
+
+        
+    
+
+</body>
+</html>

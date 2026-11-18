@@ -1,0 +1,34 @@
+/* 播放器通过Aplayer.css注入，不在此处 */
+/* 字体源文件通过NotoSerifSC.css注入 */
+/* Font */
+:root {
+  --base-font-family: Noto Serif SC!important;
+}
+/* no horizontal scroll */
+html {
+   overflow-x: hidden;
+}
+body {
+   overflow-x: clip !important;
+}
+.paginator .page-number-box .page-number-input{
+   -moz-appearance: textfield;
+}
+
+code{
+   border: none;
+}
+figcaption{
+   text-align: center;
+}
+.keep-markdown-body h1, .keep-markdown-body h2, .keep-markdown-body h3, .keep-markdown-body h4, .keep-markdown-body h5, .keep-markdown-body h6{
+   white-space: normal!important;
+}
+.first-screen-container .first-screen-content .description .desc-item .desc {
+  background-color: var(--first-screen-desc-bg-color);
+}
+
+/*修复部分MathJax渲染越界的bug*/
+.MathJax{
+   min-width: unset !important;
+}

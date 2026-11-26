@@ -6,7 +6,7 @@
   <link href="https://justalo.li/atom.xml" rel="self"/>
   
   <link href="https://justalo.li/"/>
-  <updated>2026-11-21T06:57:09.075Z</updated>
+  <updated>2026-11-25T11:24:20.437Z</updated>
   <id>https://justalo.li/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://justalo.li/posts/57764.html"/>
     <id>https://justalo.li/posts/57764.html</id>
     <published>2026-11-21T06:49:25.000Z</published>
-    <updated>2026-11-21T06:57:09.075Z</updated>
+    <updated>2026-11-25T11:24:20.437Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/css/hint.css"><script src="/js/hint-clamp.js" defer></script><p>软件：Virtusoo，Calibre；KLayout</p><h1 id="比对两个版图是否一致">比对两个版图是否一致</h1><p>属于sign off阶段必做内容</p><h2 id="检查gds和gds是否一致">检查gds和gds是否一致</h2><h2 id="检查gds和virtuoso-layout-editor绘制的layout是否一致">检查gds和virtuosolayout editor绘制的layout是否一致</h2><h2 id="其它验证-stream-out-正确性的做法">其它验证 Stream-out正确性的做法</h2><p>对导出待交付的gds文件做drc和lvscheck。错层、丢层、精度错误，都能查出来。</p><svg style="display: none;" id="MJX-SVG-global-cache"><defs/></svg>]]></content>
     
@@ -78,11 +78,11 @@
     
     
     
+    <category term="Linux" scheme="https://justalo.li/tags/Linux/"/>
+    
     <category term="明日方舟" scheme="https://justalo.li/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
     
     <category term="终末地" scheme="https://justalo.li/tags/%E7%BB%88%E6%9C%AB%E5%9C%B0/"/>
-    
-    <category term="Linux" scheme="https://justalo.li/tags/Linux/"/>
     
   </entry>
   
@@ -203,9 +203,9 @@
     <category term="思考" scheme="https://justalo.li/categories/%E6%80%9D%E8%80%83/"/>
     
     
-    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
-    
     <category term="体验" scheme="https://justalo.li/tags/%E4%BD%93%E9%AA%8C/"/>
+    
+    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
@@ -226,9 +226,9 @@
     <category term="思考" scheme="https://justalo.li/categories/%E6%80%9D%E8%80%83/"/>
     
     
-    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
-    
     <category term="体验" scheme="https://justalo.li/tags/%E4%BD%93%E9%AA%8C/"/>
+    
+    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
     
     <category term="华为" scheme="https://justalo.li/tags/%E5%8D%8E%E4%B8%BA/"/>
     
@@ -253,9 +253,9 @@
     <category term="思考" scheme="https://justalo.li/categories/%E6%80%9D%E8%80%83/"/>
     
     
-    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
-    
     <category term="体验" scheme="https://justalo.li/tags/%E4%BD%93%E9%AA%8C/"/>
+    
+    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
     
     <category term="华为" scheme="https://justalo.li/tags/%E5%8D%8E%E4%B8%BA/"/>
     
@@ -345,9 +345,9 @@
     <category term="思考" scheme="https://justalo.li/categories/%E6%80%9D%E8%80%83/"/>
     
     
-    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
-    
     <category term="体验" scheme="https://justalo.li/tags/%E4%BD%93%E9%AA%8C/"/>
+    
+    <category term="杂记" scheme="https://justalo.li/tags/%E6%9D%82%E8%AE%B0/"/>
     
     <category term="魔术" scheme="https://justalo.li/tags/%E9%AD%94%E6%9C%AF/"/>
     
